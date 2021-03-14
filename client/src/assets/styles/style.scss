@@ -1,0 +1,42 @@
+// [IMPORT] Personal //
+@import './sass-variables.scss';
+
+body {
+	opacity: 1;
+	background: #a8a8a8;
+	background-size: 20px 20px,20px 20px;
+	background-image:
+		linear-gradient(
+			#242e38 19px,
+			transparent 0
+		),
+		linear-gradient(
+			90deg,
+			#242e38 19px,
+			transparent 0
+		),
+	;
+}
+
+// Comment List Image Fix //
+.comment img { max-width: 100%; }
+
+// Distinct blockquotes //
+.comment blockquote {
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.171);
+	border-color: #535353;
+	border-style: solid;
+	border-width: 1px;
+	padding: 0px 10px;
+}
+
+// Distinct p //
+.comment p { margin: 0; }
+
+// Nav Spacer //
+.nav-spacer { padding-top: 147px; }
+
+@media only screen and (max-width: 991px) { .nav-spacer { padding-top: 178px; } }
+
+@media only screen and (max-width: 768px) { .nav-spacer { padding-top: 186px; } }
