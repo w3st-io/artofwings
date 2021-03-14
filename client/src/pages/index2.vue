@@ -1,18 +1,30 @@
 <template>
 	<div>
-		<BContainer fluid class="px-0 py-5 text-center bg-info">
-			<h1 class="mb-3 text-primary font-weight-bold" style="font-size: 5em;">Are you ready..</h1>
-			<h1 class="mb-5 text-primary font-weight-bold">for food
-				<mark class="p-0 text-light bg-primary" style="font-size: 1.5em;">awesome-ness</mark>
-				?!
-			</h1>
+		<BContainer fluid class="px-0 py-5 text-center">
+			<BRow>
+				<BCol cols="3">
+					<img :src="imageLeft" class="w-100" >
+				</BCol>
 
-			<BButton size="lg" class="born-ready">
-				<h1 class="m-0">I was born ready!!</h1>
-			</BButton>
+				<BCol cols="6" class="text-center">
+					<h1 class="mb-3 text-primary font-weight-bold" style="font-size: 5em;">Are you ready..</h1>
+					<h1 class="mb-5 text-primary font-weight-bold">for food
+						<mark class="p-0 text-light bg-primary" style="font-size: 1.5em;">awesome-ness</mark>
+						?!
+					</h1>
+
+					<BButton size="lg" class="born-ready">
+						<h1 class="m-0">I was born ready!!</h1>
+					</BButton>
+				</BCol>
+
+				<BCol cols="3">
+					<img :src="imageRight" class="w-100">
+				</BCol>
+			</BRow>
 		</BContainer>
 
-		<BContainer fluid class="px-0 text-center bg-white">
+		<BContainer fluid class="px-0 text-center bg-info">
 			<Conveyor />
 		</BContainer>
 
@@ -37,6 +49,13 @@
 		components: {
 			Conveyor,
 		},
+
+		data() {
+			return {
+				imageLeft: require('../assets/images/pages/index/ready-left.png'),
+				imageRight: require('../assets/images/pages/index/ready-right.png'),
+			}
+		},
 	}
 </script>
 
@@ -44,9 +63,12 @@
 	@import 'src/assets/styles/bootstrap-override.scss';
 
 	.born-ready {
+		transition: .5s;
+	}
+
+	.born-ready {
 		&:hover {
 			transform: translate(0, -10px);
-			transition: .5s;
 			@extend .shadow-lg;
 		}
 	}

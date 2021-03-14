@@ -2,20 +2,28 @@
 	<div>
 		<!-- Top Bar -->
 		<div class="bg-primary">
-			<BContainer>
-				<nav class="px-0 navbar navbar-expand-lg navbar-dark">
-					<!-- Logo -->
-					<RouterLink to="/" class="navbar-brand">
-						<h1 class="m-0">
-							{{ defaultData.companyName }}
-						</h1>
-					</RouterLink>
+			<BContainer class="py-3">
+				<!-- Logo -->
+				<RouterLink to="/" class="text-center text-decoration-none text-light">
+					<h1 class="m-0">
+						{{ defaultData.companyName }}
+					</h1>
+				</RouterLink>
+			</BContainer>
+		</div>
 
-					<!-- Hidden Menu Button -->
-					<BButton class="d-block d-md-none" @click="toggle()">
-						<MenuIcon class="text-primary" />
-					</BButton>
-				</nav>
+		<!-- Hidden Menu Button -->
+		<BButton class="d-block d-md-none w-100" @click="toggle()">
+			<MenuIcon size="3x" class="text-primary" />
+		</BButton>
+
+		<div class="d-none d-md-block w-100 py-2 bg-secondary">
+			<BContainer>
+				<h3>
+					<RouterLink to="/" class="menu-link">
+						Home
+					</RouterLink>
+				</h3>
 			</BContainer>
 		</div>
 
@@ -118,3 +126,34 @@
 		},
 	}
 </script>
+
+<style lang="scss">
+	.menu-link {
+		position: relative;
+		text-decoration: none;
+		transition: .2s;
+		text-decoration: none !important;
+	}
+
+	.menu-link:hover {
+		color: white !important;
+	}
+
+	.menu-link::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: white !important;
+		visibility: hidden;
+		transform: scaleX(0);
+		transition: all 0.3s ease-in-out 0s;
+	}
+	
+	.menu-link:hover::before {
+		visibility: visible;
+		transform: scaleX(1);
+	}
+</style>
