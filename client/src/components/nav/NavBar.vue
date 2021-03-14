@@ -1,96 +1,21 @@
 <template>
 	<div>
 		<!-- Top Bar -->
-		<div class="bg-dark bg-secondary border-bottom border-primary">
+		<div class="bg-primary">
 			<BContainer>
 				<nav class="px-0 navbar navbar-expand-lg navbar-dark">
 					<!-- Logo -->
 					<RouterLink to="/" class="navbar-brand">
-						<mark class="h4 bg-primary text-light">
+						<h1 class="m-0">
 							{{ defaultData.companyName }}
-						</mark>
+						</h1>
 					</RouterLink>
 
 					<!-- Hidden Menu Button -->
-					<button class="navbar-toggler" @click="toggle()">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-
-					<!-- Top Menu -->
-					<div class="collapse navbar-collapse">
-						<div class="navbar-nav mr-auto"></div>
-						<!-- Search and Button -->
-						<form class="input-group" style="width: 300px;">
-							<input
-								v-model="query"
-								type="text"
-								placeholder="Search"
-								class="form-control border-secondary bg-dark text-light"
-							>
-							<div class="input-group-append">
-								<BButton
-									:disabled="!query"
-									variant="outline-secondary"
-									type="submit"
-									@click="searchRedirect()"
-								>Search</BButton>
-							</div>
-						</form>
-					</div>
+					<BButton class="d-block d-md-none" @click="toggle()">
+						<MenuIcon class="text-primary" />
+					</BButton>
 				</nav>
-			</BContainer>
-		</div>
-		
-		<!-- Bottom Bar -->
-		<div class="p-0 bg-dark border-bottom border-dark shadow-sm">
-			<BContainer>
-				<BNavbar class="px-0 py-1">
-					<div class="mr-auto d-none d-sm-block">
-						<BButton
-							v-if="userLogged"
-							variant="outline-light"
-							size="sm"
-							class=""
-							@click="followedRedirect()"
-						>Followed Posts</BButton>
-
-						<BButton
-							variant="outline-light"
-							size="sm"
-							class="ml-2"
-							@click="allActivityRedirect()"
-						>All Activity</BButton>
-					</div>
-
-					<div>
-						<!-- Logged In -->
-						<NotificationMenu v-if="userLogged" />
-
-						<BButton
-							v-if="userLogged"
-							variant="outline-primary"
-							size="sm"
-							class="ml-2"
-							@click="profileRedirect()"
-						>{{ decoded.username }}</BButton>
-
-						<!-- NOT Logged In -->
-						<BButton
-							v-if="!userLogged"
-							variant="outline-secondary"
-							size="sm"
-							@click="loginRedirect()"
-						>Login</BButton>
-						
-						<BButton
-							v-if="!userLogged"
-							variant="outline-primary"
-							size="sm"
-							class="ml-2"
-							@click="registerRedirect()"
-						>Register</BButton>
-					</div>
-				</BNavbar>
 			</BContainer>
 		</div>
 
@@ -100,8 +25,10 @@
 </template>
 
 <script>
+	// [IMPORT] //
+	import { MenuIcon } from 'vue-feather-icons'
+
 	// [IMPORT] Personal //
-	import NotificationMenu from '@/components/notifications/NotificationMenu'
 	import SideMenu from '@/components/nav/SideMenu'
 	import defaultData from '../../defaults/companyInfo'
 	import router from '@/router'
@@ -111,7 +38,7 @@
 	// [EXPORT] //
 	export default {
 		components: {
-			NotificationMenu,
+			MenuIcon,
 			SideMenu,
 		},
 

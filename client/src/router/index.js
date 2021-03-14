@@ -6,7 +6,7 @@ import Router from 'vue-router'
 // [IMPORT] Personal (Ordered by path) //
 import companyInfo from '@/defaults/companyInfo'
 // Home //
-import home from '@/pages'
+import home from '@/pages/index2'
 // Activity //
 import activity from '@/pages/activity'
 // Admin //
@@ -28,7 +28,7 @@ import comment_reply from '@/pages/comment/reply'
 import components from '@/pages/components'
 import components_bcarousel from '@/pages/components/bcarousel'
 import components_conveyor from '@/pages/components/conveyor'
-import components_getQuote from '../pages/components/get-quote'
+import components_getQuote from '@/pages/components/get-quote'
 import components_parallax from '@/pages/components/parallax'
 // Email //
 import emailSent from '@/pages/email-sent'

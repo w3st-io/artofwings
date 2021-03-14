@@ -1,8 +1,8 @@
 // [EXPORT] //
 module.exports = {
 	companyLogo: '',
-	companyName: 'BlockBased.io',
-	companyCaption: 'Caption',
+	companyName: 'Art of Wings',
+	companyCaption: 'Est. 2021',
 
 	address: '123 Main St. Teaneck, NJ 07666',
 	googleMapsLink: 'https://www.google.com/maps?q=google+maps&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjDmt_7-9HuAhVlUN8KHfY4BxEQ_AUoAXoECAoQAw',
