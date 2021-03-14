@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<BContainer fluid class="px-0 py-5 text-center">
+		<BContainer fluid class="py-5 text-center">
 			<BRow>
-				<BCol cols="3">
+				<BCol cols="3" class="p-0">
 					<img :src="imageLeft" class="w-100" >
 				</BCol>
 
@@ -18,14 +18,51 @@
 					</BButton>
 				</BCol>
 
-				<BCol cols="3">
+				<BCol cols="3" class="p-0">
 					<img :src="imageRight" class="w-100">
 				</BCol>
 			</BRow>
 		</BContainer>
 
-		<BContainer fluid class="px-0 text-center bg-info">
+		<hr class="bg-primary">
+
+		<BContainer fluid class="px-0 text-center">
 			<Conveyor />
+		</BContainer>
+
+		<hr class="bg-secondary">
+
+		<BContainer fluid class="mb-3 px-0 py-0 text-center">
+			<BRow>
+				<BCol cols="4">
+					<h1 class="mb-3">
+						<mark class="bg-dark text-light">Best Sellers</mark>
+					</h1>
+
+					<ul class="text-left">
+						<li>
+							<h1>Dish 2</h1>
+						</li>
+
+						<li>
+							<h1>Dish 2</h1>
+						</li>
+
+						<li>
+							<h1>Dish 2</h1>
+						</li>
+					</ul>
+				</BCol>
+
+				<BCol cols="4" class="bg-primary">
+					<h1 class="text-light">Art of Our Flavors</h1>
+				</BCol>
+
+				<BCol cols="4">
+					<h1 class="mb-3 text-secondary"><i>Gallery</i></h1>
+				</BCol>
+			</BRow>
+			
 		</BContainer>
 
 		<BContainer fluid class="px-0 py-0 text-center">
