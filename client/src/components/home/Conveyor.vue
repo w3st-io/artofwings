@@ -1,5 +1,21 @@
 <template>
-	<div>
+	<div class="controls" id="customize-controls" aria-label="Carousel Navigation" tabindex="0">
+		<BButton
+			variant="primary"
+			data-controls="prev"
+			aria-controls="customize"
+			tabindex="-1"
+			class="prev"
+		>Prev</BButton>	
+
+		<BButton
+			variant="primary"
+			data-controls="next"
+			aria-controls="customize"
+			tabindex="-1"
+			class="next"
+		>Next</BButton>
+
 		<!-- All Sliders -->
 		<div v-for="(slider, index) in sliders" :key="index">
 			<VueTinySlider v-bind="slider.options" :class="slider.class">
@@ -69,7 +85,8 @@
 							items: this.totalOnLg,
 							gutter: 160,
 							nav: false,
-							controls: false,
+							controls: true,
+							controlsContainer: "#customize-controls",
 							loop: true,
 							autoplay: true,
 							autoplayButtonOutput: false,
