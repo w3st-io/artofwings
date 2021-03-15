@@ -1,25 +1,49 @@
 <template>
 	<nav
-		class="bg-dark shadow opacity-90 nav-drawer-menu"
+		class="bg-light shadow nav-drawer-menu"
 		:class="{ isOpen: sideMenuOpen }"
-		style="z-index: 1040;"
 	>
+		<!-- Close Button -->
 		<BButton
-			variant="dark"
-			class="w-100 m-0 p-2 bg-secondary text-center text-primary"
-			@click="closeMenu"
-		>
-			<span aria-hidden="true" style="font-size: 2em;">&times;</span>
-		</BButton>
+			v-show="sideMenuOpen"
+			variant="primary"
+			class="w-100 mb-2 p-4 text-light"
+			@click="menuItemClicked('close-menu')"
+		><XIcon size="36" /></BButton>
 
-		<BButton variant="primary" class="w-100" @click="homeBtn()">
-			Forum
-		</BButton>
+		<RouterLink
+			v-show="sideMenuOpen"
+			v-for="button in buttons"
+			:key="button.type"
+			:to="button.path"
+		>
+			<!-- Menu Items -->
+			<BButton
+				variant="outline-seconadry"
+				class="w-100 text-primary"
+				@click="closeMenu()"
+			>
+				<p v-if="button.text" class="h1 my-1">{{ button.text }}</p>
+				<span v-else v-html="button.slideMenuIcon"></span>
+			</BButton>
+		</RouterLink>
+
+		<a v-show="sideMenuOpen" :href="companyInfo.googleMapsLink" class="text-center">
+			<h5 class="m-4 text-info">{{ companyInfo.address }}</h5>
+		</a>
+
+		<SocialMediaPlug v-show="sideMenuOpen" size="1.8x" variant="info" class="m-4" />
 	</nav>
 </template>
+
 <script>
 	// [IMPORT] //
-	import router from '@/router'
+	import { XIcon } from 'vue-feather-icons'
+
+	// [IMPORT] Personal //
+	import SocialMediaPlug from '@/components/SocialMediaPlug'
+	import companyInfo from '@/defaults/companyInfo'
+	import buttons from '@/defaults/pageLinks'
 
 	// [EXPORT] //
 	export default {
@@ -30,9 +54,15 @@
 			}
 		},
 
+		components: {
+			XIcon,
+			SocialMediaPlug,
+		},
+
 		data() {
 			return {
-				query: ''
+				companyInfo: companyInfo,
+				buttons: buttons,
 			}
 		},
 
@@ -41,22 +71,19 @@
 				this.sideMenuOpen = !this.sideMenuOpen
 				this.$emit('closeMenu')
 			},
-
-			homeBtn() {
-				this.sideMenuOpen = !this.sideMenuOpen
-				router.push({ name: '/' })
-			},
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.nav-drawer-menu {
+		z-index: 2000;
+
 		position: fixed;
 		top: 0;
-		right: 0;
+		left: 0;
 
-		height: 100%;
+		height: 100vh;
 		width: 0;
 
 		overflow-x: hidden;
@@ -67,7 +94,7 @@
 		transition: 0.3s;
 		font-size: 2em;
 
-		&:hover { background: #212529; }
+		&:hover { background: hsl(224, 47%, 65%); }
 	}
 	
 	.isOpen { width: 75%; }

@@ -4,7 +4,7 @@
 		<div class="bg-primary">
 			<BContainer class="py-3">
 				<!-- Logo -->
-				<RouterLink to="/" class="text-center text-decoration-none text-light">
+				<RouterLink to="/" class="text-decoration-none text-light">
 					<h1 class="m-0">
 						{{ defaultData.companyName }}
 					</h1>
@@ -18,12 +18,21 @@
 		</BButton>
 
 		<div class="d-none d-md-block w-100 py-2 bg-secondary">
-			<BContainer>
-				<h3>
-					<RouterLink to="/" class="menu-link">
-						Home
-					</RouterLink>
-				</h3>
+			<BContainer class="text-center">
+				<!-- Menu Items -->
+				<RouterLink
+					v-for="button in buttons"
+					:key="button.type"
+					:to="button.path"
+				>
+					<BButton
+						variant="secondary"
+						class="mx-1 px-2 py-0 text-light menu-link"
+					>
+						<span v-if="button.text">{{ button.text }}</span>
+						<span v-else v-html="button.navIcon"></span>
+					</BButton>
+				</RouterLink>
 			</BContainer>
 		</div>
 
@@ -39,6 +48,7 @@
 	// [IMPORT] Personal //
 	import SideMenu from '@/components/nav/SideMenu'
 	import defaultData from '../../defaults/companyInfo'
+	import buttons from '@/defaults/pageLinks'
 	import router from '@/router'
 	import UserService from '@/services/UserService'
 	import { EventBus } from '@/main'
@@ -52,6 +62,7 @@
 
 		data() {
 			return {
+				buttons: buttons,
 				defaultData: defaultData,
 				decoded: {},
 				userLogged: false,
@@ -135,9 +146,7 @@
 		text-decoration: none !important;
 	}
 
-	.menu-link:hover {
-		color: white !important;
-	}
+	.menu-link:hover { color: white !important; }
 
 	.menu-link::before {
 		content: "";

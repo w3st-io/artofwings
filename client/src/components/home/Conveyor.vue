@@ -3,29 +3,14 @@
 		<!-- All Sliders -->
 		<div v-for="(slider, index) in sliders" :key="index">
 			<VueTinySlider v-bind="slider.options" :class="slider.class">
-				<div>
-					<h1>Dish 1</h1>
-					<BButton>Check it Out</BButton>
-				</div>
+				<div v-for="(slide, index) in slides" :key="index">
+					<img :src="slide.image" class="w-100 rounded">
 
-				<div>
-					<h1>Dish 2</h1>
-					<BButton>Check it Out</BButton>
-				</div>
+					<h3>{{ slide.title }}</h3>
 
-				<div>
-					<h1>Dish 3</h1>
-					<BButton>Check it Out</BButton>
-				</div>
+					<p>{{ slide.description }}</p>
 
-				<div>
-					<h1>Dish 3</h1>
-					<BButton>Check it Out</BButton>
-				</div>
-
-				<div>
-					<h1>Dish 4</h1>
-					<BButton>Check it Out</BButton>
+					<BButton variant="primary" size="lg" class="w-100">Check it Out</BButton>
 				</div>
 			</VueTinySlider>
 		</div>
@@ -44,24 +29,51 @@
 		},
 
 		components: {
-			VueTinySlider
+			VueTinySlider,
 		},
 
 		data() {
 			return {
+				slides: [
+					{
+						title: 'Dish 1',
+						description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
+						image: require('../../assets/images/dishes/506A3683.jpg'),
+					},
+					{
+						title: 'Dish 2',
+						description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
+						image: require('../../assets/images/dishes/506A3697.jpg'),
+					},
+					{
+						title: 'Dish 3',
+						description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
+						image: require('../../assets/images/dishes/506A3697.jpg'),
+					},
+					{
+						title: 'Dish 4',
+						description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
+						image: require('../../assets/images/dishes/506A3697.jpg'),
+					},
+					{
+						title: 'Dish 5',
+						description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
+						image: require('../../assets/images/dishes/506A3697.jpg'),
+					},
+				],
 				sliders: [
 					// LG
 					{
 						class: 'd-none d-lg-block my-3',
 						options: {
 							items: this.totalOnLg,
-							gutter: 20,
+							gutter: 160,
 							nav: false,
 							controls: false,
 							loop: true,
 							autoplay: true,
 							autoplayButtonOutput: false,
-							autoplayTimeout: 2000,
+							autoplayTimeout: 5000,
 						},
 					},
 					// MD
@@ -75,7 +87,7 @@
 							loop: true,
 							autoplay: true,
 							autoplayButtonOutput: false,
-							autoplayTimeout: 2000,
+							autoplayTimeout: 5000,
 						},
 					},
 					// SM
@@ -89,7 +101,7 @@
 							loop: true,
 							autoplay: true,
 							autoplayButtonOutput: false,
-							autoplayTimeout: 2000,
+							autoplayTimeout: 5000,
 						},
 					},
 					// XS
@@ -103,50 +115,10 @@
 							loop: true,
 							autoplay: true,
 							autoplayButtonOutput: false,
-							autoplayTimeout: 2000,
+							autoplayTimeout: 5000,
 						},
 					},
 				],
-				lg: {
-					items: this.totalOnLg,
-					gutter: 20,
-					nav: false,
-					controls: false,
-					loop: true,
-					autoplay: true,
-					autoplayButtonOutput: false,
-					autoplayTimeout: 2000,
-				},
-				md: {
-					items: this.totalOnLg - 1,
-					gutter: 20,
-					nav: false,
-					controls: false,
-					loop: true,
-					autoplay: true,
-					autoplayButtonOutput: false,
-					autoplayTimeout: 2000,
-				},
-				sm: {
-					items: this.totalOnLg - 2,
-					gutter: 20,
-					nav: false,
-					controls: false,
-					loop: true,
-					autoplay: true,
-					autoplayButtonOutput: false,
-					autoplayTimeout: 2000,
-				},
-				xs: {
-					items: this.totalOnLg - 3,
-					gutter: 20,
-					nav: false,
-					controls: false,
-					loop: true,
-					autoplay: true,
-					autoplayButtonOutput: false,
-					autoplayTimeout: 2000,
-				},
 			}
 		},
 	}
