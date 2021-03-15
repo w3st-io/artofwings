@@ -1,10 +1,9 @@
 <template>
 	<BRow>
 		<BCol cols="1">
-			<BButton
-				variant="primary"
-				id="prevButton"
-			>Prev</BButton>
+			<BButton variant="primary" id="prevButton" class="mt-5">
+				<ArrowLeftIcon />
+			</BButton>
 		</BCol>
 
 		<!-- All Sliders -->
@@ -25,15 +24,15 @@
 		</BCol>
 
 		<BCol cols="1">
-			<BButton
-				variant="primary"
-				id="nextButton"
-			>Next</BButton>
+			<BButton variant="primary" id="nextButton" class="mt-5">
+				<ArrowRightIcon />
+			</BButton>
 		</BCol>
 	</BRow>
 </template>
 
 <script>
+	import { ArrowLeftIcon, ArrowRightIcon } from 'vue-feather-icons'
 	import VueTinySlider from 'vue-tiny-slider'
 
 	export default {
@@ -45,6 +44,8 @@
 		},
 
 		components: {
+			ArrowLeftIcon,
+			ArrowRightIcon,
 			VueTinySlider,
 		},
 
