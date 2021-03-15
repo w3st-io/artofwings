@@ -3,14 +3,19 @@
 		<!-- Hero -->
 		<BContainer fluid class="py-5 text-center">
 			<BRow>
-				<BCol cols="3" class="p-0" data-aos="fade-right">
+				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade-right">
 					<img :src="imageLeft" class="w-100" >
 				</BCol>
 
-				<BCol cols="6" class="p-0 text-center" data-aos="fade-up">
-					<h1 class="mb-3 text-primary font-weight-bold" style="font-size: 5em;">Are you ready..</h1>
-					<h1 class="mb-5 text-primary font-weight-bold">for food
-						<mark class="p-0 text-light bg-primary" style="font-size: 1.5em;">awesome-ness</mark>
+				<BCol cols="12" md="6" class="p-0 text-center" data-aos="fade-up">
+					<h1 class="mb-3 text-primary font-weight-bold" style="font-size: 5em;">
+						Are you ready..
+					</h1>
+					<h1 class="mb-5 text-primary font-weight-bold">
+						for food
+						<mark class="p-0 text-light bg-primary" style="font-size: 1.5em;">
+							awesome-ness
+						</mark>
 						?!
 					</h1>
 
@@ -19,7 +24,7 @@
 					</BButton>
 				</BCol>
 
-				<BCol cols="3" class="p-0" data-aos="fade-left">
+				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade-left">
 					<img :src="imageRight" class="w-100">
 				</BCol>
 			</BRow>
@@ -29,7 +34,7 @@
 
 		<!-- Conveyor -->
 		<BContainer fluid class="m-0 py-3 text-center">
-			<Conveyor :totalOnLg="3" />
+			<Conveyor />
 		</BContainer>
 
 		<!-- Images -->
