@@ -1,36 +1,36 @@
 <template>
-	<div class="controls" id="customize-controls" aria-label="Carousel Navigation" tabindex="0">
-		<BButton
-			variant="primary"
-			data-controls="prev"
-			aria-controls="customize"
-			tabindex="-1"
-			class="prev"
-		>Prev</BButton>	
-
-		<BButton
-			variant="primary"
-			data-controls="next"
-			aria-controls="customize"
-			tabindex="-1"
-			class="next"
-		>Next</BButton>
+	<BRow>
+		<BCol cols="1">
+			<BButton
+				variant="primary"
+				id="prevButton"
+			>Prev</BButton>
+		</BCol>
 
 		<!-- All Sliders -->
-		<div v-for="(slider, index) in sliders" :key="index">
-			<VueTinySlider v-bind="slider.options" :class="slider.class">
-				<div v-for="(slide, index) in slides" :key="index">
-					<img :src="slide.image" class="w-100 rounded">
+		<BCol cols="10" class="my-slider">
+			<div v-for="(slider, index) in sliders" :key="index">
+				<VueTinySlider v-bind="slider.options" :class="slider.class">
+					<div v-for="(slide, index) in slides" :key="index">
+						<img :src="slide.image" class="w-100 rounded">
 
-					<h3>{{ slide.title }}</h3>
+						<h3>{{ slide.title }}</h3>
 
-					<p>{{ slide.description }}</p>
+						<p>{{ slide.description }}</p>
 
-					<BButton variant="primary" size="lg" class="w-100">Check it Out</BButton>
-				</div>
-			</VueTinySlider>
-		</div>
-	</div>
+						<BButton variant="primary" size="lg" class="w-100">Check it Out</BButton>
+					</div>
+				</VueTinySlider>
+			</div>
+		</BCol>
+
+		<BCol cols="1">
+			<BButton
+				variant="primary"
+				id="nextButton"
+			>Next</BButton>
+		</BCol>
+	</BRow>
 </template>
 
 <script>
@@ -82,11 +82,13 @@
 					{
 						class: 'd-none d-lg-block my-3',
 						options: {
+							container: '.my-slider',
 							items: this.totalOnLg,
 							gutter: 160,
 							nav: false,
 							controls: true,
-							controlsContainer: "#customize-controls",
+							prevButton: '#prevButton',
+							nextButton: '#nextButton',
 							loop: true,
 							autoplay: true,
 							autoplayButtonOutput: false,
