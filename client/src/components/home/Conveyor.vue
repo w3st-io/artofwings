@@ -5,7 +5,7 @@
 			variant="primary"
 			id="prevButton"
 			class="mt-5 px-0 w-100"
-			style="max-width: 100px;"
+			style="max-width: 64px;"
 			><ArrowLeftIcon /></BButton>
 		</BCol>
 
@@ -77,7 +77,7 @@
 				variant="primary"
 				id="nextButton"
 				class="mt-5 px-0 w-100"
-				style="max-width: 100px;"
+				style="max-width: 64px;"
 			><ArrowRightIcon /></BButton>
 		</BCol>
 	</BRow>
@@ -125,7 +125,7 @@
 					{
 						class: 'd-none d-md-block d-lg-none my-3',
 						options: {
-							items: 3,
+							items: 2,
 							gutter: 20,
 							nav: false,
 							controls: true,
@@ -141,7 +141,7 @@
 					{
 						class: 'd-none d-sm-block d-md-none my-3',
 						options: {
-							items: 2,
+							items: 1,
 							gutter: 20,
 							nav: false,
 							controls: true,

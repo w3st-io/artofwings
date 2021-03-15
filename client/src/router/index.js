@@ -32,6 +32,8 @@ import components_getQuote from '@/pages/components/get-quote'
 import components_parallax from '@/pages/components/parallax'
 // Email //
 import emailSent from '@/pages/email-sent'
+// Gallery //
+import gallery from '../pages/gallery'
 // Post //
 import post from '@/pages/post'
 import post_create from '@/pages/post/create'
@@ -253,6 +255,16 @@ const router = new Router ({
 			meta: {
 				auth: true,
 				title: 'Email Sent'
+			},
+		},
+		// Gallery //
+		{
+			path: '/gallery',
+			name: 'gallery',
+			component: gallery,
+			meta: {
+				auth: true,
+				title: 'Gallery'
 			},
 		},
 		// Post //

@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<div class="my-5">
 		<!-- Hero -->
-		<BContainer fluid class="py-5 text-center">
+		<BContainer fluid class="mb-5 text-center">
 			<BRow>
 				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade-right">
 					<img :src="imageLeft" class="w-100" >
@@ -9,18 +9,11 @@
 
 				<BCol cols="12" md="6" class="p-0 text-center" data-aos="fade-up">
 					<h1 class="mb-3 text-primary font-weight-bold" style="font-size: 5em;">
-						Are you ready..
-					</h1>
-					<h1 class="mb-5 text-primary font-weight-bold">
-						for food
-						<mark class="p-0 text-light bg-primary" style="font-size: 1.5em;">
-							awesome-ness
-						</mark>
-						?!
+						The Art of Wings
 					</h1>
 
 					<BButton size="lg" class="born-ready">
-						<h1 class="m-0">I was born ready!!</h1>
+						<h1 class="m-0">Menu</h1>
 					</BButton>
 				</BCol>
 
@@ -41,7 +34,7 @@
 		<BContainer fluid class="m-0 py-3 text-center">
 			<BRow class="mb-5">
 				<BCol cols="12" class="mb-3">
-					<h1 class="text-primary">See It In Action</h1>
+					<h1 class="text-primary">We Craft With Love</h1>
 				</BCol>
 
 				<BCol cols="12">
@@ -49,7 +42,7 @@
 						<BCol
 						v-for="(col, index) in pageData.cnt3.r1.c3.r1.cx"
 						:key="index"
-						cols="2"
+						cols="12" sm="6" md="4" lg="3" xl="2"
 						class="px-1"
 						>
 							<img :src="col[0]" class="mb-2 w-100">
