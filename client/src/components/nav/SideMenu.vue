@@ -8,7 +8,7 @@
 			v-show="sideMenuOpen"
 			variant="primary"
 			class="w-100 mb-2 p-4 text-light"
-			@click="menuItemClicked('close-menu')"
+			@click="closeMenu()"
 		><XIcon size="36" /></BButton>
 
 		<RouterLink
