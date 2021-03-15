@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<!-- Hero -->
 		<BContainer fluid class="py-5 text-center">
 			<BRow>
 				<BCol cols="3" class="p-0" data-aos="fade-right">
@@ -26,13 +27,43 @@
 
 		<hr class="bg-primary">
 
-		<BContainer class="px-0 text-center">
+		<!-- Conveyor -->
+		<BContainer fluid class="m-0 py-3 text-center">
 			<Conveyor :totalOnLg="3" />
 		</BContainer>
 
-		<hr class="bg-secondary">
+		<!-- Images -->
+		<BContainer fluid class="m-0 py-3 text-center">
+			<BRow class="mb-5">
+				<BCol cols="12" class="mb-3">
+					<h1 class="text-primary">See It In Action</h1>
+				</BCol>
 
-		<BContainer fluid class="mb-3 py-0 text-center">
+				<BCol cols="12">
+					<BRow>
+						<BCol
+						v-for="(col, index) in pageData.cnt3.r1.c3.r1.cx"
+						:key="index"
+						cols="2"
+						class="px-1"
+						>
+							<img :src="col[0]" class="mb-2 w-100">
+							<img :src="col[1]" class="mb-2 w-100">
+						</BCol>
+
+						<BCol cols="12" class="py-3 text-center">
+							<BButton
+								variant="primary"
+								size="lg"
+							><h3 class="m-0">View More Images</h3></BButton>
+						</BCol>
+					</BRow>
+				</BCol>
+			</BRow>
+		</BContainer>
+
+		<!-- Sections -->
+		<BContainer fluid class="m-0 py-3 text-center">
 			<BRow>
 				<BCol cols="4">
 					<h1 class="mb-3">
@@ -57,16 +88,7 @@
 				<BCol cols="4" class="">
 					<h1 class="text-secondary">Our Flavors</h1>
 				</BCol>
-
-				<BCol cols="4">
-					<h1 class="mb-3 text-info"><i>Gallery</i></h1>
-				</BCol>
 			</BRow>
-			
-		</BContainer>
-
-		<BContainer fluid class="px-0 py-0 text-center">
-			
 		</BContainer>
 	</div>
 </template>
@@ -74,6 +96,7 @@
 <script>
 	// [IMPORT] Personal //
 	import Conveyor from '@/components/home/Conveyor'
+	import pageData from '../defaults/pages/index'
 
 	export default {
 		components: {
@@ -82,9 +105,14 @@
 
 		data() {
 			return {
+				pageData: pageData,
 				imageLeft: require('../assets/images/pages/index/ready-left.png'),
 				imageRight: require('../assets/images/pages/index/ready-right.png'),
 			}
+		},
+
+		methods: {
+			isOdd(num) { return num % 2 },
 		},
 	}
 </script>
