@@ -82,8 +82,8 @@
 					</ul>
 				</BCol>
 
-				<BCol cols="4" class="">
-					<h1 class="text-secondary">Our Flavors</h1>
+				<BCol cols="4">
+					<FlavorSlider class="w-100" />
 				</BCol>
 			</BRow>
 		</BContainer>
@@ -92,11 +92,13 @@
 
 <script>
 	// [IMPORT] Personal //
+	import FlavorSlider from '@/components/home/FlavorSlider'
 	import Conveyor from '@/components/home/Conveyor'
-	import pageData from '../defaults/pages/index'
+	import pageData from '@/defaults/pages/index'
 
 	export default {
 		components: {
+			FlavorSlider,
 			Conveyor,
 		},
 

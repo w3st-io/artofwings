@@ -12,7 +12,7 @@
 		<!-- All Sliders -->
 		<BCol cols="10" class="my-slider">
 			<!-- lg -->
-			<VueTinySlider v-bind="sliders[0].options" :class="sliders[0].class">
+			<VueTinySlider ref="slider" v-bind="sliders[0].options" :class="sliders[0].class">
 				<div v-for="(slide, index) in slides" :key="index">
 					<img :src="slide.image" class="w-100 rounded">
 
@@ -27,7 +27,7 @@
 			</VueTinySlider>
 
 			<!-- md -->
-			<VueTinySlider v-bind="sliders[1].options" :class="sliders[1].class">
+			<VueTinySlider ref="slider" v-bind="sliders[1].options" :class="sliders[1].class">
 				<div v-for="(slide, index) in slides" :key="index">
 					<img :src="slide.image" class="w-100 rounded">
 
@@ -42,7 +42,7 @@
 			</VueTinySlider>
 
 			<!-- sm -->
-			<VueTinySlider v-bind="sliders[2].options" :class="sliders[2].class">
+			<VueTinySlider ref="slider" v-bind="sliders[2].options" :class="sliders[2].class">
 				<div v-for="(slide, index) in slides" :key="index">
 					<img :src="slide.image" class="w-100 rounded">
 
@@ -57,7 +57,7 @@
 			</VueTinySlider>
 
 			<!-- xs -->
-			<VueTinySlider v-bind="sliders[3].options" :class="sliders[3].class">
+			<VueTinySlider ref="slider" v-bind="sliders[3].options" :class="sliders[3].class">
 				<div v-for="(slide, index) in slides" :key="index">
 					<img :src="slide.image" class="w-100 rounded">
 
@@ -88,13 +88,6 @@
 	import VueTinySlider from 'vue-tiny-slider'
 
 	export default {
-		props: {
-			totalOnLg: {
-				type: Number,
-				default: 4
-			},
-		},
-
 		components: {
 			ArrowLeftIcon,
 			ArrowRightIcon,
@@ -199,6 +192,16 @@
 					},
 				],
 			}
+		},
+
+		methods: {
+			goToSlide() {
+				//VueTinySlider.goTo(1)
+
+				//document.getElementById('slider').goTo(1)
+
+				this.$refs.slider.slider.goTo(0)
+			},
 		},
 	}
 </script>
