@@ -38,6 +38,12 @@
 				</BCol>
 
 				<BCol cols="12">
+					<div class="p-2 bg-white gallery-center">
+						<BButton
+							variant="primary"
+							size="lg"
+						><h3 class="m-0">Check Out the Gallery</h3></BButton>
+					</div>
 					<BRow>
 						<BCol
 						v-for="(col, index) in pageData.cnt3.r1.c3.r1.cx"
@@ -47,13 +53,6 @@
 						>
 							<img :src="col[0]" class="mb-2 w-100">
 							<img :src="col[1]" class="mb-2 w-100">
-						</BCol>
-
-						<BCol cols="12" class="py-3 text-center">
-							<BButton
-								variant="primary"
-								size="lg"
-							><h3 class="m-0">View More Images</h3></BButton>
 						</BCol>
 					</BRow>
 				</BCol>
@@ -127,5 +126,14 @@
 			transform: translate(0, -10px);
 			@extend .shadow-lg;
 		}
+	}
+
+	.gallery-center {
+		z-index: 100;
+		position: absolute;
+		top: 50%;
+		top: 240px;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 </style>
