@@ -5,9 +5,7 @@
 			<BContainer class="py-3">
 				<!-- Logo -->
 				<RouterLink to="/" class="text-decoration-none text-light">
-					<h1 class="m-0">
-						{{ defaultData.companyName }}
-					</h1>
+					<img :src="logo" alt="" class="w-100" style="max-width: 300px;">
 				</RouterLink>
 			</BContainer>
 		</div>
@@ -47,7 +45,7 @@
 
 	// [IMPORT] Personal //
 	import SideMenu from '@/components/nav/SideMenu'
-	import defaultData from '../../defaults/companyInfo'
+	import defaultData from '@/defaults/companyInfo'
 	import buttons from '@/defaults/pageLinks'
 	import router from '@/router'
 	import UserService from '@/services/UserService'
@@ -62,6 +60,7 @@
 
 		data() {
 			return {
+				logo: require('../../assets/images/company/logo.png'),
 				buttons: buttons,
 				defaultData: defaultData,
 				decoded: {},

@@ -8,9 +8,7 @@
 				</BCol>
 
 				<BCol cols="12" md="6" class="p-0 text-center" data-aos="fade-up">
-					<h1 class="mb-3 text-primary font-weight-bold" style="font-size: 5em;">
-						The Art of Wings
-					</h1>
+					<img :src="pageData.cnt1.r1.c2.image" class="w-100">
 
 					<BButton size="lg" class="born-ready">
 						<h1 class="m-0">Menu</h1>
