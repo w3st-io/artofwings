@@ -1,11 +1,14 @@
 <template>
-	<BRow class="mb-5">
-		<BCol cols="12">
+	<BRow>
+		<BCol cols="12" style="max-height: 360px; overflow: hidden;">
 			<div class="p-2 bg-white gallery-center">
-				<BButton
-					variant="primary"
-					size="lg"
-				><h3 class="m-0">View Gallery</h3></BButton>
+				<img
+					:src="heroImg"
+					class="w-100"
+					style="max-width: 300px"
+					data-aos="fade-up"
+					data-aos-delay="1500"
+				>
 			</div>
 			<BRow>
 				<BCol
@@ -18,13 +21,13 @@
 					<img
 						:src="col[0]"
 						class="mb-2 w-100"
-						data-aos="fade"
+						:data-aos="randomFade()"
 						:data-aos-delay="randomDelay()"
 					>
 					<img
 						:src="col[1]"
 						class="mb-2 w-100"
-						data-aos="fade"
+						:data-aos="randomFade()"
 						:data-aos-delay="randomDelay()"
 					>
 				</BCol>
@@ -40,6 +43,8 @@
 		data() {
 			return {
 				data: data,
+
+				heroImg: require('../../assets/images/components/home/Hero/hero-text2.png'),
 
 				cols: [
 					[ data[0], data[1] ],
@@ -62,8 +67,16 @@
 		},
 
 		methods: {
+			randomFade() {
+				const fade = ['fade-up', 'fade-down', 'fade-left', 'fade-right']
+
+				const randomNum = Math.floor(Math.random() * 3)
+
+				return fade[randomNum]
+			},
+
 			randomDelay() {
-				return Math.floor(Math.random() * 10) * 100
+				return Math.floor(Math.random() * 10) * 150
 			}
 		},
 	}

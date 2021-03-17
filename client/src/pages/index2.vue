@@ -1,27 +1,32 @@
 <template>
-	<div class="my-5">
+	<div class="mb-5">
 		<!-- Hero -->
-		<BContainer fluid class="mb-5 text-center">
-			<BRow>
+		<BContainer fluid class="mt-2 mb-3 text-center">
+			<Hero class="mb-4" />
+			
+			<!--
+			<BRow class="mb-3 bg-info">
 				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade-right">
 					<img :src="imageLeft" class="w-100" >
 				</BCol>
 
-				<BCol cols="12" md="6" class="p-0 text-center" data-aos="fade-up">
-					<img :src="pageData.cnt1.r1.c2.image" class="w-100">
-
-					<BButton size="lg" class="born-ready">
-						<h1 class="m-0">Menu</h1>
-					</BButton>
+				<BCol cols="3" class="text-center">
+					<h1>awesome</h1>
+					<BButton size="lg" class="w-100 my-5">Check Out the Menu</BButton>
+				</BCol>
+				<BCol cols="3" class="text-center">
+					<h1>wings</h1>
+					<BButton size="lg" class="w-100 my-5">Order Now</BButton>
 				</BCol>
 
 				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade-left">
 					<img :src="imageRight" class="w-100">
 				</BCol>
 			</BRow>
+			-->
 		</BContainer>
 
-		<hr class="bg-primary">
+		<hr class="bg-light">
 
 		<!-- Conveyor -->
 		<BContainer fluid class="m-0 py-3 text-center">
@@ -68,16 +73,18 @@
 
 <script>
 	// [IMPORT] Personal //
-	import FlavorSlider from '@/components/home/FlavorSlider'
 	import Conveyor from '@/components/home/Conveyor'
+	import FlavorSlider from '@/components/home/FlavorSlider'
 	import GalleryPreview from '../components/home/GalleryPreview'
+	import Hero from '../components/home/Hero'
 	import pageData from '@/defaults/pages/index'
 
 	export default {
 		components: {
-			FlavorSlider,
 			Conveyor,
+			FlavorSlider,
 			GalleryPreview,
+			Hero,
 		},
 
 		data() {

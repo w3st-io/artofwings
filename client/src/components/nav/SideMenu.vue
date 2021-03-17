@@ -1,6 +1,6 @@
 <template>
 	<nav
-		class="bg-light shadow nav-drawer-menu"
+		class="bg-secondary shadow nav-drawer-menu"
 		:class="{ isOpen: sideMenuOpen }"
 	>
 		<!-- Close Button -->
