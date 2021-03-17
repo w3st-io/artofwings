@@ -7,7 +7,7 @@
 		<BCol cols="2">
 			<BButton
 				variant="primary"
-				class="w-100 px-0"
+				class="w-100 px-0 shadow"
 				@click="decrementValue()"
 			>-</BButton>
 		</BCol>
@@ -30,7 +30,7 @@
 		<BCol cols="2">
 			<BButton
 				variant="primary"
-				class="w-100 px-0"
+				class="w-100 px-0 shadow"
 				@click="incrementValue()"
 			>+</BButton>
 		</BCol>

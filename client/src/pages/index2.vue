@@ -1,29 +1,8 @@
 <template>
 	<div class="mb-5">
 		<!-- Hero -->
-		<BContainer fluid class="mt-2 mb-3 text-center">
-			<Hero class="mb-4" />
-			
-			<!--
-			<BRow class="mb-3 bg-info">
-				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade-right">
-					<img :src="imageLeft" class="w-100" >
-				</BCol>
-
-				<BCol cols="3" class="text-center">
-					<h1>awesome</h1>
-					<BButton size="lg" class="w-100 my-5">Check Out the Menu</BButton>
-				</BCol>
-				<BCol cols="3" class="text-center">
-					<h1>wings</h1>
-					<BButton size="lg" class="w-100 my-5">Order Now</BButton>
-				</BCol>
-
-				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade-left">
-					<img :src="imageRight" class="w-100">
-				</BCol>
-			</BRow>
-			-->
+		<BContainer fluid class="mb-3 py-2 text-center">
+			<Hero />
 		</BContainer>
 
 		<hr class="bg-light">
@@ -67,6 +46,23 @@
 		<!-- Gallery Preview -->
 		<BContainer fluid class="m-0 py-3 text-center">
 			<GalleryPreview />
+
+			<BRow class="mb-3 bg-info">
+				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade-right">
+					<img :src="imageLeft" class="w-100" >
+				</BCol>
+
+				<BCol cols="6" md="3" class="text-center">
+					<BButton size="lg" class="w-100 my-5">Check Out the Menu</BButton>
+				</BCol>
+				<BCol cols="6" md="3" class="text-center">
+					<BButton size="lg" class="w-100 my-5">Order Now</BButton>
+				</BCol>
+
+				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade-left">
+					<img :src="imageRight" class="w-100">
+				</BCol>
+			</BRow>
 		</BContainer>
 	</div>
 </template>
