@@ -62,7 +62,7 @@
 		<!-- Sections -->
 		<BContainer fluid class="m-0 py-3 text-center">
 			<BRow>
-				<BCol cols="4">
+				<BCol cols="12" sm="6" md="4" lg="3">
 					<h1 class="mb-3">
 						<mark class="bg-dark text-light">Best Sellers</mark>
 					</h1>
@@ -82,7 +82,7 @@
 					</ul>
 				</BCol>
 
-				<BCol cols="4">
+				<BCol cols="12" sm="6" md="4" lg="3">
 					<FlavorSlider class="w-100" />
 				</BCol>
 			</BRow>

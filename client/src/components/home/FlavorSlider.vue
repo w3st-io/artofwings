@@ -1,13 +1,18 @@
 <template>
 	<BRow>
-		<BCol cols="3">
-			<BButton variant="primary" @click="decrementValue()">-</BButton>
+		<BCol cols="3" class="p-0">
+			<BButton
+				variant="primary"
+				class="p-0 rounded-circle"
+				style="width: 36px; height: 36px;"
+				@click="incrementValue()"
+			>+</BButton>
 			
-			<div class="text-center">
+			<div class="w-100 text-center">
 				<!-- SLIDER! -->
 				<VueSlider
 					v-model="value"
-					direction="ttb"
+					direction="btt"
 					:adsorb="true"
 					:min="1"
 					:max="5"
@@ -18,20 +23,19 @@
 				/>
 			</div>
 
-			<BButton variant="primary" @click="incrementValue()">+</BButton>
+			<BButton
+				variant="primary"
+				class="p-0 rounded-circle"
+				style="width: 36px; height: 36px;"
+				@click="decrementValue()"
+			>-</BButton>
 		</BCol>
 
 		<BCol cols="9">
 			<!-- Tiny Slider -->
-			<VueTinySlider ref="slider" v-bind="slider.options" :class="slider.class">
-				<div v-for="(slide, index) in slides" :key="index">
-					<h3>{{ slide.title }}</h3>
-
-					<p>{{ slide.description }}</p>
-
-					<BButton variant="primary" size="lg" class="w-100">
-						Check it Out
-					</BButton>
+			<VueTinySlider ref="slider" v-bind="slider.options">
+				<div v-for="(slide, index) in slides" :key="index" style="height: 100px;">
+					<h2>{{ slide.title }}</h2>
 				</div>
 			</VueTinySlider>
 		</BCol>
@@ -42,7 +46,7 @@
 	// [IMPORT] //
 	import VueSlider from 'vue-slider-component'
 	import VueTinySlider from 'vue-tiny-slider'
-	import 'vue-slider-component/theme/antd.css'
+
 
 	export default {
 		props: {
@@ -62,7 +66,6 @@
 				value: 1,
 
 				slider: {
-					class: '',
 					options: {
 						axis: "vertical",
 						items: 1,
@@ -77,24 +80,24 @@
 
 				slides: [
 					{
-						title: 'Dish 1',
-						description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
+						title: 'Plain',
+						description: '',
 					},
 					{
-						title: 'Dish 2',
-						description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
+						title: 'Pineapple BBQ',
+						description: '',
 					},
 					{
-						title: 'Dish 3',
-						description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
+						title: 'Honey BBQ',
+						description: '',
 					},
 					{
-						title: 'Dish 4',
-						description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
+						title: 'Honey Garlic',
+						description: '',
 					},
 					{
-						title: 'Dish 5',
-						description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
+						title: 'Asian Sesame',
+						description: '',
 					},
 				],
 			}
@@ -124,6 +127,6 @@
 	/* Set the theme color of the component */
 	$themeColor: #db5534;
 
-	/* import theme style */
+	// [IMPORT] theme style //
 	@import '~vue-slider-component/lib/theme/default.scss';
 </style>

@@ -73,21 +73,14 @@
 	}
 </script>
 
-<style scoped>
-	#app {
-		font-family:
-			-apple-system,
-			BlinkMacSystemFont,
-			'Segoe UI',
-			Roboto,
-			Oxygen,
-			Ubuntu,
-			Cantarell,
-			'Open Sans',
-			'Helvetica Neue',
-			sans-serif
-		;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+<style lang="scss">
+	// [IMPORT] Personal //
+	@font-face {
+		font-family: 'meltix';
+		src: url('./assets/fonts/meltix/Meltix_Regular_Demo.otf');
+	}
+	
+	body {
+		font-family: 'meltix' !important;
 	}
 </style>
