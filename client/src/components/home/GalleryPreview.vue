@@ -9,11 +9,11 @@
 				<BButton
 					variant="primary"
 					size="lg"
-				><h3 class="m-0">Check Out the Gallery</h3></BButton>
+				><h3 class="m-0">View Gallery</h3></BButton>
 			</div>
 			<BRow>
 				<BCol
-					v-for="(col, index) in data.r1.cx"
+					v-for="(col, index) in cols"
 					:key="index"
 					cols="6" sm="6" md="4" lg="3" xl="2"
 					class="px-1"
@@ -34,6 +34,15 @@
 		data() {
 			return {
 				data: data,
+
+				cols: [
+					[ data[0], data[1] ],
+					[ data[2], data[3] ],
+					[ data[4], data[5] ],
+					[ data[6], data[7] ],
+					[ data[8], data[9] ],
+					[ data[10], data[11] ]
+				],
 
 				colClass: [
 					'd-block',
