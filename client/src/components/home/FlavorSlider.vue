@@ -4,16 +4,15 @@
 			<h1 class="text-dark">Our Flavors</h1>
 		</BCol>
 
-		<BCol cols="3">
+		<BCol cols="2">
 			<BButton
 				variant="primary"
-				class="w-100"
-				style="max-width: 40px;"
+				class="w-100 px-0"
 				@click="decrementValue()"
 			>-</BButton>
 		</BCol>
 
-		<BCol cols="6" class="p-0">
+		<BCol cols="8" class="p-0">
 			<div class="text-center">
 				<!-- SLIDER! -->
 				<VueSlider
@@ -28,11 +27,10 @@
 			</div>
 		</BCol>
 
-		<BCol cols="3">
+		<BCol cols="2">
 			<BButton
 				variant="primary"
-				class="w-100"
-				style="max-width: 40px;"
+				class="w-100 px-0"
 				@click="incrementValue()"
 			>+</BButton>
 		</BCol>
@@ -152,7 +150,7 @@
 				const increment = 100 / this.slides.length
 				const R = (255 * (index * increment)) / 100
 				const G = (255 * (100 - (index * increment))) / 100 
-				const B = 10
+				const B = 68
 
 				return `${R}, ${G}, ${B}`
 			},
