@@ -30,10 +30,7 @@
 			<Conveyor />
 		</BContainer>
 
-		<!-- Gallery Preview -->
-		<BContainer fluid class="m-0 py-3 text-center">
-			<GalleryPreview />
-		</BContainer>
+		<hr class="bg-light">
 
 		<!-- Sections -->
 		<BContainer fluid class="m-0 py-3 text-center">
@@ -62,6 +59,11 @@
 					<FlavorSlider class="w-100" />
 				</BCol>
 			</BRow>
+		</BContainer>
+
+		<!-- Gallery Preview -->
+		<BContainer fluid class="m-0 py-3 text-center">
+			<GalleryPreview />
 		</BContainer>
 	</div>
 </template>

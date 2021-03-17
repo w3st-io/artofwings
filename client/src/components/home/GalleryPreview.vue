@@ -13,10 +13,11 @@
 			</div>
 			<BRow>
 				<BCol
-				v-for="(col, index) in data.r1.cx"
-				:key="index"
-				cols="12" sm="6" md="4" lg="3" xl="2"
-				class="px-1"
+					v-for="(col, index) in data.r1.cx"
+					:key="index"
+					cols="6" sm="6" md="4" lg="3" xl="2"
+					class="px-1"
+					:class="colClass[index]"
 				>
 					<img :src="col[0]" class="mb-2 w-100">
 					<img :src="col[1]" class="mb-2 w-100">
@@ -32,7 +33,16 @@
 	export default {
 		data() {
 			return {
-				data: data	
+				data: data,
+
+				colClass: [
+					'd-block',
+					'd-block',
+					'd-none d-md-block',
+					'd-none d-lg-block',
+					'd-none d-xl-block',
+					'd-none d-xl-block',
+				],
 			}
 		},
 	}
@@ -43,7 +53,6 @@
 		z-index: 100;
 		position: absolute;
 		top: 50%;
-		top: 240px;
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
