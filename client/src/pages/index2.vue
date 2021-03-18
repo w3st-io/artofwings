@@ -8,7 +8,7 @@
 		<hr class="bg-light">
 
 		<!-- SugggestionConveyor -->
-		<BContainer fluid class="m-0 py-3 text-center">
+		<BContainer class="m3 text-center">
 			<BRow>
 				<BCol cols="12">
 					<SuggestionConveyor />
@@ -17,17 +17,17 @@
 		</BContainer>
 
 		<!-- Sections -->
-		<BContainer fluid class="m-0 py-3 text-center bg-light">
+		<BContainer fluid class="m-0 py-5 text-center bg-light">
 			<BRow>
-				<BCol cols="12" md="6" lg="4">
+				<BCol cols="12" md="6" lg="4" class="mb-3">
 					<FlavorSlider class="w-100" />
 				</BCol>
 
-				<BCol cols="12" md="6" lg="4">
+				<BCol cols="12" md="6" lg="4" class="mb-3">
 					<GalleryPreview class="w-100" />
 				</BCol>
 
-				<BCol cols="12" md="6" lg="4">
+				<BCol cols="12" md="6" lg="4" class="mb-3">
 					<BestSellers />
 				</BCol>
 			</BRow>

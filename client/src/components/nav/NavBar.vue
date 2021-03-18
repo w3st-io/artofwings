@@ -12,7 +12,7 @@
 					</BCol>
 
 					<!-- Menu Items -->
-					<BCol cols="12" lg="6" class="py-3">
+					<BCol cols="12" lg="6" class="d-none d-md-block py-3">
 						<RouterLink
 							v-for="button in buttons"
 							:key="button.type"
@@ -35,11 +35,11 @@
 				</BRow>
 			</BContainer>
 
-			<BContainer fluid>
+			<BContainer fluid class="d-block d-md-none">
 				<BRow>
 					<!-- Hidden Menu Button -->
 					<BCol cols="12" class="p-0">
-						<BButton class="d-block d-md-none w-100" @click="toggle()">
+						<BButton class="w-100" @click="toggle()">
 							<MenuIcon size="3x" class="text-primary" />
 						</BButton>
 					</BCol>

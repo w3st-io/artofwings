@@ -7,9 +7,9 @@
 		<BCol cols="2">
 			<BButton
 				variant="primary"
-				class="w-100 px-0 shadow"
+				class="h1 w-100 px-0 shadow"
 				@click="decrementValue()"
-			>-</BButton>
+			><h3 class="m-0">-</h3></BButton>
 		</BCol>
 
 		<BCol cols="8" class="p-0">
@@ -21,7 +21,7 @@
 					:min="1"
 					:max="slides.length"
 					:interval="1"
-					class="mx-auto my-3"
+					class="mx-auto"
 					@change="goToSlide()"
 				/>
 			</div>
@@ -32,7 +32,7 @@
 				variant="primary"
 				class="w-100 px-0 shadow"
 				@click="incrementValue()"
-			>+</BButton>
+			><h3 class="m-0">+</h3></BButton>
 		</BCol>
 
 		<BCol cols="12">
