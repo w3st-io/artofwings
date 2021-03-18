@@ -46,7 +46,7 @@
 		<!-- Chicken Wing Gates -->
 		<BContainer fluid class="text-center">
 			<BRow class="mb-3 bg-white">
-				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade-right">
+				<BCol cols="3" class="p-0 d-none d-md-block">
 					<img :src="imageLeft" class="w-100" >
 				</BCol>
 
@@ -57,7 +57,7 @@
 					<BButton size="lg" class="w-100 my-5">Order Now</BButton>
 				</BCol>
 
-				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade-left">
+				<BCol cols="3" class="p-0 d-none d-md-block">
 					<img :src="imageRight" class="w-100">
 				</BCol>
 			</BRow>
