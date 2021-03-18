@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<!-- Top Navbar & Side Menu -->
-		<NavBar />
+		<NavBar class="position-fixed w-100 nav-z-index" />
 
 		<!-- Admin Bottom Bar -->
 		<AdminNavBar v-if="adminLogged" />
@@ -48,3 +48,7 @@
 		},
 	}
 </script>
+
+<style scoped>
+	.nav-z-index { z-index: 2000; top: 0; }
+</style>

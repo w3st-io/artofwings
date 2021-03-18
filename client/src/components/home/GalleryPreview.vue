@@ -1,69 +1,42 @@
 <template>
-	<BRow class="mb-5">
-		<BCol cols="12">
-			<div class="p-2 bg-white gallery-center">
-				<BButton
-					variant="primary"
-					size="lg"
-				><h3 class="m-0">View Gallery</h3></BButton>
-			</div>
-			<BRow>
-				<BCol
-					v-for="(col, index) in cols"
-					:key="index"
-					cols="6" sm="6" md="4" lg="3" xl="2"
-					class="px-1"
-					:class="colClass[index]"
-				>
-					<img
-						:src="col[0]"
-						class="mb-2 w-100"
-						data-aos="fade"
-						:data-aos-delay="randomDelay()"
-					>
-					<img
-						:src="col[1]"
-						class="mb-2 w-100"
-						data-aos="fade"
-						:data-aos-delay="randomDelay()"
-					>
-				</BCol>
-			</BRow>
-		</BCol>
-	</BRow>
+	<div class="w-100">
+		<div class="gallery-center">
+			<RouterLink to="/gallery">
+				<BButton variant="primary" size="lg">View Gallery</BButton>
+			</RouterLink>
+		</div>
+
+		<Carousel
+			:per-page="1"
+			:loop="true"
+			:autoplay="true"
+			:autoplayTimeout="2000"
+			:paginationEnabled="false"
+
+		>
+			<Slide v-for="(slide, index) in data.slides" :key="index">
+				<img :src="slide" class="w-100">
+			</Slide>
+		</Carousel>
+	</div>
 </template>
 
 <script>
+	// [IMPORT] //
+	import { Carousel, Slide } from 'vue-carousel'
+
+	// [IMPORT] Personal //
 	import data from '../../defaults/components/home/GalleryPreview'
 
 	export default {
+		components: {
+			Carousel,
+			Slide
+		},
+
 		data() {
 			return {
 				data: data,
-
-				cols: [
-					[ data[0], data[1] ],
-					[ data[2], data[3] ],
-					[ data[4], data[5] ],
-					[ data[6], data[7] ],
-					[ data[8], data[9] ],
-					[ data[10], data[11] ]
-				],
-
-				colClass: [
-					'd-block',
-					'd-block',
-					'd-none d-md-block',
-					'd-none d-lg-block',
-					'd-none d-xl-block',
-					'd-none d-xl-block',
-				],
-			}
-		},
-
-		methods: {
-			randomDelay() {
-				return Math.floor(Math.random() * 10) * 100
 			}
 		},
 	}

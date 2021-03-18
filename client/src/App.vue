@@ -3,6 +3,8 @@
 		<!-- UI -->
 		<UI />
 
+		<div style="padding-top: 96px;"></div>
+
 		<!-- Router -->
 		<RouterView :key="$route.name + ($route.params.id || '')" />
 

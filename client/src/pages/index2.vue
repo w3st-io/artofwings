@@ -7,47 +7,45 @@
 
 		<hr class="bg-light">
 
-		<!-- Conveyor -->
-		<BContainer fluid class="m-0 py-3 text-center">
-			<Conveyor />
-		</BContainer>
-
-		<hr class="bg-light">
-
-		<!-- Sections -->
+		<!-- SugggestionConveyor -->
 		<BContainer fluid class="m-0 py-3 text-center">
 			<BRow>
-				<BCol cols="12" md="6" lg="4">
-					<h1 class="mb-3">
-						<mark class="bg-dark text-light">Best Sellers</mark>
-					</h1>
-
-					<ul class="text-left">
-						<li>
-							<h1>Dish 2</h1>
-						</li>
-
-						<li>
-							<h1>Dish 2</h1>
-						</li>
-
-						<li>
-							<h1>Dish 2</h1>
-						</li>
-					</ul>
-				</BCol>
-
-				<BCol cols="12" md="6" lg="4">
-					<FlavorSlider class="w-100" />
+				<BCol cols="12">
+					<SuggestionConveyor />
 				</BCol>
 			</BRow>
 		</BContainer>
 
-		<!-- Gallery Preview -->
-		<BContainer fluid class="m-0 py-3 text-center">
-			<GalleryPreview />
+		<!-- Sections -->
+		<BContainer fluid class="m-0 py-3 text-center bg-light">
+			<BRow>
+				<BCol cols="12" md="6" lg="4">
+					<FlavorSlider class="w-100" />
+				</BCol>
 
-			<BRow class="mb-3 bg-info">
+				<BCol cols="12" md="6" lg="4">
+					<GalleryPreview class="w-100" />
+				</BCol>
+
+				<BCol cols="12" md="6" lg="4">
+					<h1 class="mb-3">
+						<mark class="bg-primary text-light">Best Sellers</mark>
+					</h1>
+
+					<BListGroup>
+						<BListGroupItem variant="secondary">Cras justo odio</BListGroupItem>
+						<BListGroupItem variant="secondary">Dapibus ac facilisis in</BListGroupItem>
+						<BListGroupItem variant="secondary">Morbi leo risus</BListGroupItem>
+						<BListGroupItem variant="secondary">Porta ac consectetur ac</BListGroupItem>
+						<BListGroupItem variant="secondary">Vestibulum at eros</BListGroupItem>
+					</BListGroup>
+				</BCol>
+			</BRow>
+		</BContainer>
+
+		<!-- Chicken Wing Gates -->
+		<BContainer fluid class="text-center">
+			<BRow class="mb-3 bg-white">
 				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade-right">
 					<img :src="imageLeft" class="w-100" >
 				</BCol>
@@ -69,15 +67,15 @@
 
 <script>
 	// [IMPORT] Personal //
-	import Conveyor from '@/components/home/Conveyor'
+	import SuggestionConveyor from '@/components/home/SuggestionConveyor'
 	import FlavorSlider from '@/components/home/FlavorSlider'
-	import GalleryPreview from '../components/home/GalleryPreview'
-	import Hero from '../components/home/Hero'
+	import GalleryPreview from '@/components/home/GalleryPreview'
+	import Hero from '@/components/home/Hero'
 	import pageData from '@/defaults/pages/index'
 
 	export default {
 		components: {
-			Conveyor,
+			SuggestionConveyor,
 			FlavorSlider,
 			GalleryPreview,
 			Hero,

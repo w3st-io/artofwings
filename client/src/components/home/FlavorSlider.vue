@@ -39,9 +39,11 @@
 			<!-- Tiny Slider -->
 			<VueTinySlider ref="slider" v-bind="slider.options">
 				<div v-for="(slide, index) in slides" :key="index">
-					<h1 :style="'color: rgb(' + spiceColor(index) + ');'">
-						{{ slide.title }}
-					</h1>
+					<mark
+						class="h1 m-0 px-5 py-0 text-light"
+						:style="'background-color: rgb(' + spiceColor(index) + ');'"
+					>{{ slide.title }}</mark>
+					<br>
 
 					<ChiliPepperSVG
 						:color="'rgb(' + spiceColor(index) + ')'"
@@ -178,7 +180,7 @@
 				const increment = 100 / this.slides.length
 				const R = (255 * (index * increment)) / 100
 				const G = (255 * (100 - (index * increment))) / 100 
-				const B = 68
+				const B = 64
 
 				return `${R}, ${G}, ${B}`
 			},

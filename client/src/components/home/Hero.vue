@@ -37,7 +37,7 @@
 </template>
 
 <script>
-	import data from '../../defaults/components/home/GalleryPreview'
+	import data from '../../defaults/components/home/Hero'
 
 	export default {
 		data() {
@@ -75,9 +75,7 @@
 				return fade[randomNum]
 			},
 
-			randomDelay() {
-				return Math.floor(Math.random() * 10) * 150
-			}
+			randomDelay() { return Math.floor(Math.random() * 10) * 150 }
 		},
 	}
 </script>
