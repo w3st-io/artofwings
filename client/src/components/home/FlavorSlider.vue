@@ -42,6 +42,11 @@
 					<h1 :style="'color: rgb(' + spiceColor(index) + ');'">
 						{{ slide.title }}
 					</h1>
+
+					<ChiliPepperSVG
+						:color="'rgb(' + spiceColor(index) + ')'"
+						class="px-5"
+					/>
 					
 				</div>
 			</VueTinySlider>
@@ -54,6 +59,8 @@
 	import VueSlider from 'vue-slider-component'
 	import VueTinySlider from 'vue-tiny-slider'
 
+	// [IMPORT] Personal //
+	import ChiliPepperSVG from '../../components/svgs/ChiliPepper'
 
 	export default {
 		props: {
@@ -66,6 +73,7 @@
 		components: {
 			VueSlider,
 			VueTinySlider,
+			ChiliPepperSVG,
 		},
 
 		data() {
@@ -106,23 +114,43 @@
 						description: '',
 					},
 					{
-						title: 'Asian Sesame',
+						title: 'General Tso',
 						description: '',
 					},
 					{
-						title: 'Asian Sesame',
+						title: 'Mojita Lime',
 						description: '',
 					},
 					{
-						title: 'Asian Sesame',
+						title: 'Buffalo Dry Rub',
 						description: '',
 					},
 					{
-						title: 'Asian Sesame',
+						title: 'Buffalo Mild',
 						description: '',
 					},
 					{
-						title: 'Asian Sesame',
+						title: 'Teriyaki Sause',
+						description: '',
+					},
+					{
+						title: 'Lousiana Sause',
+						description: '',
+					},
+					{
+						title: 'Korean BBQ',
+						description: '',
+					},
+					{
+						title: 'Ragin\' Cajun',
+						description: '',
+					},
+					{
+						title: 'Mango Habanero',
+						description: '',
+					},
+					{
+						title: 'Knockout',
 						description: '',
 					},
 				],
