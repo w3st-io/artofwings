@@ -86,8 +86,8 @@
 		data() {
 			return {
 				pageData: pageData,
-				imageLeft: require('../assets/images/pages/index/ready-left.png'),
-				imageRight: require('../assets/images/pages/index/ready-right.png'),
+				imageLeft: require('../assets/media/pages/index/ready-left.png'),
+				imageRight: require('../assets/media/pages/index/ready-right.png'),
 			}
 		},
 

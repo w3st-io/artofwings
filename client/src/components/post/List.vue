@@ -13,7 +13,7 @@
 							<h5 class="text-light">
 								<img
 									v-if="post.pinned"
-									:src="require('../../assets/images/symbol-icons/pin.svg')"
+									:src="require('../../assets/media/symbol-icons/pin.svg')"
 									class="small text-secondary"
 									style="width: 18px;"
 								>

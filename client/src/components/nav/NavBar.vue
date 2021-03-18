@@ -73,7 +73,7 @@
 
 		data() {
 			return {
-				logo: require('../../assets/images/company/logo.png'),
+				logo: require('../../assets/media/company/logo.png'),
 				buttons: buttons,
 				defaultData: defaultData,
 				decoded: {},

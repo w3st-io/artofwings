@@ -87,7 +87,7 @@
 		data() {
 			return {
 				user_id: this.$route.params.user_id,
-				profile_img: require('../../../assets/images/pages/user/profile/lookup/DefaultProfileImg.png'),
+				profile_img: require('../../../assets/media/pages/user/profile/lookup/DefaultProfileImg.png'),
 				reqData: {},
 				loading: true,
 				error: '',

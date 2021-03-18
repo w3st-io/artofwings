@@ -1,4 +1,4 @@
 // [EXPORT] //
 module.exports = {
-	image: require('../../../assets/images/pages/components/parallax/parallax.jpg')
+	image: require('../../../assets/media/pages/components/parallax/parallax.jpg')
 }

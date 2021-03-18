@@ -5,15 +5,15 @@ module.exports = {
 	caraousel: [
 		{
 			textHtml: textHtml,
-			img: require('../../../assets/images/pages/components/bcarousel/industry.jpg'),
+			img: require('../../../assets/media/pages/components/bcarousel/industry.jpg'),
 		},
 		{
 			textHtml: textHtml,
-			img: require('../../../assets/images/pages/components/bcarousel/building.jpg'),
+			img: require('../../../assets/media/pages/components/bcarousel/building.jpg'),
 		},
 		{
 			textHtml: textHtml,
-			img: require('../../../assets/images/pages/components/bcarousel/inspection.jpg'),
+			img: require('../../../assets/media/pages/components/bcarousel/inspection.jpg'),
 		},
 	],
 }

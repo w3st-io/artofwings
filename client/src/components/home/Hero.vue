@@ -44,7 +44,7 @@
 			return {
 				data: data,
 
-				heroImg: require('../../assets/images/components/home/Hero/hero-text2.png'),
+				heroImg: require('../../assets/media/components/home/Hero/hero-text2.png'),
 
 				cols: [
 					[ data[0], data[1] ],
