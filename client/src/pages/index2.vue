@@ -28,17 +28,7 @@
 				</BCol>
 
 				<BCol cols="12" md="6" lg="4">
-					<h1 class="mb-3">
-						<mark class="bg-primary text-light">Best Sellers</mark>
-					</h1>
-
-					<BListGroup>
-						<BListGroupItem variant="secondary">Cras justo odio</BListGroupItem>
-						<BListGroupItem variant="secondary">Dapibus ac facilisis in</BListGroupItem>
-						<BListGroupItem variant="secondary">Morbi leo risus</BListGroupItem>
-						<BListGroupItem variant="secondary">Porta ac consectetur ac</BListGroupItem>
-						<BListGroupItem variant="secondary">Vestibulum at eros</BListGroupItem>
-					</BListGroup>
+					<BestSellers />
 				</BCol>
 			</BRow>
 		</BContainer>
@@ -67,17 +57,19 @@
 
 <script>
 	// [IMPORT] Personal //
-	import SuggestionConveyor from '@/components/home/SuggestionConveyor'
+	import BestSellers from '@/components/home/BestSellers'
 	import FlavorSlider from '@/components/home/FlavorSlider'
 	import GalleryPreview from '@/components/home/GalleryPreview'
+	import SuggestionConveyor from '@/components/home/SuggestionConveyor'
 	import Hero from '@/components/home/Hero'
 	import pageData from '@/defaults/pages/index'
 
 	export default {
 		components: {
-			SuggestionConveyor,
-			FlavorSlider,
+			BestSellers,
 			GalleryPreview,
+			FlavorSlider,
+			SuggestionConveyor,
 			Hero,
 		},
 
