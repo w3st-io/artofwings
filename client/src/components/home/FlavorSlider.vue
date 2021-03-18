@@ -45,7 +45,7 @@
 
 					<ChiliPepperSVG
 						:color="'rgb(' + spiceColor(index) + ')'"
-						class="px-5"
+						style="max-width: 180px;"
 					/>
 					
 				</div>

@@ -3,34 +3,47 @@
 		<!-- Top Bar -->
 		<div class="bg-primary">
 			<BContainer class="py-3">
-				<!-- Logo -->
-				<RouterLink to="/" class="text-decoration-none text-light">
-					<img :src="logo" alt="" class="w-100" style="max-width: 300px;">
-				</RouterLink>
+				<BRow>
+					<!-- Logo -->
+					<BCol cols="12" lg="3">
+						<RouterLink to="/" class="text-decoration-none text-light">
+							<img :src="logo" class="w-100" style="max-width: 256px;">
+						</RouterLink>
+					</BCol>
+
+					<!-- Menu Items -->
+					<BCol cols="12" lg="6" class="py-3">
+						<RouterLink
+							v-for="button in buttons"
+							:key="button.type"
+							:to="button.path"
+						>
+							<BButton
+								variant="primary"
+								size="lg"
+								class="mx-1 px-2 py-0 text-light menu-link"
+							>
+								<span v-if="button.text">{{ button.text }}</span>
+								<span v-else v-html="button.navIcon"></span>
+							</BButton>
+						</RouterLink>
+					</BCol>
+
+					<!-- Logo -->
+					<BCol cols="12" lg="3">
+					</BCol>
+				</BRow>
 			</BContainer>
-		</div>
 
-		<!-- Hidden Menu Button -->
-		<BButton class="d-block d-md-none w-100" @click="toggle()">
-			<MenuIcon size="3x" class="text-primary" />
-		</BButton>
-
-		<div class="d-none d-md-block w-100 py-2 bg-secondary">
-			<BContainer class="text-center">
-				<!-- Menu Items -->
-				<RouterLink
-					v-for="button in buttons"
-					:key="button.type"
-					:to="button.path"
-				>
-					<BButton
-						variant="secondary"
-						class="mx-1 px-2 py-0 text-light menu-link"
-					>
-						<span v-if="button.text">{{ button.text }}</span>
-						<span v-else v-html="button.navIcon"></span>
-					</BButton>
-				</RouterLink>
+			<BContainer fluid>
+				<BRow>
+					<!-- Hidden Menu Button -->
+					<BCol cols="12" class="p-0">
+						<BButton class="d-block d-md-none w-100" @click="toggle()">
+							<MenuIcon size="3x" class="text-primary" />
+						</BButton>
+					</BCol>
+				</BRow>
 			</BContainer>
 		</div>
 
