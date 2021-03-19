@@ -4,15 +4,20 @@
 			v-for="(array, index)
 			in imageChoppedArray"
 			:key="index"
-			cols="4"
+			cols="12" sm="6" md="4" lg="3" xl="2"
 			class="p-1"
 		>
-			<img
-				v-for="(img, index) in array"
-				:key="index"
-				:src="img"
-				class="w-100 py-1"
+			<viewer
+				:options="{ title: false, transition: false, }"
+				class="text-center"
 			>
+				<img
+					v-for="(img, index) in array"
+					:key="index"
+					:src="img"
+					class="w-100 py-1"
+				>
+			</viewer>
 		</BCol>
 	</BRow>
 </template>
@@ -38,6 +43,9 @@
 
 		methods: {
 			chopImageArray(images) {
+				// [INIT] Const //
+				const imageLimitPerCol = Math.ceil(images.length / 6)
+
 				// [INIT] //
 				let i = 0
 				let tempArray = []
@@ -45,7 +53,7 @@
 
 				// [FOREACH] //
 				images.forEach(image => {
-					if (i >= 5) {
+					if (i >= imageLimitPerCol) {
 						i = 0
 
 						choppedArray.push(tempArray)

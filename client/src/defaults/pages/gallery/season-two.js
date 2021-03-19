@@ -1,0 +1,6 @@
+// [EXPORT] //
+module.exports = {
+	images: [
+		
+	],
+}

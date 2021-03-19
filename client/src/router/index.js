@@ -33,7 +33,8 @@ import components_parallax from '@/pages/components/parallax'
 // Email //
 import emailSent from '@/pages/email-sent'
 // Gallery //
-import gallery from '../pages/gallery'
+import gallery from '@/pages/gallery'
+import gallery_seasonOne from '@/pages/gallery/season-one'
 // Post //
 import post from '@/pages/post'
 import post_create from '@/pages/post/create'
@@ -262,6 +263,16 @@ const router = new Router ({
 			path: '/gallery',
 			name: 'gallery',
 			component: gallery,
+			meta: {
+				auth: true,
+				title: 'Gallery'
+			},
+		},
+		// Gallery //
+		{
+			path: '/gallery/season-one',
+			name: 'gallery_season-one',
+			component: gallery_seasonOne,
 			meta: {
 				auth: true,
 				title: 'Gallery'
