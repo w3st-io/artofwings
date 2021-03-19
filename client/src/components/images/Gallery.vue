@@ -1,7 +1,18 @@
 <template>
 	<BRow>
-		<BCol v-for="(array, index) in imageChoppedArray" :key="index" cols="4" class="p-1">
-			<img v-for="(img, index) in array" :key="index" :src="img" class="w-100 py-1">
+		<BCol
+			v-for="(array, index)
+			in imageChoppedArray"
+			:key="index"
+			cols="4"
+			class="p-1"
+		>
+			<img
+				v-for="(img, index) in array"
+				:key="index"
+				:src="img"
+				class="w-100 py-1"
+			>
 		</BCol>
 	</BRow>
 </template>
