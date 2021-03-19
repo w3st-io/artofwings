@@ -48,8 +48,7 @@
 					<ChiliPepperSVG
 						:color="'rgb(' + spiceColor(index) + ')'"
 						style="max-width: 180px;"
-					/>
-					
+					/>	
 				</div>
 			</VueTinySlider>
 		</BCol>
