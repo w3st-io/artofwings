@@ -20,13 +20,13 @@
 				>
 					<img
 						:src="col[0]"
-						class="mb-2 w-100 hero-img"
+						class="mb-2 w-100"
 						:data-aos="randomFade()"
 						:data-aos-delay="randomDelay()"
 					>
 					<img
 						:src="col[1]"
-						class="mb-2 w-100"
+						class="mb-2 w-100 hero-img"
 						:data-aos="randomFade()"
 						:data-aos-delay="randomDelay()"
 					>

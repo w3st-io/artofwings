@@ -26,6 +26,7 @@
     "vue-editor-js": "^2.0.2",
     "vue-feather-icons": "^5.1.0",
     "vue-headful": "^2.1.0",
+    "vue-lazyload": "^1.3.3",
     "vue-rellax": "^0.2.0",
     "vue-router": "^3.3.4",
     "vue-slider-component": "^3.2.11",

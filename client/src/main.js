@@ -6,6 +6,7 @@ import { ValidationObserver, ValidationProvider } from 'vee-validate'
 import Vue from 'vue'
 import Editor from 'vue-editor-js/src/index'
 import VueHeadful from 'vue-headful'
+import VueLazyload from 'vue-lazyload'
 import VueYouTubeEmbed from 'vue-youtube-embed'
 import 'aos/dist/aos.css'
 import 'viewerjs/dist/viewer.css'
@@ -24,6 +25,12 @@ import './vee-validation-rules'
 Vue.use(BootstrapVue)
 Vue.use(Editor)
 Vue.use(Viewer)
+Vue.use(VueLazyload, {
+	preLoad: 1.3,
+	error: require('./assets/media/err.png'),
+	loading: require('./assets/media/placeholder.png'),
+	attempt: 1
+})
 Vue.use(VueYouTubeEmbed)
 
 
@@ -40,7 +47,7 @@ export const EventBus = new Vue()
 // [CONFIG + RENDER] //
 Vue.config.productionTip = false
 new Vue({
-  router,
-  created() { aos.init() },
-  render: h => h(App),
+	router,
+	created() { aos.init() },
+	render: h => h(App),
 }).$mount('#app')
