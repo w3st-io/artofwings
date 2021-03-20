@@ -90,7 +90,7 @@
 	}
 
 	.hero-text-img {
-		background: rgba(0, 0, 0, 0.479);
+		background: rgba(0, 0, 0, 0.48);
 	}
 
 	.hero-img { filter: grayscale(100%); }

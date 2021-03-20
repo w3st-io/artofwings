@@ -14,6 +14,7 @@
 					v-for="(img, index) in array"
 					:key="index"
 					v-lazy="img"
+					:src="img"
 					class="w-100 py-1"
 				/>
 			</viewer>

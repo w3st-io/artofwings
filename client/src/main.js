@@ -28,7 +28,7 @@ Vue.use(Viewer)
 Vue.use(VueLazyload, {
 	preLoad: 1.3,
 	error: require('./assets/media/err.png'),
-	loading: require('./assets/media/placeholder.png'),
+	loading: require('./assets/media/loading.gif'),
 	attempt: 1
 })
 Vue.use(VueYouTubeEmbed)
