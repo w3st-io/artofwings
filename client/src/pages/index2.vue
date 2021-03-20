@@ -2,7 +2,7 @@
 	<div class="mb-5">
 		<!-- Hero -->
 		<BContainer fluid class="mb-3 py-2 text-center">
-			<Hero />
+			<Hero class="px-1" />
 		</BContainer>
 
 		<hr class="bg-light">

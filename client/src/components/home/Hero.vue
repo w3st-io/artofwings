@@ -1,13 +1,13 @@
 <template>
 	<BRow>
-		<BCol cols="12" style="max-height: 360px; overflow: hidden;">
-			<div class="p-2 bg-white gallery-center">
+		<BCol cols="12" style="max-height: 500px; overflow: hidden;">
+			<div class="p-2 gallery-center">
 				<img
 					:src="heroImg"
-					class="w-100"
-					style="max-width: 300px"
+					class="w-100 hero-text-img"
+					style="max-width: 600px"
 					data-aos="fade-up"
-					data-aos-delay="1500"
+					data-aos-delay="1000"
 				>
 			</div>
 			<BRow>
@@ -20,7 +20,7 @@
 				>
 					<img
 						:src="col[0]"
-						class="mb-2 w-100"
+						class="mb-2 w-100 hero-img"
 						:data-aos="randomFade()"
 						:data-aos-delay="randomDelay()"
 					>
@@ -75,7 +75,7 @@
 				return fade[randomNum]
 			},
 
-			randomDelay() { return Math.floor(Math.random() * 10) * 150 }
+			randomDelay() { return Math.floor(Math.random() * 10) * 100 }
 		},
 	}
 </script>
@@ -88,4 +88,10 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
+
+	.hero-text-img {
+		background: rgba(0, 0, 0, 0.479);
+	}
+
+	.hero-img { filter: grayscale(100%); }
 </style>

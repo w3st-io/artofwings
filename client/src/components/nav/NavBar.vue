@@ -12,7 +12,7 @@
 					</BCol>
 
 					<!-- Menu Items -->
-					<BCol cols="12" lg="6" class="d-none d-md-block py-3">
+					<BCol cols="12" lg="7" class="d-none d-md-block py-3">
 						<RouterLink
 							v-for="button in buttons"
 							:key="button.type"
@@ -23,14 +23,16 @@
 								size="lg"
 								class="mx-1 px-1 py-0 text-light menu-link"
 							>
-								<span v-if="button.text">{{ button.text }}</span>
-								<span v-else v-html="button.navIcon"></span>
+								<h5 class="m-0 font-weight-bold">
+									<span v-if="button.text">{{ button.text }}</span>
+									<span v-else v-html="button.navIcon"></span>
+								</h5>
 							</BButton>
 						</RouterLink>
 					</BCol>
 
 					<!-- Logo -->
-					<BCol cols="12" lg="3">
+					<BCol cols="12" lg="2">
 					</BCol>
 				</BRow>
 			</BContainer>
@@ -151,6 +153,8 @@
 </script>
 
 <style lang="scss">
+	@import '../../assets/styles/bootstrap-override.scss';
+
 	.menu-link {
 		position: relative;
 		text-decoration: none;
@@ -158,16 +162,17 @@
 		text-decoration: none !important;
 	}
 
-	.menu-link:hover { color: white !important; }
+	.menu-link:hover { @extend .text-secondary; }
 
 	.menu-link::before {
+		@extend .bg-secondary;
+		
 		content: "";
 		position: absolute;
 		width: 100%;
 		height: 2px;
 		bottom: 0;
 		left: 0;
-		background-color: white !important;
 		visibility: hidden;
 		transform: scaleX(0);
 		transition: all 0.3s ease-in-out 0s;
