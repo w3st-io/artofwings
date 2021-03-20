@@ -15,6 +15,7 @@
 					v-for="(img, index) in array"
 					:key="index"
 					:src="img"
+					alt="Image Here"
 					class="w-100 py-1"
 				>
 			</viewer>

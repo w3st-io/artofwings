@@ -35,6 +35,7 @@ import emailSent from '@/pages/email-sent'
 // Gallery //
 import gallery from '@/pages/gallery'
 import gallery_seasonOne from '@/pages/gallery/season-one'
+import gallery_seasonTwo from '@/pages/gallery/season-two'
 // Post //
 import post from '@/pages/post'
 import post_create from '@/pages/post/create'
@@ -268,14 +269,22 @@ const router = new Router ({
 				title: 'Gallery'
 			},
 		},
-		// Gallery //
 		{
 			path: '/gallery/season-one',
 			name: 'gallery_season-one',
 			component: gallery_seasonOne,
 			meta: {
 				auth: true,
-				title: 'Gallery'
+				title: 'Season One'
+			},
+		},
+		{
+			path: '/gallery/season-two',
+			name: 'gallery_season-two',
+			component: gallery_seasonTwo,
+			meta: {
+				auth: true,
+				title: 'Season Two'
 			},
 		},
 		// Post //
