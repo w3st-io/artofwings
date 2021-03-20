@@ -21,7 +21,7 @@
 							<BButton
 								variant="primary"
 								size="lg"
-								class="mx-1 px-2 py-0 text-light menu-link"
+								class="mx-1 px-1 py-0 text-light menu-link"
 							>
 								<span v-if="button.text">{{ button.text }}</span>
 								<span v-else v-html="button.navIcon"></span>
