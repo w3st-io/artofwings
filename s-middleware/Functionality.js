@@ -31,9 +31,9 @@ class Auth {
 		}
 	}
 
-	static payments() {
+	static stripe() {
 		return (req, res, next) => {
-			if (config.PAYMENT_FUNCTIONALITY === 'true') { next() }
+			if (config.STRIPE_FUNCTIONALITY === 'true') { next() }
 			else {
 				res.status(200).send({
 					executed: true,

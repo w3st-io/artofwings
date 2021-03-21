@@ -10,7 +10,7 @@ module.exports = {
 	// [FUNCTIONALITY] //
 	ADMIN_FUNCTIONALITY: process.env.ADMIN_FUNCTIONALITY || false,
 	USER_FUNCTIONALITY: process.env.USER_FUNCTIONALITY || false,
-	PAYMENT_FUNCTIONALITY: process.env.PAYMENT_FUNCTIONALITY || false,
+	STRIPE_FUNCTIONALITY: process.env.STRIPE_FUNCTIONALITY || false,
 	POST_FUNCTIONALITY: process.env.POST_FUNCTIONALITY || false,
 	COMMENT_FUNCTIONALITY: process.env.COMMENT_FUNCTIONALITY || false,
 
@@ -38,6 +38,9 @@ module.exports = {
 	
 	// [SECRET] //
 	SECRET_KEY: process.env.SECRET_KEY || 'secret',
+
+	// [STRIPE] //
+	STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY || '',
 
 	// [IEX] //
 	IEX_PUBLIC_KEY: process.env.IEX_PUBLIC_KEY || '',

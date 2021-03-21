@@ -14,10 +14,7 @@ const router = express.Router().use(cors())
 
 
 // [STRIPE] //
-const stripe = Stripe(
-	config.STRIPE_SECRET_KEY ||
-	'sk_test_51INvnfCC0rHo3XXZxdgGXsFDstmtEnCGYux6ZA8XlySkrSsYqHAa5kOFptGb8k2w6TtyOAuJhiBpeeTkXShldA6E00XuTKIQ3h'
-)
+const stripe = Stripe(config.STRIPE_SECRET_KEY)
 
 
 router.get(
