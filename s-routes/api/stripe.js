@@ -6,7 +6,7 @@ const validator = require('validator')
 
 
 // [REQUIRE] Personal //
-const config = require('../../s-config/index')
+const config = require('../../s-config')
 
 
 // [USE] //
@@ -18,53 +18,57 @@ const stripe = Stripe(config.STRIPE_SECRET_KEY)
 
 
 router.get(
-	'/balance',
+	'/create-customer',
 	async (req, res) => {
 		try {
-			const balance = await stripe.balance.retrieve()
+			req.body.name = 'aleem ahmed'
+			req.body.email = 'aleem.ahmed1997@gmail.com'
+			req.body.phone = 2013626859
+			req.body.address = {
+				city: 'teaneck',
+				country: 'USA',
+				line1: '724 cedar ln.',
+				postal_code: 07666,
+				state: 'nj'
+			}
+			req.body.shipping = {
+				address: {
+					city: 'teaneck',
+					country: 'USA',
+					line1: '724 cedar ln.',
+					postal_code: 07666,
+					state: 'nj'
+				},
+				name: 'aleem ahmed',
+			}
+			req.body.user_id = 'user_id here'
 
+			const customer = await stripe.customers.create({
+				name: req.body.name,
+				email: req.body.email,
+				phone: req.body.phone,
+				address: req.body.address,
+				shipping: req.body.shipping,
+				metadata: {
+					//user_id: req.decoded.user_id,
+					user_id: req.body.user_id,
+				},
+			})
+
+			// [CREATE] stripeCustomer //
+			
 			res.send({
 				executed: true,
 				status: true,
-				location: '/api/payments/balance',
-				message: 'Successfully retrieved balance',
-				balance: balance,
+				customer: customer,
 			})
 		}
 		catch (err) {
 			res.send({
 				executed: false,
 				status: false,
-				location: '/api/payments/balance',
-				message: `Error --> ${err}`,
-			})
-		}
-	}
-)
-
-
-router.get(
-	'/transactions',
-	async (req, res) => {
-		try {
-			const balanceTransactions = await stripe.balanceTransactions.list({
-				limit: 3,
-			})
-
-			res.send({
-				executed: true,
-				status: true,
-				location: '/api/payments/transactions',
-				message: 'Successfully retrieved balance',
-				balanceTransactions: balanceTransactions,
-			})
-		}
-		catch (err) {
-			res.send({
-				executed: false,
-				status: false,
-				location: '/api/payments/transactions',
-				message: `Error --> ${err}`,
+				location: '/api/stripe/charge',
+				message: `Error --> ${err}`
 			})
 		}
 	}
@@ -130,7 +134,7 @@ router.get(
 			res.send({
 				executed: false,
 				status: false,
-				location: '/api/payments/charge',
+				location: '/api/stripe/charge',
 				message: `Error --> ${err}`
 			})
 		}
@@ -167,7 +171,7 @@ router.post(
 							res.send({
 								executed: true,
 								status: true,
-								location: '/api/payments/transactions',
+								location: '/api/stripe/transactions',
 								message: 'Success!',
 								paid: true,
 							})
@@ -176,7 +180,7 @@ router.post(
 							res.send({
 								executed: true,
 								status: true,
-								location: '/api/payments/transactions',
+								location: '/api/stripe/transactions',
 								message: 'Something went wrong',
 								paid: false,
 							})
@@ -186,7 +190,7 @@ router.post(
 						res.send({
 							executed: true,
 							status: false,
-							location: '/api/payments/charge',
+							location: '/api/stripe/charge',
 							message: 'No product found'
 						})
 					}
@@ -195,7 +199,7 @@ router.post(
 					res.send({
 						executed: true,
 						status: false,
-						location: '/api/payments/charge',
+						location: '/api/stripe/charge',
 						message: 'Invalid Email'
 					})
 				}
@@ -204,7 +208,7 @@ router.post(
 				res.send({
 					executed: true,
 					status: false,
-					location: '/api/payments/charge',
+					location: '/api/stripe/charge',
 					message: `Invalid product_id`
 				})
 			}
@@ -213,7 +217,7 @@ router.post(
 			res.send({
 				executed: false,
 				status: false,
-				location: '/api/payments/charge',
+				location: '/api/stripe/charge',
 				message: `Error --> ${err}`
 			})
 		}

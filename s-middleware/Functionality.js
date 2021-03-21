@@ -39,7 +39,7 @@ class Auth {
 					executed: true,
 					status: false,
 					location: '/s-middleware/Functionality/',
-					message: 'This app does not support a payment system',
+					message: 'This app does not support stripe',
 				})
 			}
 		}
