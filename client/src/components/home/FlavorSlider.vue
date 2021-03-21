@@ -1,12 +1,13 @@
 <template>
 	<BRow>
 		<BCol cols="12">
-			<h1 class="text-dark">Our Flavors</h1>
+			<h2 class="text-dark">Our Flavors</h2>
 		</BCol>
 
 		<BCol cols="2">
 			<BButton
 				variant="primary"
+				size="sm"
 				class="h1 w-100 px-0 shadow"
 				@click="decrementValue()"
 			><h3 class="m-0">-</h3></BButton>
@@ -30,6 +31,7 @@
 		<BCol cols="2">
 			<BButton
 				variant="primary"
+				size="sm"
 				class="w-100 px-0 shadow"
 				@click="incrementValue()"
 			><h3 class="m-0">+</h3></BButton>
@@ -40,7 +42,7 @@
 			<VueTinySlider ref="slider" v-bind="slider.options">
 				<div v-for="(slide, index) in slides" :key="index">
 					<mark
-						class="h1 m-0 px-5 py-0 text-light"
+						class="h2 m-0 px-5 py-0 text-light"
 						:style="'background-color: rgb(' + spiceColor(index) + ');'"
 					>{{ slide.title }}</mark>
 					<br>

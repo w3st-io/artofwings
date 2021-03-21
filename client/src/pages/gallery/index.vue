@@ -5,7 +5,7 @@
 			<BCol cols="12" sm="6" md="4">
 				<RouterLink to="/gallery/season-one" class="icon">
 					<div class="gallery-center">
-						<h1 class="text-secondary label">Season One</h1>
+						<h2 class="text-secondary label">Season One</h2>
 					</div>
 
 					<img :src="data.seasonOneImg" alt="Img" class="w-100">
@@ -16,7 +16,7 @@
 			<BCol cols="12" sm="6" md="4">
 				<RouterLink to="/gallery/season-two" class="icon">
 					<div class="gallery-center">
-						<h1 class="text-secondary label">Season One</h1>
+						<h2 class="text-secondary label">Season Two</h2>
 					</div>
 
 					<img :src="data.seasonTwoImg" alt="Img" class="w-100">
