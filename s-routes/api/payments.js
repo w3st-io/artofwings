@@ -78,32 +78,56 @@ router.get(
 	'/create-payment-method',
 	async (req, res) => {
 		try {
-			const token = await stripe.tokens.create({
+			const customer = await stripe.customers.create({
+				description: 'My First Test Customer (created for API docs)',
+			})
+
+			// store customer.id //
+			
+			const paymentMethod = await stripe.paymentMethods.create({
+				type: 'card',
 				card: {
-					number: '4242424242424242',
-					exp_month: 3,
-					exp_year: 2022,
-					cvc: '314',
+				  number: '4242424242424242',
+				  exp_month: 3,
+				  exp_year: 2022,
+				  cvc: '314',
 				},
 			})
 
-			const source = await stripe.sources.create({
-				type: 'card',
-				token: token.id
-			})
-			
+			const attachedPaymentMethod = await stripe.paymentMethods.attach(
+				paymentMethod.id,
+				{ customer: customer.id }
+			)
+
+			const customerupdated = await stripe.customers.update(
+				customer.id,
+				{
+					invoice_settings: {
+						default_payment_method: paymentMethod.id,
+					}
+				}
+			)
+
+			const retrievedCustomer = await stripe.customers.retrieve(
+				customer.id
+			)
+
+				
+			/*
 			const charge = await stripe.charges.create({
 				amount: 2000,
 				currency: 'usd',
 				customer: 'cus_J9YT4DzdMZCu7v',
 				source: source.id
 			})
-
-			const sourceRetrieve = await stripe.sources.retrieve(
-				'src_1IXHFgCC0rHo3XXZO6aKTeck'
-			)
-
-			res.send({ token, source, sourceRetrieve, charge })
+			*/
+			
+			res.send({
+				customer,
+				paymentMethod,
+				attachedPaymentMethod,
+				retrievedCustomer
+			})
 		}
 		catch (err) {
 			res.send({
