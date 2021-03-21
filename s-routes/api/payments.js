@@ -14,7 +14,10 @@ const router = express.Router().use(cors())
 
 
 // [STRIPE] //
-const stripe = Stripe(config.STRIPE_SECRET_KEY)
+const stripe = Stripe(
+	config.STRIPE_SECRET_KEY ||
+	'sk_test_51INvnfCC0rHo3XXZxdgGXsFDstmtEnCGYux6ZA8XlySkrSsYqHAa5kOFptGb8k2w6TtyOAuJhiBpeeTkXShldA6E00XuTKIQ3h'
+)
 
 
 router.get(
@@ -75,8 +78,6 @@ router.get(
 	'/create-payment-method',
 	async (req, res) => {
 		try {
-			const stripe = require('stripe')('sk_test_51INvnfCC0rHo3XXZxdgGXsFDstmtEnCGYux6ZA8XlySkrSsYqHAa5kOFptGb8k2w6TtyOAuJhiBpeeTkXShldA6E00XuTKIQ3h');
-
 			const token = await stripe.tokens.create({
 				card: {
 					number: '4242424242424242',
@@ -84,60 +85,27 @@ router.get(
 					exp_year: 2022,
 					cvc: '314',
 				},
-			 });
+			})
 
-			const paymentIntent = await stripe.paymentIntents.create({
-				amount: 2000,
-				currency: 'usd',
-				customer: 'cus_J9YT4DzdMZCu7v',
-				source: token.id
-			});
-
-			res.send(token, paymentIntent)
-
-			/*
+			const source = await stripe.sources.create({
+				type: 'card',
+				token: token.id
+			})
+			
 			const charge = await stripe.charges.create({
 				amount: 2000,
 				currency: 'usd',
-				source: 'pm_1IXFMtCC0rHo3XXZThgszjuO',
 				customer: 'cus_J9YT4DzdMZCu7v',
-				description: 'My First Test Charge (created for API docs)',
-			})
-			
-			const paymentIntent = await stripe.paymentIntents.retrieve(
-				'pm_1IXFMtCC0rHo3XXZThgszjuO'
-				);
-			const paymentMethod = await stripe.paymentMethods.create({
-				type: 'card',
-				card: {
-					number: '4242424242424242',
-					exp_month: 3,
-					exp_year: 2022,
-					cvc: '314',
-				},
+				source: source.id
 			})
 
+			const sourceRetrieve = await stripe.sources.retrieve(
+				'src_1IXHFgCC0rHo3XXZO6aKTeck'
+			)
 
-
-			const customer = await stripe.customers.create({
-				name: 'aleem ahmed',
-				email: 'aleem.ahmed1997@gmail.com',
-				metadata: {
-					user_id: 'user_id here',
-				},
-				payment_method: paymentMethod.id,
-				description: 'My First Test Customer (created for API docs)',
-			})
-
-			
-			res.send({
-				
-				paymentIntent,
-			})
-			*/
+			res.send({ token, source, sourceRetrieve, charge })
 		}
 		catch (err) {
-			console.log(err);
 			res.send({
 				executed: false,
 				status: false,
@@ -221,7 +189,6 @@ router.post(
 			}
 		}
 		catch (err) {
-			console.log(err);
 			res.send({
 				executed: false,
 				status: false,

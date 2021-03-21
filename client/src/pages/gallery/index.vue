@@ -44,7 +44,6 @@
 	}
 
 	.icon {
-		
 		img {
 			transition: .6s;
 			filter: grayscale(100%);
