@@ -10,9 +10,15 @@
 				<!-- Welcome Half -->
 				<BCol cols="12" md="6" class="d-none d-md-block">
 					<h3 class="m-3 text-center text-light">Welcome Back</h3>
-					<div class="text-center">
+					<div class="text-center mb-3">
 						<LogInIcon size="8x" class="text-light" />
 					</div>
+
+					<RouterLink to="/user/register" class="text-primary">
+						<BButton variant="outline-secondary" class="w-100">
+							Create Account
+						</BButton>
+					</RouterLink>
 				</BCol>
 
 				<BCol cols="12" md="6">
@@ -67,6 +73,7 @@
 								type="submit"
 							>Login</BButton>
 						</form>
+						
 						<RouterLink to="/user/password/request" class="text-primary">
 							Forgot password?
 						</RouterLink>

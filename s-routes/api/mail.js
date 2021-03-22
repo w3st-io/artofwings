@@ -33,6 +33,7 @@ router.post(
 	'/get-quote',
 	async (req, res) => {
 		try {
+			// [VALIDATE] General //
 			if (
 				validator.isAscii(req.body.subject) &&
 				validator.isAscii(req.body.type) &&
@@ -88,6 +89,7 @@ router.post(
 	upload.single('file'),
 	async (req, res) => {
 		try {
+			// [VALIDATE] General //
 			if (
 				validator.isAscii(req.body.subject) &&
 				validator.isAscii(req.body.clientEmail) &&

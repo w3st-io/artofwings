@@ -40,6 +40,7 @@ module.exports = {
 	SECRET_KEY: process.env.SECRET_KEY || 'secret',
 
 	// [STRIPE] //
+	STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLIC_KEY || '',
 	STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY || '',
 
 	// [IEX] //

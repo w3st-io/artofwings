@@ -164,10 +164,11 @@ router.post(
 	rateLimiters.registrationLimiter,
 	async (req, res) => {
 		try {
-			// [VALIDATE] //
+			// [VALIDATE] General //
 			if (
 				validator.isAscii(req.body.username) &&
 				validator.isAscii(req.body.email) &&
+				validator.isAscii(req.body.phone) &&
 				validator.isAscii(req.body.password)
 			) {
 			
@@ -175,6 +176,7 @@ router.post(
 				const user = await usersCollection.c_register({
 					username: req.body.username,
 					email: req.body.email,
+					phone: req.body.phone,
 					password: req.body.password,
 				})
 

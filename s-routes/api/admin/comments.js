@@ -23,7 +23,7 @@ router.delete(
 	Auth.adminToken(),
 	async (req, res) => {
 		try {
-			// [VALDIATE] //
+			// [VALIDATE] General //
 			if (validator.isAscii(req.params.comment_id)) {
 				// [DELETE] Comment //
 				const comment = await commentsCollection.c_delete(

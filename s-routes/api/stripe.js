@@ -162,7 +162,7 @@ router.post(
 	'/charge',
 	async (req, res) => {
 		try {
-			// [VALIDATION] //
+			// [VALIDATE] General //
 			if (validator.isAscii(req.body.product_id)) {
 				if (validator.isEmail(req.body.email)) {
 					// [GET-PRODUCT] //

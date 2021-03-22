@@ -91,11 +91,13 @@ async function s_logout() {
 
 
 // [REGISTER] //
-async function s_register({ username, email, password }) {
+async function s_register({ username, email, phone, password }) {
 	try {
 		const authAxios = await this.authAxios()
 		
-		return (await authAxios.post('/register', { username, email, password })).data
+		return (
+			await authAxios.post('/register', { username, email, phone, password })
+		).data
 	}
 	catch (err) {
 		return {

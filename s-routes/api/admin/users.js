@@ -23,7 +23,7 @@ router.get(
 			// [SANITZE] //
 			hours = parseInt(req.params.hours)
 
-			// [VALIDATE] //
+			// [VALIDATE] General //
 			if (
 				validator.isAscii(req.params.user_id) &&
 				Number.isInteger(parseInt(req.params.hours))

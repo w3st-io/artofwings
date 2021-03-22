@@ -97,7 +97,7 @@ const c_update = async ({ user_id, img_url, bio }) => {
 
 /******************* [OTHER-CRUD] *******************/
 // [CREATE] User (with password) //
-const c_register = async ({ username, email, password }) => {
+const c_register = async ({ username, email, phone, password }) => {
 	try {
 		// [VALIDATE] username //
 		if (!validator.isAscii(username)) {
@@ -114,6 +114,15 @@ const c_register = async ({ username, email, password }) => {
 				executed: true,
 				status: false,
 				message: 'UserCollection: Invalid email'
+			}
+		}
+
+		// [VALIDATE] phone //
+		if (!validator.isInteger(phone)) {
+			return {
+				executed: true,
+				status: false,
+				message: 'UserCollection: Invalid phone'
 			}
 		}
 
@@ -162,8 +171,9 @@ const c_register = async ({ username, email, password }) => {
 		// [SAVE] //
 		const user = await new UserModel({
 			_id: mongoose.Types.ObjectId(),
-			username,
-			email,
+			username: username,
+			email: email,
+			phone: phone,
 			password: hashedPassword,
 		}).save()
 		

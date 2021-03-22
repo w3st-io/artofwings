@@ -25,7 +25,7 @@ router.delete(
 	Auth.adminToken(),
 	async (req, res) => {
 		try {
-			// [VALIDATE] //
+			// [VALIDATE] General //
 			if (validator.isAscii(req.params.post_id)) {
 				//// [POSTS] ////
 				// [DELETE] posts //

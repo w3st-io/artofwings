@@ -20,7 +20,7 @@ router.get(
 	Auth.adminToken(),
 	async (req, res) => {
 		try {
-			// [VALIDATE] //
+			// [VALIDATE] General //
 			if (validator.isAscii(req.params.commentReport_id)) {
 				const returned = await commentReportsCollection.c_markHandled(
 					req.params.commentReport_id

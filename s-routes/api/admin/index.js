@@ -26,6 +26,7 @@ router.post(
 	'/login',
 	async (req, res) => {
 		try {
+			// [VALIDATE] General //
 			if (
 				validator.isAscii(req.body.email) &&
 				validator.isAscii(req.body.password)
@@ -127,6 +128,7 @@ router.post(
 	rateLimiters.registrationLimiter,
 	async (req, res) => {
 		try {
+			// [VALIDATE] General //
 			if (
 				validator.isAscii(req.body.username) &&
 				validator.isAscii(req.body.email) &&

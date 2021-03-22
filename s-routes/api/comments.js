@@ -31,7 +31,7 @@ router.post(
 	rateLimiter.commentLimiter,
 	async (req, res) => {
 		try {
-			// [VALIDATE] //
+			// [VALIDATE] General //
 			if (
 				validator.isAscii(req.body.post_id) &&
 				req.body.cleanJSON &&
@@ -161,7 +161,7 @@ router.post(
 	Auth.userToken(),
 	async (req, res) => {
 		try {
-			// [VALIDATE] //
+			// [VALIDATE] General //
 			if (validator.isAscii(req.body.comment_id) && req.body.cleanJSON) {
 				// [OWNERSHIP] //
 				const ownership = await commentsCollection.c_ownership(
@@ -223,7 +223,7 @@ router.delete(
 		try {
 			res.sendStatus(200)
 			/*
-			// [VALIDATE] //
+			// [VALIDATE] General //
 			if (mongoose.isValidObjectId(req.params.comment_id)) {
 				// [DELETE] //
 				const comment = await commentsCollection.c_deleteByIdAndUser({
@@ -283,7 +283,7 @@ router.post(
 	rateLimiter.likeLimiter,
 	async (req, res) => {
 		try {
-			// [VALIDATE] //
+			// [VALIDATE] General //
 			if (
 				validator.isAscii(req.body.post_id) &&
 				validator.isAscii(req.body.comment_id) &&
@@ -340,7 +340,7 @@ router.post(
 	rateLimiter.likeLimiter,
 	async (req, res) => {
 		try {
-			// [VALIDATE] //
+			// [VALIDATE] General //
 			if (validator.isAscii(req.body.comment_id)) {
 				// [DELETE] CommentLike //
 				const commentLike = await commentLikesCollection.c_deleteByUserAndComment({
@@ -377,7 +377,7 @@ router.post(
 	rateLimiter.reportLimiter,
 	async (req, res) => {
 		try {
-			// [VALIDATE] //
+			// [VALIDATE] General //
 			if (
 				validator.isAscii(req.body.post_id) &&
 				validator.isAscii(req.body.comment_id) &&

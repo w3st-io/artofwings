@@ -23,6 +23,12 @@ module.exports = mongoose.model(
 			required: [true, 'This is required'],
 			maxlength: 24,
 		},
+
+		phone: {
+			type: Number,
+			required: [true, 'This is required'],
+			maxlength: 10,
+		},
 		
 		first_name: {
 			type: String,

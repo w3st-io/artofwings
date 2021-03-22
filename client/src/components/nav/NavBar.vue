@@ -31,8 +31,17 @@
 						</RouterLink>
 					</BCol>
 
-					<!-- Logo -->
+					<!-- User -->
 					<BCol cols="12" lg="2">
+						<div class="text-right">
+							<RouterLink to="/user/login">
+								<BButton variant="info">Login</BButton>
+							</RouterLink>
+
+							<RouterLink to="/user/profile">
+								<BButton v-if="userLogged" variant="info">Your Profile</BButton>
+							</RouterLink>
+						</div>
 					</BCol>
 				</BRow>
 			</BContainer>

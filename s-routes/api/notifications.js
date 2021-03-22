@@ -20,6 +20,7 @@ router.get(
 	Auth.userToken(),
 	async (req, res) => {
 		try {
+			// [VALIDATE] General //
 			if (
 				Number.isInteger(parseInt(req.params.sort)) &&
 				Number.isInteger(parseInt(req.params.limit)) &&
@@ -75,7 +76,7 @@ router.get(
 	Auth.userToken(),
 	async (req, res) => {
 		try {
-			// [VALIDATE] //
+			// [VALIDATE] General //
 			if (validator.isAscii(req.params.notification_id)) {
 				const returned = await notificationsCollection.c_markRead(
 					req.params.notification_id

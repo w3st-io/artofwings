@@ -26,7 +26,7 @@ router.post(
 	Auth.userToken(),
 	async (req, res) => {
 		try {
-			// [VALIDATE] //
+			// [VALIDATE] General //
 			if (
 				validator.isAscii(req.body.cat_id) &&
 				req.body.title &&
@@ -115,7 +115,7 @@ router.post(
 	Auth.userToken(),
 	async (req, res) => {
 		try {
-			// [VALIDATE] //
+			// [VALIDATE] General //
 			if (
 				validator.isAscii(req.body.post_id) &&
 				validator.isAscii(req.body.postUser_id)
@@ -181,6 +181,7 @@ router.post(
 	Auth.userToken(),
 	async (req, res) => {
 		try {
+			// [VALIDATE] General //
 			if (validator.isAscii(req.body.post_id)) {
 				const existance = await postLikesCollection.c_existance(
 					req.decoded.user_id,
@@ -238,6 +239,7 @@ router.post(
 	Auth.userToken(),
 	async (req, res) => {
 		try {
+			// [VALIDATE] General //
 			if (validator.isAscii(req.body.post_id)) {
 				const returned = await postFollowsCollection.c_create(
 					req.decoded.user_id,
@@ -272,6 +274,7 @@ router.post(
 	Auth.userToken(),
 	async (req, res) => {
 		try {
+			// [VALIDATE] General //
 			if (validator.isAscii(req.body.post_id)) {
 				const pFObj = await postFollowsCollection.c_deleteByUserAndPost(
 					req.decoded.user_id,
