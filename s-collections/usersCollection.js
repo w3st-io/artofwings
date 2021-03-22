@@ -99,6 +99,9 @@ const c_update = async ({ user_id, img_url, bio }) => {
 // [CREATE] User (with password) //
 const c_register = async ({ username, email, phone, password }) => {
 	try {
+		// [SANITIZE] //
+		phone = parseInt(phone)
+		
 		// [VALIDATE] username //
 		if (!validator.isAscii(username)) {
 			return {
@@ -118,7 +121,9 @@ const c_register = async ({ username, email, phone, password }) => {
 		}
 
 		// [VALIDATE] phone //
-		if (!validator.isInteger(phone)) {
+		if (!Number.isInteger(phone)) {
+			console.log(phone)
+
 			return {
 				executed: true,
 				status: false,
