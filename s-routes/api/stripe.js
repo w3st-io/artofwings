@@ -7,6 +7,8 @@ const validator = require('validator')
 
 // [REQUIRE] Personal //
 const config = require('../../s-config')
+const stripeCustomersCollection = require('../../s-collections/stripeCustomersCollection')
+const Auth = require('../../s-middleware/Auth')
 
 
 // [USE] //
@@ -19,11 +21,10 @@ const stripe = Stripe(config.STRIPE_SECRET_KEY)
 
 router.get(
 	'/create-customer',
+	Auth.userToken(),
 	async (req, res) => {
 		try {
-			req.body.name = 'aleem ahmed'
-			req.body.email = 'aleem.ahmed1997@gmail.com'
-			req.body.phone = 2013626859
+			/*
 			req.body.address = {
 				city: 'teaneck',
 				country: 'USA',
@@ -41,27 +42,42 @@ router.get(
 				},
 				name: 'aleem ahmed',
 			}
-			req.body.user_id = 'user_id here'
-
-			const customer = await stripe.customers.create({
+			*/
+			// [STRIPE] Create Customer //
+			const createdCustomer = await stripe.customers.create({
 				name: req.body.name,
 				email: req.body.email,
 				phone: req.body.phone,
 				address: req.body.address,
 				shipping: req.body.shipping,
 				metadata: {
-					//user_id: req.decoded.user_id,
-					user_id: req.body.user_id,
+					user_id: req.decoded.user_id,
 				},
 			})
 
-			// [CREATE] stripeCustomer //
-			
-			res.send({
-				executed: true,
-				status: true,
-				customer: customer,
-			})
+			if (createdCustomer.created != null) {
+				// [CREATE] stripeCustomer //
+				stripeCustomersCollection.c_create({
+					user_id: eq.decoded.user_id,
+					stripe_customer_id: createdCustomer.id
+				})
+
+				res.send({
+					executed: true,
+					status: true,
+					location: '/api/stripe/charge',
+					createdCustomer: createdCustomer,
+				})
+			}
+			else {
+				res.send({
+					executed: true,
+					status: false,
+					createdCustomer: createdCustomer,
+					location: '/api/stripe/charge',
+					message: 'Something went wrong',
+				})
+			}
 		}
 		catch (err) {
 			res.send({
