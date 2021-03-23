@@ -13,11 +13,7 @@
 
 		<!-- SugggestionConveyor -->
 		<BContainer class="m3 text-center">
-			<BRow>
-				<BCol cols="12">
-					<SuggestionConveyor />
-				</BCol>
-			</BRow>
+			<SuggestionConveyor :slides="pageData.cnt2.slides" />
 		</BContainer>
 
 		<!-- Sections -->
@@ -30,7 +26,7 @@
 
 					<BCol cols="12" md="6" lg="4" class="mb-3">
 						<GalleryPreview
-							:slideImgs="pageData.cnt2.r1.c2.slideImgs"
+							:slideImgs="pageData.cnt3.r1.c2.slideImgs"
 							class="w-100"
 						/>
 					</BCol>

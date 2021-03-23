@@ -13,7 +13,7 @@
 		<BCol cols="10" class="my-slider">
 			<!-- lg -->
 			<VueTinySlider ref="slider" v-bind="sliders[0].options" :class="sliders[0].class">
-				<div v-for="(slide, index) in data.slides" :key="index">
+				<div v-for="(slide, index) in slides" :key="index">
 					<img :src="slide.image" class="w-100 rounded">
 
 					<h3>{{ slide.title }}</h3>
@@ -28,7 +28,7 @@
 
 			<!-- md -->
 			<VueTinySlider ref="slider" v-bind="sliders[1].options" :class="sliders[1].class">
-				<div v-for="(slide, index) in data.slides" :key="index">
+				<div v-for="(slide, index) in slides" :key="index">
 					<img :src="slide.image" class="w-100 rounded">
 
 					<h3>{{ slide.title }}</h3>
@@ -43,7 +43,7 @@
 
 			<!-- sm -->
 			<VueTinySlider ref="slider" v-bind="sliders[2].options" :class="sliders[2].class">
-				<div v-for="(slide, index) in data.slides" :key="index">
+				<div v-for="(slide, index) in slides" :key="index">
 					<img :src="slide.image" class="w-100 rounded">
 
 					<h3>{{ slide.title }}</h3>
@@ -58,7 +58,7 @@
 
 			<!-- xs -->
 			<VueTinySlider ref="slider" v-bind="sliders[3].options" :class="sliders[3].class">
-				<div v-for="(slide, index) in data.slides" :key="index">
+				<div v-for="(slide, index) in slides" :key="index">
 					<img :src="slide.image" class="w-100 rounded">
 
 					<h3>{{ slide.title }}</h3>
@@ -89,6 +89,13 @@
 	import VueTinySlider from 'vue-tiny-slider'
 
 	export default {
+		props: {
+			slides: {
+				type: Array,
+				required: true
+			}
+		},
+
 		components: {
 			ArrowLeftIcon,
 			ArrowRightIcon,
@@ -101,36 +108,6 @@
 			const autoplayTimeout = 5000
 
 			return {
-				data: {
-					slides: [
-						{
-							title: 'Dish 1',
-							description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
-							image: require('../../assets/media/components/home/GalleryPreview/2.jpg'),
-						},
-						{
-							title: 'Dish 2',
-							description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
-							image: require('../../assets/media/components/home/GalleryPreview/2.jpg'),
-						},
-						{
-							title: 'Dish 3',
-							description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
-							image: require('../../assets/media/components/home/GalleryPreview/2.jpg'),
-						},
-						{
-							title: 'Dish 4',
-							description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
-							image: require('../../assets/media/components/home/GalleryPreview/2.jpg'),
-						},
-						{
-							title: 'Dish 5',
-							description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
-							image: require('../../assets/media/components/home/GalleryPreview/2.jpg'),
-						},
-					]
-				}, 
-				
 				sliders: [
 					// LG
 					{
