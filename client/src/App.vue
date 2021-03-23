@@ -3,8 +3,6 @@
 		<!-- UI -->
 		<UI />
 
-		<div class="nav-spacer2"></div>
-
 		<!-- Router -->
 		<RouterView :key="$route.name + ($route.params.id || '')" />
 
@@ -84,11 +82,5 @@
 	
 	body {
 		font-family: 'meltix' !important;
-	}
-
-	.nav-spacer2 {
-		padding-top: 98px;
-
-		@media (max-width: 990px) { padding-top: 151px; }		
 	}
 </style>

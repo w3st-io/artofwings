@@ -1,7 +1,9 @@
 <template>
 	<div>
 		<!-- Top Navbar & Side Menu -->
-		<NavBar class="position-fixed w-100 nav-z-index" />
+		<NavBar id="navbar-element" class="position-fixed w-100 nav-z-index" />
+
+		<div class="nav-spacer2"></div>
 
 		<!-- Admin Bottom Bar -->
 		<AdminNavBar v-if="adminLogged" />
@@ -49,6 +51,12 @@
 	}
 </script>
 
-<style scoped>
+<style lang="scss">
 	.nav-z-index { z-index: 2000; top: 0; }
+
+	.nav-spacer2 {
+		padding-top: 98px;
+
+		@media (max-width: 990px) { padding-top: 151px; }		
+	}
 </style>
