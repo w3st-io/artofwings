@@ -87,8 +87,8 @@
 	}
 
 	.nav-spacer2 {
-		padding-top: 96px;
+		padding-top: 98px;
 
-		@media (max-width: 990px) { padding-top: 149px; }		
+		@media (max-width: 990px) { padding-top: 151px; }		
 	}
 </style>

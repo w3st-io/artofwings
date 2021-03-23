@@ -24,7 +24,10 @@
 					</BCol>
 
 					<!-- Menu Items -->
-					<BCol cols="12" lg="7" class="d-none d-md-block">
+					<BCol
+						cols="12" lg="7"
+						class="d-none d-md-block text-center text-lg-left py-3"
+					>
 						<RouterLink
 							v-for="button in buttons"
 							:key="button.type"
@@ -32,8 +35,8 @@
 						>
 							<BButton
 								variant="primary"
-								size="lg"
-								class="mx-1 px-1 text-light menu-link"
+								size="sm"
+								class="text-light menu-link"
 							>
 								<h5 class="m-0 font-weight-bold">
 									<span v-if="button.text">{{ button.text }}</span>

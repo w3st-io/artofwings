@@ -6,7 +6,6 @@ const feather = require('feather-icons')
 module.exports = [
 	{
 		path: '/',
-		type:'home',
 		text: '',
 		navIcon: feather.icons.home.toSvg({
 			'stroke-width': 3,
@@ -22,23 +21,23 @@ module.exports = [
 		}),
 	},
 	{
-		path: '/about',
-		type: 'about',
-		text: 'About Us',
+		path: '/menu',
+		text: 'Menu',
 	},
 	{
 		path: '/gallery',
-		type: 'gallery',
 		text: 'Gallery',
 	},
 	{
 		path: '/directions',
-		type: 'directions',
 		text: 'Directions',
 	},
 	{
 		path: '/contact-us',
-		type: 'contact-us',
-		text: 'Contact Us',
+		text: 'Contact',
+	},
+	{
+		path: '/about',
+		text: 'About',
 	},
 ]
