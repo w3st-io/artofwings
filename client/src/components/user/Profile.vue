@@ -2,7 +2,12 @@
 	<BRow class="mt-3">
 		<!-- Account Details -->
 		<BCol sm="12" lg="9">
-			<BCard bg-variant="dark" class="mb-4 text-light">
+			<BCard
+				bg-variant="light"
+				text-variant="dark"
+				border-variant="none"
+				class="mb-4"
+			>
 				<!-- Profile Details -->
 				<BRow>
 					<!-- Profile -->
@@ -49,10 +54,7 @@
 						<BRow>
 							<!-- Total Comments -->
 							<BCol cols="12" sm="6" md="6" lg="3">
-								<BBadge
-									variant="dark"
-									class="w-100 mb-2"
-								>
+								<BBadge variant="light" class="w-100 mb-2">
 									<h6>Total Comments</h6>
 									<h4>{{ commentCount }}</h4>
 								</BBadge>
@@ -60,7 +62,7 @@
 
 							<!-- Total Posts -->
 							<BCol cols="12" sm="6" md="6" lg="3">
-								<BBadge variant="dark" class="w-100 mb-2">
+								<BBadge variant="light" class="w-100 mb-2">
 									<h6>Total Posts</h6>
 									<h4>{{ postCount }}</h4>
 								</BBadge>
@@ -68,7 +70,7 @@
 
 							<!-- Post Score -->
 							<BCol cols="12" sm="6" md="6" lg="3">
-								<BBadge variant="dark" class="w-100 mb-2">
+								<BBadge variant="light" class="w-100 mb-2">
 									<h6>Post Score</h6>
 									<h4>{{ postLikeCount }}</h4>
 								</BBadge>
@@ -76,7 +78,7 @@
 
 							<!-- Comment Score -->
 							<BCol cols="12" sm="6" md="6" lg="3">
-								<BBadge variant="dark" class="w-100 mb-2">
+								<BBadge variant="light" class="w-100 mb-2">
 									<h6>Comment Score</h6>
 									<h4>{{ commentLikeCount }}</h4>
 								</BBadge>
@@ -117,7 +119,11 @@
 				</BRow>
 			</BCard>
 
-			<BCard bg-variant="dark" class="text-light">
+			<BCard
+				bg-variant="light"
+				text-variant="dark"
+				border-variant="none"
+			>
 				<BRow>
 					<!-- Wrapped Chart -->
 					<BCol cols="12" lg="12" class="mt-2">
@@ -150,11 +156,12 @@
 
 		<!-- Social -->
 		<BCol sm="12" lg="3">
-			<BCard bg-variant="dark text-light">
-				<BBadge
-					variant="dark"
-					class="w-100 py-1 rounded"
-				>
+			<BCard
+				bg-variant="light"
+				text-variant="dark"
+				border-variant="none"
+			>
+				<BBadge variant="light" class="w-100 py-1 rounded">
 					<h6>Total Friends</h6>
 					<h4>--</h4>
 				</BBadge>

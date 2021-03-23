@@ -31,16 +31,26 @@
 						</RouterLink>
 					</BCol>
 
-					<!-- User -->
+					<!-- User Content -->
 					<BCol cols="12" lg="2">
 						<div class="text-right">
 							<RouterLink to="/user/login">
-								<BButton variant="info">Login</BButton>
+								<BButton v-if="!userLogged" variant="info" class="mx-1">Login</BButton>
 							</RouterLink>
 
-							<RouterLink to="/user/profile">
-								<BButton v-if="userLogged" variant="info">Your Profile</BButton>
-							</RouterLink>
+							<!-- User Logged -->
+							<BDropdown
+								v-if="userLogged"
+								split
+								right
+								text="Profile"
+								class="m-2"
+								@click="profileRedirect()"
+							>
+								<BDropdownItemButton @click="logout()">
+									Log Out
+								</BDropdownItemButton>
+							</BDropdown>
 						</div>
 					</BCol>
 				</BRow>
@@ -157,6 +167,12 @@
 			},
 
 			toggle() { this.sideMenuOpen = !this.sideMenuOpen },
+
+			logout() {
+				UserService.s_logout()
+
+				router.push({ name: 'user_login' })
+			},
 		},
 	}
 </script>

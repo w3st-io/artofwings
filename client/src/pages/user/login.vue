@@ -1,17 +1,18 @@
 <template>
 	<BContainer class="my-3">
 		<BCard
-			bg-variant="dark"
-			border-variant="secondary"
+			bg-variant="light"
+			text-variant="dark"
+			border-variant="none"
 			class="mx-auto"
 			style="max-width: 800px;"
 		>
 			<BRow>
-				<!-- Welcome Half -->
+				<!-- Welcome -->
 				<BCol cols="12" md="6" class="d-none d-md-block">
-					<h3 class="m-3 text-center text-light">Welcome Back</h3>
+					<h3 class="m-3 text-center">Welcome Back</h3>
 					<div class="text-center mb-3">
-						<LogInIcon size="8x" class="text-light" />
+						<LogInIcon size="8x" />
 					</div>
 
 					<RouterLink to="/user/register" class="text-primary">
@@ -21,9 +22,9 @@
 					</RouterLink>
 				</BCol>
 
+				<!-- Log in -->
 				<BCol cols="12" md="6">
-					<!-- LOG IN FORM -->
-					<ValidationObserver v-slot="{ handleSubmit }" tag="section">
+					<ValidationObserver v-slot="{ handleSubmit }" tag="div">
 						<form @submit.prevent="handleSubmit(login)">
 							<!-- Email  -->
 							<ValidationProvider
@@ -32,12 +33,12 @@
 								rules="required"
 								v-slot="{ errors }"
 							>
-								<label for="email" class="text-light">Email</label>
+								<label for="email">Email</label>
 								<input
 									v-model="email"
 									name="email"
 									type="email"
-									class="form-control bg-dark border-secondary text-light"
+									class="form-control"
 									:class="{ 'is-invalid border-danger': errors != '' }"
 									placeholder="Example@example.com"
 								>
@@ -51,12 +52,12 @@
 								rules="required"
 								v-slot="{ errors }"
 							>
-								<label for="password" class="text-light">Password</label>
+								<label for="password">Password</label>
 								<input
 									v-model="password"
 									name="password"
 									type="password"
-									class="form-control bg-dark border-secondary text-light"
+									class="form-control"
 									:class="{ 'is-invalid border-danger': errors != '' }"
 									placeholder="******"
 								>

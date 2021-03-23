@@ -3,8 +3,9 @@
 		<BRow>
 			<BCol class="text-center">
 				<BCard
-					bg-variant="dark"
-					text-variant="light"
+					bg-variant="light"
+					text-variant="dark"
+					border-variant="none"
 					class="mx-auto"
 					style="max-width: 500px;"
 				>
