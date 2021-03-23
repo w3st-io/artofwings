@@ -35,7 +35,9 @@
 					<BCol cols="12" lg="2">
 						<div class="text-right">
 							<RouterLink to="/user/login">
-								<BButton v-if="!userLogged" variant="info" class="mx-1">Login</BButton>
+								<BButton v-if="!userLogged" variant="secondary" class="mx-1">
+									Login
+								</BButton>
 							</RouterLink>
 
 							<!-- User Logged -->
