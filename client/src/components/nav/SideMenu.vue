@@ -24,7 +24,7 @@
 				@click="closeMenu()"
 			>
 				<p v-if="button.text" class="h1 my-1">{{ button.text }}</p>
-				<span v-else v-html="button.slideMenuIcon"></span>
+				<span v-else v-html="button.sideMenuIcon"></span>
 			</BButton>
 		</RouterLink>
 

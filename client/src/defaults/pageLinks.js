@@ -9,12 +9,12 @@ module.exports = [
 		type:'home',
 		text: '',
 		navIcon: feather.icons.home.toSvg({
-			'stroke-width': 2.4,
-			width: 16,
-			height: 16,
+			'stroke-width': 3,
+			width: 18,
+			height: 18,
 			'class': ''
 		}),
-		slideMenuIcon: feather.icons.home.toSvg({
+		sideMenuIcon: feather.icons.home.toSvg({
 			'stroke-width': 2.4,
 			width: 34,
 			height: 34,

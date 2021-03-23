@@ -45,6 +45,7 @@ import user_activity_lookup from '@/pages/user/activity/lookup'
 import user_followed from '@/pages/user/followed'
 import user_login from '@/pages/user/login'
 import user_notifications from '@/pages/user/notifications'
+import user_order from '@/pages/user/order'
 import user_password_change from '@/pages/user/password/change'
 import user_password_request from '@/pages/user/password/request'
 import user_password_reset from '@/pages/user/password/reset'
@@ -350,6 +351,15 @@ const router = new Router ({
 			meta: {
 				auth: true,
 				title: 'notifications'
+			}
+		},
+		{
+			path: '/user/order',
+			name: 'user_order',
+			component: user_order,
+			meta: {
+				auth: true,
+				title: 'Your Order'
 			}
 		},
 		{

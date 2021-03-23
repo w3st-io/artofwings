@@ -5,14 +5,26 @@
 			<BContainer class="py-3">
 				<BRow>
 					<!-- Logo -->
-					<BCol cols="12" lg="3">
+					<BCol cols="8" lg="3">
 						<RouterLink to="/" class="text-decoration-none text-light">
 							<img :src="logo" class="w-100" style="max-width: 256px;">
 						</RouterLink>
 					</BCol>
 
+					<!-- Shopping Cart + User -->
+					<BCol cols="4" lg="12" class="d-block d-lg-none text-right">
+						<BButton
+							v-if="!userLogged"
+							variant="secondary"
+							class="mx-1"
+							@click="loginRedirect()"
+						>Login</BButton>
+
+						<ShopPortal v-if="userLogged" />
+					</BCol>
+
 					<!-- Menu Items -->
-					<BCol cols="12" lg="7" class="d-none d-md-block py-3">
+					<BCol cols="12" lg="7" class="d-none d-md-block">
 						<RouterLink
 							v-for="button in buttons"
 							:key="button.type"
@@ -21,7 +33,7 @@
 							<BButton
 								variant="primary"
 								size="lg"
-								class="mx-1 px-1 py-0 text-light menu-link"
+								class="mx-1 px-1 text-light menu-link"
 							>
 								<h5 class="m-0 font-weight-bold">
 									<span v-if="button.text">{{ button.text }}</span>
@@ -31,29 +43,16 @@
 						</RouterLink>
 					</BCol>
 
-					<!-- User Content -->
-					<BCol cols="12" lg="2">
-						<div class="text-right">
-							<RouterLink to="/user/login">
-								<BButton v-if="!userLogged" variant="secondary" class="mx-1">
-									Login
-								</BButton>
-							</RouterLink>
+					<!-- Shopping Cart + User -->
+					<BCol cols="12" lg="2" class="d-none d-lg-block text-right">
+						<BButton
+							v-if="!userLogged"
+							variant="secondary"
+							class="mx-1"
+							@click="loginRedirect()"
+						>Login</BButton>
 
-							<!-- User Logged -->
-							<BDropdown
-								v-if="userLogged"
-								split
-								right
-								text="Profile"
-								class="m-2"
-								@click="profileRedirect()"
-							>
-								<BDropdownItemButton @click="logout()">
-									Log Out
-								</BDropdownItemButton>
-							</BDropdown>
-						</div>
+						<ShopPortal v-if="userLogged" />
 					</BCol>
 				</BRow>
 			</BContainer>
@@ -81,17 +80,17 @@
 
 	// [IMPORT] Personal //
 	import SideMenu from '@/components/nav/SideMenu'
+	import ShopPortal from '@/components/nav/ShopPortal'
 	import defaultData from '@/defaults/companyInfo'
 	import buttons from '@/defaults/pageLinks'
 	import router from '@/router'
 	import UserService from '@/services/UserService'
-	import { EventBus } from '@/main'
 
-	// [EXPORT] //
 	export default {
 		components: {
 			MenuIcon,
 			SideMenu,
+			ShopPortal,
 		},
 
 		data() {
@@ -132,49 +131,7 @@
 
 			registerRedirect() { router.push({ name: 'register' }) },
 
-			profileRedirect() { router.push({ name: 'user_profile' }) },
-
-			followedRedirect() {
-				router.push({
-					name: 'user_followed',
-					params: { page: 1 }
-				})
-			},
-
-			allActivityRedirect() {
-				router.push({
-					name: 'activity',
-					params: {
-						sort: 1,
-						limit: 10,
-						page: 1
-					}
-				})
-			},
-
-			searchRedirect() {
-				if (this.query) {
-					router.push({
-						name: 'search',
-						params: {
-							type: 'posts',
-							query: this.query,
-							limit: 5,
-							page: 1,
-						}
-					})
-	
-					EventBus.$emit('force-rerender')
-				}
-			},
-
 			toggle() { this.sideMenuOpen = !this.sideMenuOpen },
-
-			logout() {
-				UserService.s_logout()
-
-				router.push({ name: 'user_login' })
-			},
 		},
 	}
 </script>
