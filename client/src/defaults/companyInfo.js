@@ -28,5 +28,4 @@ module.exports = {
 	instagramLink: '',
 	twitterLink: '',
 	youtubeLink: '',
-
 }

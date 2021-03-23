@@ -1,0 +1,4 @@
+// [EXPORT] //
+module.exports = {
+	wings: '',
+}

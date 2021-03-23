@@ -36,6 +36,8 @@ import emailSent from '@/pages/email-sent'
 import gallery from '@/pages/gallery'
 import gallery_seasonOne from '@/pages/gallery/season-one'
 import gallery_seasonTwo from '@/pages/gallery/season-two'
+// Menu //
+import menu from '@/pages/menu'
 // Post //
 import post from '@/pages/post'
 import post_create from '@/pages/post/create'
@@ -287,6 +289,16 @@ const router = new Router ({
 				auth: true,
 				title: 'Season Two'
 			},
+		},
+		// Menu //
+		{
+			path: '/menu',
+			name: 'menu',
+			component: menu,
+			meta: {
+				auth: true,
+				title: 'Menu'
+			}
 		},
 		// Post //
 		{

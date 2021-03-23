@@ -63,7 +63,7 @@
 	import VueTinySlider from 'vue-tiny-slider'
 
 	// [IMPORT] Personal //
-	import ChiliPepperSVG from '../../components/svgs/ChiliPepper'
+	import ChiliPepperSVG from '@/components/svgs/ChiliPepper'
 
 	export default {
 		props: {
