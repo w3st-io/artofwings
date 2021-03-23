@@ -14,8 +14,8 @@
 			:paginationEnabled="false"
 
 		>
-			<Slide v-for="(slide, index) in data.slides" :key="index">
-				<img :src="slide" class="w-100">
+			<Slide v-for="(img, index) in slideImgs" :key="index">
+				<img :src="img" class="w-100">
 			</Slide>
 		</Carousel>
 	</div>
@@ -25,19 +25,17 @@
 	// [IMPORT] //
 	import { Carousel, Slide } from 'vue-carousel'
 
-	// [IMPORT] Personal //
-	import data from '../../defaults/components/home/GalleryPreview'
-
 	export default {
+		props: {
+			slideImgs: {
+				type: Array,
+				required: true
+			},
+		},
+
 		components: {
 			Carousel,
 			Slide
-		},
-
-		data() {
-			return {
-				data: data,
-			}
 		},
 	}
 </script>

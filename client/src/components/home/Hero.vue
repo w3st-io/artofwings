@@ -3,7 +3,7 @@
 		<BCol cols="12" style="max-height: 500px; overflow: hidden;">
 			<div class="p-2 gallery-center">
 				<img
-					:src="heroImg"
+					:src="centerImg"
 					class="w-100 hero-text-img"
 					style="max-width: 600px"
 					data-aos="fade-up"
@@ -37,22 +37,28 @@
 </template>
 
 <script>
-	import data from '../../defaults/components/home/Hero'
-
 	export default {
+		props: {
+			centerImg: {
+				type: String,
+				required: true,
+			},
+
+			backgroundImgs: {
+				type: Array,
+				required: true,
+			},
+		},
+			
 		data() {
 			return {
-				data: data,
-
-				heroImg: require('../../assets/media/components/home/Hero/hero-text2.png'),
-
 				cols: [
-					[ data[0], data[1] ],
-					[ data[2], data[3] ],
-					[ data[4], data[5] ],
-					[ data[6], data[7] ],
-					[ data[8], data[9] ],
-					[ data[10], data[11] ]
+					[ this.backgroundImgs[0], this.backgroundImgs[1] ],
+					[ this.backgroundImgs[2], this.backgroundImgs[3] ],
+					[ this.backgroundImgs[4], this.backgroundImgs[5] ],
+					[ this.backgroundImgs[6], this.backgroundImgs[7] ],
+					[ this.backgroundImgs[8], this.backgroundImgs[9] ],
+					[ this.backgroundImgs[10], this.backgroundImgs[11] ]
 				],
 
 				colClass: [

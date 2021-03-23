@@ -2,7 +2,11 @@
 	<div class="mb-5">
 		<!-- Hero -->
 		<BContainer fluid class="mb-3 py-2 text-center">
-			<Hero class="px-1" />
+			<Hero
+				:centerImg="pageData.cnt1.heroCenterImg"
+				:backgroundImgs="pageData.cnt1.heroBackgoundImgs"
+				class="px-1"
+			/>
 		</BContainer>
 
 		<hr class="bg-light">
@@ -25,7 +29,10 @@
 					</BCol>
 
 					<BCol cols="12" md="6" lg="4" class="mb-3">
-						<GalleryPreview class="w-100" />
+						<GalleryPreview
+							:slideImgs="pageData.cnt2.r1.c2.slideImgs"
+							class="w-100"
+						/>
 					</BCol>
 
 					<BCol cols="12" md="6" lg="4" class="mb-3">
@@ -64,7 +71,7 @@
 	import GalleryPreview from '@/components/home/GalleryPreview'
 	import SuggestionConveyor from '@/components/home/SuggestionConveyor'
 	import Hero from '@/components/home/Hero'
-	import pageData from '@/defaults/pages/index'
+	import pageData from '@/defaults/pages'
 
 	export default {
 		components: {
