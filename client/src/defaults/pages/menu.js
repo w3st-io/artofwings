@@ -169,6 +169,86 @@ module.exports = {
 		],
 	},
 
+	// Signature Sandwhiches //
+	signatureSandwiches: {
+		title: 'Signature Sandwiches',
+
+		description: 'Served w/fries',
+
+		options: [
+			{
+				id: '',
+				title: 'Jamaican Burger',
+				description: '6oz burger, bacon jam, swiss cheese, signature sauce',
+				cost: 8.99,
+				stripeCost: 899,
+			},
+			{
+				id: '',
+				title: 'BBQ Burger',
+				description: '6oz burger, BBQ sauce, cheddar, crispy onions, beef bacon, tomato',
+				cost: 7.50,
+				stripeCost: 750,
+			},
+			{
+				id: '',
+				title: 'Spicy Art Burger',
+				description: 'Jalapenos, spicy mayo, cheddar cheese, beef bacon',
+				cost: 7.50,
+				stripeCost: 750,
+			},
+			{
+				id: '',
+				title: 'Chop Cheese Burger',
+				description: '6oz burger with choices of lettuce, tomato, or onions served on an italian roll',
+				cost: 6.99,
+				stripeCost: 699,
+			},
+			{
+				id: '',
+				title: 'Classic Chicken Sandwich',
+				description: 'Crispy or grilled chicken, spicy mayo, lettuce, tomato',
+				cost: 7.50,
+				stripeCost: 750,
+			},
+			{
+				id: '',
+				title: 'Baffalo Chicken Sandwich',
+				description: 'Crispy or grilled chicken buffalo sauce, blue cheese, crispy onions',
+				cost: 7.50,
+				stripeCost: 750,
+			},
+			{
+				id: '',
+				title: 'Art BBQ Chicken Sandwich',
+				description: 'Crispy or grilled chicken BBQ sauce, coleslaw, pickles, bacon',
+				cost: 7.50,
+				stripeCost: 750,
+			},
+			{
+				id: '',
+				title: 'The Rutgers Cheesesteak',
+				description: 'Grilled beef, sauteed onions, american cheese, thousand island, served on a brioche roll',
+				cost: 6.99,
+				stripeCost: 699,
+			},
+			{
+				id: '',
+				title: 'Cheesesteak',
+				description: 'Melted American cheese w/sweet peppers & onions',
+				cost: 6.99,
+				stripeCost: 699,
+			},
+			{
+				id: '',
+				title: 'Grilled Cheese Sandwich',
+				description: 'Add bacon, lettuce, and tomato for $2.00',
+				cost: 4.99,
+				stripeCost: 499,
+			},
+		]
+	},
+
 	// Appetizers //
 	appetizers: {
 		title: 'Appetizers',
@@ -250,7 +330,7 @@ module.exports = {
 		title: 'Plantbased',
 
 		description: '',
-		
+
 		options: [
 			{
 				id: '',
@@ -290,87 +370,11 @@ module.exports = {
 		],
 	},
 
-	// Signature Sandwhiches //
-	signatureSandwiches: {
-		caption: 'Served w/fries',
-
-		options: [
-			{
-				id: '',
-				title: 'Jamaican Burger',
-				description: '6oz burger, bacon jam, swiss cheese, signature sauce',
-				cost: 8.99,
-				stripeCost: 899,
-			},
-			{
-				id: '',
-				title: 'BBQ Burger',
-				description: '6oz burger, BBQ sauce, cheddar, crispy onions, beef bacon, tomato',
-				cost: 7.50,
-				stripeCost: 750,
-			},
-			{
-				id: '',
-				title: 'Spicy Art Burger',
-				description: 'Jalapenos, spicy mayo, cheddar cheese, beef bacon',
-				cost: 7.50,
-				stripeCost: 750,
-			},
-			{
-				id: '',
-				title: 'Chop Cheese Burger',
-				description: '6oz burger with choices of lettuce, tomato, or onions served on an italian roll',
-				cost: 6.99,
-				stripeCost: 699,
-			},
-			{
-				id: '',
-				title: 'Classic Chicken Sandwich',
-				description: 'Crispy or grilled chicken, spicy mayo, lettuce, tomato',
-				cost: 7.50,
-				stripeCost: 750,
-			},
-			{
-				id: '',
-				title: 'Baffalo Chicken Sandwich',
-				description: 'Crispy or grilled chicken buffalo sauce, blue cheese, crispy onions',
-				cost: 7.50,
-				stripeCost: 750,
-			},
-			{
-				id: '',
-				title: 'Art BBQ Chicken Sandwich',
-				description: 'Crispy or grilled chicken BBQ sauce, coleslaw, pickles, bacon',
-				cost: 7.50,
-				stripeCost: 750,
-			},
-			{
-				id: '',
-				title: 'The Rutgers Cheesesteak',
-				description: 'Grilled beef, sauteed onions, american cheese, thousand island, served on a brioche roll',
-				cost: 6.99,
-				stripeCost: 699,
-			},
-			{
-				id: '',
-				title: 'Cheesesteak',
-				description: 'Melted American cheese w/sweet peppers & onions',
-				cost: 6.99,
-				stripeCost: 699,
-			},
-			{
-				id: '',
-				title: 'Grilled Cheese Sandwich',
-				description: 'Add bacon, lettuce, and tomato for $2.00',
-				cost: 4.99,
-				stripeCost: 499,
-			},
-		]
-	},
-
 	// Specialty Sides //
 	specialtySides: {
-		caption: 'French Fries or Tator Tots',
+		title: 'Specialty Sides',
+
+		description: 'French Fries or Tator Tots',
 
 		options: [
 			{
@@ -441,6 +445,10 @@ module.exports = {
 
 	// Beverages //
 	beverages: {
+		title: 'Beverages',
+
+		description: '',
+
 		options: [
 			{
 				id: '',
