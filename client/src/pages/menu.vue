@@ -25,7 +25,7 @@
 						class="d-flex justify-content-between align-items-center"
 					>
 						<div>
-							<h5 class="text-primary">{{ option.title }}</h5>
+							<h5 class="text-dark">{{ option.title }}</h5>
 							<p>{{ option.description }}</p>
 						</div>
 
@@ -50,7 +50,7 @@
 						class="d-flex justify-content-between align-items-center"
 					>
 						<div>
-							<h5 class="text-primary">{{ option.title }}</h5>
+							<h5 class="text-dark">{{ option.title }}</h5>
 							<p>{{ option.description }}</p>
 						</div>
 
@@ -109,7 +109,7 @@
 						class="d-flex justify-content-between align-items-center"
 					>
 						<div>
-							<h5 class="text-primary">{{ option.title }}</h5>
+							<h5 class="text-dark">{{ option.title }}</h5>
 							<p>{{ option.description }}</p>
 						</div>
 
@@ -134,7 +134,7 @@
 						class="d-flex justify-content-between align-items-center"
 					>
 						<div>
-							<h5 class="text-primary">{{ option.title }}</h5>
+							<h5 class="text-dark">{{ option.title }}</h5>
 							<p>{{ option.description }}</p>
 						</div>
 
@@ -160,7 +160,7 @@
 						class="d-flex justify-content-between align-items-center"
 					>
 						<div>
-							<h5 class="text-primary">{{ option.title }}</h5>
+							<h5 class="text-dark">{{ option.title }}</h5>
 							<p>{{ option.description }}</p>
 						</div>
 
@@ -214,7 +214,7 @@
 						class="d-flex justify-content-between align-items-center"
 					>
 						<div>
-							<h5 class="text-primary">{{ option.title }}</h5>
+							<h5 class="text-dark">{{ option.title }}</h5>
 							<p>{{ option.description }}</p>
 						</div>
 
@@ -251,7 +251,7 @@
 						class="d-flex justify-content-between align-items-center"
 					>
 						<div>
-							<h5 class="text-primary">{{ option.title }}</h5>
+							<h5 class="text-dark">{{ option.title }}</h5>
 							<p>{{ option.description }}</p>
 						</div>
 
@@ -280,7 +280,7 @@
 						class="d-flex justify-content-between align-items-center"
 					>
 						<div>
-							<h5 class="text-primary">{{ option.title }}</h5>
+							<h5 class="text-dark">{{ option.title }}</h5>
 							<p>{{ option.description }}</p>
 						</div>
 
@@ -309,7 +309,7 @@
 						class="d-flex justify-content-between align-items-center"
 					>
 						<div>
-							<h5 class="text-primary">{{ option.title }}</h5>
+							<h5 class="text-dark">{{ option.title }}</h5>
 							<p>{{ option.description }}</p>
 						</div>
 
@@ -338,7 +338,7 @@
 						class="d-flex justify-content-between align-items-center"
 					>
 						<div>
-							<h5 class="text-primary">{{ option.title }}</h5>
+							<h5 class="text-dark">{{ option.title }}</h5>
 							<p>{{ option.description }}</p>
 						</div>
 
@@ -367,7 +367,7 @@
 						class="d-flex justify-content-between align-items-center"
 					>
 						<div>
-							<h5 class="text-primary">{{ option.title }}</h5>
+							<h5 class="text-dark">{{ option.title }}</h5>
 							<p>{{ option.description }}</p>
 						</div>
 
