@@ -11,7 +11,7 @@ module.exports = {
 
 		options: [
 			{
-				title: 'wings',
+				title: 'Wings',
 				variants: [
 					{
 						id: '',
@@ -188,7 +188,7 @@ module.exports = {
 
 		options: [
 			{
-				title: 'burgers',
+				title: 'Burgers',
 				variants: [
 					{
 						id: '',
@@ -221,7 +221,7 @@ module.exports = {
 				],
 			},
 			{
-				title: 'sandwiches',
+				title: 'Sandwiches',
 				variants: [
 					{
 						id: '',
@@ -254,7 +254,7 @@ module.exports = {
 				],
 			},
 			{
-				title: 'subs',
+				title: 'Subs',
 				variants: [
 					{
 						id: '',
