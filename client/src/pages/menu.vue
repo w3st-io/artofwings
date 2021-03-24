@@ -149,7 +149,9 @@
 				<BListGroup class="mb-4">
 					<BListGroupItem variant="secondary" class="text-center">
 						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">Toppings</span>
+							<span class="font-weight-bold text-primary">
+								Additions
+							</span>
 						</h4>
 					</BListGroupItem>
 
@@ -396,7 +398,7 @@
 				const increment = 100 / length
 				const R = (255 * (index * increment)) / 100
 				const G = (255 * (100 - (index * increment))) / 100 
-				const B = 64
+				const B = 0
 
 				return `${R}, ${G}, ${B}`
 			},

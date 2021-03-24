@@ -1,7 +1,5 @@
 <template>
 	<BContainer fluid class="my-3">
-		<h1 class="text-center text-primary">Gallery</h1>
-
 		<Gallery :images="data.images" />
 	</BContainer>
 </template>
