@@ -29,7 +29,7 @@
 							<p>{{ option.description }}</p>
 						</div>
 
-						<BBadge variant="primary" class="custom-badge" pill>
+						<BBadge variant="primary" class="custom-badge">
 							<h5 class="m-0">${{ option.cost }}</h5>
 						</BBadge>
 					</BListGroupItem>
@@ -54,7 +54,7 @@
 							<p>{{ option.description }}</p>
 						</div>
 
-						<BBadge variant="primary" class="custom-badge" pill>
+						<BBadge variant="primary" class="custom-badge">
 							<h5 class="m-0">${{ option.cost }}</h5>
 						</BBadge>
 					</BListGroupItem>
@@ -113,7 +113,7 @@
 							<p>{{ option.description }}</p>
 						</div>
 
-						<BBadge variant="primary" class="custom-badge" pill>
+						<BBadge variant="primary" class="custom-badge">
 							<h5 class="m-0">${{ option.cost }}</h5>
 						</BBadge>
 					</BListGroupItem>
@@ -138,7 +138,7 @@
 							<p>{{ option.description }}</p>
 						</div>
 
-						<BBadge variant="primary" class="custom-badge" pill>
+						<BBadge variant="primary" class="custom-badge">
 							<h5 class="m-0">${{ option.cost }}</h5>
 						</BBadge>
 					</BListGroupItem>
@@ -166,7 +166,7 @@
 							<p>{{ option.description }}</p>
 						</div>
 
-						<BBadge variant="primary" class="custom-badge" pill>
+						<BBadge variant="primary" class="custom-badge">
 							<h5 class="m-0">${{ option.cost }}</h5>
 						</BBadge>
 					</BListGroupItem>
@@ -220,7 +220,7 @@
 							<p>{{ option.description }}</p>
 						</div>
 
-						<BBadge variant="primary" class="custom-badge" pill>
+						<BBadge variant="primary" class="custom-badge">
 							<h5 class="m-0">${{ option.cost }}</h5>
 						</BBadge>
 					</BListGroupItem>
@@ -257,7 +257,7 @@
 							<p>{{ option.description }}</p>
 						</div>
 
-						<BBadge variant="primary" class="custom-badge" pill>
+						<BBadge variant="primary" class="custom-badge">
 							<h5 class="m-0">${{ option.cost }}</h5>
 						</BBadge>
 					</BListGroupItem>
@@ -286,7 +286,7 @@
 							<p>{{ option.description }}</p>
 						</div>
 
-						<BBadge variant="primary" class="custom-badge" pill>
+						<BBadge variant="primary" class="custom-badge">
 							<h5 class="m-0">${{ option.cost }}</h5>
 						</BBadge>
 					</BListGroupItem>
@@ -315,7 +315,7 @@
 							<p>{{ option.description }}</p>
 						</div>
 
-						<BBadge variant="primary" class="custom-badge" pill>
+						<BBadge variant="primary" class="custom-badge">
 							<h5 class="m-0">${{ option.cost }}</h5>
 						</BBadge>
 					</BListGroupItem>
@@ -344,7 +344,7 @@
 							<p>{{ option.description }}</p>
 						</div>
 
-						<BBadge variant="primary" class="custom-badge" pill>
+						<BBadge variant="primary" class="custom-badge">
 							<h5 class="m-0">${{ option.cost }}</h5>
 						</BBadge>
 					</BListGroupItem>
@@ -373,7 +373,7 @@
 							<p>{{ option.description }}</p>
 						</div>
 
-						<BBadge variant="primary" class="custom-badge" pill>
+						<BBadge variant="primary" class="custom-badge">
 							<h5 class="m-0">${{ option.cost }}</h5>
 						</BBadge>
 					</BListGroupItem>
