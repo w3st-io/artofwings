@@ -4,26 +4,26 @@
 ## (Add $1 more to make into sweet potato)
 
 ### Plan
-#### Classic side
+Classic side
 
 ### Loaded
-#### Melted cheese, sour cream, and bacon
+Melted cheese, sour cream, and bacon
 
 ### Chicken
-#### Spicy mayo, fried or grilled chicken, crispy onions
+Spicy mayo, fried or grilled chicken, crispy onions
 
 ### Burger
-#### Melted American cheese, art burger sauce, red onions
+Melted American cheese, art burger sauce, red onions
 
 ### Fiery
-#### Melted Cheese, Jalapeno, and chili'
+Melted Cheese, Jalapeno, and chili'
 
 ### Cheese
-##### Melted Cheese
+Melted Cheese
 
 ### Funnel
-#### Funnel description
+Funnel description
 
 # Other Sides
 ### Mac and cheese
-#### Add bacon for $1.50 more
+Add bacon for $1.50 more
