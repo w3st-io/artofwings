@@ -456,6 +456,7 @@
 
 		methods: {
 			spiceColor(length, index) {
+				index++
 				const increment = 100 / length
 				const R = (255 * (index * increment)) / 100
 				const G = (255 * (100 - (index * increment))) / 100 
