@@ -3,16 +3,16 @@
 # French Fries or Tator Tots
 ### Add $1 more to make into sweet potato
 
-1. Plan
+1. Plane
 Classic side
 
-2. Loaded
+1. Loaded
 Melted cheese, sour cream, and bacon
 
-3. Chicken
+1. Chicken
 Spicy mayo, fried or grilled chicken, crispy onions
 
-4. Burger
+1. Burger
 Melted American cheese, art burger sauce, red onions
 
 5. Fiery
