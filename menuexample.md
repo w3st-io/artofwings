@@ -1,7 +1,6 @@
 # AW Specialty Sides
 
-## French Fries or Tator Tots
-#### Add $1 more to make into sweet potato
+## French Fries or Tator Tots (Add $1 more to make into sweet potato)
 
 ##### 1. Plane - $0.00
 Classic side
