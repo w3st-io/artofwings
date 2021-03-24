@@ -2,7 +2,7 @@
 	<BContainer class="my-3">
 		<BRow>
 			<!-- Wings and Tenders -->
-			<BCol cols="12" md="6" lg="4">
+			<BCol cols="12" md="6" lg="4" xl="3">
 				<h1 class="m-0 text-center font-weight-bold text-primary">
 					{{ pageData.wingsAndTenders.title }}
 				</h1>
@@ -86,7 +86,7 @@
 			</BCol>
 
 			<!-- Sliders -->
-			<BCol cols="12" md="6" lg="4">
+			<BCol cols="12" md="6" lg="4" xl="3">
 				<h1 class="m-0 text-center font-weight-bold text-primary">
 					{{ pageData.sliders.title }}
 				</h1>
@@ -197,7 +197,7 @@
 			</BCol>
 
 			<!-- Signature Sandwiches -->
-			<BCol cols="12" md="6" lg="4">
+			<BCol cols="12" md="6" lg="4" xl="3">
 				<h1 class="m-0 text-center font-weight-bold text-primary">
 					{{ pageData.signatureSandwiches.title }}
 				</h1>
@@ -225,8 +225,45 @@
 				</BListGroup>
 			</BCol>
 
+			<!-- Specialty Sides -->
+			<BCol cols="12" md="6" lg="4" xl="3">
+				<h1 class="m-0 text-center font-weight-bold text-primary">
+					{{ pageData.specialtySides.title }}
+				</h1>
+				<h4 class="mb-3 text-center text-secondary">
+					{{ pageData.specialtySides.description }}
+				</h4>
+
+				<!-- Options frenchFriesOrTatorTots -->
+				<BListGroup class="mb-4">
+					<BListGroupItem variant="secondary" class="text-center">
+						<h4 class="m-0 text-center">
+							<span class="font-weight-bold text-primary">
+								French Fries Or Tator Tots
+							</span>
+						</h4>
+					</BListGroupItem>
+
+					<BListGroupItem
+						v-for="(option, i) in pageData.specialtySides.options.frenchFriesOrTatorTots"
+						:key="i"
+						variant="secondary"
+						class="d-flex justify-content-between align-items-center"
+					>
+						<div>
+							<h5 class="text-primary">{{ option.title }}</h5>
+							<p>{{ option.description }}</p>
+						</div>
+
+						<BBadge variant="primary" class="custom-badge" pill>
+							<h5 class="m-0">${{ option.cost }}</h5>
+						</BBadge>
+					</BListGroupItem>
+				</BListGroup>
+			</BCol>
+
 			<!-- Appetizers -->
-			<BCol cols="12" md="6" lg="4">
+			<BCol cols="12" md="6" lg="4" xl="3">
 				<h1 class="m-0 text-center font-weight-bold text-primary">
 					{{ pageData.appetizers.title }}
 				</h1>
@@ -255,7 +292,7 @@
 			</BCol>
 
 			<!-- Salad -->
-			<BCol cols="12" md="6" lg="4">
+			<BCol cols="12" md="6" lg="4" xl="3">
 				<h1 class="m-0 text-center font-weight-bold text-primary">
 					{{ pageData.salads.title }}
 				</h1>
@@ -284,7 +321,7 @@
 			</BCol>
 
 			<!-- Plantbased -->
-			<BCol cols="12" md="6" lg="4">
+			<BCol cols="12" md="6" lg="4" xl="3">
 				<h1 class="m-0 text-center font-weight-bold text-primary">
 					{{ pageData.plantbased.title }}
 				</h1>
@@ -312,37 +349,8 @@
 				</BListGroup>
 			</BCol>
 
-			<!-- Specialty Sides -->
-			<BCol cols="12" md="6" lg="4">
-				<h1 class="m-0 text-center font-weight-bold text-primary">
-					{{ pageData.specialtySides.title }}
-				</h1>
-				<h4 class="mb-3 text-center text-secondary">
-					{{ pageData.specialtySides.description }}
-				</h4>
-
-				<!-- Options -->
-				<BListGroup class="mb-4">
-					<BListGroupItem
-						v-for="(option, i) in pageData.specialtySides.options"
-						:key="i"
-						variant="secondary"
-						class="d-flex justify-content-between align-items-center"
-					>
-						<div>
-							<h5 class="text-primary">{{ option.title }}</h5>
-							<p>{{ option.description }}</p>
-						</div>
-
-						<BBadge variant="primary" class="custom-badge" pill>
-							<h5 class="m-0">${{ option.cost }}</h5>
-						</BBadge>
-					</BListGroupItem>
-				</BListGroup>
-			</BCol>
-
 			<!-- Beverages -->
-			<BCol cols="12" md="6" lg="4">
+			<BCol cols="12" md="6" lg="4" xl="3">
 				<h1 class="m-0 text-center font-weight-bold text-primary">
 					{{ pageData.beverages.title }}
 				</h1>

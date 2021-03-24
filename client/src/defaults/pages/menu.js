@@ -249,6 +249,81 @@ module.exports = {
 		]
 	},
 
+	// Specialty Sides //
+	specialtySides: {
+		title: 'Specialty Sides',
+
+		description: '',
+		
+		options: {
+			frenchFriesOrTatorTots: [
+				{
+					id: '',
+					title: 'plain',
+					description: 'Classic side',
+					cost: 2.99,
+					stripeCost: 299,
+				},
+				{
+					id: '',
+					title: 'Sweet Potato',
+					description: 'Sweet potato',
+					cost: 3.99,
+					stripeCost: 399,
+				},
+				{
+					id: '',
+					title: 'Loaded',
+					description: 'Melted cheese, sour cream, and bacon',
+					cost: 5.99,
+					stripeCost: 599,
+				},
+				{
+					id: '',
+					title: 'Chicken',
+					description: 'Spicy mayo, fried or grilled chicken, crispy onions',
+					cost: 5.75,
+					stripeCost: 575,
+				},
+				{
+					id: '',
+					title: 'Burger',
+					description: 'Melted American cheese, art burger sauce, red onions',
+					cost: 5.25,
+					stripeCost: 525,
+				},
+				{
+					id: '',
+					title: 'Fiery',
+					description: 'Melted cheese, jalapeno, and chili',
+					cost: 5.99,
+					stripeCost: 599,
+				},
+				{
+					id: '',
+					title: 'Cheese',
+					description: 'Melted cheese',
+					cost: 4.99,
+					stripeCost: 499,
+				},
+				{
+					id: '',
+					title: 'Mac and Cheese',
+					description: 'Add bacon for $1.50 more',
+					cost: 4.99,
+					stripeCost: 499,
+				},
+				{
+					id: '',
+					title: 'Funnel Fries',
+					description: 'Classic Funnel fries',
+					cost: 4.95,
+					stripeCost: 495,
+				},
+			],
+		}
+	},
+
 	// Appetizers //
 	appetizers: {
 		title: 'Appetizers',
@@ -366,79 +441,6 @@ module.exports = {
 				description: '',
 				cost: 7.99,
 				stripeCost: 799,
-			},
-		],
-	},
-
-	// Specialty Sides //
-	specialtySides: {
-		title: 'Specialty Sides',
-
-		description: 'French Fries or Tator Tots',
-
-		options: [
-			{
-				id: '',
-				title: 'plain',
-				description: 'Classic side',
-				cost: 2.99,
-				stripeCost: 299,
-			},
-			{
-				id: '',
-				title: 'Sweet Potato',
-				description: 'Sweet potato',
-				cost: 3.99,
-				stripeCost: 399,
-			},
-			{
-				id: '',
-				title: 'Loaded',
-				description: 'Melted cheese, sour cream, and bacon',
-				cost: 5.99,
-				stripeCost: 599,
-			},
-			{
-				id: '',
-				title: 'Chicken',
-				description: 'Spicy mayo, fried or grilled chicken, crispy onions',
-				cost: 5.75,
-				stripeCost: 575,
-			},
-			{
-				id: '',
-				title: 'Burger',
-				description: 'Melted American cheese, art burger sauce, red onions',
-				cost: 5.25,
-				stripeCost: 525,
-			},
-			{
-				id: '',
-				title: 'Fiery',
-				description: 'Melted cheese, jalapeno, and chili',
-				cost: 5.99,
-				stripeCost: 599,
-			},
-			{
-				id: '',
-				title: 'Cheese',
-				description: 'Melted cheese',
-				cost: 4.99,
-				stripeCost: 499,
-			},
-			{
-				id: '',
-				title: 'Mac and Cheese',
-				description: 'Add bacon for $1.50 more',
-				cost: 4.99,
-				stripeCost: 499,
-			},
-			{
-				id: '',
-				title: 'Funnel Fries',
-				description: 'Classic Funnel fries',
-				cost: 4.95,
-				stripeCost: 495,
 			},
 		],
 	},
