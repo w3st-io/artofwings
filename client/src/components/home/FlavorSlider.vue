@@ -133,11 +133,11 @@
 						description: '',
 					},
 					{
-						title: 'Teriyaki Sause',
+						title: 'Teriyaki Sauce',
 						description: '',
 					},
 					{
-						title: 'Lousiana Sause',
+						title: 'Lousiana Sauce',
 						description: '',
 					},
 					{
