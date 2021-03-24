@@ -1,29 +1,29 @@
 # AW Specialty Sides
 
 # French Fries or Tator Tots
-## (Add $1 more to make into sweet potato)
+### Add $1 more to make into sweet potato
 
-### Plan
+1. Plan
 Classic side
 
-### Loaded
+2. Loaded
 Melted cheese, sour cream, and bacon
 
-### Chicken
+3. Chicken
 Spicy mayo, fried or grilled chicken, crispy onions
 
-### Burger
+4. Burger
 Melted American cheese, art burger sauce, red onions
 
-### Fiery
+5. Fiery
 Melted Cheese, Jalapeno, and chili'
 
-### Cheese
+6. Cheese
 Melted Cheese
 
-### Funnel
+7. Funnel
 Funnel description
 
 # Other Sides
-### Mac and cheese
+1. Mac and cheese
 Add bacon for $1.50 more
