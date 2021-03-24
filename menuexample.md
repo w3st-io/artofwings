@@ -1,6 +1,6 @@
 # AW Specialty Sides
 
-## French Fries or Tator Tots (Add $1 more to make into sweet potato)
+* French Fries or Tator Tots (Add $1 more to make into sweet potato)
 
 ##### 1. Plane - $0.00
 Classic side
@@ -23,6 +23,6 @@ Melted Cheese
 ##### 7. Funnel - $0.00
 Funnel description
 
-## Other Sides
+* Other Sides
 ##### 1. Mac and cheese - $0.00
 Add bacon for $1.50 more
