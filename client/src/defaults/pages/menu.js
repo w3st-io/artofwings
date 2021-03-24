@@ -5,23 +5,26 @@ module.exports = {
 	wings: {
 		description: 'Crispy/Baked/Boneless Wings',
 
-		variants: {
+		options: {
 			wings: [
 				{
 					id: '',
 					title: '6 pieces',
+					description: '',
 					cost: 6.99,
 					stripeCost: 699,
 				},
 				{
 					id: '',
 					title: '12 pieces',
+					description: '',
 					cost: 12.99,
 					stripeCost: 1299,
 				},
 				{
 					id: '',
 					title: '24 pieces',
+					description: '',
 					cost: 24.99,
 					stripeCost: 2499,
 				},
@@ -30,12 +33,14 @@ module.exports = {
 				{
 					id: '',
 					title: '3 pieces',
+					description: '',
 					cost: 4.99,
 					stripeCost: 499,
 				},
 				{
 					id: '',
 					title: '6 pieces',
+					description: '',
 					cost: 12.99,
 					stripeCost: 1299,
 				},
@@ -49,22 +54,25 @@ module.exports = {
 	sliders: {
 		description: 'Comes with lettuce, onions, tomatos, and pickles',
 
-		variants: [
+		options: [
 			{
 				id: '',
 				title: 'Single Slider',
+				description: '',
 				cost: 2.99,
 				stripeCost: 299,
 			},
 			{
 				id: '',
 				title: 'Double Slider',
+				description: '',
 				cost: 4.99,
 				stripeCost: 499,
 			},
 			{
 				id: '',
 				title: 'Triple Slider',
+				description: '',
 				cost: 6.99,
 				stripeCost: 699,
 			},
@@ -74,42 +82,49 @@ module.exports = {
 			{
 				id: '',
 				title: 'Sauteed onions',
+				description: '',
 				cost: 0.50,
 				stripeCost: 50,
 			},
 			{
 				id: '',
 				title: 'Jalapenos',
+				description: '',
 				cost: 0.50,
 				stripeCost: 50,
 			},
 			{
 				id: '',
 				title: 'Mushrooms',
+				description: '',
 				cost: 0.50,
 				stripeCost: 50,
 			},
 			{
 				id: '',
 				title: 'Beef Bacon',
+				description: '',
 				cost: 1.75,
 				stripeCost: 175,
 			},
 			{
 				id: '',
 				title: 'Bacon Jam',
+				description: '',
 				cost: 1.75,
 				stripeCost: 175,
 			},
 			{
 				id: '',
 				title: 'Avacado',
+				description: '',
 				cost: 1.75,
 				stripeCost: 175,
 			},
 			{
 				id: '',
 				title: 'Crispy Fried Onions',
+				description: '',
 				cost: 0.75,
 				stripeCost: 75,
 			},
@@ -119,18 +134,21 @@ module.exports = {
 			{
 				id: '',
 				title: 'Add extra patty',
+				description: '',
 				cost: 1.00,
 				stripeCost: 100,
 			},
 			{
 				id: '',
-				title: 'Add Art Appetizer (Except Quesadilla)',
+				title: 'Add any Art Appetizer',
+				description: 'Except Quesadilla',
 				cost: 2.99,
 				stripeCost: 299,
 			},
 			{
 				id: '',
-				title: 'Add Traditional or Boneless 4pc (With any choice of sauce)',
+				title: 'Add Traditional or Boneless 4pc.',
+				description: 'With any choice of sauce',
 				cost: 4.99,
 				stripeCost: 499,
 			},
@@ -147,7 +165,7 @@ module.exports = {
 
 	// Appetizers //
 	appetizers: {
-		variant: [
+		options: [
 			{
 				id: '',
 				title: 'Quesadilla',
@@ -187,26 +205,26 @@ module.exports = {
 				id: '',
 				title: 'Onion Rings',
 				description: '',
-				cost: 5.99,
-				stripeCost: 599,
+				cost: 2.99,
+				stripeCost: 299,
 			},
 		]
 	},
 
 	// Salads //
 	salads: {
-		variant: [
+		options: [
 			{
 				id: '',
 				title: 'House Salad',
-				description: 'Lettuce, tomato, cucumbers, red onions. Add chicken for $2.00',
+				description: 'Lettuce, tomato, cucumbers, and red onions. Add chicken for $2.00',
 				cost: 4.95,
 				stripeCost: 495,
 			},
 			{
 				id: '',
 				title: 'Portobello Salad',
-				description: 'Portobellos, argula, red onions, balsamic vinegar, tomato. Add chicken for $2.00',
+				description: 'Portobellos, argula, red onions, balsamic vinegar, and tomato. Add chicken for $2.00',
 				cost: 5.95,
 				stripeCost: 595,
 			},
@@ -215,7 +233,7 @@ module.exports = {
 
 	// Plantbased //
 	plantbased: {
-		variant: [
+		options: [
 			{
 				id: '',
 				title: 'Beyond Quesadilla',
@@ -257,7 +275,7 @@ module.exports = {
 	signatureSandwiches: {
 		caption: 'Served w/fries',
 
-		variant: [
+		options: [
 			{
 				id: '',
 				title: 'Jamaican Burger',
@@ -283,8 +301,8 @@ module.exports = {
 				id: '',
 				title: 'Chop Cheese Burger',
 				description: '6oz burger with choices of lettuce, tomato, or onions served on an italian roll',
-				cost: 7.50,
-				stripeCost: 750,
+				cost: 6.99,
+				stripeCost: 699,
 			},
 			{
 				id: '',
@@ -335,7 +353,7 @@ module.exports = {
 	specialtySides: {
 		caption: 'French Fries or Tator Tots',
 
-		variant: [
+		options: [
 			{
 				id: '',
 				title: 'plain',
@@ -395,7 +413,7 @@ module.exports = {
 			{
 				id: '',
 				title: 'Funnel Fries',
-				description: 'Funnel description',
+				description: 'Classic Funnel fries',
 				cost: 4.95,
 				stripeCost: 495,
 			},
@@ -404,7 +422,7 @@ module.exports = {
 
 	// Beverages //
 	beverages: {
-		variant: [
+		options: [
 			{
 				id: '',
 				title: 'Bottled Soda',
