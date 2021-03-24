@@ -1,8 +1,12 @@
+// [REQUIRE] Personal //
 const flavors = require('../flavors')
+
 // [EXPORT] //
 module.exports = {
 	// Wings //
-	wings: {
+	wingsAndTenders: {
+		title: 'Wings and Tenders',
+
 		description: 'Crispy/Baked/Boneless Wings',
 
 		options: {
@@ -52,6 +56,8 @@ module.exports = {
 
 	// Sliders //
 	sliders: {
+		title: 'Sliders',
+
 		description: 'Comes with lettuce, onions, tomatos, and pickles',
 
 		options: [
@@ -165,6 +171,10 @@ module.exports = {
 
 	// Appetizers //
 	appetizers: {
+		title: 'Appetizers',
+
+		description: '',
+
 		options: [
 			{
 				id: '',
@@ -213,6 +223,10 @@ module.exports = {
 
 	// Salads //
 	salads: {
+		title: 'Salads',
+
+		description: '',
+
 		options: [
 			{
 				id: '',
@@ -233,6 +247,10 @@ module.exports = {
 
 	// Plantbased //
 	plantbased: {
+		title: 'Plantbased',
+
+		description: '',
+		
 		options: [
 			{
 				id: '',
@@ -272,6 +290,7 @@ module.exports = {
 		],
 	},
 
+	// Signature Sandwhiches //
 	signatureSandwiches: {
 		caption: 'Served w/fries',
 

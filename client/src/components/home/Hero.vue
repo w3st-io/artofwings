@@ -26,7 +26,7 @@
 					>
 					<img
 						:src="col[1]"
-						class="mb-2 w-100 hero-img"
+						class="mb-2 w-100"
 						:data-aos="randomFade()"
 						:data-aos-delay="randomDelay()"
 					>
@@ -98,6 +98,4 @@
 	.hero-text-img {
 		background: rgba(0, 0, 0, 0.48);
 	}
-
-	.hero-img { filter: grayscale(100%); }
 </style>
