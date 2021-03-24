@@ -3,27 +3,27 @@
 # French Fries or Tator Tots
 ### Add $1 more to make into sweet potato
 
-1. Plane
+#### 1. Plane
 Classic side
 
-1. Loaded
+#### 2. Loaded
 Melted cheese, sour cream, and bacon
 
-1. Chicken
+#### 3. Chicken
 Spicy mayo, fried or grilled chicken, crispy onions
 
-1. Burger
+#### 4. Burger
 Melted American cheese, art burger sauce, red onions
 
-5. Fiery
+#### 5. Fiery
 Melted Cheese, Jalapeno, and chili'
 
-6. Cheese
+#### 6. Cheese
 Melted Cheese
 
-7. Funnel
+#### 7. Funnel
 Funnel description
 
 # Other Sides
-1. Mac and cheese
+#### 1. Mac and cheese
 Add bacon for $1.50 more
