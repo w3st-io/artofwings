@@ -331,6 +331,7 @@ module.exports = {
 		]
 	},
 
+	// Specialty Sides //
 	specialtySides: {
 		caption: 'French Fries or Tator Tots',
 
@@ -399,5 +400,25 @@ module.exports = {
 				stripeCost: 495,
 			},
 		],
+	},
+
+	// Beverages //
+	beverages: {
+		variant: [
+			{
+				id: '',
+				title: 'Bottled Soda',
+				description: '',
+				cost: 2.69,
+				stripeCost: 269,
+			},
+			{
+				id: '',
+				title: 'Bottled Water',
+				description: '',
+				cost: 1.69,
+				stripeCost: 169,
+			},
+		]
 	}
 }
