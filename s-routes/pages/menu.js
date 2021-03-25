@@ -4,9 +4,9 @@ const express = require('express')
 
 
 // [REQUIRE] Personal //
-const Auth = require('../../s-middleware/Auth')
-const flavors = require('../../s-defaults/artofwings/flavors')
 const ProductsCollection = require('../../s-collections/ProductsCollection')
+const flavors = require('../../s-defaults/artofwings/flavors')
+const Auth = require('../../s-middleware/Auth')
 
 
 // [EXPRESS + USE] //
