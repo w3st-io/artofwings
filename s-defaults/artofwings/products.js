@@ -1,6 +1,5 @@
 // [EXPORT] //
-
-const products = [
+module.exports = [
 	// wingsAndTenders wings //
 	{
 		id: 'wingsAndTenders-wings-6',
@@ -499,6 +498,3 @@ const products = [
 		stripeCost: 169,
 	},
 ]
-
-
-module.exports = products

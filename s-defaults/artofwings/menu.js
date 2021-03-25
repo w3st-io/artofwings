@@ -2,6 +2,8 @@
 const flavors = require('./flavors')
 const products = require('./products')
 
+
+// [FUNCTION] Get Products //
 const getProducts = (cat, subCat) => {
 	let array = []
 
@@ -13,6 +15,7 @@ const getProducts = (cat, subCat) => {
 
 	return array
 }
+
 
 // [EXPORT] //
 module.exports = {
