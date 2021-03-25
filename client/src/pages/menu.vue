@@ -1,6 +1,6 @@
 <template>
 	<BContainer class="my-3">
-		<BRow>
+		<BRow v-if="!loading && !error">
 			<!-- Wings & Tenders -->
 			<BCol cols="12" md="6" lg="4" xl="3">
 				<h1 class="m-0 text-center font-weight-bold text-primary">
@@ -441,20 +441,43 @@
 				</BListGroup>
 			</BCol>
 		</BRow>
+
+		<BRow v-else>
+			<BCol cols="12">
+				<h5 class="text-danger">{{ error }}</h5>
+			</BCol>
+		</BRow>
 	</BContainer>
 </template>
 
 <script>
-	import pageData from '../defaults/pages/menu'
+	import PageService from '../services/PageService'
 
 	export default {
 		data() {
 			return {
-				pageData: pageData
+				reqData: {},
+				loading: true,
+				error: '',
 			}
 		},
 
+		async created() {
+			await this.getPageData()
+
+			this.log()
+		},
+
 		methods: {
+			async getPageData() {
+				this.reqData = await PageService.s_menu()
+
+				if (this.reqData.status) { this.pageData = this.reqData.menu }
+				else { this.error = this.reqData.message }
+
+				this.loading = false
+			},
+
 			spiceColor(length, index) {
 				index++
 				const increment = 100 / length
@@ -463,6 +486,11 @@
 				const B = 0
 
 				return `${R}, ${G}, ${B}`
+			},
+
+			log() {
+				console.log('%%% [PAGES] Menu %%%')
+				console.log('pageData:', this.pageData)
 			},
 		},
 	}

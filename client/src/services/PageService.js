@@ -190,6 +190,25 @@ async function s_cat(cat_id, sort = 0, limit, page) {
 }
 
 
+// [MENU] //
+async function s_menu() {
+	try {
+		const authAxios = await this.authAxios()
+
+		const { data } = await authAxios.get(`/menu`)
+
+		return data
+	}
+	catch (err) {
+		return {
+			executed: false,
+			status: false,
+			message: `PageService: Error --> ${err}`
+		}
+	}
+}
+
+
 // [POST] //
 async function s_post(post_id, limit, page) {
 	try {
@@ -426,6 +445,7 @@ export default {
 	s_admin_function_users,
 	s_admin_function_users_record,
 	s_cat,
+	s_menu,
 	s_post,
 	s_post_create,
 	s_comment_create,
