@@ -50,6 +50,7 @@ import user_followed from '@/pages/user/followed'
 import user_login from '@/pages/user/login'
 import user_notifications from '@/pages/user/notifications'
 import user_order from '@/pages/user/order'
+import user_order_add from '@/pages/user/order/add'
 import user_password_change from '@/pages/user/password/change'
 import user_password_request from '@/pages/user/password/request'
 import user_password_reset from '@/pages/user/password/reset'
@@ -384,6 +385,15 @@ const router = new Router ({
 			meta: {
 				auth: true,
 				title: 'Your Order'
+			}
+		},
+		{
+			path: '/user/order/add/:product_id',
+			name: 'user_order',
+			component: user_order_add,
+			meta: {
+				auth: true,
+				title: 'Add to Order'
 			}
 		},
 		{

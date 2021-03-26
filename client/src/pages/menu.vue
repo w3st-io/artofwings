@@ -59,10 +59,12 @@
 								cols="12"
 								class="text-center"
 							>
-								<BButton
-									variant="secondary"
-									class="w-100"
-								>Add to Order</BButton>
+								<RouterLink :to="`/user/order/add/${variant.id}`">
+									<BButton
+										variant="secondary"
+										class="w-100"
+									>Add to Order</BButton>
+								</RouterLink>
 							</BCol>
 						</BRow>
 					</BListGroupItem>
