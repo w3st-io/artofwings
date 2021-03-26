@@ -4,8 +4,8 @@ module.exports = {
 	companyName: 'Art of Wings',
 	companyCaption: 'Est. 2021',
 
-	address: '123 Main St. Teaneck, NJ 07666',
-	googleMapsLink: 'https://www.google.com/maps?q=google+maps&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjDmt_7-9HuAhVlUN8KHfY4BxEQ_AUoAXoECAoQAw',
+	address: '48 College Ave, New Brunswick, NJ 08901',
+	googleMapsLink: 'https://www.google.com/maps/place/48+College+Ave,+New+Brunswick,+NJ+08901/@40.4994828,-74.4508458,17z/data=!3m1!4b1!4m5!3m4!1s0x89c3c65441b020cd:0xb1b7ac9a77ce5156!8m2!3d40.4994828!4d-74.4486571',
 	googleMapsImage: '',
 	
 	hoursOfOperation: [

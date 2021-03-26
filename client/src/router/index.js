@@ -30,6 +30,8 @@ import components_bcarousel from '@/pages/components/bcarousel'
 import components_conveyor from '@/pages/components/conveyor'
 import components_getQuote from '@/pages/components/get-quote'
 import components_parallax from '@/pages/components/parallax'
+// Directions //
+import directions from '@/pages/directions'
 // Email //
 import emailSent from '@/pages/email-sent'
 // Gallery //
@@ -250,6 +252,16 @@ const router = new Router ({
 			meta: {
 				auth: true,
 				title: 'Reply to Comment'
+			}
+		},
+		// Directions //
+		{
+			path: '/directions',
+			name: 'directions',
+			component: directions,
+			meta: {
+				auth: true,
+				title: 'Find Us!'
 			}
 		},
 		// Email //
