@@ -131,13 +131,6 @@ router.get(
 								'FrienchFriesOrTatorTots'
 							),
 						},
-						{
-							title: 'Extras',
-							variants: await ProductsCollection.c_readByCatAndSubCat(
-								'specialtySides',
-								'extras'
-							),
-						},
 					]
 				},
 
@@ -170,13 +163,6 @@ router.get(
 							variants: await ProductsCollection.c_readByCatAndSubCat(
 								'salads',
 								'classic'
-							),
-						},
-						{
-							title: 'Extras',
-							variants: await ProductsCollection.c_readByCatAndSubCat(
-								'salads',
-								'extras'
 							),
 						},
 					]
