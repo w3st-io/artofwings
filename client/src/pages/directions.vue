@@ -1,6 +1,6 @@
 <template>
-	<div class="my-5">
-		<BContainer fluid class="my-5">
+	<div class="py-3">
+		<BContainer fluid>
 			<BRow>
 				<BCol cols="12" class="mb-3 text-center text-primary">
 					<h1 class="font-weight-bold">Get Directions</h1>
@@ -16,10 +16,7 @@
 
 				<BCol cols="12" class="mb-3 text-center">
 					<a :href="companyInfo.googleMapsLink">
-						<BButton
-							variant="primary"
-							size="lg"
-						>
+						<BButton variant="primary" size="lg">
 							<MapPinIcon />
 							Open Google Maps
 						</BButton>
