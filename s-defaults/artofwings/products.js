@@ -80,15 +80,6 @@ module.exports = [
 
 	// sliders toppings //
 	{
-		id: 'sliders-toppings-extra-patty',
-		cat: 'sliders',
-		subCat: 'toppings',
-		title: 'Extra Patty',
-		description: '',
-		cost: 1.00,
-		stripeCost: 100,
-	},
-	{
 		id: 'sliders-toppings-sauteed-onions',
 		cat: 'sliders',
 		subCat: 'toppings',
@@ -152,6 +143,17 @@ module.exports = [
 		stripeCost: 75,
 	},
 
+	// sliders extras //
+	{
+		id: 'sliders-extras-patty',
+		cat: 'sliders',
+		subCat: 'extras',
+		title: 'Patty',
+		description: '',
+		cost: 1.00,
+		stripeCost: 100,
+	},
+
 	// sliders additions //
 	{
 		id: 'sliders-additions-add-any-art-appetizer',
@@ -183,7 +185,7 @@ module.exports = [
 		stripeCost: 899,
 	},
 	{
-		id: 'signatureDishes-burgers-bbq-burgers',
+		id: 'signatureDishes-burgers-bbq-burger',
 		cat: 'signatureDishes',
 		subCat: 'burgers',
 		title: 'BBQ Burger',
@@ -192,7 +194,7 @@ module.exports = [
 		stripeCost: 750,
 	},
 	{
-		id: 'signatureDishes-burgers-spicy-art-burgers',
+		id: 'signatureDishes-burgers-spicy-art-burger',
 		cat: 'signatureDishes',
 		subCat: 'burgers',
 		title: 'Spicy Art Burger',
@@ -216,9 +218,18 @@ module.exports = [
 		cat: 'signatureDishes',
 		subCat: 'sandwiches',
 		title: 'Grilled Cheese Sandwich',
-		description: 'Add bacon, lettuce, and tomato for $2.00',
+		description: 'Classic grilled cheese sandwich',
 		cost: 4.99,
 		stripeCost: 499,
+	},
+	{
+		id: 'signatureDishes-sandwiches-deluxe',
+		cat: 'signatureDishes',
+		subCat: 'sandwiches',
+		title: 'Grilled Cheese Sandwich Deluxe',
+		description: 'Grilled cheese sandwich with bacon, lettuce, & tomatos',
+		cost: 6.99,
+		stripeCost: 699,
 	},
 	{
 		id: 'signatureDishes-sandwiches-classic-chicken-sandwich',
@@ -351,9 +362,20 @@ module.exports = [
 		stripeCost: 495,
 	},
 
+	// specialtySides extras //
+	{
+		id: 'specialtySides-extras-bacon',
+		cat: 'specialtySides',
+		subCat: 'extras',
+		title: 'bacon',
+		description: '',
+		cost: 1.50,
+		stripeCost: 150,
+	},
+
 	// appetizers classic //
 	{
-		id: 'appetizer-classic-quesadilla',
+		id: 'appetizers-classic-quesadilla',
 		cat: 'appetizers',
 		subCat: 'classic',
 		title: 'Quesadilla',
@@ -362,7 +384,7 @@ module.exports = [
 		stripeCost: 599,
 	},
 	{
-		id: 'appetizer-classic-friend-mac-and-cheese-bites',
+		id: 'appetizers-classic-friend-mac-and-cheese-bites',
 		cat: 'appetizers',
 		subCat: 'classic',
 		title: 'Fried Mac and Cheese Bites',
@@ -371,7 +393,7 @@ module.exports = [
 		stripeCost: 599,
 	},
 	{
-		id: 'appetizer-classic-fried-cauliflower-pops',
+		id: 'appetizers-classic-fried-cauliflower-pops',
 		cat: 'appetizers',
 		subCat: 'classic',
 		title: 'Fried Cauliflower Pops',
@@ -380,7 +402,7 @@ module.exports = [
 		stripeCost: 499,
 	},
 	{
-		id: 'appetizer-classic-fried-pickles',
+		id: 'appetizers-classic-fried-pickles',
 		cat: 'appetizers',
 		subCat: 'classic',
 		title: 'Fried Pickles',
@@ -389,7 +411,7 @@ module.exports = [
 		stripeCost: 599,
 	},
 	{
-		id: 'appetizer-classic-mozzerella-sticks',
+		id: 'appetizers-classic-mozzerella-sticks',
 		cat: 'appetizers',
 		subCat: 'classic',
 		title: 'Mozzerella Sticks',
@@ -398,13 +420,33 @@ module.exports = [
 		stripeCost: 499,
 	},
 	{
-		id: 'appetizer-classic-onion-rings',
+		id: 'appetizers-classic-onion-rings',
 		cat: 'appetizers',
 		subCat: 'classic',
 		title: 'Onion Rings',
 		description: '',
 		cost: 2.99,
 		stripeCost: 299,
+	},
+
+	// appetizers extras //
+	{
+		id: 'appetizers-extras-chicken',
+		cat: 'appetizers',
+		subCat: 'extras',
+		title: 'Chicken',
+		description: '',
+		cost: 1.50,
+		stripeCost: 150,
+	},
+	{
+		id: 'appetizers-extras-beef',
+		cat: 'appetizers',
+		subCat: 'extras',
+		title: 'Beef',
+		description: '',
+		cost: 1.50,
+		stripeCost: 150,
 	},
 
 	// salads classic //
@@ -425,6 +467,16 @@ module.exports = [
 		description: 'Portobellos, argula, red onions, balsamic vinegar, and tomato. Add chicken for $2.00',
 		cost: 5.95,
 		stripeCost: 595,
+	},
+	// salads extras //
+	{
+		id: 'salads-extras-chicken',
+		cat: 'salads',
+		subCat: 'extras',
+		title: 'Chicken',
+		description: '',
+		cost: 2.00,
+		stripeCost: 200,
 	},
 
 	// plantbased beyond //

@@ -6,6 +6,7 @@ const express = require('express')
 // [REQUIRE] Personal //
 const ProductsCollection = require('../../s-collections/ProductsCollection')
 const flavors = require('../../s-defaults/artofwings/flavors')
+const sauces = require('../../s-defaults/artofwings/sauces')
 const Auth = require('../../s-middleware/Auth')
 
 
@@ -37,12 +38,12 @@ router.get(
 							title: 'Tenders',
 							variants: await ProductsCollection.c_readByCatAndSubCat(
 								'wingsAndTenders',
-								'wings'
+								'tenders'
 							),
 						}
 					],
 			
-					flavors: flavors.flavors
+					flavors: flavors,
 				},
 			
 				// Sliders //
@@ -67,6 +68,13 @@ router.get(
 							),
 						},
 						{
+							title: 'Extras',
+							variants: await ProductsCollection.c_readByCatAndSubCat(
+								'sliders',
+								'extras'
+							),
+						},
+						{
 							title: 'Additions',
 							variants: await ProductsCollection.c_readByCatAndSubCat(
 								'sliders',
@@ -75,13 +83,7 @@ router.get(
 						},
 					],
 			
-					sauces: [
-						'Spicy Mayo',
-						'Chipotle Mayo',
-						'Teriyaki Aoli',
-						'Thousand Island',
-						'BBQ',
-					],
+					sauces: sauces
 				},
 			
 				// Signature Dishes //
@@ -111,7 +113,7 @@ router.get(
 								'signatureDishes',
 								'subs'
 							),
-						}
+						},
 					]
 				},
 			
@@ -127,6 +129,13 @@ router.get(
 							variants: await ProductsCollection.c_readByCatAndSubCat(
 								'specialtySides',
 								'FrienchFriesOrTatorTots'
+							),
+						},
+						{
+							title: 'Extras',
+							variants: await ProductsCollection.c_readByCatAndSubCat(
+								'specialtySides',
+								'extras'
 							),
 						},
 					]
@@ -146,6 +155,13 @@ router.get(
 								'classic'
 							),
 						},
+						{
+							title: 'Extras',
+							variants: await ProductsCollection.c_readByCatAndSubCat(
+								'appetizers',
+								'extras'
+							),
+						},
 					]
 				},
 			
@@ -161,6 +177,13 @@ router.get(
 							variants: await ProductsCollection.c_readByCatAndSubCat(
 								'salads',
 								'classic'
+							),
+						},
+						{
+							title: 'Extras',
+							variants: await ProductsCollection.c_readByCatAndSubCat(
+								'salads',
+								'extras'
 							),
 						},
 					]

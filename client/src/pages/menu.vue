@@ -33,7 +33,9 @@
 					>
 						<div>
 							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p>{{ variant.description }}</p>
+							<p v-if="variant.description">
+								{{ variant.description }}
+							</p>
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
@@ -99,7 +101,9 @@
 					>
 						<div>
 							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p>{{ variant.description }}</p>
+							<p v-if="variant.description">
+								{{ variant.description }}
+							</p>
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
@@ -117,11 +121,11 @@
 					</BListGroupItem>
 
 					<BListGroupItem
-						v-for="(option, i) in pageData.sliders.sauces"
+						v-for="(sauce, i) in pageData.sliders.sauces"
 						:key="i"
 						variant="secondary"
 						class="text-center"
-					><h4 class="m-0">{{ option }}</h4></BListGroupItem>
+					><h4 class="m-0">{{ sauce.title }}</h4></BListGroupItem>
 				</BListGroup>
 			</BCol>
 
@@ -157,7 +161,9 @@
 					>
 						<div>
 							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p>{{ variant.description }}</p>
+							<p v-if="variant.description">
+								{{ variant.description }}
+							</p>
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
@@ -199,7 +205,9 @@
 					>
 						<div>
 							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p>{{ variant.description }}</p>
+							<p v-if="variant.description">
+								{{ variant.description }}
+							</p>
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
@@ -241,7 +249,9 @@
 					>
 						<div>
 							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p>{{ variant.description }}</p>
+							<p v-if="variant.description">
+								{{ variant.description }}
+							</p>
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
@@ -283,7 +293,9 @@
 					>
 						<div>
 							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p>{{ variant.description }}</p>
+							<p v-if="variant.description">
+								{{ variant.description }}
+							</p>
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
@@ -325,7 +337,9 @@
 					>
 						<div>
 							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p>{{ variant.description }}</p>
+							<p v-if="variant.description">
+								{{ variant.description }}
+							</p>
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
@@ -367,7 +381,9 @@
 					>
 						<div>
 							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p>{{ variant.description }}</p>
+							<p v-if="variant.description">
+								{{ variant.description }}
+							</p>
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">

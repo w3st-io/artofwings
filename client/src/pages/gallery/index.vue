@@ -2,7 +2,7 @@
 	<BContainer class="my-3">
 		<BRow>
 			<!-- Season 1 -->
-			<BCol cols="12" sm="6" md="4">
+			<BCol cols="12" sm="6" md="4" class="mb-3">
 				<RouterLink to="/gallery/season-one" class="icon">
 					<div class="gallery-center">
 						<h2 class="text-secondary label">Season One</h2>
@@ -13,7 +13,7 @@
 			</BCol>
 
 			<!-- Season 2 -->
-			<BCol cols="12" sm="6" md="4">
+			<BCol cols="12" sm="6" md="4" class="mb-3">
 				<RouterLink to="/gallery/season-two" class="icon">
 					<div class="gallery-center">
 						<h2 class="text-secondary label">Season Two</h2>
