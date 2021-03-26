@@ -1,7 +1,7 @@
 <template>
 	<div class="mb-5">
 		<!-- Hero -->
-		<BContainer fluid class="mb-3 py-2 text-center">
+		<BContainer fluid class="py-2 text-center">
 			<Hero
 				:centerImg="pageData.cnt1.heroCenterImg"
 				:backgroundImgs="pageData.cnt1.heroBackgoundImgs"
@@ -9,11 +9,11 @@
 			/>
 		</BContainer>
 
-		<hr class="bg-light">
-
 		<!-- SugggestionConveyor -->
-		<BContainer class="m3 text-center">
-			<SuggestionConveyor :slides="pageData.cnt2.slides" />
+		<BContainer fluid class="m-0 py-3 bg-light">
+			<BContainer class="m3 text-center">
+				<SuggestionConveyor :slides="pageData.cnt2.slides" />
+			</BContainer>
 		</BContainer>
 
 		<!-- Sections -->

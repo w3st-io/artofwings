@@ -1,9 +1,9 @@
 <template>
-	<BContainer class="my-3">
+	<BContainer fluid class="my-3">
 		<BRow v-if="!loading && !error">
 			<BCol
-				v-for="(section, index) in pageData.menu" :key="index"
-				cols="12" md="6" lg="4" xl="3"
+				v-for="(section, i) in pageData.menu" :key="i"
+				cols="12" md="6" lg="4" :xl="colSizeSetter(i)"
 			>
 				<h1 class="m-0 text-center font-weight-bold text-primary">
 					{{ section.title }}
@@ -54,7 +54,7 @@
 							<BCol cols="12" class="text-center">
 								<BButton
 									variant="secondary"
-									class="w-100 shadow"
+									class="w-100"
 								>Add to Order</BButton>
 							</BCol>
 						</BRow>
@@ -73,15 +73,11 @@
 						v-for="(option, i) in section.flavors"
 						:key="i"
 						class="p-0 text-center"
-						:style="
-							'background-color: rgb(' +
-							spiceColor(section.flavors.length, i) +
-							');'
-						"
+						:style="spiceColor(section.flavors.length, i)"
 					>
-						<h3 class="m-0 px-5 py-0 text-light">
+						<h5 class="m-0 px-5 py-0 text-light">
 							{{ option.title }}
-						</h3>
+						</h5>
 					</BListGroupItem>
 				</BListGroup>
 				
@@ -96,9 +92,9 @@
 					<BListGroupItem
 						v-for="(sauce, i) in section.sauces"
 						:key="i"
-						variant="secondary"
-						class="text-center"
-					><h4 class="m-0">{{ sauce.title }}</h4></BListGroupItem>
+						variant="info"
+						class="p-1 text-center"
+					><h5 class="m-0">{{ sauce.title }}</h5></BListGroupItem>
 				</BListGroup>
 			</BCol>
 		</BRow>
@@ -139,6 +135,26 @@
 				this.loading = false
 			},
 
+			colSizeSetter(index) {
+				let value = 3
+
+				switch (index) {
+					case 0:
+						value = 4
+						break
+						
+					case 1:
+						value = 4
+						break
+
+					case 2:
+						value = 4
+						break
+				}
+
+				return value
+			},
+
 			spiceColor(length, index) {
 				index++
 				const increment = 100 / length
@@ -146,7 +162,7 @@
 				const G = (255 * (100 - (index * increment))) / 100 
 				const B = 0
 
-				return `${R}, ${G}, ${B}`
+				return `background-color: rgb(${R}, ${G}, ${B});`
 			},
 
 			log() {

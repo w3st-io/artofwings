@@ -20,7 +20,7 @@
 
 					<p>{{ slide.description }}</p>
 
-					<BButton variant="primary" size="lg" class="w-100 shadow">
+					<BButton variant="primary" size="lg" class="w-100 px-5 shadow">
 						Check it Out
 					</BButton>
 				</div>
@@ -111,7 +111,7 @@
 				sliders: [
 					// LG
 					{
-						class: 'd-none d-lg-block my-3',
+						class: 'd-none d-lg-block my-3 px-3',
 						options: {
 							container: '.my-slider',
 							items: 3,
@@ -128,7 +128,7 @@
 					},
 					// MD
 					{
-						class: 'd-none d-md-block d-lg-none my-3',
+						class: 'd-none d-md-block d-lg-none my-3 px-3',
 						options: {
 							items: 2,
 							gutter: 20,
@@ -144,7 +144,7 @@
 					},
 					// SM
 					{
-						class: 'd-none d-sm-block d-md-none my-3',
+						class: 'd-none d-sm-block d-md-none my-3 px-3',
 						options: {
 							items: 1,
 							gutter: 20,
@@ -160,7 +160,7 @@
 					},
 					// XS
 					{
-						class: 'd-block d-sm-none my-3',
+						class: 'd-block d-sm-none my-3 px-3',
 						options: {
 							items: 1,
 							gutter: 20,
