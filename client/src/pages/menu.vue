@@ -108,62 +108,6 @@
 					</BListGroupItem>
 				</BListGroup>
 
-				<!-- Toppings -->
-				<BListGroup class="mb-4">
-					<BListGroupItem variant="secondary" class="text-center">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">
-								Add Toppings
-							</span>
-						</h4>
-					</BListGroupItem>
-
-					<BListGroupItem
-						v-for="(option, i) in pageData.sliders.toppings"
-						:key="i"
-						variant="secondary"
-						class="d-flex justify-content-between align-items-center"
-					>
-						<div>
-							<h5 class="text-dark">{{ option.title }}</h5>
-							<p>{{ option.description }}</p>
-						</div>
-
-						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ option.cost.toFixed(2) }}</h5>
-						</BBadge>
-					</BListGroupItem>
-				</BListGroup>
-
-
-				<!-- Additions -->
-				<BListGroup class="mb-4">
-					<BListGroupItem variant="secondary" class="text-center">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">
-								Additions
-							</span>
-						</h4>
-					</BListGroupItem>
-
-					<BListGroupItem
-						v-for="(option, i) in pageData.sliders.additions"
-						:key="i"
-						variant="secondary"
-						class="d-flex justify-content-between align-items-center"
-					>
-						<div>
-							<h5 class="text-dark">{{ option.title }}</h5>
-							<p>{{ option.description }}</p>
-						</div>
-
-						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ option.cost.toFixed(2) }}</h5>
-						</BBadge>
-					</BListGroupItem>
-				</BListGroup>
-
-
 				<!-- Sauces -->
 				<BListGroup class="mb-4">
 					<BListGroupItem variant="secondary" class="text-center">
@@ -498,6 +442,6 @@
 
 <style scoped>
 	.custom-badge {
-		font-family: 'Courier New', Courier, monospace;
+		font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	}
 </style>

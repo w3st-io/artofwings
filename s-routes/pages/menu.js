@@ -59,17 +59,21 @@ router.get(
 								'sliders'
 							),
 						},
+						{
+							title: 'Toppings',
+							variants: await ProductsCollection.c_readByCatAndSubCat(
+								'sliders',
+								'toppings'
+							),
+						},
+						{
+							title: 'Additions',
+							variants: await ProductsCollection.c_readByCatAndSubCat(
+								'sliders',
+								'additions'
+							),
+						},
 					],
-			
-					toppings: await ProductsCollection.c_readByCatAndSubCat(
-						'sliders',
-						'toppings'
-					),
-			
-					additions: await ProductsCollection.c_readByCatAndSubCat(
-						'sliders',
-						'additions'
-					),
 			
 					sauces: [
 						'Spicy Mayo',
