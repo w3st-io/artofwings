@@ -36,9 +36,9 @@
 					>
 						<BRow>
 							<BCol cols="9" class="pr-0 text-primary">
-								<h4 class="font-weight-bold">
+								<h5 class="font-weight-bold">
 									{{ variant.title }}
-								</h4>
+								</h5>
 							</BCol>
 								
 							<BCol cols="3" class="pl-0 text-right text-dark">
@@ -51,7 +51,14 @@
 								<p>{{ variant.description }}</p>
 							</BCol>
 
-							<BCol cols="12" class="text-center">
+							<BCol
+								v-if="
+									variant.subCat != 'extras' &&
+									variant.subCat != 'toppings'
+								"
+								cols="12"
+								class="text-center"
+							>
 								<BButton
 									variant="secondary"
 									class="w-100"
