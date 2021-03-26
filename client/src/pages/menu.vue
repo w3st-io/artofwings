@@ -119,17 +119,9 @@
 					<BListGroupItem
 						v-for="(option, i) in pageData.sliders.sauces"
 						:key="i"
-						class="p-0 text-center"
-						:style="
-							'background-color: rgb(' +
-								spiceColor(pageData.sliders.sauces.length, i) + 
-							');'
-						"
-					>
-						<h3 class="m-0 px-5 py-0 text-light">
-							{{ option }}
-						</h3>
-					</BListGroupItem>
+						variant="secondary"
+						class="text-center"
+					><h4 class="m-0">{{ option }}</h4></BListGroupItem>
 				</BListGroup>
 			</BCol>
 
