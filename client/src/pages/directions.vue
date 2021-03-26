@@ -3,7 +3,7 @@
 		<BContainer fluid>
 			<BRow>
 				<BCol cols="12" class="mb-3 text-center text-primary">
-					<h1 class="font-weight-bold">Get Directions</h1>
+					<h1 class="font-weight-bold">Find Us</h1>
 				</BCol>
 				
 				<BCol cols="12" class="mb-3">

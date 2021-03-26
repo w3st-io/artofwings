@@ -54,7 +54,7 @@
 							<BCol cols="12" class="text-center">
 								<BButton
 									variant="secondary"
-									class="w-100"
+									class="w-100 shadow"
 								>Add to Order</BButton>
 							</BCol>
 						</BRow>
