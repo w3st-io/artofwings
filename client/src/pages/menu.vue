@@ -35,13 +35,13 @@
 						class="py-4"
 					>
 						<BRow>
-							<BCol cols="8" class="text-primary">
+							<BCol cols="9" class="pr-0 text-primary">
 								<h4 class="font-weight-bold">
 									{{ variant.title }}
 								</h4>
 							</BCol>
 								
-							<BCol cols="4" class="text-right text-dark">
+							<BCol cols="3" class="pl-0 text-right text-dark">
 								<h5 class="m-0 custom-badge">
 									${{ variant.cost.toFixed(2) }}
 								</h5>
