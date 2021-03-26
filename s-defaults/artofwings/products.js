@@ -379,9 +379,27 @@ module.exports = [
 		cat: 'appetizers',
 		subCat: 'classic',
 		title: 'Quesadilla',
-		description: 'Add Chicken or Beef for $1.50',
+		description: '',
 		cost: 5.99,
 		stripeCost: 599,
+	},
+	{
+		id: 'appetizers-classic-chicken-quesadilla',
+		cat: 'appetizers',
+		subCat: 'classic',
+		title: 'Chicken Quesadilla',
+		description: '',
+		cost: 7.49,
+		stripeCost: 749,
+	},
+	{
+		id: 'appetizers-classic-beef-quesadilla',
+		cat: 'appetizers',
+		subCat: 'classic',
+		title: 'Beef Quesadilla',
+		description: '',
+		cost: 7.49,
+		stripeCost: 749,
 	},
 	{
 		id: 'appetizers-classic-friend-mac-and-cheese-bites',
@@ -427,26 +445,6 @@ module.exports = [
 		description: '',
 		cost: 2.99,
 		stripeCost: 299,
-	},
-
-	// appetizers extras //
-	{
-		id: 'appetizers-extras-chicken',
-		cat: 'appetizers',
-		subCat: 'extras',
-		title: 'Chicken',
-		description: '',
-		cost: 1.50,
-		stripeCost: 150,
-	},
-	{
-		id: 'appetizers-extras-beef',
-		cat: 'appetizers',
-		subCat: 'extras',
-		title: 'Beef',
-		description: '',
-		cost: 1.50,
-		stripeCost: 150,
 	},
 
 	// salads classic //

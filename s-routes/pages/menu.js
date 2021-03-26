@@ -155,13 +155,6 @@ router.get(
 								'classic'
 							),
 						},
-						{
-							title: 'Extras',
-							variants: await ProductsCollection.c_readByCatAndSubCat(
-								'appetizers',
-								'extras'
-							),
-						},
 					]
 				},
 
