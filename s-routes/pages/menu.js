@@ -19,9 +19,9 @@ router.get(
 	Auth.userTokenNotRequired(),
 	async (req, res) => {
 		try {
-			menu = {
+			menu = [
 				// Wings //
-				wingsAndTenders: {
+				{
 					title: 'Wings & Tenders',
 			
 					description: 'Crispy/Baked/Boneless Wings',
@@ -45,9 +45,9 @@ router.get(
 			
 					flavors: flavors,
 				},
-			
+
 				// Sliders //
-				sliders: {
+				{
 					title: 'Sliders',
 			
 					description: 'Comes with lettuce, onions, tomatos, and pickles',
@@ -85,9 +85,9 @@ router.get(
 			
 					sauces: sauces
 				},
-			
+				
 				// Signature Dishes //
-				signatureDishes: {
+				{
 					title: 'Signature Dishes',
 			
 					description: 'Served w/fries',
@@ -116,9 +116,9 @@ router.get(
 						},
 					]
 				},
-			
+
 				// Specialty Sides //
-				specialtySides: {
+				{
 					title: 'Specialty Sides',
 			
 					description: '',
@@ -140,9 +140,9 @@ router.get(
 						},
 					]
 				},
-			
+
 				// Appetizers //
-				appetizers: {
+				{
 					title: 'Appetizers',
 			
 					description: '',
@@ -164,9 +164,9 @@ router.get(
 						},
 					]
 				},
-			
+
 				// Salads //
-				salads: {
+				{
 					title: 'Salads',
 			
 					description: '',
@@ -188,9 +188,9 @@ router.get(
 						},
 					]
 				},
-			
+
 				// Plantbased //
-				plantbased: {
+				{
 					title: 'Plantbased',
 			
 					description: '',
@@ -212,9 +212,9 @@ router.get(
 						}
 					],
 				},
-			
+
 				// Beverages //
-				beverages: {
+				{
 					title: 'Beverages',
 			
 					description: '',
@@ -236,7 +236,7 @@ router.get(
 						}
 					]
 				}
-			}
+			]
 
 			res.status(200).send({
 				executed: true,

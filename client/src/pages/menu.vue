@@ -1,21 +1,24 @@
 <template>
 	<BContainer class="my-3">
 		<BRow v-if="!loading && !error">
-			<!-- Wings & Tenders -->
-			<BCol cols="12" md="6" lg="4" xl="3">
+			<BCol
+				v-for="(section, index) in pageData.menu" :key="index"
+				cols="12" md="6" lg="4" xl="3"
+			>
 				<h1 class="m-0 text-center font-weight-bold text-primary">
-					{{ pageData.wingsAndTenders.title }}
+					{{ section.title }}
 				</h1>
 				<h4 class="mb-3 text-center text-secondary">
-					{{ pageData.wingsAndTenders.description }}
+					{{ section.description }}
 				</h4>
 
 				<!-- Options -->
 				<BListGroup
-					v-for="(option, i) in pageData.wingsAndTenders.options"
+					v-for="(option, i) in section.options"
 					:key="i"
 					class="mb-4"
 				>
+					<!-- Title -->
 					<BListGroupItem v-if="option.title" variant="secondary">
 						<h4 class="m-0 text-center">
 							<span class="font-weight-bold text-primary">
@@ -24,28 +27,42 @@
 						</h4>
 					</BListGroupItem>
 
-					<!-- Variants -->
+					<!-- variants -->
 					<BListGroupItem
 						v-for="(variant, i) in option.variants"
 						:key="i"
 						variant="secondary"
-						class="d-flex justify-content-between align-items-center"
+						class="py-4"
 					>
-						<div>
-							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p v-if="variant.description">
-								{{ variant.description }}
-							</p>
-						</div>
+						<BRow>
+							<BCol cols="8" class="text-primary">
+								<h4 class="font-weight-bold">
+									{{ variant.title }}
+								</h4>
+							</BCol>
+								
+							<BCol cols="4" class="text-right text-dark">
+								<h5 class="m-0 custom-badge">
+									${{ variant.cost.toFixed(2) }}
+								</h5>
+							</BCol>
 
-						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
-						</BBadge>
+							<BCol v-if="variant.description" cols="12">
+								<p>{{ variant.description }}</p>
+							</BCol>
+
+							<BCol cols="12" class="text-center">
+								<BButton
+									variant="primary"
+									class="w-100"
+								>Add to Order</BButton>
+							</BCol>
+						</BRow>
 					</BListGroupItem>
 				</BListGroup>
 
 				<!-- Flavor Options -->
-				<BListGroup class="mb-3">
+				<BListGroup v-if="section.flavors" class="mb-3">
 					<BListGroupItem variant="secondary" class="text-center">
 						<h4 class="m-0 text-center">
 							<span class="font-weight-bold text-primary">Flavors</span>
@@ -53,12 +70,12 @@
 					</BListGroupItem>
 
 					<BListGroupItem
-						v-for="(option, i) in pageData.wingsAndTenders.flavors"
+						v-for="(option, i) in section.flavors"
 						:key="i"
 						class="p-0 text-center"
 						:style="
 							'background-color: rgb(' +
-							spiceColor(pageData.wingsAndTenders.flavors.length, i) +
+							spiceColor(section.flavors.length, i) +
 							');'
 						"
 					>
@@ -67,53 +84,9 @@
 						</h3>
 					</BListGroupItem>
 				</BListGroup>
-			</BCol>
-
-			<!-- Sliders -->
-			<BCol cols="12" md="6" lg="4" xl="3">
-				<h1 class="m-0 text-center font-weight-bold text-primary">
-					{{ pageData.sliders.title }}
-				</h1>
-				<h4 class="mb-3 text-center text-secondary">
-					{{ pageData.sliders.description }}
-				</h4>
-
-				<!-- Options -->
-				<BListGroup
-					v-for="(option, i) in pageData.sliders.options"
-					:key="i"
-					class="mb-4"
-				>
-					<BListGroupItem v-if="option.title" variant="secondary">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">
-								{{ option.title }}
-							</span>
-						</h4>
-					</BListGroupItem>
-
-					<!-- Variants -->
-					<BListGroupItem
-						v-for="(variant, i) in option.variants"
-						:key="i"
-						variant="secondary"
-						class="d-flex justify-content-between align-items-center"
-					>
-						<div>
-							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p v-if="variant.description">
-								{{ variant.description }}
-							</p>
-						</div>
-
-						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
-						</BBadge>
-					</BListGroupItem>
-				</BListGroup>
-
+				
 				<!-- Sauces -->
-				<BListGroup class="mb-4">
+				<BListGroup v-if="section.sauces" class="mb-4">
 					<BListGroupItem variant="secondary" class="text-center">
 						<h4 class="m-0 text-center">
 							<span class="font-weight-bold text-primary">Sauces</span>
@@ -121,275 +94,11 @@
 					</BListGroupItem>
 
 					<BListGroupItem
-						v-for="(sauce, i) in pageData.sliders.sauces"
+						v-for="(sauce, i) in section.sauces"
 						:key="i"
 						variant="secondary"
 						class="text-center"
 					><h4 class="m-0">{{ sauce.title }}</h4></BListGroupItem>
-				</BListGroup>
-			</BCol>
-
-			<!-- Signature Dishes -->
-			<BCol cols="12" md="6" lg="4" xl="3">
-				<h1 class="m-0 text-center font-weight-bold text-primary">
-					{{ pageData.signatureDishes.title }}
-				</h1>
-				<h4 class="mb-3 text-center text-secondary">
-					{{ pageData.signatureDishes.description }}
-				</h4>
-
-				<!-- Options -->
-				<BListGroup
-					v-for="(option, i) in pageData.signatureDishes.options"
-					:key="i"
-					class="mb-4"
-				>
-					<BListGroupItem v-if="option.title" variant="secondary">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">
-								{{ option.title }}
-							</span>
-						</h4>
-					</BListGroupItem>
-
-					<!-- Variants -->
-					<BListGroupItem
-						v-for="(variant, i) in option.variants"
-						:key="i"
-						variant="secondary"
-						class="d-flex justify-content-between align-items-center"
-					>
-						<div>
-							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p v-if="variant.description">
-								{{ variant.description }}
-							</p>
-						</div>
-
-						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
-						</BBadge>
-					</BListGroupItem>
-				</BListGroup>
-			</BCol>
-
-			<!-- Specialty Sides -->
-			<BCol cols="12" md="6" lg="4" xl="3">
-				<h1 class="m-0 text-center font-weight-bold text-primary">
-					{{ pageData.specialtySides.title }}
-				</h1>
-				<h4 class="mb-3 text-center text-secondary">
-					{{ pageData.specialtySides.description }}
-				</h4>
-
-				<!-- Options -->
-				<BListGroup
-					v-for="(option, i) in pageData.specialtySides.options"
-					:key="i"
-					class="mb-4"
-				>
-					<BListGroupItem v-if="option.title" variant="secondary">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">
-								{{ option.title }}
-							</span>
-						</h4>
-					</BListGroupItem>
-
-					<!-- Variants -->
-					<BListGroupItem
-						v-for="(variant, i) in option.variants"
-						:key="i"
-						variant="secondary"
-						class="d-flex justify-content-between align-items-center"
-					>
-						<div>
-							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p v-if="variant.description">
-								{{ variant.description }}
-							</p>
-						</div>
-
-						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
-						</BBadge>
-					</BListGroupItem>
-				</BListGroup>
-			</BCol>
-
-			<!-- Appetizers -->
-			<BCol cols="12" md="6" lg="4" xl="3">
-				<h1 class="m-0 text-center font-weight-bold text-primary">
-					{{ pageData.appetizers.title }}
-				</h1>
-				<h4 class="mb-3 text-center text-secondary">
-					{{ pageData.appetizers.description }}
-				</h4>
-
-				<!-- Options -->
-				<BListGroup
-					v-for="(option, i) in pageData.appetizers.options"
-					:key="i"
-					class="mb-4"
-				>
-					<BListGroupItem v-if="option.title" variant="secondary">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">
-								{{ option.title }}
-							</span>
-						</h4>
-					</BListGroupItem>
-
-					<!-- Variants -->
-					<BListGroupItem
-						v-for="(variant, i) in option.variants"
-						:key="i"
-						variant="secondary"
-						class="d-flex justify-content-between align-items-center"
-					>
-						<div>
-							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p v-if="variant.description">
-								{{ variant.description }}
-							</p>
-						</div>
-
-						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
-						</BBadge>
-					</BListGroupItem>
-				</BListGroup>
-			</BCol>
-
-			<!-- Salad -->
-			<BCol cols="12" md="6" lg="4" xl="3">
-				<h1 class="m-0 text-center font-weight-bold text-primary">
-					{{ pageData.salads.title }}
-				</h1>
-				<h4 class="mb-3 text-center text-secondary">
-					{{ pageData.salads.description }}
-				</h4>
-
-				<!-- Options -->
-				<BListGroup
-					v-for="(option, i) in pageData.salads.options"
-					:key="i"
-					class="mb-4"
-				>
-					<BListGroupItem v-if="option.title" variant="secondary">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">
-								{{ option.title }}
-							</span>
-						</h4>
-					</BListGroupItem>
-
-					<!-- Variants -->
-					<BListGroupItem
-						v-for="(variant, i) in option.variants"
-						:key="i"
-						variant="secondary"
-						class="d-flex justify-content-between align-items-center"
-					>
-						<div>
-							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p v-if="variant.description">
-								{{ variant.description }}
-							</p>
-						</div>
-
-						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
-						</BBadge>
-					</BListGroupItem>
-				</BListGroup>
-			</BCol>
-
-			<!-- Plantbased -->
-			<BCol cols="12" md="6" lg="4" xl="3">
-				<h1 class="m-0 text-center font-weight-bold text-primary">
-					{{ pageData.plantbased.title }}
-				</h1>
-				<h4 class="mb-3 text-center text-secondary">
-					{{ pageData.plantbased.description }}
-				</h4>
-
-				<!-- Options -->
-				<BListGroup
-					v-for="(option, i) in pageData.plantbased.options"
-					:key="i"
-					class="mb-4"
-				>
-					<BListGroupItem v-if="option.title" variant="secondary">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">
-								{{ option.title }}
-							</span>
-						</h4>
-					</BListGroupItem>
-
-					<!-- Variants -->
-					<BListGroupItem
-						v-for="(variant, i) in option.variants"
-						:key="i"
-						variant="secondary"
-						class="d-flex justify-content-between align-items-center"
-					>
-						<div>
-							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p v-if="variant.description">
-								{{ variant.description }}
-							</p>
-						</div>
-
-						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
-						</BBadge>
-					</BListGroupItem>
-				</BListGroup>
-			</BCol>
-
-			<!-- Beverages -->
-			<BCol cols="12" md="6" lg="4" xl="3">
-				<h1 class="m-0 text-center font-weight-bold text-primary">
-					{{ pageData.beverages.title }}
-				</h1>
-				<h4 class="mb-3 text-center text-secondary">
-					{{ pageData.beverages.description }}
-				</h4>
-
-				<!-- Options -->
-				<BListGroup
-					v-for="(option, i) in pageData.beverages.options"
-					:key="i"
-					class="mb-4"
-				>
-					<BListGroupItem v-if="option.title" variant="secondary">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">
-								{{ option.title }}
-							</span>
-						</h4>
-					</BListGroupItem>
-
-					<!-- Variants -->
-					<BListGroupItem
-						v-for="(variant, i) in option.variants"
-						:key="i"
-						variant="secondary"
-						class="d-flex justify-content-between align-items-center"
-					>
-						<div>
-							<h5 class="text-dark">{{ variant.title }}</h5>
-							<p v-if="variant.description">
-								{{ variant.description }}
-							</p>
-						</div>
-
-						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
-						</BBadge>
-					</BListGroupItem>
 				</BListGroup>
 			</BCol>
 		</BRow>
@@ -424,7 +133,7 @@
 			async getPageData() {
 				this.reqData = await PageService.s_menu()
 
-				if (this.reqData.status) { this.pageData = this.reqData.menu }
+				if (this.reqData.status) { this.pageData = this.reqData }
 				else { this.error = this.reqData.message }
 
 				this.loading = false
@@ -446,6 +155,101 @@
 			},
 		},
 	}
+/*
+<BCol
+				v-for="(section, index) in pageData.menu" :key="index"
+				cols="12" md="6" lg="4" xl="3"
+			>
+				<h1 class="m-0 text-center font-weight-bold text-primary">
+					{{ section.title }}
+				</h1>
+				<h4 class="mb-3 text-center text-secondary">
+					{{ section.description }}
+				</h4>
+
+				<!-- Options -->
+				<BListGroup
+					v-for="(option, i) in section.options"
+					:key="i"
+					class="mb-4 shadow"
+				>
+					<BListGroupItem v-if="option.title" variant="light">
+						<h4 class="m-0 text-center">
+							<span class="font-weight-bold text-primary">
+								{{ option.title }}
+							</span>
+						</h4>
+					</BListGroupItem>
+
+					<!-- Variants -->
+					<BListGroupItem
+						v-for="(variant, i) in option.variants"
+						:key="i"
+						variant="light"
+					>
+						<BRow>
+							<BCol cols="9" class="text-dark">
+								<h5>{{ variant.title }}</h5>
+								<p v-if="variant.description">
+									{{ variant.description }}
+								</p>
+							</BCol>
+								
+							<BCol cols="3" class="text-right text-dark">
+								<h5 class="m-0 custom-badge">
+									${{ variant.cost.toFixed(2) }}
+								</h5>
+							</BCol>
+
+							<BCol cols="12">
+								<BButton
+									variant="primary" size="sm" class="w-100"
+								>Add to Order</BButton>
+							</BCol>
+						</BRow>
+					</BListGroupItem>
+				</BListGroup>
+
+				<!-- Flavor Options -->
+				<BListGroup v-if="section.flavors" class="mb-3 shadow">
+					<BListGroupItem variant="secondary" class="text-center">
+						<h4 class="m-0 text-center">
+							<span class="font-weight-bold text-primary">Flavors</span>
+						</h4>
+					</BListGroupItem>
+
+					<BListGroupItem
+						v-for="(option, i) in section.flavors"
+						:key="i"
+						class="p-0 text-center"
+						:style="
+							'background-color: rgb(' +
+							spiceColor(pageData.wingsAndTenders.flavors.length, i) +
+							');'
+						"
+					>
+						<h3 class="m-0 px-5 py-0 text-light">
+							{{ option.title }}
+						</h3>
+					</BListGroupItem>
+				</BListGroup>
+
+				<!-- Sauces -->
+				<BListGroup v-if="section.sauses" class="mb-4 shadow">
+					<BListGroupItem variant="secondary" class="text-center">
+						<h4 class="m-0 text-center">
+							<span class="font-weight-bold text-primary">Sauces</span>
+						</h4>
+					</BListGroupItem>
+
+					<BListGroupItem
+						v-for="(sauce, i) in section.sauces"
+						:key="i"
+						variant="secondary"
+						class="text-center"
+					><h4 class="m-0">{{ sauce.title }}</h4></BListGroupItem>
+				</BListGroup>
+			</BCol>*/
 </script>
 
 <style scoped>
