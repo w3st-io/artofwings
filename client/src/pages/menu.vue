@@ -53,7 +53,7 @@
 
 							<BCol cols="12" class="text-center">
 								<BButton
-									variant="primary"
+									variant="secondary"
 									class="w-100"
 								>Add to Order</BButton>
 							</BCol>
