@@ -15,13 +15,15 @@
 				</BCol>
 
 				<BCol cols="12" class="mb-3 text-center">
-					<BButton
-						variant="primary"
-						size="lg"
-					>
-						<MapPinIcon />
-						Open Google Maps
-					</BButton>
+					<a :href="companyInfo.googleMapsLink">
+						<BButton
+							variant="primary"
+							size="lg"
+						>
+							<MapPinIcon />
+							Open Google Maps
+						</BButton>
+					</a>
 				</BCol>
 
 				<BCol cols="12" class="mx-0 mb-3 p-0">
