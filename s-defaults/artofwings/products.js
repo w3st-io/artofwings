@@ -168,7 +168,7 @@ module.exports = [
 		id: 'sliders-additions-add-traditional-or-boneless-4pc',
 		cat: 'sliders',
 		subCat: 'additions',
-		title: 'Add Traditional or Boneless 4pc.',
+		title: 'Add Traditional or Boneless 4pc',
 		description: 'With any choice of sauce',
 		cost: 4.99,
 		stripeCost: 499,
