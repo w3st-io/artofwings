@@ -1,5 +1,5 @@
 <template>
-	<BContainer fluid class="my-3">
+	<BContainer class="my-3">
 		<BRow v-if="!loading && !error">
 			<BCol
 				v-for="(section, i) in pageData.menu" :key="i"

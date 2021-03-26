@@ -115,7 +115,7 @@
 						options: {
 							container: '.my-slider',
 							items: 3,
-							gutter: 40,
+							gutter: 20,
 							nav: false,
 							controls: true,
 							prevButton: prevButton,
