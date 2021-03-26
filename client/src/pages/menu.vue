@@ -37,7 +37,7 @@
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost }}</h5>
+							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
 						</BBadge>
 					</BListGroupItem>
 				</BListGroup>
@@ -103,7 +103,7 @@
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost }}</h5>
+							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
 						</BBadge>
 					</BListGroupItem>
 				</BListGroup>
@@ -130,7 +130,7 @@
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ option.cost }}</h5>
+							<h5 class="m-0">${{ option.cost.toFixed(2) }}</h5>
 						</BBadge>
 					</BListGroupItem>
 				</BListGroup>
@@ -158,7 +158,7 @@
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ option.cost }}</h5>
+							<h5 class="m-0">${{ option.cost.toFixed(2) }}</h5>
 						</BBadge>
 					</BListGroupItem>
 				</BListGroup>
@@ -225,7 +225,7 @@
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost }}</h5>
+							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
 						</BBadge>
 					</BListGroupItem>
 				</BListGroup>
@@ -267,7 +267,7 @@
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost }}</h5>
+							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
 						</BBadge>
 					</BListGroupItem>
 				</BListGroup>
@@ -309,7 +309,7 @@
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost }}</h5>
+							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
 						</BBadge>
 					</BListGroupItem>
 				</BListGroup>
@@ -351,7 +351,7 @@
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost }}</h5>
+							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
 						</BBadge>
 					</BListGroupItem>
 				</BListGroup>
@@ -393,7 +393,7 @@
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost }}</h5>
+							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
 						</BBadge>
 					</BListGroupItem>
 				</BListGroup>
@@ -435,7 +435,7 @@
 						</div>
 
 						<BBadge variant="primary" class="custom-badge">
-							<h5 class="m-0">${{ variant.cost }}</h5>
+							<h5 class="m-0">${{ variant.cost.toFixed(2) }}</h5>
 						</BBadge>
 					</BListGroupItem>
 				</BListGroup>

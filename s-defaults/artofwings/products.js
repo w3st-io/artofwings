@@ -476,7 +476,7 @@ module.exports = [
 		stripeCost: 799,
 	},
 
-	// Beverages sodas //
+	// beverages sodas //
 	{
 		id: 'beverages-sodas-bottled-soda',
 		cat: 'beverages',
