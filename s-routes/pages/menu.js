@@ -68,13 +68,6 @@ router.get(
 							),
 						},
 						{
-							title: 'Extras',
-							variants: await ProductsCollection.c_readByCatAndSubCat(
-								'sliders',
-								'extras'
-							),
-						},
-						{
 							title: 'Additions',
 							variants: await ProductsCollection.c_readByCatAndSubCat(
 								'sliders',
