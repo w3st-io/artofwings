@@ -3,7 +3,7 @@
 		<BRow v-if="!loading && !error">
 			<BCol
 				v-for="(section, i) in pageData.menu" :key="i"
-				cols="12" md="6" lg="4" xl="3"
+				cols="12" md="6" lg="4" xl="4"
 			>
 				<h1 class="m-0 text-center font-weight-bold text-primary">
 					{{ section.title }}
