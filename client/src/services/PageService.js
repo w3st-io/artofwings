@@ -368,6 +368,23 @@ async function s_user_notifications(sort = 0, limit, page) {
 }
 
 
+async function s_user_order_add({ product_id }) {
+	try {
+		console.log(product_id)
+		const authAxios = await this.authAxios()
+
+		return (await authAxios.get(`/user/order/add/${product_id}`)).data
+	}
+	catch (err) {
+		return {
+			executed: false,
+			status: false,
+			message: `PageService: Error --> ${err}`
+		}
+	}
+}
+
+
 async function s_user_profile() {
 	try {
 		const authAxios = await this.authAxios()
@@ -446,6 +463,7 @@ export default {
 	s_admin_function_users_record,
 	s_cat,
 	s_menu,
+	s_user_order_add,
 	s_post,
 	s_post_create,
 	s_comment_create,
