@@ -5,6 +5,7 @@ const express = require('express')
 
 // [REQUIRE] Personal //
 const ProductsCollection = require('../../s-collections/ProductsCollection')
+const ToppingsCollection = require('../../s-collections/ToppingsCollection')
 const flavors = require('../../s-defaults/artofwings/flavors')
 const sauces = require('../../s-defaults/artofwings/sauces')
 const Auth = require('../../s-middleware/Auth')
@@ -61,13 +62,6 @@ router.get(
 							),
 						},
 						{
-							title: 'Toppings',
-							variants: await ProductsCollection.c_readByCatAndSubCat(
-								'sliders',
-								'toppings'
-							),
-						},
-						{
 							title: 'Additions',
 							variants: await ProductsCollection.c_readByCatAndSubCat(
 								'sliders',
@@ -76,7 +70,9 @@ router.get(
 						},
 					],
 			
-					sauces: sauces
+					toppings: await ToppingsCollection.c_readAll(),
+					
+					sauces: sauces,
 				},
 				
 				// Signature Dishes //

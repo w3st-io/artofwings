@@ -70,6 +70,35 @@
 					</BListGroupItem>
 				</BListGroup>
 
+				<!-- Toppings Options -->
+				<BListGroup v-if="section.toppings" class="mb-3">
+					<BListGroupItem variant="secondary" class="text-center">
+						<h4 class="m-0 text-center">
+							<span class="font-weight-bold text-primary">Toppings</span>
+						</h4>
+					</BListGroupItem>
+
+					<BListGroupItem
+						v-for="(option, i) in section.toppings"
+						:key="i"
+						variant="info"
+						class="px-3 py-1"
+					>
+						<BRow>
+							<BCol cols="9" class="text-left">
+								<h5 class="m-0 py-0">{{ option.title }}</h5>
+							</BCol>
+
+							<BCol cols="3" class="text-right price">
+								<h5 class="m-0 py-0">
+									${{ option.cost.toFixed(2) }}
+								</h5>
+							</BCol>
+						</BRow>
+						
+					</BListGroupItem>
+				</BListGroup>
+
 				<!-- Flavor Options -->
 				<BListGroup v-if="section.flavors" class="mb-3">
 					<BListGroupItem variant="secondary" class="text-center">
