@@ -1,7 +1,7 @@
 {
-  "name": "blockbased.io-server",
+  "name": "artofwings-server",
   "version": "0.9.0",
-  "description": "This is the server for blockbased.io forum.",
+  "description": "This is the server for artofwings",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
