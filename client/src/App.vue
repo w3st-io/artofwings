@@ -76,17 +76,11 @@
 <style lang="scss">
 	// [IMPORT] Personal //
 	body {
-		font-family: 'dot', 'meltix' !important;
+		font-family: 'meltix' !important;
 	}
 
 	@font-face {
 		font-family: 'meltix';
 		src: url('./assets/fonts/meltix/Meltix_Regular_Demo.otf');
-	}
-
-	@font-face {
-		font-family: 'dot';
-		src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300');
-		unicode-range: U+002E;
 	}
 </style>

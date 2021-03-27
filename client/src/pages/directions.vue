@@ -17,8 +17,7 @@
 				<BCol cols="12" class="mb-5 text-center">
 					<a :href="companyInfo.googleMapsLink">
 						<BButton variant="primary" size="lg">
-							<MapPinIcon />
-							Open Google Maps
+							<MapPinIcon /> Open Google Maps
 						</BButton>
 					</a>
 				</BCol>

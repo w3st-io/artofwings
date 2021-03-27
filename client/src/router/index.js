@@ -389,7 +389,7 @@ const router = new Router ({
 		},
 		{
 			path: '/user/order/add/:product_id',
-			name: 'user_order',
+			name: 'user_order_add',
 			component: user_order_add,
 			meta: {
 				auth: true,

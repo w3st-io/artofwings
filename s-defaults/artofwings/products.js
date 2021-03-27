@@ -13,7 +13,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Get 6 pieces of wings with your choice of flavor',
 		cost: 6.99,
-		stripeCost: 699,
 	},
 	{
 		_id: 'wingsAndTenders-wings-12',
@@ -25,9 +24,8 @@ module.exports = [
 		saucesAvailable: false,
 		toppingsAvailable: false,
 		extrasAvailable: false,
-		description: '',
+		description: 'Get 12 pieces of wings with your choice of flavor',
 		cost: 12.99,
-		stripeCost: 1299,
 	},
 	{
 		_id: 'wingsAndTenders-wings-24',
@@ -39,9 +37,8 @@ module.exports = [
 		saucesAvailable: false,
 		toppingsAvailable: false,
 		extrasAvailable: false,
-		description: '',
+		description: 'Get 24 pieces of wings with your choice of flavor',
 		cost: 24.99,
-		stripeCost: 2499,
 	},
 
 	// wingsAndTenders tenders //
@@ -57,7 +54,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 4.99,
-		stripeCost: 499,
 	},
 	{
 		_id: 'wingsAndTenders-tenders-6',
@@ -71,7 +67,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 12.99,
-		stripeCost: 1299,
 	},
 
 	// sliders sliders //
@@ -87,7 +82,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 2.99,
-		stripeCost: 299,
 	},
 	{
 		_id: 'sliders-sliders-double-slider',
@@ -101,7 +95,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 4.99,
-		stripeCost: 499,
 	},
 	{
 		_id: 'sliders-sliders-triple-slider',
@@ -115,7 +108,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 6.99,
-		stripeCost: 699,
 	},
 
 	// sliders toppings //
@@ -131,7 +123,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 0.50,
-		stripeCost: 50,
 	},
 	{
 		_id: 'sliders-toppings-jalapenos',
@@ -145,7 +136,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 0.50,
-		stripeCost: 50,
 	},
 	{
 		_id: 'sliders-toppings-mushrooms',
@@ -159,7 +149,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 0.50,
-		stripeCost: 50,
 	},
 	{
 		_id: 'sliders-toppings-beef-bacon',
@@ -173,7 +162,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 1.75,
-		stripeCost: 175,
 	},
 	{
 		_id: 'sliders-toppings-bacon-jam',
@@ -187,7 +175,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 1.75,
-		stripeCost: 175,
 	},
 	{
 		_id: 'sliders-toppings-avacado',
@@ -201,7 +188,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 1.75,
-		stripeCost: 175,
 	},
 	{
 		_id: 'sliders-toppings-crispy-fried-onions',
@@ -215,7 +201,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 0.75,
-		stripeCost: 75,
 	},
 
 	// sliders extras //
@@ -231,37 +216,34 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 1.00,
-		stripeCost: 100,
 	},
 
 	// sliders additions //
 	{
-		_id: 'sliders-additions-add-any-art-appetizer',
+		_id: 'sliders-additions-art-appetizer',
 		cat: 'sliders',
 		subCat: 'additions',
-		title: 'Add any Art Appetizer',
+		title: 'Art Appetizer',
 		image: '',
 		flavorsAvailable: false,
 		saucesAvailable: false,
 		toppingsAvailable: false,
 		extrasAvailable: false,
-		description: 'Except Quesadilla',
+		description: 'Add any art appetizers (except for Quesadilla, Chicken Quesadilla, & Beef Quesadilla)',
 		cost: 2.99,
-		stripeCost: 299,
 	},
 	{
-		_id: 'sliders-additions-add-traditional-or-boneless-4pc',
+		_id: 'sliders-additions-traditional-or-boneless-4pc-wings',
 		cat: 'sliders',
 		subCat: 'additions',
-		title: 'Add Traditional or Boneless 4pc',
+		title: 'Traditional or Boneless 4pc Wings',
 		image: '',
 		flavorsAvailable: false,
 		saucesAvailable: false,
 		toppingsAvailable: false,
 		extrasAvailable: false,
-		description: 'With any choice of sauce',
+		description: 'Add wings (traditional or boneless) with any choice of sauce',
 		cost: 4.99,
-		stripeCost: 499,
 	},
 
 	// signatureDishes burgers //
@@ -277,7 +259,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '6oz burger, bacon jam, swiss cheese, signature sauce',
 		cost: 8.99,
-		stripeCost: 899,
 	},
 	{
 		_id: 'signatureDishes-burgers-bbq-burger',
@@ -291,7 +272,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '6oz burger, BBQ sauce, cheddar, crispy onions, beef bacon, tomato',
 		cost: 7.50,
-		stripeCost: 750,
 	},
 	{
 		_id: 'signatureDishes-burgers-spicy-art-burger',
@@ -305,7 +285,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Jalapenos, spicy mayo, cheddar cheese, beef bacon',
 		cost: 7.50,
-		stripeCost: 750,
 	},
 	{
 		_id: 'signatureDishes-burgers-chop-cheese-burger',
@@ -319,7 +298,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '6oz burger with choices of lettuce, tomato, or onions served on an italian roll',
 		cost: 6.99,
-		stripeCost: 699,
 	},
 
 	// signatureDishes sandwiches //
@@ -335,7 +313,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Classic grilled cheese sandwich',
 		cost: 4.99,
-		stripeCost: 499,
 	},
 	{
 		_id: 'signatureDishes-sandwiches-deluxe',
@@ -349,7 +326,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Grilled cheese sandwich with bacon, lettuce, & tomatos',
 		cost: 6.99,
-		stripeCost: 699,
 	},
 	{
 		_id: 'signatureDishes-sandwiches-classic-chicken-sandwich',
@@ -363,7 +339,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Crispy or grilled chicken, spicy mayo, lettuce, tomato',
 		cost: 7.50,
-		stripeCost: 750,
 	},
 	{
 		_id: 'signatureDishes-sandwiches-buffalo-chicken-sandwich',
@@ -377,7 +352,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Crispy or grilled chicken buffalo sauce, blue cheese, crispy onions',
 		cost: 7.50,
-		stripeCost: 750,
 	},
 	{
 		_id: 'signatureDishes-sandwiches-art-bbq-chicken-sandwich',
@@ -391,7 +365,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Crispy or grilled chicken BBQ sauce, coleslaw, pickles, bacon',
 		cost: 7.50,
-		stripeCost: 750,
 	},
 
 	// signatureDishes subs //
@@ -407,7 +380,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Grilled beef, sauteed onions, american cheese, thousand island, served on a brioche roll',
 		cost: 6.99,
-		stripeCost: 699,
 	},
 	{
 		_id: 'signatureDishes-subs-cheesesteak',
@@ -421,7 +393,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Melted American cheese w/sweet peppers & onions',
 		cost: 6.99,
-		stripeCost: 699,
 	},
 
 	// specialtySides FrienchFriesOrTatorTots //
@@ -437,7 +408,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Classic side',
 		cost: 2.99,
-		stripeCost: 299,
 	},
 	{
 		_id: 'specialtySides-FrienchFriesOrTatorTots-sweet-potato',
@@ -451,7 +421,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Sweet potato',
 		cost: 3.99,
-		stripeCost: 399,
 	},
 	{
 		_id: 'specialtySides-FrienchFriesOrTatorTots-loaded',
@@ -465,7 +434,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Melted cheese, sour cream, and bacon',
 		cost: 5.99,
-		stripeCost: 599,
 	},
 	{
 		_id: 'specialtySides-FrienchFriesOrTatorTots-chicken',
@@ -479,7 +447,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Spicy mayo, fried or grilled chicken, crispy onions',
 		cost: 5.75,
-		stripeCost: 575,
 	},
 	{
 		_id: 'specialtySides-FrienchFriesOrTatorTots-burger',
@@ -493,7 +460,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Melted American cheese, art burger sauce, red onions',
 		cost: 5.25,
-		stripeCost: 525,
 	},
 	{
 		_id: 'specialtySides-FrienchFriesOrTatorTots-fiery',
@@ -507,7 +473,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Melted cheese, jalapeno, and chili',
 		cost: 5.99,
-		stripeCost: 599,
 	},
 	{
 		_id: 'specialtySides-FrienchFriesOrTatorTots-cheese',
@@ -521,7 +486,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Melted cheese',
 		cost: 4.99,
-		stripeCost: 499,
 	},
 	{
 		_id: 'specialtySides-FrienchFriesOrTatorTots-mac-and-cheese',
@@ -535,7 +499,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Mac & cheese',
 		cost: 4.99,
-		stripeCost: 499,
 	},
 	{
 		_id: 'specialtySides-FrienchFriesOrTatorTots-mac-and-cheese-with-bacon',
@@ -549,7 +512,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Mac & cheese and Bacon',
 		cost: 6.49,
-		stripeCost: 649,
 	},
 	{
 		_id: 'specialtySides-FrienchFriesOrTatorTots-funnel-fries',
@@ -563,7 +525,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Classic Funnel fries',
 		cost: 4.95,
-		stripeCost: 495,
 	},
 
 	// appetizers classic //
@@ -579,7 +540,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 5.99,
-		stripeCost: 599,
 	},
 	{
 		_id: 'appetizers-classic-chicken-quesadilla',
@@ -593,7 +553,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 7.49,
-		stripeCost: 749,
 	},
 	{
 		_id: 'appetizers-classic-beef-quesadilla',
@@ -607,7 +566,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 7.49,
-		stripeCost: 749,
 	},
 	{
 		_id: 'appetizers-classic-friend-mac-and-cheese-bites',
@@ -621,7 +579,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 5.99,
-		stripeCost: 599,
 	},
 	{
 		_id: 'appetizers-classic-fried-cauliflower-pops',
@@ -635,7 +592,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 4.99,
-		stripeCost: 499,
 	},
 	{
 		_id: 'appetizers-classic-fried-pickles',
@@ -649,7 +605,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 5.99,
-		stripeCost: 599,
 	},
 	{
 		_id: 'appetizers-classic-mozzerella-sticks',
@@ -663,7 +618,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 4.99,
-		stripeCost: 499,
 	},
 	{
 		_id: 'appetizers-classic-onion-rings',
@@ -677,7 +631,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 2.99,
-		stripeCost: 299,
 	},
 
 	// salads classic //
@@ -693,7 +646,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Lettuce, tomato, cucumbers, and red onions.',
 		cost: 4.95,
-		stripeCost: 495,
 	},
 	{
 		_id: 'salads-classic-house-salad-with-chicken',
@@ -707,7 +659,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Lettuce, tomato, cucumbers, red onions, and chicken.',
 		cost: 6.95,
-		stripeCost: 695,
 	},
 	{
 		_id: 'salads-classic-portobello-salad',
@@ -721,7 +672,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Portobellos, argula, red onions, balsamic vinegar, and tomato.',
 		cost: 5.95,
-		stripeCost: 595,
 	},
 	{
 		_id: 'salads-classic-portobello-salad-with-chicken',
@@ -735,7 +685,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: 'Portobellos, argula, red onions, balsamic vinegar, tomato, and chicken',
 		cost: 7.95,
-		stripeCost: 795,
 	},
 
 	// plantbased beyond //
@@ -751,7 +700,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 9.99,
-		stripeCost: 999,
 	},
 	{
 		_id: 'plantbased-beyond-beyond-burger',
@@ -765,7 +713,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 9.99,
-		stripeCost: 999,
 	},
 	{
 		_id: 'plantbased-beyond-beyond-chop-cheese-burger',
@@ -779,7 +726,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 9.99,
-		stripeCost: 999,
 	},
 	
 	// plantbased veggie //
@@ -795,7 +741,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 6.99,
-		stripeCost: 699,
 	},
 	{
 		_id: 'plantbased-veggie-veggie-burger',
@@ -809,7 +754,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 7.99,
-		stripeCost: 799,
 	},
 
 	// beverages sodas //
@@ -825,7 +769,6 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 2.69,
-		stripeCost: 269,
 	},
 
 	// Beverages notSodas //
@@ -841,6 +784,5 @@ module.exports = [
 		extrasAvailable: false,
 		description: '',
 		cost: 1.69,
-		stripeCost: 169,
 	},
 ]

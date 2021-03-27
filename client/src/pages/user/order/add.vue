@@ -15,7 +15,7 @@
 				<BCol cols="12" sm="12" md="6" lg="8" xl="8">
 					<h2 class="mb-3 text-primary">{{ product.title }}</h2>
 					<h5 class="mb-3">{{ product.description }}</h5>
-					<h4 class="mb-3 price">Price: {{ product.cost }}</h4>
+					<h4 class="mb-3 price">Price: {{ product.cost.toFixed(2) }}</h4>
 				
 					<BButton
 						variant="secondary"

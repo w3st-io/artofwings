@@ -42,7 +42,7 @@
 							</BCol>
 								
 							<BCol cols="3" class="pl-0 text-right text-dark">
-								<h5 class="m-0 custom-badge">
+								<h5 class="m-0 price">
 									${{ variant.cost.toFixed(2) }}
 								</h5>
 							</BCol>
@@ -161,9 +161,3 @@
 		},
 	}
 </script>
-
-<style scoped>
-	.custom-badge {
-		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	}
-</style>
