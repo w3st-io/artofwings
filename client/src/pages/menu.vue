@@ -82,7 +82,7 @@
 						v-for="(option, i) in section.toppings"
 						:key="i"
 						variant="info"
-						class="px-3 py-1"
+						class=" py-1"
 					>
 						<BRow>
 							<BCol cols="9" class="text-left">

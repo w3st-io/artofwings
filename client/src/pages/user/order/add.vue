@@ -32,6 +32,7 @@
 </template>
 
 <script>
+	import router from '@/router'
 	import PageService from '@/services/PageService'
 	
 	export default {
@@ -47,6 +48,8 @@
 		},
 
 		async created() {
+			if (!localStorage.usertoken) { router.push({ name: 'user_login' }) }
+
 			await this.getPageData()
 		},
 

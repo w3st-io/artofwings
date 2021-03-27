@@ -1,13 +1,13 @@
 <template>
-	<BButtonGroup class="w-100">
+	<BButtonGroup>
 		<!-- Shopping Cart -->
-		<BButton variant="secondary" class="w-75" @click="orderRedirect()">
+		<BButton variant="secondary" class="" @click="orderRedirect()">
 			<!-- <BBadge variant="danger">3</BBadge> -->
 			<ShoppingCartIcon size="2x" class="mx-3 text-dark" />
 		</BButton>
 
 		<!-- User Logged -->
-		<BDropdown right class="w-25" @click="profileRedirect()">
+		<BDropdown right @click="profileRedirect()">
 			<BDropdownItemButton @click="logout()">
 				Log Out
 			</BDropdownItemButton>
