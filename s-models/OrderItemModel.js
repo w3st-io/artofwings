@@ -8,37 +8,86 @@ module.exports = mongoose.model(
 	mongoose.Schema({
 		_id: mongoose.Schema.Types.ObjectId,
 
-		product_id: {
+		product: {
 			type: String,
 			maxlength: 50,
 			required: true,
 		},
 
-		boneless: {
-			type: Boolean,
+		// Product Variants //
+		productVariants: [
+			{
+				type: String,
+				maxlength: 25,
+				required: true,
+			},
+		],
+
+		variantsTotalCost: {
+			type: Number,
+			maxlength: 4,
 			required: true,
-			default: false,
+			default: 0,
 		},
 
+		// Product Extras //
+		productExtras: [
+			{
+				type: String,
+				maxlength: 25,
+				required: true,
+			},
+		],
+
+		productExtrasTotalCost: {
+			type: Number,
+			maxlength: 4,
+			required: true,
+			default: 0,
+		},
+
+		// Product Additions //
 		productAdditions: [
 			{
-				productAddition_id: {
+				productAddition: {
 					type: String,
 					maxlength: 25,
 					required: true,
 				},
 
-				productAdditionFlavor: {
+				variant: {
 					type: String,
 					maxlength: 20,
 				}
 			},
 		],
 
+		productAdditionsTotalCost: {
+			type: Number,
+			maxlength: 4,
+			required: true,
+			default: 0,
+		},
+
 		quantity: {
 			type: Number,
 			required: true,
 			default: 1,
+		},
+
+		preTaxTotal: {
+			type: Number,
+			required: true,
+		},
+
+		taxTotal: {
+			type: Number,
+			required: true,
+		},
+
+		orderTotal: {
+			type: Number,
+			required: true,
 		},
 
 		created_at: {
