@@ -6,7 +6,7 @@ const validator = require('validator')
 
 // [REQUIRE] Personal //
 const Auth = require('../../../../s-middleware/Auth')
-const ProductsCollection = require('../../../../s-collections/ProductsCollection')
+const productsCollection = require('../../../../s-collections/productsCollection')
 
 
 // [EXPRESS + USE] //
@@ -20,7 +20,7 @@ router.get(
 	async (req, res) => {
 		try {
 			if (validator.isAscii(req.params.product_id)) {
-				const product = await ProductsCollection.c_read({
+				const { product } = await productsCollection.c_read({
 					product_id: req.params.product_id
 				})
 				

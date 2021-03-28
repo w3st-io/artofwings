@@ -1,0 +1,68 @@
+// [EXPORT] //
+module.exports = [
+	// toppings //
+	{
+		_id: 'patty',
+		type: 'topping',
+		title: 'Extra Patty',
+		description: '',
+		image: '',
+		cost: 1.00,
+	},
+	{
+		_id: 'sauteed-onions',
+		type: 'topping',
+		title: 'Sauteed Onions',
+		description: '',
+		image: '',
+		cost: 0.50,
+	},
+	{
+		_id: 'jalapenos',
+		type: 'topping',
+		title: 'Jalapenos',
+		description: '',
+		image: '',
+		cost: 0.50,
+	},
+	{
+		_id: 'mushrooms',
+		type: 'topping',
+		title: 'Mushrooms',
+		description: '',
+		image: '',
+		cost: 0.50,
+	},
+	{
+		_id: 'beef-bacon',
+		type: 'topping',
+		title: 'Beef Bacon',
+		description: '',
+		image: '',
+		cost: 1.75,
+	},
+	{
+		_id: 'bacon-jam',
+		type: 'topping',
+		title: 'Bacon Jam',
+		description: '',
+		image: '',
+		cost: 1.75,
+	},
+	{
+		_id: 'avacado',
+		type: 'topping',
+		title: 'Avacado',
+		description: '',
+		image: '',
+		cost: 1.75,
+	},
+	{
+		_id: 'crispy-fried-onions',
+		type: 'topping',
+		title: 'Crispy Fried Onions',
+		description: '',
+		image: '',
+		cost: 0.75,
+	},
+]

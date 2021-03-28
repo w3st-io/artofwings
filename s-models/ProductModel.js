@@ -74,7 +74,7 @@ const product = mongoose.Schema({
 })
 
 
-comment.pre('validate', function(next) {
+product.pre('validate', function(next) {
 	// [LENGTH-CHECK] Blocks //
 	if (this.productAdditions.length > 20) { throw ('Error: Comment too large') }
 	
@@ -82,7 +82,7 @@ comment.pre('validate', function(next) {
 })
 
 
-comment.pre('updateOne', function(next) {
+product.pre('updateOne', function(next) {
 	// [LENGTH-CHECK] Blocks //
 	if (this._update.$set.productAdditions.length > 20) {
 		throw ('Error: Comment too large')
