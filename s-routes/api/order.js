@@ -39,9 +39,7 @@ router.post(
 router.post(
 	'/update',
 	Auth.userToken(),
-	async (req, res) => {
-		
-	},
+	async (req, res) => {},
 )
 
 
