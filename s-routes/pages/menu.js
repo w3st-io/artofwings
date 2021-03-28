@@ -5,8 +5,7 @@ const express = require('express')
 
 // [REQUIRE] Personal //
 const ProductsCollection = require('../../s-collections/ProductsCollection')
-const ToppingsCollection = require('../../s-collections/ToppingsCollection')
-const flavors = require('../../s-defaults/artofwings/flavors')
+const ProductsAdditionsCollection = require('../../s-collections/ProductAdditionsCollection')
 const sauces = require('../../s-defaults/artofwings/sauces')
 const Auth = require('../../s-middleware/Auth')
 
@@ -41,10 +40,12 @@ router.get(
 								'wingsAndTenders',
 								'tenders'
 							),
-						}
+						},
 					],
 			
-					flavors: flavors,
+					flavors: await ProductsAdditionsCollection.c_readByType(
+						'flavor'
+					),
 				},
 
 				// Sliders //
@@ -70,7 +71,9 @@ router.get(
 						},
 					],
 			
-					toppings: await ToppingsCollection.c_readAll(),
+					toppings: await ProductsAdditionsCollection.c_readByType(
+						'topping'
+					),
 					
 					sauces: sauces,
 				},
@@ -177,7 +180,7 @@ router.get(
 								'plantbased',
 								'veggie'
 							),
-						}
+						},
 					],
 				},
 
@@ -201,9 +204,26 @@ router.get(
 								'beverages',
 								'notSodas'
 							),
-						}
+						},
 					]
-				}
+				},
+
+				// combos //
+				{
+					title: 'Combos',
+			
+					description: '',
+			
+					options: [
+						{
+							title: 'Slider with Wings',
+							variants: await ProductsCollection.c_readByCatAndSubCat(
+								'combos',
+								'slider-with-wings'
+							),
+						},
+					]
+				},
 			]
 
 			res.status(200).send({

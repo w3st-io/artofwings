@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 
 // [REQUIRE] Personal //
-const products= require('../s-defaults/artofwings/products')
+const products = require('../s-defaults/artofwings/products')
 
 
 /******************* [CRUD] *******************/

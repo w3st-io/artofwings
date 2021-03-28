@@ -38,6 +38,12 @@ module.exports = mongoose.model(
 			required: true,
 		},
 
+		hasProductAddition: {
+			type: Boolean,
+			required: true,
+			default: false,
+		},
+
 		created_at: {
 			type: Date,
 			default: Date.now,

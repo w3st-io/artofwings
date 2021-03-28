@@ -48,6 +48,24 @@ const product = mongoose.Schema({
 		},
 	],
 
+	flavorsAvailable: {
+		type: Boolean,
+		required: true,
+		default: false,
+	},
+
+	saucesAvailable: {
+		type: Boolean,
+		required: true,
+		default: false,
+	},
+
+	toppingsAvailable: {
+		type: Boolean,
+		required: true,
+		default: false,
+	},
+
 	created_at: {
 		type: Date,
 		default: Date.now,
