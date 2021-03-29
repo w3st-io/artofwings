@@ -18,7 +18,7 @@ async function insert() {
 	try {
 		// [MONGOOSE-CONNECTION] //
 		mongoose.connect(
-			config.MONGO_URI,
+			'mongodb://localhost:27017/artofwings',
 			{
 				useNewUrlParser: true,
 				useUnifiedTopology: true,
@@ -93,6 +93,7 @@ async function insert() {
 				title: p.title,
 				description: p.description,
 				image: p.image,
+				options: p.options,
 				cost: p.cost,
 			}).save()
 		}

@@ -21,6 +21,34 @@ module.exports = [
 					'Onion Rings'
 				]
 			},
+			{
+				type: 'appetizer',
+				title: 'Choose Appetizer',
+				variants: [
+					'Quesadilla',
+					'Chicken Quesadilla',
+					'Beef Quesadilla',
+					'Fried Mac and Cheese Bites',
+					'Fried Cauliflower Pops',
+					'Fried Pickles',
+					'Mozzerella Sticks',
+					'Onion Rings'
+				]
+			},
+			{
+				type: 'appetizer',
+				title: 'Choose Appetizer',
+				variants: [
+					'Quesadilla',
+					'Chicken Quesadilla',
+					'Beef Quesadilla',
+					'Fried Mac and Cheese Bites',
+					'Fried Cauliflower Pops',
+					'Fried Pickles',
+					'Mozzerella Sticks',
+					'Onion Rings'
+				]
+			},
 		],
 		cost: 2.99,
 	},
@@ -50,6 +78,6 @@ module.exports = [
 				]
 			},
 		],
-		cost: 2.99,
+		cost: 4.99,
 	},
 ]
