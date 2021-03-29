@@ -11,9 +11,6 @@ module.exports = [
 				type: 'appetizer',
 				title: 'Choose Appetizer',
 				variants: [
-					'Quesadilla',
-					'Chicken Quesadilla',
-					'Beef Quesadilla',
 					'Fried Mac and Cheese Bites',
 					'Fried Cauliflower Pops',
 					'Fried Pickles',
