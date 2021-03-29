@@ -44,8 +44,8 @@ async function insert() {
 				image: p.image,
 				cost: p.cost,
 				productVariantTypes: p.productVariantTypes,
-				productExtrasTypes: p.productExtrasTypes,
-				productAdditionsTypes: p.productAdditionsTypes,
+				productExtraTypes: p.productExtraTypes,
+				productAdditionTypes: p.productAdditionTypes,
 			}).save()
 		}
 

@@ -1,7 +1,7 @@
 <template>
 	<BContainer class="py-3">
 		<BCard>
-			<BRow>
+			<BRow v-if="product != {}">
 				<BCol cols="12" class="mb-3">
 					<h2 class="text-center font-weight-bold text-primary">
 						Add Item to Your Order

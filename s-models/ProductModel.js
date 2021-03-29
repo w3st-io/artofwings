@@ -50,14 +50,14 @@ const product = mongoose.Schema({
 		},
 	],
 
-	productExtrasTypes: [
+	productExtraTypes: [
 		{
 			type: String,
 			maxlength: 20,	
 		},
 	],
 
-	productAdditionsTypes: [
+	productAdditionTypes: [
 		{
 			type: String,
 			maxlength: 20,	
@@ -76,9 +76,9 @@ product.pre('validate', function(next) {
 	// [LENGTH-CHECK] Blocks //
 	if (this.productVariantTypes.length > 20) { throw ('Error: too many variants') }
 
-	if (this.productExtrasTypes.length > 20) { throw ('Error: too many extras') }
+	if (this.productExtraTypes.length > 20) { throw ('Error: too many extras') }
 	
-	if (this.productAdditionsTypes.length > 20) { throw ('Error: too many additions') }
+	if (this.productAdditionTypes.length > 20) { throw ('Error: too many additions') }
 	
 	next()
 })
@@ -90,11 +90,11 @@ product.pre('updateOne', function(next) {
 		throw ('Error: too many variants')
 	}
 
-	if (this._update.$set.productExtrasTypes.length > 20) {
+	if (this._update.$set.productExtraTypes.length > 20) {
 		throw ('Error: too many extras')
 	}
 
-	if (this._update.$set.productAdditionsTypes.length > 20) {
+	if (this._update.$set.productAdditionTypes.length > 20) {
 		throw ('Error: too many additions')
 	}
 	

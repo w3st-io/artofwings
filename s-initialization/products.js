@@ -9,8 +9,8 @@ module.exports = [
 		image: 'https://i.imgur.com/X5gq5BN.jpg',
 		cost: 6.99,
 		productVariantTypes: ['bone', 'flavor'],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'wingsAndTenders',
@@ -20,8 +20,8 @@ module.exports = [
 		image: '',
 		cost: 12.99,
 		productVariantTypes: ['bone', 'flavor'],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'wingsAndTenders',
@@ -31,8 +31,8 @@ module.exports = [
 		image: '',
 		cost: 24.99,
 		productVariantTypes: ['bone', 'flavor'],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 
 	// wingsAndTenders tenders //
@@ -44,8 +44,8 @@ module.exports = [
 		image: '',	
 		cost: 4.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'wingsAndTenders',
@@ -55,8 +55,8 @@ module.exports = [
 		image: '',	
 		cost: 12.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 
 	// sliders sliders //
@@ -67,9 +67,9 @@ module.exports = [
 		description: '',
 		image: '',
 		cost: 2.99,
-		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productVariantTypes: ['sauce'],
+		productExtraTypes: [],
+		productAdditionTypes: ['slider'],
 	},
 	{
 		cat: 'sliders',
@@ -78,9 +78,9 @@ module.exports = [
 		description: '',
 		image: '',
 		cost: 4.99,
-		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productVariantTypes: ['sauce'],
+		productExtraTypes: [],
+		productAdditionTypes: ['slider'],
 	},
 	{
 		cat: 'sliders',
@@ -89,9 +89,9 @@ module.exports = [
 		description: '',
 		image: '',
 		cost: 6.99,
-		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productVariantTypes: ['sauce'],
+		productExtraTypes: [],
+		productAdditionTypes: ['slider'],
 	},
 
 	// sliders additions //
@@ -103,8 +103,8 @@ module.exports = [
 		image: '',
 		cost: 2.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'sliders',
@@ -114,8 +114,8 @@ module.exports = [
 		image: '',
 		cost: 4.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 
 	// signatureDishes burgers //
@@ -127,8 +127,8 @@ module.exports = [
 		image: '',
 		cost: 8.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'signatureDishes',
@@ -138,8 +138,8 @@ module.exports = [
 		image: '',
 		cost: 7.50,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'signatureDishes',
@@ -149,8 +149,8 @@ module.exports = [
 		image: '',
 		cost: 7.50,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'signatureDishes',
@@ -160,8 +160,8 @@ module.exports = [
 		image: '',
 		cost: 6.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 
 	// signatureDishes sandwiches //
@@ -173,8 +173,8 @@ module.exports = [
 		image: '',
 		cost: 4.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'signatureDishes',
@@ -184,8 +184,8 @@ module.exports = [
 		image: '',
 		cost: 6.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'signatureDishes',
@@ -195,8 +195,8 @@ module.exports = [
 		image: '',
 		cost: 7.50,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'signatureDishes',
@@ -206,8 +206,8 @@ module.exports = [
 		image: '',
 		cost: 7.50,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'signatureDishes',
@@ -217,8 +217,8 @@ module.exports = [
 		image: '',
 		cost: 7.50,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 
 	// signatureDishes subs //
@@ -230,8 +230,8 @@ module.exports = [
 		image: '',
 		cost: 6.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'signatureDishes',
@@ -241,8 +241,8 @@ module.exports = [
 		image: '',
 		cost: 6.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 
 	// specialtySides FrienchFriesOrTatorTots //
@@ -254,8 +254,8 @@ module.exports = [
 		image: '',
 		cost: 2.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'specialtySides',
@@ -265,8 +265,8 @@ module.exports = [
 		image: '',
 		cost: 3.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'specialtySides',
@@ -276,8 +276,8 @@ module.exports = [
 		image: '',
 		cost: 5.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'specialtySides',
@@ -287,8 +287,8 @@ module.exports = [
 		image: '',
 		cost: 5.75,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'specialtySides',
@@ -298,8 +298,8 @@ module.exports = [
 		image: '',
 		cost: 5.25,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'specialtySides',
@@ -309,8 +309,8 @@ module.exports = [
 		image: '',
 		cost: 5.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'specialtySides',
@@ -320,8 +320,8 @@ module.exports = [
 		image: '',
 		cost: 4.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'specialtySides',
@@ -331,8 +331,8 @@ module.exports = [
 		image: '',
 		cost: 4.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'specialtySides',
@@ -342,8 +342,8 @@ module.exports = [
 		image: '',
 		cost: 6.49,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'specialtySides',
@@ -353,8 +353,8 @@ module.exports = [
 		image: '',
 		cost: 4.95,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 
 	// appetizers classic //
@@ -366,8 +366,8 @@ module.exports = [
 		image: '',	
 		cost: 5.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'appetizers',
@@ -377,8 +377,8 @@ module.exports = [
 		image: '',	
 		cost: 7.49,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'appetizers',
@@ -388,8 +388,8 @@ module.exports = [
 		image: '',	
 		cost: 7.49,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'appetizers',
@@ -399,8 +399,8 @@ module.exports = [
 		image: '',	
 		cost: 5.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'appetizers',
@@ -410,8 +410,8 @@ module.exports = [
 		image: '',	
 		cost: 4.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'appetizers',
@@ -421,8 +421,8 @@ module.exports = [
 		image: '',	
 		cost: 5.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'appetizers',
@@ -432,8 +432,8 @@ module.exports = [
 		image: '',	
 		cost: 4.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'appetizers',
@@ -443,8 +443,8 @@ module.exports = [
 		image: '',	
 		cost: 2.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 
 	// salads classic //
@@ -456,8 +456,8 @@ module.exports = [
 		image: '',
 		cost: 4.95,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'salads',
@@ -467,8 +467,8 @@ module.exports = [
 		image: '',
 		cost: 6.95,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'salads',
@@ -478,8 +478,8 @@ module.exports = [
 		image: '',
 		cost: 5.95,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'salads',
@@ -489,8 +489,8 @@ module.exports = [
 		image: '',
 		cost: 7.95,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 
 	// plantbased beyond //
@@ -502,8 +502,8 @@ module.exports = [
 		image: '',	
 		cost: 9.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'plantbased',
@@ -513,8 +513,8 @@ module.exports = [
 		image: '',	
 		cost: 9.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'plantbased',
@@ -524,8 +524,8 @@ module.exports = [
 		image: '',	
 		cost: 9.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	
 	// plantbased veggie //
@@ -537,8 +537,8 @@ module.exports = [
 		image: '',	
 		cost: 6.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 	{
 		cat: 'plantbased',
@@ -548,8 +548,8 @@ module.exports = [
 		image: '',	
 		cost: 7.99,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 
 	// beverages sodas //
@@ -561,8 +561,8 @@ module.exports = [
 		image: '',	
 		cost: 2.69,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 
 	// Beverages notSodas //
@@ -574,7 +574,7 @@ module.exports = [
 		image: '',	
 		cost: 1.69,
 		productVariantTypes: [],
-		productExtrasTypes: [],
-		productAdditionsTypes: [],
+		productExtraTypes: [],
+		productAdditionTypes: [],
 	},
 ]
