@@ -11,7 +11,7 @@ const ProductVariantModel = require('../s-models/ProductVariantModel')
 // [READ] type //
 const c_readAllByType = async ({ type }) => {
 	try {
-		// [VALIDATE] cat //
+		// [VALIDATE] type //
 		if (!validator.isAscii(type)) {
 			return {
 				executed: true,
@@ -20,7 +20,7 @@ const c_readAllByType = async ({ type }) => {
 			}
 		}
 
-		const productVariants = await ProductVariantModel.find({ type: type }).exec()
+		const productVariants = await ProductVariantModel.find({ type }).exec()
 
 		return {
 			executed: true,

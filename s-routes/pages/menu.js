@@ -81,6 +81,12 @@ router.get(
 							).products,
 						},
 					],
+
+					additions: (
+						await productAdditionsCollection.c_readAllByType({
+							type: 'sliders'
+						})
+					).productAdditions,
 			
 					toppings: (
 						await productExtrasCollection.c_readAllByType({
@@ -145,25 +151,6 @@ router.get(
 								await productsCollection.c_readByCatAndSubCat({
 									cat: 'specialtySides',
 									subCat: 'FrienchFriesOrTatorTots'
-								})
-							).products,
-						},
-					]
-				},
-
-				// Combos //
-				{
-					title: 'Combos',
-			
-					description: '',
-			
-					options: [
-						{
-							title: 'Slider with Wings',
-							variants: (
-								await productsCollection.c_readByCatAndSubCat({
-									cat: 'combos',
-									subCat: 'slider-with-wings'
 								})
 							).products,
 						},

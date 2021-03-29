@@ -95,7 +95,6 @@
 								</h5>
 							</BCol>
 						</BRow>
-						
 					</BListGroupItem>
 				</BListGroup>
 
@@ -133,6 +132,34 @@
 						variant="info"
 						class="p-1 text-center"
 					><h5 class="m-0">{{ sauce.title }}</h5></BListGroupItem>
+				</BListGroup>
+
+				<!-- Additions -->
+				<BListGroup v-if="section.additions" class="mb-4">
+					<BListGroupItem variant="secondary" class="text-center">
+						<h4 class="m-0 text-center">
+							<span class="font-weight-bold text-primary">Additions</span>
+						</h4>
+					</BListGroupItem>
+
+					<BListGroupItem
+						v-for="(addition, i) in section.additions"
+						:key="i"
+						variant="info"
+						class=" py-1"
+					>
+						<BRow>
+							<BCol cols="9" class="text-left">
+								<h5 class="m-0 py-0">{{ addition.title }}</h5>
+							</BCol>
+
+							<BCol cols="3" class="text-right price">
+								<h5 class="m-0 py-0">
+									${{ addition.cost.toFixed(2) }}
+								</h5>
+							</BCol>
+						</BRow>
+					</BListGroupItem>
 				</BListGroup>
 			</BCol>
 		</BRow>

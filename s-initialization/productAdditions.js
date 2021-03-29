@@ -1,60 +1,55 @@
 // [EXPORT] //
 module.exports = [
-	// appetizers classic //
+	// sliders //
 	{
-		type: 'appetizer',
-		title: 'Quesadilla',
-		description: '',
+		type: 'sliders',
+		title: 'Add Art Appetizer',
+		description: 'Add any art appetizers (except for Quesadilla, Chicken Quesadilla, & Beef Quesadilla)',
 		image: '',
-		cost: 5.99,
+		options: [
+			{
+				type: 'appetizer',
+				title: 'Choose Appetizer',
+				variants: [
+					'Quesadilla',
+					'Chicken Quesadilla',
+					'Beef Quesadilla',
+					'Fried Mac and Cheese Bites',
+					'Fried Cauliflower Pops',
+					'Fried Pickles',
+					'Mozzerella Sticks',
+					'Onion Rings'
+				]
+			},
+		],
+		cost: 2.99,
 	},
 	{
-		type: 'appetizer',
-		title: 'Chicken Quesadilla',
-		description: '',
+		type: 'sliders',
+		title: 'Traditional or Boneless wings 4pc-wings',
+		description: 'With any choice of sauce',
 		image: '',
-		cost: 7.49,
-	},
-	{
-		type: 'appetizer',
-		title: 'Beef Quesadilla',
-		description: '',
-		image: '',
-		cost: 7.49,
-	},
-	{
-		type: 'appetizer',
-		title: 'Fried Mac and Cheese Bites',
-		description: '',
-		image: '',
-		cost: 5.99,
-	},
-	{
-		type: 'appetizer',
-		title: 'Fried Cauliflower Pops',
-		description: '',
-		image: '',
-		cost: 4.99,
-	},
-	{
-		type: 'appetizer',
-		title: 'Fried Pickles',
-		description: '',
-		image: '',
-		cost: 5.99,
-	},
-	{
-		type: 'appetizer',
-		title: 'Mozzerella Sticks',
-		description: '',
-		image: '',
-		cost: 4.99,
-	},
-	{
-		type: 'appetizer',
-		title: 'Onion Rings',
-		description: '',
-		image: '',
+		options: [
+			{
+				type: 'bone',
+				title: 'Choose Wing Type',
+				variants: ['traditional', 'boneless',]
+			},
+			{
+				type: 'flavor',
+				title: 'Choose flavor',
+				variants: [
+					'Quesadilla',
+					'Chicken Quesadilla',
+					'Beef Quesadilla',
+					'Fried Mac and Cheese Bites',
+					'Fried Cauliflower Pops',
+					'Fried Pickles',
+					'Mozzerella Sticks',
+					'Onion Rings'
+				]
+			},
+		],
 		cost: 2.99,
 	},
 ]

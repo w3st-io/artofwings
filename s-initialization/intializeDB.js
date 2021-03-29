@@ -1,19 +1,35 @@
 // [REQUIRE] //
 const mongoose = require('mongoose')
 
+
 // [REQUIRE] Personal //
-const products = require('./products')
+const config = require('../s-config')
+const productAddition = require('./productAdditions')
 const productVariants = require('./productVariants')
 const productExtras = require('./productExtras')
-const productAddition = require('./productAdditions')
-
+const products = require('./products')
+const productAdditionsModel = require('../s-models/ProductAdditionModel')
+const productExtrasModel = require('../s-models/ProductExtraModel')
 const productModel = require('../s-models/ProductModel')
 const productVariantsModel = require('../s-models/ProductVariantModel')
-const productExtrasModel = require('../s-models/ProductExtraModel')
-const productAdditionsModel = require('../s-models/ProductAdditionModel')
+
 
 async function insert() {
 	try {
+		// [MONGOOSE-CONNECTION] //
+		mongoose.connect(
+			config.MONGO_URI,
+			{
+				useNewUrlParser: true,
+				useUnifiedTopology: true,
+				useFindAndModify: false,
+			},
+			(err, connected) => {
+				if (connected) { console.log('Mongoose Connected to DB') }
+				else { console.log(`Mongoose Connection Error --> ${err}`) }
+			}
+		)
+
 		// PRODUCTS //
 		for (let i = 0; i < products.length; i++) {
 			const p = products[i]

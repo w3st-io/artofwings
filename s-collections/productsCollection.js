@@ -58,7 +58,7 @@ const c_readByCatAndSubCat = async ({ cat, subCat }) => {
 			}
 		}
 
-		const products = await productModel.find({ cat: cat, subCat: subCat }).exec()
+		const products = await productModel.find({ cat, subCat }).exec()
 
 		return {
 			executed: true,
