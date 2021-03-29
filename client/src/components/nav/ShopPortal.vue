@@ -29,7 +29,7 @@
 		},
 
 		methods: {
-			orderRedirect() { router.push({ name: 'user_order' }) },
+			orderRedirect() { router.push({ name: 'order' }) },
 
 			profileRedirect() { router.push({ name: 'user_profile' }) },
 

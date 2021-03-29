@@ -41,6 +41,7 @@
 
 			return {
 				product_id: product_id,
+				pageData: {},
 				product: {},
 				reqData: {},
 				error: '',
@@ -51,16 +52,27 @@
 			if (!localStorage.usertoken) { router.push({ name: 'user_login' }) }
 
 			await this.getPageData()
+
+			this.log()
 		},
 
 		methods: {
 			async getPageData() {
-				this.reqData = await PageService.s_user_order_add({
+				this.reqData = await PageService.s_order_add({
 					product_id:	this.product_id
 				})
 
-				if (this.reqData.status) { this.product = this.reqData.product }
+				if (this.reqData.status) {
+					this.pageData = this.reqData
+					this.product = this.reqData.product
+				}
 				else { this.error = this.reqData.message }
+			},
+
+			log() {
+				console.log('%%% [PAGE] order_add %%%')
+				console.log('pageData:', this.pageData)
+				console.log('product:', this.product)
 			},
 		}
 	}
