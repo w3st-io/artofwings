@@ -139,43 +139,6 @@ if (config.NODE_ENV == 'production') {
 	})
 }
 
-app.get('/create-db', async (req, res) => {
-	// [REQUIRE] Personal //
-	const products = require('./s-initialization/products')
-	const productVariants = require('./s-initialization/productVariants')
-	const productExtras = require('./s-initialization/productExtras')
-	const productAddition = require('./s-initialization/productAdditions')
-
-	const productModel = require('./s-models/ProductModel')
-	const productVariantsModel = require('./s-models/ProductVariantModel')
-	const productExtrasModel = require('./s-models/ProductExtraModel')
-	const productAdditionsModel = require('./s-models/ProductAdditionModel')
-
-	try {
-		for (let i = 0; i < products.length; i++) {
-			const p = products[i]
-			
-			// [SAVE] //
-			const product = await new productModel({
-				_id: mongoose.Types.ObjectId(),
-				cat: p.cat,
-				subCat: p.subCat,
-				title: p.title,
-				description: p.description,
-				image: p.image,
-				cost: p.cost,
-				productVariantTypes: p.productVariantTypes,
-				productExtrasTypes: p.productExtrasTypes,
-				productAdditionsTypes: p.productAdditionsTypes,
-			}).save()
-	
-			console.log(product)
-		}
-
-		res.send('db created')
-	}
-	catch (err) { console.log(err) }
-})
 
 // [LISTEN] //
 server.listen(port, () => { console.log(`Server Running on Port: ${port}`) })

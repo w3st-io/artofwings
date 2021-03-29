@@ -40,8 +40,6 @@ const c_read = async ({ product_id }) => {
 // [READ-ALL] Within Cat Sorted //
 const c_readByCatAndSubCat = async ({ cat, subCat }) => {
 	try {
-		console.log('s');
-
 		// [VALIDATE] cat //
 		if (!validator.isAscii(cat)) {
 			return {

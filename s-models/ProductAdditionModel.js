@@ -23,25 +23,21 @@ module.exports = mongoose.model(
 		description: {
 			type: String,
 			maxlength: 500,
-			required: true,
+			required: false,
+			description: '',
 		},
-
+	
 		image: {
 			type: String,
-			maxlength: 1000,
-			required: true,
+			maxlength: 500,
+			required: false,
+			default: '',
 		},
 
 		cost: {
 			type: Number,
 			maxlength: 6,
 			required: true,
-		},
-
-		hasProductAddition: {
-			type: Boolean,
-			required: true,
-			default: false,
 		},
 
 		created_at: {
