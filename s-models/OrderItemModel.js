@@ -9,17 +9,16 @@ module.exports = mongoose.model(
 		_id: mongoose.Schema.Types.ObjectId,
 
 		product: {
-			type: String,
-			maxlength: 50,
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'Product',
 			required: true,
 		},
 
 		// Product Variants //
 		productVariants: [
 			{
-				type: String,
-				maxlength: 25,
-				required: true,
+				type: mongoose.Schema.Types.ObjectId,
+				ref: 'ProductVariant',
 			},
 		],
 
@@ -33,9 +32,8 @@ module.exports = mongoose.model(
 		// Product Extras //
 		productExtras: [
 			{
-				type: String,
-				maxlength: 25,
-				required: true,
+				type: mongoose.Schema.Types.ObjectId,
+				ref: 'ProductExtra',
 			},
 		],
 
@@ -50,9 +48,8 @@ module.exports = mongoose.model(
 		productAdditions: [
 			{
 				productAddition: {
-					type: String,
-					maxlength: 25,
-					required: true,
+					type: mongoose.Schema.Types.ObjectId,
+					ref: 'ProductAddition',
 				},
 
 				variant: {
