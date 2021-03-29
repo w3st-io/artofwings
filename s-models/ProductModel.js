@@ -74,7 +74,11 @@ const product = mongoose.Schema({
 
 product.pre('validate', function(next) {
 	// [LENGTH-CHECK] Blocks //
-	if (this.productVariantTypes.length > 20) { throw ('Error: Comment too large') }
+	if (this.productVariantTypes.length > 20) { throw ('Error: too many variants') }
+
+	if (this.productExtrasTypes.length > 20) { throw ('Error: too many extras') }
+	
+	if (this.productAdditionsTypes.length > 20) { throw ('Error: too many additions') }
 	
 	next()
 })
@@ -83,7 +87,15 @@ product.pre('validate', function(next) {
 product.pre('updateOne', function(next) {
 	// [LENGTH-CHECK] Blocks //
 	if (this._update.$set.productVariantTypes.length > 20) {
-		throw ('Error: Comment too large')
+		throw ('Error: too many variants')
+	}
+
+	if (this._update.$set.productExtrasTypes.length > 20) {
+		throw ('Error: too many extras')
+	}
+
+	if (this._update.$set.productAdditionsTypes.length > 20) {
+		throw ('Error: too many additions')
 	}
 	
 	next()
