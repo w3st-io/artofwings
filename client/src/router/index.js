@@ -40,6 +40,9 @@ import gallery_seasonOne from '@/pages/gallery/season-one'
 import gallery_seasonTwo from '@/pages/gallery/season-two'
 // Menu //
 import menu from '@/pages/menu'
+// Order //
+import order from '@/pages/order'
+import order_add from '@/pages/order/add'
 // Post //
 import post from '@/pages/post'
 import post_create from '@/pages/post/create'
@@ -49,8 +52,6 @@ import user_activity_lookup from '@/pages/user/activity/lookup'
 import user_followed from '@/pages/user/followed'
 import user_login from '@/pages/user/login'
 import user_notifications from '@/pages/user/notifications'
-import user_order from '@/pages/user/order'
-import user_order_add from '@/pages/user/order/add'
 import user_password_change from '@/pages/user/password/change'
 import user_password_request from '@/pages/user/password/request'
 import user_password_reset from '@/pages/user/password/reset'
@@ -379,18 +380,18 @@ const router = new Router ({
 			}
 		},
 		{
-			path: '/user/order',
-			name: 'user_order',
-			component: user_order,
+			path: '/order',
+			name: 'order',
+			component: order,
 			meta: {
 				auth: true,
 				title: 'Your Order'
 			}
 		},
 		{
-			path: '/user/order/add/:product_id',
-			name: 'user_order_add',
-			component: user_order_add,
+			path: '/order/add/:product_id',
+			name: 'order_add',
+			component: order_add,
 			meta: {
 				auth: true,
 				title: 'Add to Order'

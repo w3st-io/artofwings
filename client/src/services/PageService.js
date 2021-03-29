@@ -373,7 +373,7 @@ async function s_user_order_add({ product_id }) {
 		console.log(product_id)
 		const authAxios = await this.authAxios()
 
-		return (await authAxios.get(`/user/order/add/${product_id}`)).data
+		return (await authAxios.get(`/order/add/${product_id}`)).data
 	}
 	catch (err) {
 		return {

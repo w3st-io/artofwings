@@ -5,8 +5,8 @@ const validator = require('validator')
 
 
 // [REQUIRE] Personal //
-const Auth = require('../../../../s-middleware/Auth')
-const productsCollection = require('../../../../s-collections/productsCollection')
+const Auth = require('../../../s-middleware/Auth')
+const productsCollection = require('../../../s-collections/productsCollection')
 
 
 // [EXPRESS + USE] //
@@ -27,7 +27,7 @@ router.get(
 				res.send({
 					executed: true,
 					status: true,
-					location: '/pages/user/order/add',
+					location: '/pages/order/add',
 					product: product,
 				})
 			}
@@ -35,8 +35,8 @@ router.get(
 				res.status(200).send({
 					executed: true,
 					status: false,
-					location: '/pages/user/order/add',
-					message: `/pages/user/order/add: Invalid Params`
+					location: '/pages/order/add',
+					message: `/pages/order/add: Invalid Params`
 				})
 			}
 		}
@@ -44,8 +44,8 @@ router.get(
 			res.status(200).send({
 				executed: false,
 				status: false,
-				location: '/pages/user/order/add',
-				message: `/pages/user/order/add: Error --> ${err}`
+				location: '/pages/order/add',
+				message: `/pages/order/add: Error --> ${err}`
 			})
 		}
 	},
