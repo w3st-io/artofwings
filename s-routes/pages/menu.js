@@ -127,6 +127,23 @@ router.get(
 					]
 				},
 
+				// Combos //
+				{
+					title: 'Combos',
+			
+					description: '',
+			
+					options: [
+						{
+							title: 'Slider with Wings',
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'combos',
+								subCat: 'slider-with-wings'
+							})).products,
+						},
+					]
+				},
+
 				// Appetizers //
 				{
 					title: 'Appetizers',
@@ -155,7 +172,7 @@ router.get(
 							title: 'Classic',
 							variants: (await productsCollection.c_readByCatAndSubCat({
 								cat: 'salads',
-								catSub: 'classic'
+								subCat: 'classic'
 							})).products,
 						},
 					]
@@ -206,23 +223,6 @@ router.get(
 								cat: 'beverages',
 								subCat: 'notSodas'
 							})).products,
-						},
-					]
-				},
-
-				// combos //
-				{
-					title: 'Combos',
-			
-					description: '',
-			
-					options: [
-						{
-							title: 'Slider with Wings',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'combos',
-								'slider-with-wings'
-							)).products,
 						},
 					]
 				},
