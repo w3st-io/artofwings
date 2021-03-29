@@ -1,5 +1,6 @@
 // [REQUIRE] //
 const mongoose = require('mongoose')
+const validator = require('validator')
 
 
 // [REQUIRE] Personal //
@@ -39,6 +40,8 @@ const c_read = async ({ product_id }) => {
 // [READ-ALL] Within Cat Sorted //
 const c_readByCatAndSubCat = async ({ cat, subCat }) => {
 	try {
+		console.log('s');
+
 		// [VALIDATE] cat //
 		if (!validator.isAscii(cat)) {
 			return {
@@ -57,7 +60,7 @@ const c_readByCatAndSubCat = async ({ cat, subCat }) => {
 			}
 		}
 
-		const products = await PostModel.find({ cat: cat, subCat: subCat }).exec()
+		const products = await productModel.find({ cat: cat, subCat: subCat }).exec()
 
 		return {
 			executed: true,

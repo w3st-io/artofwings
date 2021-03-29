@@ -26,13 +26,15 @@ const product = mongoose.Schema({
 	description: {
 		type: String,
 		maxlength: 500,
-		required: true,
+		required: false,
+		description: '',
 	},
 
 	image: {
 		type: String,
 		maxlength: 1000,
-		required: true,
+		required: false,
+		default: '',
 	},
 
 	cost: {
@@ -41,30 +43,26 @@ const product = mongoose.Schema({
 		required: true,
 	},
 
-	productAdditions: [
-		{	
+	productVariantTypes: [
+		{
 			type: String,
-			maxlength: 50,	
+			maxlength: 20,	
 		},
 	],
 
-	flavorsAvailable: {
-		type: Boolean,
-		required: true,
-		default: false,
-	},
+	productExtrasTypes: [
+		{
+			type: String,
+			maxlength: 20,	
+		},
+	],
 
-	saucesAvailable: {
-		type: Boolean,
-		required: true,
-		default: false,
-	},
-
-	toppingsAvailable: {
-		type: Boolean,
-		required: true,
-		default: false,
-	},
+	productAdditionsTypes: [
+		{
+			type: String,
+			maxlength: 20,	
+		},
+	],
 
 	created_at: {
 		type: Date,
@@ -76,7 +74,7 @@ const product = mongoose.Schema({
 
 product.pre('validate', function(next) {
 	// [LENGTH-CHECK] Blocks //
-	if (this.productAdditions.length > 20) { throw ('Error: Comment too large') }
+	if (this.productVariantTypes.length > 20) { throw ('Error: Comment too large') }
 	
 	next()
 })
@@ -84,7 +82,7 @@ product.pre('validate', function(next) {
 
 product.pre('updateOne', function(next) {
 	// [LENGTH-CHECK] Blocks //
-	if (this._update.$set.productAdditions.length > 20) {
+	if (this._update.$set.productVariantTypes.length > 20) {
 		throw ('Error: Comment too large')
 	}
 	

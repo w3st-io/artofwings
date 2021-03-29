@@ -8,7 +8,7 @@ const ProductAdditionModel = require('../s-models/ProductAdditionModel')
 
 /******************* [CRUD] *******************/
 // [READ] type //
-const c_readAllByType = async ({ type }) => {
+const c_readAllByType = async (type) => {
 	try {
 		// [VALIDATE] cat //
 		if (!validator.isAscii(type)) {

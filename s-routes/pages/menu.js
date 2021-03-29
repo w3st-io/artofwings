@@ -28,23 +28,23 @@ router.get(
 					options: [
 						{
 							title: 'Wings',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'wingsAndTenders',
-								'wings'
-							)).products,
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'wingsAndTenders',
+								subCat: 'wings',
+							})).products,
 						},
 						{
 							title: 'Tenders',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'wingsAndTenders',
-								'tenders'
-							)).products,
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'wingsAndTenders',
+								subCat: 'tenders'
+							})).products
 						},
 					],
 			
-					flavors: (await productAdditionsCollection.c_readAllByType(
-						'flavor'
-					)).productAdditions,
+					flavors: (await productAdditionsCollection.c_readAllByType({
+						type: 'flavor',
+					})).productAdditions
 				},
 
 				// Sliders //
@@ -56,27 +56,27 @@ router.get(
 					options: [
 						{
 							title: 'Classic',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'sliders',
-								'sliders'
-							)).products,
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'sliders',
+								subCat: 'sliders'
+							})).products,
 						},
 						{
 							title: 'Additions',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'sliders',
-								'additions'
-							)).products,
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'sliders',
+								subCat: 'additions'
+							})).products,
 						},
 					],
 			
-					toppings: (await productAdditionsCollection.c_readAllByType(
-						'topping'
-					)).productAdditions,
+					toppings: (await productAdditionsCollection.c_readAllByType({
+						type: 'topping'
+					})).productAdditions,
 					
-					sauces: (await productAdditionsCollection.c_readAllByType(
-						'sauce'
-					)).productAdditions,
+					sauces: (await productAdditionsCollection.c_readAllByType({
+						type: 'sauce'
+					})).productAdditions,
 				},
 				
 				// Signature Dishes //
@@ -88,24 +88,24 @@ router.get(
 					options: [
 						{
 							title: 'Burgers',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'signatureDishes',
-								'burgers'
-							)).products,
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'signatureDishes',
+								subCat: 'burgers'
+							})).products,
 						},
 						{
 							title: 'Sandwiches',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'signatureDishes',
-								'sandwiches'
-							)).products,
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'signatureDishes',
+								subCat: 'sandwiches'
+							})).products,
 						},
 						{
 							title: 'Subs',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'signatureDishes',
-								'subs'
-							)).products,
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'signatureDishes',
+								subCat: 'subs'
+							})).products,
 						},
 					]
 				},
@@ -119,10 +119,10 @@ router.get(
 					options: [
 						{
 							title: 'French Fries or Tator Tots',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'specialtySides',
-								'FrienchFriesOrTatorTots'
-							)).products,
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'specialtySides',
+								subCat: 'FrienchFriesOrTatorTots'
+							})).products,
 						},
 					]
 				},
@@ -136,10 +136,10 @@ router.get(
 					options: [
 						{
 							title: 'Classic',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'appetizers',
-								'classic'
-							)).products,
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'appetizers',
+								subCat: 'classic'
+							})).products,
 						},
 					]
 				},
@@ -153,10 +153,10 @@ router.get(
 					options: [
 						{
 							title: 'Classic',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'salads',
-								'classic'
-							)).products,
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'salads',
+								catSub: 'classic'
+							})).products,
 						},
 					]
 				},
@@ -170,17 +170,18 @@ router.get(
 					options: [
 						{
 							title: 'Beyond',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'plantbased',
-								'beyond'
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'plantbased',
+								subCat: 'beyond'
+							}
 							)).products,
 						},
 						{
 							title: 'Veggie',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'plantbased',
-								'veggie'
-							)).products,
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'plantbased',
+								subCat: 'veggie'
+							})).products,
 						},
 					],
 				},
@@ -194,17 +195,17 @@ router.get(
 					options: [
 						{
 							title: 'Sodas',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'beverages',
-								'soda'
-							)).products,
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'beverages',
+								subCat: 'soda'
+							})).products,
 						},
 						{
 							title: 'Not Sodas',
-							variants: (await productsCollection.c_readByCatAndSubCat(
-								'beverages',
-								'notSodas'
-							)).products,
+							variants: (await productsCollection.c_readByCatAndSubCat({
+								cat: 'beverages',
+								subCat: 'notSodas'
+							})).products,
 						},
 					]
 				},
