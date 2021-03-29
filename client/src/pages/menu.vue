@@ -1,6 +1,5 @@
 <template>
 	<BContainer class="my-3">
-		{{ pageData }}
 		<BRow v-if="!loading && !error">
 			<BCol
 				v-for="(section, i) in pageData.menu" :key="i"

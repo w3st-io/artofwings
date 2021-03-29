@@ -4,7 +4,7 @@ const validator = require('validator')
 
 
 // [REQUIRE] Personal //
-const ProductAdditionModel = require('../s-models/ProductAdditionModel')
+const ProductVariantModel = require('../s-models/ProductVariantModel')
 
 
 /******************* [CRUD] *******************/
@@ -16,23 +16,23 @@ const c_readAllByType = async ({ type }) => {
 			return {
 				executed: true,
 				status: false,
-				message: 'productAdditionsCollection: Invalid type',
+				message: 'productVariantsCollection: Invalid type',
 			}
 		}
 
-		const productAdditions = await ProductAdditionModel.find({ type: type }).exec()
+		const productVariants = await ProductVariantModel.find({ type: type }).exec()
 
 		return {
 			executed: true,
 			status: true,
-			productAdditions: productAdditions,
+			productVariants: productVariants,
 		}
 	}
 	catch (err) {
 		return {
 			executed: false,
 			status: false,
-			message: `productAdditionsCollection: Error --> ${err}`,
+			message: `productVariantsCollection: Error --> ${err}`,
 		}
 	}
 }

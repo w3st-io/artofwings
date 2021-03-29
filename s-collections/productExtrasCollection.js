@@ -1,37 +1,38 @@
 // [REQUIRE] //
 const mongoose = require('mongoose')
+const validator = require('validator')
 
 
 // [REQUIRE] Personal //
-const ProductAdditionModel = require('../s-models/ProductAdditionModel')
+const ProductExtraModel = require('../s-models/ProductExtraModel')
 
 
 /******************* [CRUD] *******************/
 // [READ] type //
-const c_readAllByType = async (type) => {
+const c_readAllByType = async ({ type }) => {
 	try {
 		// [VALIDATE] cat //
 		if (!validator.isAscii(type)) {
 			return {
 				executed: true,
 				status: false,
-				message: 'productAdditionsCollection: Invalid type',
+				message: 'productExtrasCollection: Invalid type',
 			}
 		}
 
-		const products = await ProductAdditionModel.find({ type: type }).exec()
-
+		const productExtras = await ProductExtraModel.find({ type: type }).exec()
+		
 		return {
 			executed: true,
 			status: true,
-			products: products,
+			productExtras: productExtras,
 		}
 	}
 	catch (err) {
 		return {
 			executed: false,
 			status: false,
-			message: `productAdditionsCollection: Error --> ${err}`,
+			message: `productExtrasCollection: Error --> ${err}`,
 		}
 	}
 }
