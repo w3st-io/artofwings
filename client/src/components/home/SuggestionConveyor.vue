@@ -2,10 +2,10 @@
 	<BRow>
 		<BCol cols="1" class="m-0 p-0">
 			<BButton
-			variant="primary"
-			id="prevButton"
-			class="mt-5 px-0 w-100 shadow"
-			style="max-width: 64px;"
+				variant="primary"
+				id="prevButton"
+				class="mt-5 px-0 w-100 shadow"
+				style="max-width: 64px;"
 			><ArrowLeftIcon /></BButton>
 		</BCol>
 
@@ -20,7 +20,7 @@
 
 					<p>{{ slide.description }}</p>
 
-					<BButton variant="primary" size="lg" class="w-100 px-5 shadow">
+					<BButton :variant="buttonColor" size="lg" class="shadow">
 						Check it Out
 					</BButton>
 				</div>
@@ -35,7 +35,7 @@
 
 					<p>{{ slide.description }}</p>
 
-					<BButton variant="primary" size="lg" class="w-100 shadow">
+					<BButton :variant="buttonColor" size="lg" class="shadow">
 						Check it Out
 					</BButton>
 				</div>
@@ -50,7 +50,7 @@
 
 					<p>{{ slide.description }}</p>
 
-					<BButton variant="primary" size="lg" class="w-100 shadow">
+					<BButton :variant="buttonColor" size="lg" class="shadow">
 						Check it Out
 					</BButton>
 				</div>
@@ -65,7 +65,7 @@
 
 					<p>{{ slide.description }}</p>
 
-					<BButton variant="primary" size="lg" class="w-100 shadow">
+					<BButton :variant="buttonColor" size="lg" class="shadow">
 						Check it Out
 					</BButton>
 				</div>
@@ -178,6 +178,7 @@
 
 				imageClass: 'w-100 rounded-lg image',
 				contentClass: 'content',
+				buttonColor: 'secondary',
 			}
 		},
 

@@ -33,7 +33,7 @@ module.exports = [
 		text: 'Directions',
 	},
 	{
-		path: '/contact-us',
+		path: '/contact',
 		text: 'Contact',
 	},
 	{

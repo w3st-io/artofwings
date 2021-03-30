@@ -1,6 +1,6 @@
 // [EXPORT] //
 module.exports = {
-	companyLogo: '',
+	companyLogo: require('../assets/media/company/logo.png'),
 	companyName: 'Art of Wings',
 	companyCaption: 'Est. 2021',
 

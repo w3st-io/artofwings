@@ -30,6 +30,8 @@ import components_bcarousel from '@/pages/components/bcarousel'
 import components_conveyor from '@/pages/components/conveyor'
 import components_getQuote from '@/pages/components/get-quote'
 import components_parallax from '@/pages/components/parallax'
+// Contact
+import contact from '../pages/contact'
 // Directions //
 import directions from '@/pages/directions'
 // Email //
@@ -254,6 +256,16 @@ const router = new Router ({
 			meta: {
 				auth: true,
 				title: 'Reply to Comment'
+			}
+		},
+		// Contact //
+		{
+			path: '/contact',
+			name: 'contact',
+			component: contact,
+			meta: {
+				auth: true,
+				title: 'Contact Us'
 			}
 		},
 		// Directions //

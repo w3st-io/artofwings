@@ -5,7 +5,7 @@
 				v-for="(section, i) in pageData.menu" :key="i"
 				cols="12" md="6" lg="4" xl="4"
 				data-aos="fade-left"
-				:data-aos-delay="300 * (i + 1)"
+				:data-aos-delay="calcDelay(i)"
 			>
 				<h1 class="m-0 text-center font-weight-bold text-primary">
 					{{ section.title }}
@@ -200,6 +200,11 @@
 				else { this.error = this.reqData.message }
 
 				this.loading = false
+			},
+
+			calcDelay(i) {
+				if (i > 2) return 0
+				else return 300 * (i + 1)
 			},
 
 			spiceColor(length, index) {

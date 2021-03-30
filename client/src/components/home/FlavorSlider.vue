@@ -15,7 +15,7 @@
 		</BCol>
 
 		<BCol cols="8" class="p-0">
-			<div class="text-center">
+			<div class="h-100 py-2 text-center">
 				<!-- SLIDER! -->
 				<VueSlider
 					v-model="value"
@@ -43,16 +43,18 @@
 			<!-- Tiny Slider -->
 			<VueTinySlider ref="slider" v-bind="slider.options">
 				<div v-for="(slide, index) in slides" :key="index">
-					<mark
-						class="h2 m-0 px-5 py-0 text-light"
-						:style="'background-color: rgb(' + spiceColor(index) + ');'"
-					>{{ slide.title }}</mark>
-					<br>
+					<div class="p-3" >
+						<div
+							class="p-3 rounded-lg shadow"
+							:style="'background-color: rgb(' + spiceColor(index) + ');'"
+						>
+							<h1 class="m-0 p-0 text-light font-weight-bold">
+							{{ slide.title }}
+						</h1>
 
-					<ChiliPepperSVG
-						:color="'rgb(' + spiceColor(index) + ')'"
-						style="max-width: 140px;"
-					/>	
+						<ChiliPepperSVG color="white" style="max-width: 140px;" />
+						</div>
+					</div>
 				</div>
 			</VueTinySlider>
 		</BCol>
@@ -183,7 +185,7 @@
 				const increment = 100 / this.slides.length
 				const R = (255 * (index * increment)) / 100
 				const G = (255 * (100 - (index * increment))) / 100 
-				const B = 64
+				const B = 0
 
 				return `${R}, ${G}, ${B}`
 			},
