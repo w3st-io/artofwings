@@ -6,7 +6,7 @@
 				<!-- [LEFT] Logo -->
 				<div>
 					<RouterLink to="/" class="text-decoration-none text-light">
-						<img :src="logo" class="w-100" style="max-width: 260px;">
+						<img :src="logo" class="w-100 logo-img" style="max-width: 260px;">
 					</RouterLink>
 				</div>
 
@@ -17,7 +17,6 @@
 
 				<!-- [CENTER] Menu Items -->
 				<div class="d-none d-lg-block mx-auto text-center text-lg-left py-3">
-					
 					<RouterLink
 						v-for="button in buttons"
 						:key="button.type"
@@ -128,6 +127,13 @@
 
 <style lang="scss">
 	@import '../../assets/styles/bootstrap-override.scss';
+
+	.logo-img {
+		transition: .36s;
+		&:hover {
+			transform: translate(0px, -3px);
+		}
+	}
 
 	.menu-link {
 		position: relative;

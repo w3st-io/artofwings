@@ -9,22 +9,28 @@
 			/>
 		</BContainer>
 
-		<!-- SugggestionConveyor -->
 		<BContainer fluid class="m-0 py-5 bg-light">
+			<!-- Title -->
 			<h1 class="mb-3 text-center">
 				<mark class="bg-dark text-light">Combos & Deals</mark>
 			</h1>
+
+			<!-- SugggestionConveyor -->
 			<BContainer class="m3 text-center">
 				<SuggestionConveyor :slides="pageData.cnt2.slides" />
 			</BContainer>
-		</BContainer>
-
-		<!-- Sections -->
-		<BContainer fluid class="m-0 bg-light">
+	
+			<!-- Sections -->
 			<BContainer class="py-5 text-center">
 				<BRow>
 					<BCol cols="12" md="6" lg="4" class="mb-3">
 						<FlavorSlider class="w-100" />
+
+						<BButton
+							variant="primary"
+							size="lg"
+							class="shadow"
+						>Check Out our Menu</BButton>
 					</BCol>
 
 					<BCol cols="12" md="6" lg="4" class="mb-3">
@@ -107,5 +113,13 @@
 			transform: translate(0, -10px);
 			@extend .shadow-lg;
 		}
+	}
+
+	.gallery-center {
+		z-index: 100;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 </style>

@@ -4,7 +4,7 @@
 			<h2 class="text-dark">Our Flavors</h2>
 		</BCol>
 
-		<BCol cols="2">
+		<BCol cols="3">
 			<BButton
 				variant="primary"
 				size="sm"
@@ -14,7 +14,7 @@
 			><h2 class="m-0">-</h2></BButton>
 		</BCol>
 
-		<BCol cols="8" class="p-0">
+		<BCol cols="6" class="p-0">
 			<div class="h-100 py-2 text-center">
 				<!-- SLIDER! -->
 				<VueSlider
@@ -29,7 +29,7 @@
 			</div>
 		</BCol>
 
-		<BCol cols="2">
+		<BCol cols="3">
 			<BButton
 				variant="primary"
 				size="sm"

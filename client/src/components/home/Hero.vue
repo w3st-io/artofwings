@@ -8,7 +8,7 @@
 					style="max-width: 600px"
 					data-aos="fade-up"
 					data-aos-delay="1000"
-				>
+				/>
 			</div>
 			<BRow>
 				<BCol
@@ -23,13 +23,13 @@
 						class="mb-2 w-100"
 						:data-aos="randomFade()"
 						:data-aos-delay="randomDelay()"
-					>
+					/>
 					<img
 						:src="col[1]"
 						class="mb-2 w-100"
 						:data-aos="randomFade()"
 						:data-aos-delay="randomDelay()"
-					>
+					/>
 				</BCol>
 			</BRow>
 		</BCol>

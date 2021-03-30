@@ -1,15 +1,19 @@
 <template>
 	<div>
-		<h1 class="mb-3">
-			<mark class="bg-primary text-light">Best Sellers</mark>
-		</h1>
+		<BListGroup flush>
+			<BListGroupItem>
+				<h1 class="m-0 text-primary">Best Sellers</h1>
+			</BListGroupItem>
 
-		<BListGroup variant="dark">
-			<BListGroupItem :variant="variant">Cras justo odio</BListGroupItem>
-			<BListGroupItem :variant="variant">Dapibus ac facilisis in</BListGroupItem>
-			<BListGroupItem :variant="variant">Morbi leo risus</BListGroupItem>
-			<BListGroupItem :variant="variant">Porta ac consectetur ac</BListGroupItem>
-			<BListGroupItem :variant="variant">Vestibulum at eros</BListGroupItem>
+			<BListGroupItem
+				v-for="(bestSeller, i) in bestSellers" :key="i"
+				:variant="variant"
+			>
+				<BRow>
+					<BCol cols="9" class="text-left">{{ bestSeller.title }}</BCol>
+					<BCol cols="3" class="price">${{ bestSeller.cost.toFixed(2) }}</BCol>
+				</BRow>
+			</BListGroupItem>
 		</BListGroup>
 	</div>
 </template>
@@ -19,7 +23,26 @@
 export default {
 	data() {
 		return {
-			variant: 'dark',
+			variant: 'none',
+
+			bestSellers: [
+				{
+					title: '6 Piece Wings',
+					cost: 6.99,
+				},
+				{
+					title: '12 Piece Wings',
+					cost: 12.99,
+				},
+				{
+					title: '24 Piece Wings',
+					cost: 24.99,
+				},
+				{
+					title: 'Rutgers Cheesesteak',
+					cost: 6.99,
+				},
+			],
 		}
 	},
 }

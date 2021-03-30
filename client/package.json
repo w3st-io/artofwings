@@ -32,7 +32,8 @@
     "vue-router": "^3.3.4",
     "vue-slider-component": "^3.2.11",
     "vue-tiny-slider": "^0.1.39",
-    "vue-youtube-embed": "^2.2.2"
+    "vue-youtube-embed": "^2.2.2",
+    "vue-zoom-on-hover": "^1.0.5"
   },
   "devDependencies": {
     "@editorjs/code": "^2.6.0",

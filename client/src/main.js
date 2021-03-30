@@ -21,6 +21,10 @@ import '@assets/styles/style.scss'
 import './vee-validation-rules'
 
 
+import ZoomOnHover from "vue-zoom-on-hover"
+Vue.use(ZoomOnHover)
+
+
 // [USE] //
 Vue.use(BootstrapVue)
 Vue.use(Editor)
