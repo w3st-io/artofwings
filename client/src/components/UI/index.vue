@@ -55,7 +55,7 @@
 	.nav-z-index { z-index: 2000; top: 0; }
 
 	.nav-spacer2 {
-		padding-top: 98px;
+		padding-top: 120px;
 
 		@media (max-width: 990px) { padding-top: 151px; }		
 	}

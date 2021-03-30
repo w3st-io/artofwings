@@ -63,5 +63,5 @@
 </script>
 
 <style lang="scss">
-	.map { height: calc(100vh - 98px); }
+	.map { height: calc(100vh - 120px); }
 </style>

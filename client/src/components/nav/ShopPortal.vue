@@ -1,13 +1,15 @@
 <template>
 	<BButtonGroup>
 		<!-- Shopping Cart -->
-		<BButton variant="secondary" class="" @click="orderRedirect()">
+		<BButton variant="secondary" class="px-4" @click="mainRedirect()">
 			<!-- <BBadge variant="danger">3</BBadge> -->
-			<ShoppingCartIcon size="2x" class="mx-3 text-dark" />
+			<ShoppingCartIcon v-if="userLogged" class="text-dark" />
+
+			<span v-if="!userLogged" style="2em">Login</span>
 		</BButton>
 
 		<!-- User Logged -->
-		<BDropdown right @click="profileRedirect()">
+		<BDropdown v-if="userLogged" right @click="profileRedirect()">
 			<BDropdownItemButton @click="logout()">
 				Log Out
 			</BDropdownItemButton>
@@ -28,8 +30,23 @@
 			ShoppingCartIcon
 		},
 
+		data() {
+			return {
+				userLogged: false,
+			}
+		},
+
+		async created() {
+			if (localStorage.usertoken) { this.userLogged = true }
+		},
+
 		methods: {
-			orderRedirect() { router.push({ name: 'order' }) },
+			mainRedirect() {
+				if (this.userLogged) {
+					router.push({ name: 'order' })
+				}
+				else { router.push({ name: 'user_login' }) }
+			},
 
 			profileRedirect() { router.push({ name: 'user_profile' }) },
 

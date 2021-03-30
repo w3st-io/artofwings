@@ -29,10 +29,10 @@
 		</RouterLink>
 
 		<a v-show="sideMenuOpen" :href="companyInfo.googleMapsLink" class="text-center">
-			<h5 class="m-4 text-info">{{ companyInfo.address }}</h5>
+			<h4 class="m-4 text-light">{{ companyInfo.address }}</h4>
 		</a>
 
-		<SocialMediaPlug v-show="sideMenuOpen" size="1.8x" variant="info" class="m-4" />
+		<SocialMediaPlug v-show="sideMenuOpen" size="2x" variant="light" class="m-4" />
 	</nav>
 </template>
 

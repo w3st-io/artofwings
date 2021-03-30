@@ -2,66 +2,50 @@
 	<div>
 		<!-- Top Bar -->
 		<div class="bg-primary">
-			<BContainer class="py-3">
-				<BRow>
-					<!-- Logo -->
-					<BCol cols="8" lg="3">
-						<RouterLink to="/" class="text-decoration-none text-light">
-							<img :src="logo" class="w-100" style="max-width: 256px;">
-						</RouterLink>
-					</BCol>
+			<BContainer class="py-3 d-flex container-fluid">
+				<!-- [LEFT] Logo -->
+				<div>
+					<RouterLink to="/" class="text-decoration-none text-light">
+						<img :src="logo" class="w-100" style="max-width: 260px;">
+					</RouterLink>
+				</div>
 
-					<!-- Shopping Cart + User -->
-					<BCol cols="4" lg="12" class="d-block d-lg-none text-right">
-						<BButton
-							v-if="!userLogged"
-							variant="secondary"
-							class="mx-1"
-							@click="loginRedirect()"
-						>Login</BButton>
+				<!-- [HIDDEN] Shopping Cart + User -->
+				<div class="d-block d-lg-none ml-auto text-right">
+					<ShopPortal />
+				</div>
 
-						<ShopPortal v-if="userLogged" />
-					</BCol>
-
-					<!-- Menu Items -->
-					<BCol
-						cols="12" lg="7"
-						class="d-none d-md-block text-center text-lg-left py-3"
+				<!-- [CENTER] Menu Items -->
+				<div class="d-none d-lg-block mx-auto text-center text-lg-left py-3">
+					
+					<RouterLink
+						v-for="button in buttons"
+						:key="button.type"
+						:to="button.path"
 					>
-						<RouterLink
-							v-for="button in buttons"
-							:key="button.type"
-							:to="button.path"
-						>
-							<BButton
-								variant="primary"
-								size="sm"
-								class="text-light menu-link"
-								data-aos="fade"
-							>
-								<h5 class="m-0 font-weight-bold">
-									<span v-if="button.text">{{ button.text }}</span>
-									<span v-else v-html="button.navIcon"></span>
-								</h5>
-							</BButton>
-						</RouterLink>
-					</BCol>
-
-					<!-- Shopping Cart + User -->
-					<BCol cols="12" lg="2" class="d-none d-lg-block text-right">
 						<BButton
-							v-if="!userLogged"
-							variant="secondary"
-							class="mx-1"
-							@click="loginRedirect()"
-						>Login</BButton>
+							variant="primary"
+							size="sm"
+							class="text-light menu-link"
+							data-aos="fade"
+						>
+							<h5 class="m-0 font-weight-bold">
+								<span v-if="button.text">{{ button.text }}</span>
+								<span v-else v-html="button.navIcon"></span>
+							</h5>
+						</BButton>
+					</RouterLink>
+				</div>
 
-						<ShopPortal v-if="userLogged" />
-					</BCol>
-				</BRow>
+				<!-- [RIGHT] Shopping Cart + User -->
+				<div class="d-none d-lg-block ml-auto text-right">
+					<SocialMediaPlug size="2x" variant="light" class="mb-3"/>
+
+					<ShopPortal />
+				</div>
 			</BContainer>
 
-			<BContainer fluid class="d-block d-md-none">
+			<BContainer fluid class="d-block d-lg-none">
 				<BRow>
 					<!-- Hidden Menu Button -->
 					<BCol cols="12" class="p-0">
@@ -85,6 +69,7 @@
 	// [IMPORT] Personal //
 	import SideMenu from '@/components/nav/SideMenu'
 	import ShopPortal from '@/components/nav/ShopPortal'
+	import SocialMediaPlug from '@/components/SocialMediaPlug'
 	import defaultData from '@/defaults/companyInfo'
 	import buttons from '@/defaults/pageLinks'
 	import router from '@/router'
@@ -95,6 +80,7 @@
 			MenuIcon,
 			SideMenu,
 			ShopPortal,
+			SocialMediaPlug,
 		},
 
 		data() {
