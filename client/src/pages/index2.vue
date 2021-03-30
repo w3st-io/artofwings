@@ -10,7 +10,7 @@
 		</BContainer>
 
 		<!-- SugggestionConveyor -->
-		<BContainer fluid class="m-0 py-3 bg-light">
+		<BContainer fluid class="m-0 py-5 bg-light">
 			<BContainer class="m3 text-center">
 				<SuggestionConveyor :slides="pageData.cnt2.slides" />
 			</BContainer>
@@ -45,14 +45,14 @@
 					<img :src="imageLeft" class="w-100" >
 				</BCol>
 
-				<BCol cols="6" md="3" class="text-center">
+				<BCol cols="6" md="3" class="text-center" data-aos="fade">
 					<BButton size="lg" class="w-100 my-5">Check Out the Menu</BButton>
 				</BCol>
-				<BCol cols="6" md="3" class="text-center">
+				<BCol cols="6" md="3" class="text-center" data-aos="fade">
 					<BButton size="lg" class="w-100 my-5">Order Now</BButton>
 				</BCol>
 
-				<BCol cols="3" class="p-0 d-none d-md-block">
+				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade">
 					<img :src="imageRight" class="w-100">
 				</BCol>
 			</BRow>

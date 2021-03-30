@@ -4,12 +4,23 @@
 			<mark class="bg-primary text-light">Best Sellers</mark>
 		</h1>
 
-		<BListGroup>
-			<BListGroupItem variant="secondary">Cras justo odio</BListGroupItem>
-			<BListGroupItem variant="secondary">Dapibus ac facilisis in</BListGroupItem>
-			<BListGroupItem variant="secondary">Morbi leo risus</BListGroupItem>
-			<BListGroupItem variant="secondary">Porta ac consectetur ac</BListGroupItem>
-			<BListGroupItem variant="secondary">Vestibulum at eros</BListGroupItem>
+		<BListGroup variant="dark">
+			<BListGroupItem :variant="variant">Cras justo odio</BListGroupItem>
+			<BListGroupItem :variant="variant">Dapibus ac facilisis in</BListGroupItem>
+			<BListGroupItem :variant="variant">Morbi leo risus</BListGroupItem>
+			<BListGroupItem :variant="variant">Porta ac consectetur ac</BListGroupItem>
+			<BListGroupItem :variant="variant">Vestibulum at eros</BListGroupItem>
 		</BListGroup>
 	</div>
 </template>
+
+
+<script>
+export default {
+	data() {
+		return {
+			variant: 'dark',
+		}
+	},
+}
+</script>

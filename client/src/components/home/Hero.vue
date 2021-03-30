@@ -1,6 +1,6 @@
 <template>
 	<BRow>
-		<BCol cols="12" style="max-height: 500px; overflow: hidden;">
+		<BCol cols="12" style="max-height: 600px; overflow: hidden;">
 			<div class="p-2 gallery-center">
 				<img
 					:src="centerImg"

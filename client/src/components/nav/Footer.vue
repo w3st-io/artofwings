@@ -1,32 +1,96 @@
 <template>
 	<!-- Footer -->
-	<footer class="pt-4 page-footer font-small bg-dark text-center">
-		<BButton
-			v-if="userLogged"
-			variant="outline-secondary"
-			size="sm"
-			class="m-auto"
-			@click="logout()"
-		>Log Out</BButton>
+	<div class="w-100 bg-dark text-light">
+		<BContainer>
+			<BRow class="pt-4">
+				<BCol cols="12" class="text-center" data-aos="fade">
+					<h5 class="text-primary">
+						{{ companyInfo.companyName }} {{ new Date().getFullYear() }}
+					</h5>
+					<h6 v-html="companyInfo.companyCaption" class="text-secondary">
+					</h6>
+					<hr>
+				</BCol>
 
-		<!-- Copyright -->
-		<div class="pt-3 pb-5 footer-copyright text-secondary">
-			<a href="https://w3st.io/">w3st.io</a>
-			© {{ new Date().getFullYear() }}
-			<br>
-			<a href="https://iexcloud.io">Data provided by IEX Cloud</a>
-			<h6><i class="text-dark">"Dare I say it..?"</i></h6>
-		</div>
-	</footer>
+				<BCol cols="12" sm="4" class="text-center text-sm-left" data-aos="fade-up">
+					<h4 class="text-primary">Location</h4>
+					<a :href="companyInfo.googleMapsLink" class="mb-3">
+						<h5 class="mb-4">{{ companyInfo.address }}</h5>
+					</a>
+
+					<h4 class="text-primary">Hours</h4>
+					<ul class="list-unstyled text-small text-light">
+						<li
+							v-for="(hoo, index) in companyInfo.hoursOfOperation"
+							:key="index"
+						>
+							<span class="text-secondary">{{ hoo.days }}:</span>
+							{{ hoo.hours }}
+						</li>
+					</ul>
+					<hr>
+				</BCol>
+
+				<BCol cols="12" sm="4" class="text-center" data-aos="fade-up">
+					<h4 class="text-primary">Company</h4>
+					<ul class="list-unstyled text-small">
+						<li>
+							<RouterLink to="/contact-us">
+								Contact Us
+							</RouterLink>
+						</li>
+						<li>
+							<RouterLink to="/about">
+								About
+							</RouterLink>
+						</li>
+						<li>
+							<RouterLink to="/gallery">
+								Gallery
+							</RouterLink>
+						</li>
+					</ul>
+					<hr>
+				</BCol>
+
+				<BCol cols="12" sm="4" class="text-center" data-aos="fade-up">
+					<h4 class="text-primary">User</h4>
+					<ul class="list-unstyled text-small">
+						<li class="mb-2">
+							<BButton
+								v-if="userLogged"
+								variant="outline-secondary"
+								size="sm"
+								class="m-auto"
+								@click="logout()"
+							>Log Out</BButton>
+						</li>
+						<li>
+							<RouterLink to="/order">
+								Your Order
+							</RouterLink>
+						</li>
+					</ul>
+					<hr>
+				</BCol>
+
+				<BCol cols="12" class="my-3 text-center text-secondary">
+					<h6>© w3st.io {{ new Date().getFullYear() }}</h6>
+				</BCol>
+			</BRow>
+		</BContainer>
+	</div>
 </template>
 
 <script>
+	import companyInfo from '../../defaults/companyInfo'
 	import router from '@/router'
 	import UserService from '@/services/UserService'
 
 	export default {
 		data() {
 			return {
+				companyInfo: companyInfo,
 				userLogged: false,
 			}
 		},

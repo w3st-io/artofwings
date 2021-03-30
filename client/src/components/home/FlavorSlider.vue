@@ -8,9 +8,10 @@
 			<BButton
 				variant="primary"
 				size="sm"
-				class="h1 w-100 px-0 shadow"
+				class="h1 p-0 rounded-circle shadow"
+				style="width: 42px; height: 42px;"
 				@click="decrementValue()"
-			><h3 class="m-0">-</h3></BButton>
+			><h2 class="m-0">-</h2></BButton>
 		</BCol>
 
 		<BCol cols="8" class="p-0">
@@ -32,12 +33,13 @@
 			<BButton
 				variant="primary"
 				size="sm"
-				class="w-100 px-0 shadow"
+				class="h1 p-0 rounded-circle shadow"
+				style="width: 42px; height: 42px;"
 				@click="incrementValue()"
-			><h3 class="m-0">+</h3></BButton>
+			><h2 class="m-0">+</h2></BButton>
 		</BCol>
 
-		<BCol cols="12">
+		<BCol cols="12" class="my-2">
 			<!-- Tiny Slider -->
 			<VueTinySlider ref="slider" v-bind="slider.options">
 				<div v-for="(slide, index) in slides" :key="index">
@@ -49,7 +51,7 @@
 
 					<ChiliPepperSVG
 						:color="'rgb(' + spiceColor(index) + ')'"
-						style="max-width: 180px;"
+						style="max-width: 140px;"
 					/>	
 				</div>
 			</VueTinySlider>

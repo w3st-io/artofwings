@@ -37,6 +37,7 @@
 								variant="primary"
 								size="sm"
 								class="text-light menu-link"
+								data-aos="fade"
 							>
 								<h5 class="m-0 font-weight-bold">
 									<span v-if="button.text">{{ button.text }}</span>
