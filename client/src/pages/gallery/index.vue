@@ -3,12 +3,12 @@
 		<BRow>
 			<!-- Title -->
 			<BCol cols="12" class="mb-3 text-left">
-				<h2 class="text-primary font-weight-bold">Our Gallery</h2>
+				<h2 class="font-weight-bold text-center text-primary">Gallery</h2>
 			</BCol>
 
 			<!-- Season 1 -->
 			<BCol
-				cols="12" sm="6" md="4" class="mb-3"
+				cols="12" sm="6" class="mb-3"
 				data-aos="fade-up"
 				data-aos-delay="300"
 			>
@@ -23,7 +23,7 @@
 
 			<!-- Season 2 -->
 			<BCol
-				cols="12" sm="6" md="4" class="mb-3"
+				cols="12" sm="6" class="mb-3"
 				data-aos="fade-up"
 				data-aos-delay="600"
 			>

@@ -80,19 +80,19 @@ router.get(
 								})
 							).products,
 						},
-					],
-
-					additions: (
-						await productAdditionsCollection.c_readAllByType({
-							type: 'sliders'
-						})
-					).productAdditions,
+					],	
 			
 					toppings: (
 						await productExtrasCollection.c_readAllByType({
 							type: 'topping'
 						})
 					).productExtras,
+
+					additions: (
+						await productAdditionsCollection.c_readAllByType({
+							type: 'slider'
+						})
+					).productAdditions,
 					
 					sauces: (
 						await productVariantsCollection.c_readAllByType({

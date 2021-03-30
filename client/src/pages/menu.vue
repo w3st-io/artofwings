@@ -4,7 +4,7 @@
 			<BCol
 				v-for="(section, i) in pageData.menu" :key="i"
 				cols="12" md="6" lg="4" xl="4"
-				data-aos="fade-left"
+				data-aos="fade-up"
 				:data-aos-delay="calcDelay(i)"
 			>
 				<h1 class="m-0 text-center font-weight-bold text-primary">
@@ -119,22 +119,6 @@
 						</h5>
 					</BListGroupItem>
 				</BListGroup>
-				
-				<!-- Sauces -->
-				<BListGroup v-if="section.sauces" class="mb-4">
-					<BListGroupItem variant="secondary" class="text-center">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">Sauces</span>
-						</h4>
-					</BListGroupItem>
-
-					<BListGroupItem
-						v-for="(sauce, i) in section.sauces"
-						:key="i"
-						variant="info"
-						class="p-1 text-center"
-					><h5 class="m-0">{{ sauce.title }}</h5></BListGroupItem>
-				</BListGroup>
 
 				<!-- Additions -->
 				<BListGroup v-if="section.additions" class="mb-4">
@@ -162,6 +146,22 @@
 							</BCol>
 						</BRow>
 					</BListGroupItem>
+				</BListGroup>
+				
+				<!-- Sauces -->
+				<BListGroup v-if="section.sauces" class="mb-4">
+					<BListGroupItem variant="secondary" class="text-center">
+						<h4 class="m-0 text-center">
+							<span class="font-weight-bold text-primary">Sauces</span>
+						</h4>
+					</BListGroupItem>
+
+					<BListGroupItem
+						v-for="(sauce, i) in section.sauces"
+						:key="i"
+						variant="info"
+						class="p-1 text-center"
+					><h5 class="m-0">{{ sauce.title }}</h5></BListGroupItem>
 				</BListGroup>
 			</BCol>
 		</BRow>
@@ -204,7 +204,7 @@
 
 			calcDelay(i) {
 				if (i > 2) return 0
-				else return 300 * (i + 1)
+				else return 300 * (i)
 			},
 
 			spiceColor(length, index) {

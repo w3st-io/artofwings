@@ -23,7 +23,7 @@ module.exports = [
 	},
 	{
 		type: 'slider',
-		title: 'Traditional or Boneless wings 4pc-wings',
+		title: 'Traditional or Boneless 4pc wings',
 		description: 'With any choice of sauce',
 		image: '',
 		options: [

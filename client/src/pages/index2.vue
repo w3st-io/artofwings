@@ -11,6 +11,9 @@
 
 		<!-- SugggestionConveyor -->
 		<BContainer fluid class="m-0 py-5 bg-light">
+			<h1 class="mb-3 text-center">
+				<mark class="bg-dark text-light">Combos & Deals</mark>
+			</h1>
 			<BContainer class="m3 text-center">
 				<SuggestionConveyor :slides="pageData.cnt2.slides" />
 			</BContainer>
