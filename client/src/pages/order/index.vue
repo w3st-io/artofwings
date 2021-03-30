@@ -1,6 +1,6 @@
 <template>
 	<BContainer class="my-3" data-aos="fade">
-		<div class="jumbotron">
+		<BJumbotron class="shadow">
 			<h1 class="display-4">Coming Soon!</h1>
 			<p class="lead">
 				We are working hard to bring you our best service! Ordering online is on the way!
@@ -17,6 +17,6 @@
 				role="button"
 				>Go Home</RouterLink>
 			</p>
-		</div>
+		</BJumbotron>
 	</BContainer>
 </template>
