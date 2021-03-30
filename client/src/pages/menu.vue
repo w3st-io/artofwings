@@ -4,6 +4,8 @@
 			<BCol
 				v-for="(section, i) in pageData.menu" :key="i"
 				cols="12" md="6" lg="4" xl="4"
+				data-aos="fade-left"
+				:data-aos-delay="300 * (i + 1)"
 			>
 				<h1 class="m-0 text-center font-weight-bold text-primary">
 					{{ section.title }}

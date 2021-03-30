@@ -7,7 +7,7 @@
 					<h5 class="text-primary">
 						{{ companyInfo.companyName }} {{ new Date().getFullYear() }}
 					</h5>
-					<h6 v-html="companyInfo.companyCaption" class="text-secondary">
+					<h6 v-html="companyInfo.companyCaption" class="text-light">
 					</h6>
 					<hr>
 				</BCol>
@@ -74,8 +74,8 @@
 					<hr>
 				</BCol>
 
-				<BCol cols="12" class="my-3 text-center text-secondary">
-					<h6>© w3st.io {{ new Date().getFullYear() }}</h6>
+				<BCol cols="12" class="my-3 text-center">
+					<h6 class="text-secondary">© w3st.io {{ new Date().getFullYear() }}</h6>
 				</BCol>
 			</BRow>
 		</BContainer>

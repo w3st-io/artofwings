@@ -3,7 +3,7 @@
 		<BContainer fluid>
 			<BRow>
 				<BCol
-					cols="12" sm="6" md="6" lg="4"
+					cols="12" md="6" lg="4"
 					class="text-center text-primary my-auto"
 				>
 					<div class="my-5" data-aos="fade-up">
@@ -24,9 +24,8 @@
 				</BCol>
 
 				<BCol
-					cols="12" sm="6" md="6" lg="8"
-					class="p-0"
-					style="height: 500px;"
+					cols="12" md="6" lg="8"
+					class="p-0 map"
 					data-aos="fade-up"
 				>
 					<iframe
@@ -62,3 +61,7 @@
 		},
 	}
 </script>
+
+<style lang="scss">
+	.map { height: calc(100vh - 98px); }
+</style>

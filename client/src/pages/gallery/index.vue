@@ -1,25 +1,38 @@
 <template>
 	<BContainer class="my-3">
 		<BRow>
+			<!-- Title -->
+			<BCol cols="12" class="mb-3 text-left">
+				<h2 class="text-primary font-weight-bold">Our Gallery</h2>
+			</BCol>
+
 			<!-- Season 1 -->
-			<BCol cols="12" sm="6" md="4" class="mb-3">
+			<BCol
+				cols="12" sm="6" md="4" class="mb-3"
+				data-aos="fade-up"
+				data-aos-delay="300"
+			>
 				<RouterLink to="/gallery/season-one" class="icon">
 					<div class="gallery-center">
 						<h2 class="text-secondary label">Season One</h2>
 					</div>
 
-					<img :src="data.seasonOneImg" alt="Img" class="w-100">
+					<img :src="data.seasonOneImg" class="w-100 shadow">
 				</RouterLink>
 			</BCol>
 
 			<!-- Season 2 -->
-			<BCol cols="12" sm="6" md="4" class="mb-3">
+			<BCol
+				cols="12" sm="6" md="4" class="mb-3"
+				data-aos="fade-up"
+				data-aos-delay="600"
+			>
 				<RouterLink to="/gallery/season-two" class="icon">
 					<div class="gallery-center">
 						<h2 class="text-secondary label">Season Two</h2>
 					</div>
 
-					<img :src="data.seasonTwoImg" alt="Img" class="w-100">
+					<img :src="data.seasonTwoImg" class="w-100 shadow">
 				</RouterLink>
 			</BCol>
 		</BRow>
