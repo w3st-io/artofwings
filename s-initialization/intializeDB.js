@@ -30,6 +30,12 @@ async function insert() {
 			}
 		)
 
+		// Empty out database //
+		await productAdditionsModel.deleteMany()
+		await productExtrasModel.deleteMany()
+		await productModel.deleteMany()
+		await productVariantsModel.deleteMany()
+
 		// PRODUCTS //
 		for (let i = 0; i < products.length; i++) {
 			const p = products[i]
