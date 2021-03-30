@@ -7,6 +7,8 @@ import Router from 'vue-router'
 import companyInfo from '@/defaults/companyInfo'
 // Home //
 import home from '@/pages/index2'
+// About //
+import about from '@/pages/about'
 // Activity //
 import activity from '@/pages/activity'
 // Admin //
@@ -88,6 +90,16 @@ const router = new Router ({
 			meta: {
 				auth: true,
 				title: 'Home'
+			}
+		},
+		// Activity //
+		{
+			path: '/about',
+			name: 'about',
+			component: about,
+			meta: {
+				auth: true,
+				title: 'About Us'
 			}
 		},
 		// Activity //
