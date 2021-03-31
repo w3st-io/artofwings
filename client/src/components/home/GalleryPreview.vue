@@ -2,9 +2,11 @@
 	<div class="w-100">
 		<div class="gallery-center">
 			<RouterLink to="/gallery">
-				<BButton variant="primary" size="lg" class="shadow">
-					View Gallery
-				</BButton>
+				<BButton
+					variant="primary"
+					size="lg"
+					class="shadow"
+				>View Gallery</BButton>
 			</RouterLink>
 		</div>
 
