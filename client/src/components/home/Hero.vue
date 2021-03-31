@@ -20,13 +20,13 @@
 				>
 					<img
 						:src="col[0]"
-						class="mb-2 w-100"
+						class="mb-2 w-100 images"
 						:data-aos="randomFade()"
 						:data-aos-delay="randomDelay()"
 					/>
 					<img
 						:src="col[1]"
-						class="mb-2 w-100"
+						class="mb-2 w-100 images"
 						:data-aos="randomFade()"
 						:data-aos-delay="randomDelay()"
 					/>
@@ -97,5 +97,22 @@
 
 	.hero-text-img {
 		background: rgba(0, 0, 0, 0.48);
+	}
+
+	.images {
+		// Only Move images on screen abouve 800px //
+		@media (min-width: 800px) {
+			-webkit-animation: mover 2s infinite  alternate;
+			animation: mover2 2s infinite  alternate;
+		}
+	}
+
+	@-webkit-keyframes mover2 {
+		0% { transform: translateY(0); }
+		100% { transform: translateY(-20px); }
+	}
+	@keyframes mover2 {
+		0% { transform: translateY(0); }
+		100% { transform: translateY(-20px); }
 	}
 </style>

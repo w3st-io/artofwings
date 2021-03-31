@@ -9,49 +9,54 @@
 			/>
 		</BContainer>
 
-		<BContainer fluid class="m-0 py-5 bg-light">
-			<!-- Title -->
-			<h1 class="mb-3 text-center">
-				<mark class="bg-dark text-light">Combos & Deals</mark>
-			</h1>
+		<!-- SugggestionConveyor -->
+		<BContainer fluid class="py-5 bg-light">
+			<BContainer class="my-3 text-center">
+				<!-- Title -->
+				<h1 class="mb-3 text-center">
+					<mark class="bg-dark text-light">Combos & Deals</mark>
+				</h1>
 
-			<!-- SugggestionConveyor -->
-			<BContainer class="m3 text-center">
 				<SuggestionConveyor :slides="pageData.cnt2.slides" />
 			</BContainer>
+		</BContainer>
+
+		<!-- Second Hero -->
+		<BContainer fluid class="p-0 text-center">
+			<SecondHero :img="pageData.cnt3.img" />
+		</BContainer>
 	
-			<!-- Sections -->
-			<BContainer class="py-5 text-center">
-				<BRow>
-					<BCol cols="12" md="6" lg="4" class="mb-3">
-						<FlavorSlider class="w-100" />
+		<!-- Sections -->
+		<BContainer class="py-5 text-center">
+			<BRow>
+				<BCol cols="12" md="6" lg="4" class="mb-3">
+					<FlavorSlider class="w-100" />
 
-						<BButton
-							variant="primary"
-							size="lg"
-							class="shadow"
-						>Check Out our Menu</BButton>
-					</BCol>
+					<BButton
+						variant="primary"
+						size="lg"
+						class="shadow"
+					>Check Out our Menu</BButton>
+				</BCol>
 
-					<BCol cols="12" md="6" lg="4" class="mb-3">
-						<GalleryPreview
-							:slideImgs="pageData.cnt3.r1.c2.slideImgs"
-							class="w-100"
-						/>
-					</BCol>
+				<BCol cols="12" md="6" lg="4" class="mb-3">
+					<GalleryPreview
+						:slideImgs="pageData.cnt4.r1.c2.slideImgs"
+						class="w-100"
+					/>
+				</BCol>
 
-					<BCol cols="12" md="6" lg="4" class="mb-3">
-						<BestSellers />
-					</BCol>
-				</BRow>
-			</BContainer>
+				<BCol cols="12" md="6" lg="4" class="mb-3">
+					<BestSellers />
+				</BCol>
+			</BRow>
 		</BContainer>
 
 		<!-- Chicken Wing Gates -->
 		<BContainer fluid class="text-center">
 			<BRow class="mb-3 bg-white">
 				<BCol cols="3" class="p-0 d-none d-md-block">
-					<img :src="imageLeft" class="w-100" >
+					<img :src="pageData.cnt5.imgLeft" class="w-100" >
 				</BCol>
 
 				<BCol cols="6" md="3" class="text-center" data-aos="fade">
@@ -62,7 +67,7 @@
 				</BCol>
 
 				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade">
-					<img :src="imageRight" class="w-100">
+					<img :src="pageData.cnt5.imgRight" class="w-100">
 				</BCol>
 			</BRow>
 		</BContainer>
@@ -71,6 +76,7 @@
 
 <script>
 	// [IMPORT] Personal //
+	import SecondHero from '../components/home/secondHero'
 	import BestSellers from '@/components/home/BestSellers'
 	import FlavorSlider from '@/components/home/FlavorSlider'
 	import GalleryPreview from '@/components/home/GalleryPreview'
@@ -80,6 +86,7 @@
 
 	export default {
 		components: {
+			SecondHero,
 			BestSellers,
 			GalleryPreview,
 			FlavorSlider,
@@ -90,8 +97,6 @@
 		data() {
 			return {
 				pageData: pageData,
-				imageLeft: require('../assets/media/pages/index/ready-left.png'),
-				imageRight: require('../assets/media/pages/index/ready-right.png'),
 			}
 		},
 

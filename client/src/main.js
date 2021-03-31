@@ -5,9 +5,11 @@ import Viewer from 'v-viewer'
 import { ValidationObserver, ValidationProvider } from 'vee-validate'
 import Vue from 'vue'
 import Editor from 'vue-editor-js/src/index'
+import VideoBg from 'vue-videobg'
 import VueHeadful from 'vue-headful'
 import VueLazyload from 'vue-lazyload'
 import VueYouTubeEmbed from 'vue-youtube-embed'
+import ZoomOnHover from 'vue-zoom-on-hover'
 import 'aos/dist/aos.css'
 import 'viewerjs/dist/viewer.css'
 import 'tiny-slider/src/tiny-slider.scss'
@@ -21,11 +23,8 @@ import '@assets/styles/style.scss'
 import './vee-validation-rules'
 
 
-import ZoomOnHover from "vue-zoom-on-hover"
-Vue.use(ZoomOnHover)
-
-
 // [USE] //
+Vue.use(ZoomOnHover)
 Vue.use(BootstrapVue)
 Vue.use(Editor)
 Vue.use(Viewer)
@@ -39,9 +38,10 @@ Vue.use(VueYouTubeEmbed)
 
 
 // [GLOBAL-COMPONENTS] //
-Vue.component('VueHeadful', VueHeadful)
 Vue.component('ValidationObserver', ValidationObserver)
 Vue.component('ValidationProvider', ValidationProvider)
+Vue.component('VideoBG', VideoBg)
+Vue.component('VueHeadful', VueHeadful)
 
 
 // [EXPORT] Event Bus //

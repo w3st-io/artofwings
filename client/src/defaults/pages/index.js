@@ -50,6 +50,10 @@ module.exports = {
 	},
 
 	cnt3: {
+		img: require('../../assets/media/pages/index/hero2.jpg'),
+	},
+
+	cnt4: {
 		r1: {
 			c2: {
 				slideImgs: [
@@ -62,5 +66,10 @@ module.exports = {
 				]
 			}
 		}
-	}
+	},
+
+	cnt5: {
+		imgLeft: require('../../assets/media/pages/index/ready-left.png'),
+		imgRight: require('../../assets/media/pages/index/ready-right.png'),
+	},
 }
