@@ -4,7 +4,7 @@
 		
 		<div class="center-content filter">
 			<div class="center-content">
-				<mark class="h1 text-center bg-primary text-light">
+				<mark class="h1 text-center bg-dark text-light">
 					Ready <span class="text-secondary">to</span> Order?
 				</mark>
 				<br><br>

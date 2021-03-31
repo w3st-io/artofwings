@@ -97,22 +97,24 @@
 
 	.hero-text-img {
 		background: rgba(0, 0, 0, 0.48);
-	}
 
-	.images {
 		// Only Move images on screen abouve 800px //
 		@media (min-width: 800px) {
-			-webkit-animation: mover 2s infinite  alternate;
-			animation: mover2 2s infinite  alternate;
+			-webkit-animation: mover 1.5s infinite  alternate;
+			animation: mover 1.5s infinite  alternate;
 		}
 	}
 
-	@-webkit-keyframes mover2 {
-		0% { transform: translateY(0); }
-		100% { transform: translateY(-20px); }
+	.images {
+		
 	}
-	@keyframes mover2 {
+
+	@-webkit-keyframes mover {
 		0% { transform: translateY(0); }
-		100% { transform: translateY(-20px); }
+		100% { transform: translateY(-30px); }
+	}
+	@keyframes mover {
+		0% { transform: translateY(0); }
+		100% { transform: translateY(-30px); }
 	}
 </style>
