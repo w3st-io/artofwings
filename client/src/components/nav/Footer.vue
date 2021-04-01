@@ -75,7 +75,9 @@
 				</BCol>
 
 				<BCol cols="12" class="my-3 text-center">
-					<h6 class="text-secondary">© w3st.io {{ new Date().getFullYear() }}</h6>
+					<h6 class="text-secondary">
+						© w3st.io {{ new Date().getFullYear() }}
+					</h6>
 				</BCol>
 			</BRow>
 		</BContainer>
