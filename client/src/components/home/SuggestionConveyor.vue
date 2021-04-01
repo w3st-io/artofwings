@@ -16,7 +16,7 @@
 				<div v-for="(slide, index) in slides" :key="index" :class="contentClass">
 					<img :src="slide.image" :class="imageClass">
 
-					<h3>{{ slide.title }}</h3>
+					<h3 :class="titleClass">{{ slide.title }}</h3>
 
 					<p>{{ slide.description }}</p>
 
@@ -31,7 +31,7 @@
 				<div v-for="(slide, index) in slides" :key="index" :class="contentClass">
 					<img :src="slide.image" :class="imageClass">
 
-					<h3>{{ slide.title }}</h3>
+					<h3 :class="titleClass">{{ slide.title }}</h3>
 
 					<p>{{ slide.description }}</p>
 
@@ -46,7 +46,7 @@
 				<div v-for="(slide, index) in slides" :key="index" :class="contentClass">
 					<img :src="slide.image" :class="imageClass">
 
-					<h3>{{ slide.title }}</h3>
+					<h3 :class="titleClass">{{ slide.title }}</h3>
 
 					<p>{{ slide.description }}</p>
 
@@ -61,7 +61,7 @@
 				<div v-for="(slide, index) in slides" :key="index" :class="contentClass">
 					<img :src="slide.image" :class="imageClass">
 
-					<h3>{{ slide.title }}</h3>
+					<h3 :class="titleClass">{{ slide.title }}</h3>
 
 					<p>{{ slide.description }}</p>
 
@@ -178,6 +178,7 @@
 
 				imageClass: 'w-100 rounded-lg image',
 				contentClass: 'content',
+				titleClass: 'my-1 text-center font-weight-bold text-primary',
 				buttonColor: 'secondary',
 			}
 		},
@@ -195,7 +196,15 @@
 </script>
 
 <style lang="scss">
-	.image { max-width: 100%; }
+	@import '../../assets/styles/bootstrap-override.scss';
+
+	.image {
+		max-width: 100%;
+
+		&:hover {
+			@extend .shadow;
+		}
+	}
 
 	.content {
 		max-width: 100%;
