@@ -156,7 +156,7 @@ const comment = mongoose.Schema({
 })
 
 
-comment.pre('validate', function(next) {
+comment.pre('validate', function (next) {
 	// [LENGTH-CHECK] Blocks //
 	if (this.cleanJSON.blocks.length > 20) { throw ('Error: Comment too large') }
 
@@ -189,7 +189,7 @@ comment.pre('validate', function(next) {
 })
 
 
-comment.pre('updateOne', function(next) {
+comment.pre('updateOne', function (next) {
 	// [LENGTH-CHECK] Blocks //
 	if (this._update.$set.cleanJSON.blocks.ledngth > 20) {
 		throw ('Error: Comment too large')

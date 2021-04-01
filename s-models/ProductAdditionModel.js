@@ -9,10 +9,11 @@ const productAddition = mongoose.Schema({
 	type: {
 		type: String,
 		maxlength: 50,
-		required: true,
+		required: false,
+		default: '',
 	},
 
-	title: {
+	name: {
 		type: String,
 		maxlength: 100,
 		required: true,
@@ -32,31 +33,35 @@ const productAddition = mongoose.Schema({
 		default: '',
 	},
 
-	options: [
+	productVariants: [
 		{
-			type: {
-				type: String,
-				maxlength: 30,
-			},
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'ProductVariant',
+			required: true,
+		}
+	],
 
-			title: {
-				type: String,
-				maxlength: 30,
-			},
+	productExtras: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'ProductExtra',
+			required: true,
+		}
+	],
 
-			variants: [
-				{
-					type: String,
-					maxlength: 30,
-				},
-			]
+	productAdditions: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'ProductAddition',
+			required: true,
 		}
 	],
 
 	cost: {
 		type: Number,
 		maxlength: 6,
-		required: true,
+		required: false,
+		default: 0.00,
 	},
 
 	created_at: {
@@ -67,28 +72,31 @@ const productAddition = mongoose.Schema({
 })
 
 
-productAddition.pre('validate', function(next) {
+productAddition.pre('validate', function (next) {
 	// [LENGTH-CHECK] Blocks //
-	if (this.options.length > 20) { throw ('Error: Too many options') }
+	if (this.productVariants.length > 20) { throw ('Error: too many variants') }
 
-
-	this.options.forEach(option => {
-		if (option.variants.length > 20) { throw ('Error: Too many option variant') }
-	})
+	if (this.productExtras.length > 20) { throw ('Error: too many extras') }
+	
+	if (this.productAdditions.length > 20) { throw ('Error: too many additions') }
 	
 	next()
 })
-
-
-productAddition.pre('updateOne', function(next) {
+	
+	
+productAddition.pre('updateOne', function (next) {
 	// [LENGTH-CHECK] Blocks //
-	if (this._update.$set.options.length > 20) {
-		throw ('Error: Too many options')
+	if (this._update.$set.productVariants.length > 20) {
+		throw ('Error: too many variants')
 	}
 
-	this._update.$set.options.forEach(option => {
-		if (option.variants.length > 2) { throw ('Error: Too many option variant') }
-	})
+	if (this._update.$set.productExtras.length > 20) {
+		throw ('Error: too many extras')
+	}
+
+	if (this._update.$set.productAddition.length > 20) {
+		throw ('Error: too many additions')
+	}
 	
 	next()
 })

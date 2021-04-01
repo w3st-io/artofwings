@@ -146,7 +146,7 @@ const preeditedComment = mongoose.Schema({
 })
 
 
-preeditedComment.pre('validate', function(next) {
+preeditedComment.pre('validate', function (next) {
 	// [LENGTH-CHECK] Blocks //
 	if (this.cleanJSON.blocks.length > 20) { throw ('Error: Comment too large') }
 

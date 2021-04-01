@@ -3,19 +3,21 @@ const mongoose = require('mongoose')
 
 
 // [REQUIRE] Personal //
-const config = require('../s-config')
 const productAddition = require('./productAdditions')
 const productVariants = require('./productVariants')
 const productExtras = require('./productExtras')
 const products = require('./products')
-const productAdditionsModel = require('../s-models/ProductAdditionModel')
-const productExtrasModel = require('../s-models/ProductExtraModel')
-const productModel = require('../s-models/ProductModel')
-const productVariantsModel = require('../s-models/ProductVariantModel')
+const ProductAdditionsModel = require('../s-models/ProductAdditionModel')
+const ProductExtrasModel = require('../s-models/ProductExtraModel')
+const ProductModel = require('../s-models/ProductModel')
+const ProductVariantModel = require('../s-models/ProductVariantModel')
 
 
 async function insert() {
 	try {
+		let pVariant = null
+		let pVariant2 = null
+
 		// [MONGOOSE-CONNECTION] //
 		mongoose.connect(
 			'mongodb://localhost:27017/artofwings',
@@ -31,29 +33,10 @@ async function insert() {
 		)
 
 		// Empty out database //
-		await productAdditionsModel.deleteMany()
-		await productExtrasModel.deleteMany()
-		await productModel.deleteMany()
-		await productVariantsModel.deleteMany()
-
-		// PRODUCTS //
-		for (let i = 0; i < products.length; i++) {
-			const p = products[i]
-			
-			// [SAVE] //
-			await new productModel({
-				_id: mongoose.Types.ObjectId(),
-				cat: p.cat,
-				subCat: p.subCat,
-				title: p.title,
-				description: p.description,
-				image: p.image,
-				cost: p.cost,
-				productVariantTypes: p.productVariantTypes,
-				productExtraTypes: p.productExtraTypes,
-				productAdditionTypes: p.productAdditionTypes,
-			}).save()
-		}
+		await ProductAdditionsModel.deleteMany()
+		await ProductExtrasModel.deleteMany()
+		await ProductModel.deleteMany()
+		await ProductVariantModel.deleteMany()
 
 
 		// PRODUCT VARIANT //
@@ -61,13 +44,13 @@ async function insert() {
 			const p = productVariants[i]
 			
 			// [SAVE] //
-			await new productVariantsModel({
+			await new ProductVariantModel({
 				_id: mongoose.Types.ObjectId(),
 				type: p.type,
-				title: p.title,
+				name: p.name,
 				description: p.description,
 				image: p.image,
-				cost: p.cost,
+				options: p.options,
 			}).save()
 		}
 
@@ -77,30 +60,95 @@ async function insert() {
 			const p = productExtras[i]
 			
 			// [SAVE] //
-			await new productExtrasModel({
+			await new ProductExtrasModel({
 				_id: mongoose.Types.ObjectId(),
 				type: p.type,
-				title: p.title,
+				name: p.name,
 				description: p.description,
 				image: p.image,
-				cost: p.cost,
+				options: p.options,
 			}).save()
 		}
 
 
 		// PRODUCT ADDITIONS //
 		for (let i = 0; i < productAddition.length; i++) {
-			const p = productAddition[i]
+			let p = productAddition[i]
 			
+			if (i == 0) {
+				pVariant = await ProductVariantModel.findOne({
+					type: 'appetizers'
+				})
+
+				p.productVariants = [pVariant._id]
+			}
+
+			if (i == 1) {
+				pVariant = await ProductVariantModel.findOne({
+					type: 'wing-type'
+				})
+
+				pVariant2 = await ProductVariantModel.findOne({
+					type: 'flavors'
+				})
+
+				p.productVariants = [pVariant._id, pVariant2._id]
+			}
+
 			// [SAVE] //
-			await new productAdditionsModel({
+			await new ProductAdditionsModel({
 				_id: mongoose.Types.ObjectId(),
 				type: p.type,
-				title: p.title,
+				name: p.name,
 				description: p.description,
 				image: p.image,
-				options: p.options,
+				productVariants: p.productVariants,
 				cost: p.cost,
+			}).save()
+		}
+
+
+		// PRODUCTS //
+		for (let i = 0; i < products.length; i++) {
+			const p = products[i]
+
+			if (i == 0 || i == 1 || i == 2) {
+				pVariant = await ProductVariantModel.findOne({
+					type: 'flavors'
+				})
+
+				pVariant2 = await ProductVariantModel.findOne({
+					type: 'wing-type'
+				})
+
+				p.productVariants = [pVariant._id, pVariant2._id]
+			}
+
+			if (i == 5 || i == 6 || i == 7) {
+				pVariant = await ProductVariantModel.findOne({
+					type: 'wing-type'
+				})
+
+				pVariant2 = await ProductAdditionsModel.findOne({
+					type: 'slider'
+				})
+
+				p.productVariants = [pVariant._id]
+				p.productAdditions = [pVariant2._id]
+			}
+			
+			// [SAVE] //
+			await new ProductModel({
+				_id: mongoose.Types.ObjectId(),
+				cat: p.cat,
+				subCat: p.subCat,
+				name: p.name,
+				description: p.description,
+				image: p.image,
+				cost: p.cost,
+				productVariants: p.productVariants,
+				productExtras: p.productExtras,
+				productAdditions: p.productAdditions,
 			}).save()
 		}
 	}

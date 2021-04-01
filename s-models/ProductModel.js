@@ -17,7 +17,7 @@ const product = mongoose.Schema({
 		required: true,
 	},
 
-	title: {
+	name: {
 		type: String,
 		maxlength: 100,
 		required: true,
@@ -43,25 +43,28 @@ const product = mongoose.Schema({
 		required: true,
 	},
 
-	productVariantTypes: [
+	productVariants: [
 		{
-			type: String,
-			maxlength: 20,	
-		},
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'ProductVariant',
+			required: true,
+		}
 	],
 
-	productExtraTypes: [
+	productExtras: [
 		{
-			type: String,
-			maxlength: 20,	
-		},
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'ProductExtra',
+			required: true,
+		}
 	],
 
-	productAdditionTypes: [
+	productAdditions: [
 		{
-			type: String,
-			maxlength: 20,	
-		},
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'ProductAddition',
+			required: true,
+		}
 	],
 
 	created_at: {
@@ -72,29 +75,29 @@ const product = mongoose.Schema({
 })
 
 
-product.pre('validate', function(next) {
+product.pre('validate', function (next) {
 	// [LENGTH-CHECK] Blocks //
-	if (this.productVariantTypes.length > 20) { throw ('Error: too many variants') }
+	if (this.productVariants.length > 20) { throw ('Error: too many variants') }
 
-	if (this.productExtraTypes.length > 20) { throw ('Error: too many extras') }
+	if (this.productExtras.length > 20) { throw ('Error: too many extras') }
 	
-	if (this.productAdditionTypes.length > 20) { throw ('Error: too many additions') }
+	if (this.productAdditions.length > 20) { throw ('Error: too many additions') }
 	
 	next()
 })
 
 
-product.pre('updateOne', function(next) {
+product.pre('updateOne', function (next) {
 	// [LENGTH-CHECK] Blocks //
-	if (this._update.$set.productVariantTypes.length > 20) {
+	if (this._update.$set.productVariants.length > 20) {
 		throw ('Error: too many variants')
 	}
 
-	if (this._update.$set.productExtraTypes.length > 20) {
+	if (this._update.$set.productExtras.length > 20) {
 		throw ('Error: too many extras')
 	}
 
-	if (this._update.$set.productAdditionTypes.length > 20) {
+	if (this._update.$set.productAddition.length > 20) {
 		throw ('Error: too many additions')
 	}
 	
