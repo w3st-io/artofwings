@@ -30,16 +30,6 @@
 		<BContainer class="py-5 text-center">
 			<BRow>
 				<BCol cols="12" md="6" lg="4" class="mb-3">
-					<FlavorSlider class="w-100" />
-
-					<BButton
-						variant="primary"
-						size="lg"
-						class="shadow"
-					>Check Out our Menu</BButton>
-				</BCol>
-
-				<BCol cols="12" md="6" lg="4" class="mb-3">
 					<GalleryPreview
 						:slideImgs="pageData.cnt4.r1.c2.slideImgs"
 						class="w-100"
@@ -48,6 +38,10 @@
 
 				<BCol cols="12" md="6" lg="4" class="mb-3">
 					<BestSellers />
+				</BCol>
+				
+				<BCol cols="12" md="6" lg="4" class="mb-3">
+					<FlavorSlider class="w-100" />
 				</BCol>
 			</BRow>
 		</BContainer>
@@ -105,26 +99,3 @@
 		},
 	}
 </script>
-
-<style lang="scss" scoped>
-	@import 'src/assets/styles/bootstrap-override.scss';
-
-	.born-ready {
-		transition: .5s;
-	}
-
-	.born-ready {
-		&:hover {
-			transform: translate(0, -10px);
-			@extend .shadow-lg;
-		}
-	}
-
-	.gallery-center {
-		z-index: 100;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-</style>

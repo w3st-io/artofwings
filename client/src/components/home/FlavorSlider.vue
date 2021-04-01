@@ -1,7 +1,7 @@
 <template>
 	<BRow>
 		<BCol cols="12">
-			<h2 class="text-dark">Our Flavors</h2>
+			<h3 class="text-dark">Our Flavors</h3>
 		</BCol>
 
 		<BCol cols="3">
@@ -43,16 +43,16 @@
 			<!-- Tiny Slider -->
 			<VueTinySlider ref="slider" v-bind="slider.options">
 				<div v-for="(slide, index) in slides" :key="index">
-					<div class="p-3" >
+					<div class="p-3">
 						<div
-							class="p-3 rounded-lg shadow"
+							class="p-1 rounded-lg shadow"
 							:style="'background-color: rgb(' + spiceColor(index) + ');'"
 						>
 							<h1 class="m-0 p-0 text-light font-weight-bold">
-							{{ slide.title }}
-						</h1>
+								{{ slide.title }}
+							</h1>
 
-						<ChiliPepperSVG color="white" style="max-width: 140px;" />
+							<ChiliPepperSVG color="white" style="max-width: 100px;" />
 						</div>
 					</div>
 				</div>
