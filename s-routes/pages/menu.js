@@ -52,7 +52,7 @@ router.get(
 						await productVariantsCollection.c_readByType({
 							type: 'flavors',
 						})
-					).productVariants.options,
+					).productVariants,
 				},
 
 				// Sliders //
@@ -71,22 +71,13 @@ router.get(
 								})
 							).products,
 						},
-						{
-							title: 'Additions',
-							variants: (
-								await productsCollection.c_readByCatAndSubCat({
-									cat: 'sliders',
-									subCat: 'additions'
-								})
-							).products,
-						},
 					],	
 			
 					toppings: (
 						await productExtrasCollection.c_readByType({
 							type: 'toppings'
 						})
-					).productExtras.options,
+					).productExtras,
 
 					additions: (
 						await productAdditionsCollection.c_readAllByType({
@@ -98,7 +89,7 @@ router.get(
 						await productVariantsCollection.c_readByType({
 							type: 'sauces'
 						})
-					).productVariants.options,
+					).productVariants,
 				},
 				
 				// Signature Dishes //

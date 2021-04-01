@@ -21,10 +21,10 @@
 					class="mb-4"
 				>
 					<!-- Title -->
-					<BListGroupItem v-if="option.name" variant="secondary">
+					<BListGroupItem v-if="option.title" variant="secondary">
 						<h4 class="m-0 text-center">
 							<span class="font-weight-bold text-primary">
-								{{ option.name }}
+								{{ option.title }}
 							</span>
 						</h4>
 					</BListGroupItem>
@@ -81,10 +81,10 @@
 					</BListGroupItem>
 
 					<BListGroupItem
-						v-for="(option, i) in section.flavors"
+						v-for="(option, i) in section.flavors.options"
 						:key="i"
 						class="p-0 text-center"
-						:style="spiceColor(section.flavors.length, i)"
+						:style="spiceColor(section.flavors.options.length, i)"
 					>
 						<h5 class="m-0 px-5 py-0 text-light">
 							{{ option.name }}
@@ -96,12 +96,14 @@
 				<BListGroup v-if="section.toppings" class="mb-3">
 					<BListGroupItem variant="secondary" class="text-center">
 						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">Toppings</span>
+							<span class="font-weight-bold text-primary">
+								{{ section.toppings.name }}
+							</span>
 						</h4>
 					</BListGroupItem>
 
 					<BListGroupItem
-						v-for="(option, i) in section.toppings"
+						v-for="(option, i) in section.toppings.options"
 						:key="i"
 						variant="info"
 						class=" py-1"
@@ -124,10 +126,12 @@
 				<BListGroup v-if="section.additions" class="mb-4">
 					<BListGroupItem variant="secondary" class="text-center">
 						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">Additions</span>
+							<span class="font-weight-bold text-primary">
+								Additions
+							</span>
 						</h4>
 					</BListGroupItem>
-
+					
 					<BListGroupItem
 						v-for="(addition, i) in section.additions"
 						:key="i"
@@ -152,12 +156,14 @@
 				<BListGroup v-if="section.sauces" class="mb-4">
 					<BListGroupItem variant="secondary" class="text-center">
 						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">Sauces</span>
+							<span class="font-weight-bold text-primary">
+								{{ section.sauces.name }}
+							</span>
 						</h4>
 					</BListGroupItem>
 
 					<BListGroupItem
-						v-for="(sauce, i) in section.sauces"
+						v-for="(sauce, i) in section.sauces.options"
 						:key="i"
 						variant="info"
 						class="p-1 text-center"
