@@ -20,7 +20,7 @@ const c_readAllByType = async ({ type }) => {
 			}
 		}
 
-		const productAdditions = await ProductAdditionModel.find({ type })
+		const productAdditions = await ProductAdditionModel.find({ type: type })
 			.populate('productVariants')
 			.populate('productExtras')
 			.populate('productAdditions')

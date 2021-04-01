@@ -20,7 +20,8 @@ const c_readByType = async ({ type }) => {
 			}
 		}
 
-		const productExtras = await ProductExtraModel.findOne({ type }).exec()
+		const productExtras = await ProductExtraModel.findOne({ type: type })
+		.exec()
 
 		return {
 			executed: true,

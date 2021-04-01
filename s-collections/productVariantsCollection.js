@@ -20,7 +20,8 @@ const c_readByType = async ({ type }) => {
 			}
 		}
 
-		const productVariants = await ProductVariantModel.findOne({ type }).exec()
+		const productVariants = await ProductVariantModel.findOne({ type: type })
+		.exec()
 
 		return {
 			executed: true,

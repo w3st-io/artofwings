@@ -62,7 +62,7 @@ const c_readByCatAndSubCat = async ({ cat, subCat }) => {
 			}
 		}
 
-		const products = await productModel.find({ cat, subCat })
+		const products = await productModel.find({ cat: cat, subCat: subCat })
 			.populate('productVariants')
 			.populate('productExtras')
 			.populate('productAdditions')
