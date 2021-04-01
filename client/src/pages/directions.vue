@@ -47,7 +47,7 @@
 	import { MapPinIcon } from 'vue-feather-icons'
 
 	// [IMPORT] Personal //
-	import companyInfo from '../defaults/companyInfo'
+	import companyInfo from '@/defaults/companyInfo'
 
 	export default {
 		components: {

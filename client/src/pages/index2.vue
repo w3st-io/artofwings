@@ -70,7 +70,7 @@
 
 <script>
 	// [IMPORT] Personal //
-	import SecondHero from '../components/home/secondHero'
+	import SecondHero from '@/components/home/secondHero'
 	import BestSellers from '@/components/home/BestSellers'
 	import FlavorSlider from '@/components/home/FlavorSlider'
 	import GalleryPreview from '@/components/home/GalleryPreview'

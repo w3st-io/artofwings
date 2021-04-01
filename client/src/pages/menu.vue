@@ -181,7 +181,7 @@
 </template>
 
 <script>
-	import PageService from '../services/PageService'
+	import PageService from '@/services/PageService'
 
 	export default {
 		data() {

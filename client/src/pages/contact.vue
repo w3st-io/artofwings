@@ -50,7 +50,7 @@
 
 
 	// [IMPORT] Personal //
-	import pData from '../defaults/pages/contact'
+	import pData from '@/defaults/pages/contact'
 
 	export default {
 		components: {

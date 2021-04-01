@@ -5,8 +5,8 @@
 </template>
 
 <script>
-	import Gallery from '../../components/images/Gallery'
-	import data from '../../defaults/pages/gallery/season-one'
+	import Gallery from '@/components/images/Gallery'
+	import data from '@/defaults/pages/gallery/season-one'
 
 	export default {
 		components: {

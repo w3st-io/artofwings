@@ -83,7 +83,7 @@
 </template>
 
 <script>
-	import companyInfo from '../../defaults/companyInfo'
+	import companyInfo from '@/defaults/companyInfo'
 	import router from '@/router'
 	import UserService from '@/services/UserService'
 

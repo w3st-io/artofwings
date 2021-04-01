@@ -40,7 +40,7 @@
 </template>
 
 <script>
-	import data from '../../defaults/pages/gallery'
+	import data from '@/defaults/pages/gallery'
 
 	export default {
 		data() {
