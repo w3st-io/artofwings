@@ -21,10 +21,10 @@
 					class="mb-4"
 				>
 					<!-- Title -->
-					<BListGroupItem v-if="option.title" variant="secondary">
+					<BListGroupItem v-if="option.name" variant="secondary">
 						<h4 class="m-0 text-center">
 							<span class="font-weight-bold text-primary">
-								{{ option.title }}
+								{{ option.name }}
 							</span>
 						</h4>
 					</BListGroupItem>
@@ -39,7 +39,7 @@
 						<BRow>
 							<BCol cols="9" class="pr-0 text-primary">
 								<h5 class="font-weight-bold">
-									{{ variant.title }}
+									{{ variant.name }}
 								</h5>
 							</BCol>
 								
@@ -72,6 +72,26 @@
 					</BListGroupItem>
 				</BListGroup>
 
+				<!-- Flavor Options -->
+				<BListGroup v-if="section.flavors" class="mb-3">
+					<BListGroupItem variant="secondary" class="text-center">
+						<h4 class="m-0 text-center">
+							<span class="font-weight-bold text-primary">Flavors</span>
+						</h4>
+					</BListGroupItem>
+
+					<BListGroupItem
+						v-for="(option, i) in section.flavors"
+						:key="i"
+						class="p-0 text-center"
+						:style="spiceColor(section.flavors.length, i)"
+					>
+						<h5 class="m-0 px-5 py-0 text-light">
+							{{ option.name }}
+						</h5>
+					</BListGroupItem>
+				</BListGroup>
+
 				<!-- Toppings Options -->
 				<BListGroup v-if="section.toppings" class="mb-3">
 					<BListGroupItem variant="secondary" class="text-center">
@@ -88,7 +108,7 @@
 					>
 						<BRow>
 							<BCol cols="9" class="text-left">
-								<h5 class="m-0 py-0">{{ option.title }}</h5>
+								<h5 class="m-0 py-0">{{ option.name }}</h5>
 							</BCol>
 
 							<BCol cols="3" class="text-right price">
@@ -97,26 +117,6 @@
 								</h5>
 							</BCol>
 						</BRow>
-					</BListGroupItem>
-				</BListGroup>
-
-				<!-- Flavor Options -->
-				<BListGroup v-if="section.flavors" class="mb-3">
-					<BListGroupItem variant="secondary" class="text-center">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">Flavors</span>
-						</h4>
-					</BListGroupItem>
-
-					<BListGroupItem
-						v-for="(option, i) in section.flavors"
-						:key="i"
-						class="p-0 text-center"
-						:style="spiceColor(section.flavors.length, i)"
-					>
-						<h5 class="m-0 px-5 py-0 text-light">
-							{{ option.title }}
-						</h5>
 					</BListGroupItem>
 				</BListGroup>
 
@@ -136,7 +136,7 @@
 					>
 						<BRow>
 							<BCol cols="9" class="text-left">
-								<h5 class="m-0 py-0">{{ addition.title }}</h5>
+								<h5 class="m-0 py-0">{{ addition.name }}</h5>
 							</BCol>
 
 							<BCol cols="3" class="text-right price">
@@ -161,7 +161,7 @@
 						:key="i"
 						variant="info"
 						class="p-1 text-center"
-					><h5 class="m-0">{{ sauce.title }}</h5></BListGroupItem>
+					><h5 class="m-0">{{ sauce.name }}</h5></BListGroupItem>
 				</BListGroup>
 			</BCol>
 		</BRow>

@@ -9,7 +9,7 @@ const ProductExtraModel = require('../s-models/ProductExtraModel')
 
 /******************* [CRUD] *******************/
 // [READ] type //
-const c_readAllByType = async ({ type }) => {
+const c_readByType = async ({ type }) => {
 	try {
 		// [VALIDATE] cat //
 		if (!validator.isAscii(type)) {
@@ -20,7 +20,7 @@ const c_readAllByType = async ({ type }) => {
 			}
 		}
 
-		const productExtras = await ProductExtraModel.find({ type }).exec()
+		const productExtras = await ProductExtraModel.findOne({ type }).exec()
 
 		return {
 			executed: true,
@@ -40,5 +40,5 @@ const c_readAllByType = async ({ type }) => {
 
 // [EXPORT] //
 module.exports = {
-	c_readAllByType,
+	c_readByType,
 }

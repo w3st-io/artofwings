@@ -20,7 +20,11 @@ const c_readAllByType = async ({ type }) => {
 			}
 		}
 
-		const productAdditions = await ProductAdditionModel.find({ type }).exec()
+		const productAdditions = await ProductAdditionModel.find({ type })
+			.populate('productVariants')
+			.populate('productExtras')
+			.populate('productAdditions')
+			.exec()
 
 		return {
 			executed: true,
@@ -38,35 +42,7 @@ const c_readAllByType = async ({ type }) => {
 }
 
 
-const c_readTitlesOnlyByType = async ({ type }) => {
-	try {
-		// [INIT] //
-		let flavors = []
-		
-		// [READ-ALL]
-		const { productVariants } = await this.c_readAllByType({ type: type })
-		
-		productVariants.forEach(pv => { flavors.push(pv.title) })
-		
-		return {
-			executed: true,
-			status: true,
-			flavors: flavors,
-			message: `good`,
-		}
-	}
-	catch (err) {
-		return {
-			executed: false,
-			status: false,
-			message: `productAdditionsCollection: Error --> ${err}`,
-		}
-	}
-}
-
-
 // [EXPORT] //
 module.exports = {
 	c_readAllByType,
-	c_readTitlesOnlyByType,
 }

@@ -20,7 +20,11 @@ const c_read = async ({ product_id }) => {
 			}
 		}
 
-		const product = await productModel.findById(product_id).exec()
+		const product = await productModel.findById(product_id)
+			.populate('productVariants')
+			.populate('productExtras')
+			.populate('productAdditions')
+			.exec()
 		
 		return {
 			executed: true,
@@ -58,7 +62,11 @@ const c_readByCatAndSubCat = async ({ cat, subCat }) => {
 			}
 		}
 
-		const products = await productModel.find({ cat, subCat }).exec()
+		const products = await productModel.find({ cat, subCat })
+			.populate('productVariants')
+			.populate('productExtras')
+			.populate('productAdditions')
+			.exec()
 
 		return {
 			executed: true,
