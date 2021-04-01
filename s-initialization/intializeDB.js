@@ -15,8 +15,8 @@ const ProductVariantModel = require('../s-models/ProductVariantModel')
 
 async function insert() {
 	try {
-		let pVariant = null
-		let pVariant2 = null
+		let pv = null
+		let pv2 = null
 
 		// [MONGOOSE-CONNECTION] //
 		mongoose.connect(
@@ -76,23 +76,23 @@ async function insert() {
 			let p = productAddition[i]
 			
 			if (i == 0) {
-				pVariant = await ProductVariantModel.findOne({
+				pv = await ProductVariantModel.findOne({
 					type: 'appetizers'
 				})
 
-				p.productVariants = [pVariant._id]
+				p.productVariants = [pv._id]
 			}
 
 			if (i == 1) {
-				pVariant = await ProductVariantModel.findOne({
+				pv = await ProductVariantModel.findOne({
 					type: 'wing-type'
 				})
 
-				pVariant2 = await ProductVariantModel.findOne({
+				pv2 = await ProductVariantModel.findOne({
 					type: 'flavors'
 				})
 
-				p.productVariants = [pVariant._id, pVariant2._id]
+				p.productVariants = [pv._id, pv2._id]
 			}
 
 			// [SAVE] //
@@ -113,28 +113,28 @@ async function insert() {
 			const p = products[i]
 
 			if (i == 0 || i == 1 || i == 2) {
-				pVariant = await ProductVariantModel.findOne({
+				pv = await ProductVariantModel.findOne({
 					type: 'flavors'
 				})
 
-				pVariant2 = await ProductVariantModel.findOne({
+				pv2 = await ProductVariantModel.findOne({
 					type: 'wing-type'
 				})
 
-				p.productVariants = [pVariant._id, pVariant2._id]
+				p.productVariants = [pv._id, pv2._id]
 			}
 
 			if (i == 5 || i == 6 || i == 7) {
-				pVariant = await ProductVariantModel.findOne({
-					type: 'wing-type'
+				pv = await ProductVariantModel.findOne({
+					type: 'sauces'
 				})
 
-				pVariant2 = await ProductAdditionsModel.findOne({
+				pv2 = await ProductAdditionsModel.find({
 					type: 'slider'
 				})
 
-				p.productVariants = [pVariant._id]
-				p.productAdditions = [pVariant2._id]
+				p.productVariants = [pv._id]
+				p.productAdditions = [pv2[0]._id, pv2[1]._id]
 			}
 			
 			// [SAVE] //
