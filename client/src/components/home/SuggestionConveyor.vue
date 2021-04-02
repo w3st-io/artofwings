@@ -236,12 +236,12 @@
 
 		-webkit-animation: linear infinite;
 		-webkit-animation-name: slide;
-		-webkit-animation-duration: 80s;
+		-webkit-animation-duration: 100s;
 	}
 
 	@-webkit-keyframes slide {
-		from { background-position: 0; }
-		to { background-position: 100%; }
+		from { background-position: left 0; }
+		to { background-position: right 100%; }
 	}
 
 	@-moz-keyframes slide {
