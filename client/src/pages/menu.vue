@@ -1,5 +1,7 @@
 <template>
 	<BContainer class="my-3">
+		<Loading v-if="loading" />
+
 		<BRow v-if="!loading && !error">
 			<BCol
 				v-for="(section, i) in pageData.menu" :key="i"
@@ -181,9 +183,14 @@
 </template>
 
 <script>
+	import Loading from '../components/inform/Loading'
 	import PageService from '@/services/PageService'
 
 	export default {
+		components: {
+			Loading
+		},
+
 		data() {
 			return {
 				reqData: {},

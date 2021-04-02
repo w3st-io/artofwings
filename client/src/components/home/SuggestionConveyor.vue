@@ -234,9 +234,10 @@
 		background-repeat: repeat;
 		background-size: 20%;
 
-		-webkit-animation: linear infinite;
 		-webkit-animation-name: slide;
 		-webkit-animation-duration: 100s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
 	}
 
 	@-webkit-keyframes slide {
