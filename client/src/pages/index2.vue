@@ -10,15 +10,17 @@
 		</BContainer>
 
 		<!-- SugggestionConveyor -->
-		<BContainer fluid class="py-5 bg-light">
-			<BContainer class="my-3 text-center">
-				<!-- Title -->
-				<h1 class="mb-3 text-center">
-					<mark class="bg-dark text-light">Combos & Deals</mark>
-				</h1>
+		<BContainer fluid class="p-0 bg-light">
+			<div class="py-5 bg-light suggestion-container">
+				<BContainer class="my-3 text-center">
+					<!-- Title -->
+					<h1 class="mb-3 text-center">
+						<mark class="bg-dark text-light">Combos & Deals</mark>
+					</h1>
 
-				<SuggestionConveyor :slides="pageData.cnt2.slides" />
-			</BContainer>
+					<SuggestionConveyor :slides="pageData.cnt2.slides" />
+				</BContainer>
+			</div>
 		</BContainer>
 
 		<!-- Second Hero -->
@@ -99,3 +101,28 @@
 		},
 	}
 </script>
+
+
+<style scoped>
+	.suggestion-container {
+		width: 100%;
+		
+		background-image: url('../assets/media/pages/index/bd.png');
+		background-repeat: repeat;
+		background-size: 20%;
+
+		-webkit-animation: linear infinite;
+		-webkit-animation-name: slide;
+		-webkit-animation-duration: 80s;
+	}
+
+	@-webkit-keyframes slide {
+		from { background-position: 0; }
+		to { background-position: 100%; }
+	}
+
+	@-moz-keyframes slide {
+		from { background-position: 0%; }
+		to { background-position: 100%; }
+	}
+</style>
