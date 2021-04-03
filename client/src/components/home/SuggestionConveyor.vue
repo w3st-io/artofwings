@@ -232,7 +232,7 @@
 	.suggestion-container {
 		width: 100%;
 		
-		background-image: url('../../assets/media/pages/index/bd.png');
+		background-image: url('./bd.png');
 		background-repeat: repeat;
 		background-size: 20%;
 
@@ -240,6 +240,14 @@
 		-webkit-animation-duration: 100s;
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
+
+		@media (max-width: 800px) {
+			background-size: 80%;
+		}
+
+		@media (max-width: 1200px) {
+			background-size: 40%;
+		}
 	}
 
 	@-webkit-keyframes slide {

@@ -1,5 +1,9 @@
+const companyInfo = require('../companyInfo')
+
 // [EXPORT] //
 module.exports = {
+	companyInfo: companyInfo,
+
 	cnt1: {
 		heroCenterImg: require('../../assets/media/pages/index/Hero/hero-text2.png'),
 
@@ -50,7 +54,7 @@ module.exports = {
 	},
 
 	cnt3: {
-		img: require('../../assets/media/pages/index/hero2.jpg'),
+		video: require('../../assets/media/pages/index/2ndhero.mp4'),
 	},
 
 	cnt4: {

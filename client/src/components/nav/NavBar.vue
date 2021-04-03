@@ -12,7 +12,11 @@
 
 				<!-- [HIDDEN] Shopping Cart + User -->
 				<div class="d-block d-lg-none ml-auto text-right">
-					<ShopPortal />
+					<ShopPortal v-if="1 == 2" />
+
+					<a :href="defaultData.grubhubLink">
+						<BButton>Order Now</BButton>
+					</a>
 				</div>
 
 				<!-- [CENTER] Menu Items -->
@@ -40,7 +44,11 @@
 				<div class="d-none d-lg-block ml-auto text-right">
 					<SocialMediaPlug size="2x" variant="light" class="mb-3"/>
 
-					<ShopPortal />
+					<ShopPortal v-if="1 == 2" />
+					
+					<a :href="defaultData.grubhubLink">
+						<BButton>Order Now</BButton>
+					</a>
 				</div>
 			</BContainer>
 

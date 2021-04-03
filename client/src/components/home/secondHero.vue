@@ -8,7 +8,13 @@
 					Ready <span class="text-secondary">to</span> Order?
 				</mark>
 				<br><br>
-				<BButton variant="primary" class="shadow">Order Now!</BButton>
+
+				<a :href="link">
+					<BButton
+						variant="primary"
+						class="shadow"
+					>Order Now!</BButton>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -17,14 +23,15 @@
 <script>
 	export default {
 		props: {
-			img: {
+			video: {
 				type: String,
 				required: true,
 			},
 
-			video: {
-				default: require('../../assets/media/pages/index/2ndhero.mp4')
-			}
+			link: {
+				type: String,
+				required: true,
+			},
 		},
 
 		data() {
@@ -36,15 +43,7 @@
 </script>
 
 <style scoped>
-	.content-container {
-		position: relative;
-	}
-
-	/* Make the image responsive */
-	.content-container img {
-		width: 100%;
-		height: auto;
-	}
+	.content-container { position: relative; }
 
 	/* Style the center-content and place it in the middle of image */
 	.content-container .center-content {

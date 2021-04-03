@@ -14,7 +14,10 @@
 			
 		<!-- Second Hero -->
 		<BContainer fluid class="p-0 text-center">
-			<SecondHero :img="pageData.cnt3.img" />
+			<SecondHero
+				:video="pageData.cnt3.video"
+				:link="pageData.companyInfo.grubhubLink"
+			/>
 		</BContainer>
 	
 		<!-- Sections -->
@@ -45,10 +48,16 @@
 				</BCol>
 
 				<BCol cols="6" md="3" class="text-center" data-aos="fade">
-					<BButton size="lg" class="w-100 my-5">Check Out the Menu</BButton>
+					<RouterLink to="/menu">
+						<BButton size="lg" class="w-100 my-5">
+							Check Out the Menu
+						</BButton>
+					</RouterLink>
 				</BCol>
 				<BCol cols="6" md="3" class="text-center" data-aos="fade">
-					<BButton size="lg" class="w-100 my-5">Order Now</BButton>
+					<a :href="pageData.companyInfo.grubhubLink">
+						<BButton size="lg" class="w-100 my-5">Order Now</BButton>
+					</a>
 				</BCol>
 
 				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade">
