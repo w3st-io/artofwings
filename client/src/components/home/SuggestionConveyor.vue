@@ -20,100 +20,29 @@
 
 							<!-- All Sliders -->
 							<BCol cols="12" md="10" class="my-slider">
-								<!-- lg -->
-								<VueTinySlider
-									ref="slider"
-									v-bind="sliders[0].options"
-									:class="sliders[0].class"
-								>
+								<!-- Tiny Slider -->
+								<VueTinySlider ref="slider" v-bind="options">
 									<div
 										v-for="(slide, index) in slides"
 										:key="index"
-										:class="contentClass"
+										class="content"
 									>
-										<img :src="slide.image" :class="imageClass">
+										<img
+											:src="slide.image"
+											class="w-100 rounded-lg image"
+										>
 
-										<h3 :class="titleClass">{{ slide.title }}</h3>
+										<h3 class="
+											my-1
+											text-center
+											font-weight-bold
+											text-primary
+										">{{ slide.title }}</h3>
 
 										<p>{{ slide.description }}</p>
 
 										<BButton
-											:variant="buttonColor"
-											size="lg"
-											class=""
-										>Check it Out</BButton>
-									</div>
-								</VueTinySlider>
-
-								<!-- md -->
-								<VueTinySlider
-									ref="slider"
-									v-bind="sliders[1].options"
-									:class="sliders[1].class"
-								>
-									<div
-										v-for="(slide, index) in slides"
-										:key="index"
-										:class="contentClass"
-									>
-										<img :src="slide.image" :class="imageClass">
-
-										<h3 :class="titleClass">{{ slide.title }}</h3>
-
-										<p>{{ slide.description }}</p>
-
-										<BButton
-											:variant="buttonColor"
-											size="lg"
-											class=""
-										>Check it Out</BButton>
-									</div>
-								</VueTinySlider>
-
-								<!-- sm -->
-								<VueTinySlider
-									ref="slider"
-									v-bind="sliders[2].options"
-									:class="sliders[2].class"
-								>
-									<div
-										v-for="(slide, index) in slides"
-										:key="index"
-										:class="contentClass"
-									>
-										<img :src="slide.image" :class="imageClass">
-
-										<h3 :class="titleClass">{{ slide.title }}</h3>
-
-										<p>{{ slide.description }}</p>
-
-										<BButton
-											:variant="buttonColor"
-											size="lg"
-											class=""
-										>Check it Out</BButton>
-									</div>
-								</VueTinySlider>
-
-								<!-- xs -->
-								<VueTinySlider
-									ref="slider"
-									v-bind="sliders[3].options"
-									:class="sliders[3].class"
-								>
-									<div
-										v-for="(slide, index) in slides"
-										:key="index"
-										:class="contentClass"
-									>
-										<img :src="slide.image" :class="imageClass">
-
-										<h3 :class="titleClass">{{ slide.title }}</h3>
-
-										<p>{{ slide.description }}</p>
-
-										<BButton
-											:variant="buttonColor"
+											variant="primary"
 											size="lg"
 											class=""
 										>Check it Out</BButton>
@@ -157,93 +86,59 @@
 		},
 
 		data() {
-			const prevButton = '#prevButton'
-			const nextButton = '#nextButton'
-			const autoplayTimeout = 5000
-
 			return {
-				sliders: [
-					// LG
-					{
-						class: 'd-none d-lg-block my-3 px-3',
-						options: {
-							container: '.my-slider',
-							items: 3,
-							gutter: 60,
-							nav: false,
-							controls: true,
-							prevButton: prevButton,
-							nextButton: nextButton,
-							loop: true,
-							autoplay: true,
-							autoplayButtonOutput: false,
-							autoplayTimeout: autoplayTimeout,
-						},
-					},
-					// MD
-					{
-						class: 'd-none d-md-block d-lg-none my-3 px-3',
-						options: {
-							items: 2,
-							gutter: 20,
-							nav: false,
-							controls: true,
-							prevButton: prevButton,
-							nextButton: nextButton,
-							loop: true,
-							autoplay: true,
-							autoplayButtonOutput: false,
-							autoplayTimeout: autoplayTimeout,
-						},
-					},
-					// SM
-					{
-						class: 'd-none d-sm-block d-md-none my-3 px-3',
-						options: {
-							items: 1,
-							gutter: 20,
-							nav: false,
-							controls: true,
-							prevButton: prevButton,
-							nextButton: nextButton,
-							loop: true,
-							autoplay: true,
-							autoplayButtonOutput: false,
-							autoplayTimeout: autoplayTimeout,
-						},
-					},
-					// XS
-					{
-						class: 'd-block d-sm-none my-3 px-3',
-						options: {
-							items: 1,
-							gutter: 20,
-							nav: false,
-							controls: true,
-							prevButton: prevButton,
-							nextButton: nextButton,
-							loop: true,
-							autoplay: true,
-							autoplayButtonOutput: false,
-							autoplayTimeout: autoplayTimeout,
-						},
-					},
-				],
+				window: {
+					width: 0,
+					height: 0
+				},
 
-				imageClass: 'w-100 rounded-lg image',
-				contentClass: 'content',
-				titleClass: 'my-1 text-center font-weight-bold text-primary',
-				buttonColor: 'primary',
+				options: {
+					container: '.my-slider',
+					items: 1,
+					gutter: 20,
+					nav: false,
+					controls: true,
+					prevButton: '#prevButton',
+					nextButton: '#nextButton',
+					loop: true,
+					autoplay: true,
+					autoplayButtonOutput: false,
+					autoplayTimeout: 5000,
+				},
 			}
 		},
 
+		created() {
+			window.addEventListener('resize', this.handleResize)
+			this.handleResize();
+		},
+
+		destroyed() {
+			window.removeEventListener('resize', this.handleResize)
+		},
+
 		methods: {
-			goToSlide() {
-				//VueTinySlider.goTo(1)
+			handleResize() {
+				this.window.width = window.innerWidth;
+				this.window.height = window.innerHeight;
 
-				//document.getElementById('slider').goTo(1)
+				// Extra small devices (portrait phones, less than 576px)
+				if (this.window.width > 575.98) {
+					this.options.items = 1
+					this.options.gutter = 20
+				}
 
-				this.$refs.slider.slider.goTo(0)
+				// Small devices (landscape phones, less than 768px)
+				if (this.window.width > 767.98) {
+					this.options.items = 2
+					this.options.gutter = 20
+				}
+
+				// Medium devices (tablets, less than 992px)
+				if (this.window.width > 991.98) {
+					this.options.items = 3
+					this.options.gutter = 60
+				}
 			},
 		},
 	}
