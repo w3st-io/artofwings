@@ -35,7 +35,7 @@
 				</BCol>
 				
 				<BCol cols="12" md="6" lg="4" class="mb-3">
-					<FlavorSlider class="w-100" />
+					<FlavorSlider class="" />
 				</BCol>
 			</BRow>
 		</BContainer>
@@ -47,16 +47,16 @@
 					<img :src="pageData.cnt5.imgLeft" class="w-100" >
 				</BCol>
 
-				<BCol cols="6" md="3" class="text-center" data-aos="fade">
+				<BCol cols="12" md="3" class="text-center" data-aos="fade">
 					<RouterLink to="/menu">
-						<BButton size="lg" class="w-100 my-5">
+						<BButton size="lg" class="mb-3 p-4 w-100">
 							Check Out the Menu
 						</BButton>
 					</RouterLink>
 				</BCol>
-				<BCol cols="6" md="3" class="text-center" data-aos="fade">
+				<BCol cols="12" md="3" class="text-center" data-aos="fade">
 					<a :href="pageData.companyInfo.grubhubLink">
-						<BButton size="lg" class="w-100 my-5">Order Now</BButton>
+						<BButton size="lg" class="mb-3 p-4 w-100">Order Now</BButton>
 					</a>
 				</BCol>
 

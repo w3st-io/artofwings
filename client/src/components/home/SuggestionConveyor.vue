@@ -1,6 +1,6 @@
 <template>
 		<BContainer fluid class="p-0 bg-light">
-			<div class="py-5 bg-light suggestion-container">
+			<div class="py-4 bg-light suggestion-container">
 				<BContainer class="my-3 text-center">
 					<BCard bg-variant="light" class="shadow">
 						<!-- Title -->
@@ -9,7 +9,7 @@
 						</h1>
 
 						<BRow>
-							<BCol cols="1" class="m-0 p-0">
+							<BCol cols="1" class="d-none d-md-block m-0 p-0">
 								<BButton
 									variant="primary"
 									id="prevButton"
@@ -19,7 +19,7 @@
 							</BCol>
 
 							<!-- All Sliders -->
-							<BCol cols="10" class="my-slider">
+							<BCol cols="12" md="10" class="my-slider">
 								<!-- lg -->
 								<VueTinySlider ref="slider" v-bind="sliders[0].options" :class="sliders[0].class">
 									<div v-for="(slide, index) in slides" :key="index" :class="contentClass">
@@ -81,7 +81,7 @@
 								</VueTinySlider>
 							</BCol>
 
-							<BCol cols="1" class="m-0 p-0">
+							<BCol cols="1" class="d-none d-md-block m-0 p-0">
 								<BButton
 									variant="primary"
 									id="nextButton"
