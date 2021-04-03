@@ -21,62 +21,102 @@
 							<!-- All Sliders -->
 							<BCol cols="12" md="10" class="my-slider">
 								<!-- lg -->
-								<VueTinySlider ref="slider" v-bind="sliders[0].options" :class="sliders[0].class">
-									<div v-for="(slide, index) in slides" :key="index" :class="contentClass">
+								<VueTinySlider
+									ref="slider"
+									v-bind="sliders[0].options"
+									:class="sliders[0].class"
+								>
+									<div
+										v-for="(slide, index) in slides"
+										:key="index"
+										:class="contentClass"
+									>
 										<img :src="slide.image" :class="imageClass">
 
 										<h3 :class="titleClass">{{ slide.title }}</h3>
 
 										<p>{{ slide.description }}</p>
 
-										<BButton :variant="buttonColor" size="lg" class="">
-											Check it Out
-										</BButton>
+										<BButton
+											:variant="buttonColor"
+											size="lg"
+											class=""
+										>Check it Out</BButton>
 									</div>
 								</VueTinySlider>
 
 								<!-- md -->
-								<VueTinySlider ref="slider" v-bind="sliders[1].options" :class="sliders[1].class">
-									<div v-for="(slide, index) in slides" :key="index" :class="contentClass">
+								<VueTinySlider
+									ref="slider"
+									v-bind="sliders[1].options"
+									:class="sliders[1].class"
+								>
+									<div
+										v-for="(slide, index) in slides"
+										:key="index"
+										:class="contentClass"
+									>
 										<img :src="slide.image" :class="imageClass">
 
 										<h3 :class="titleClass">{{ slide.title }}</h3>
 
 										<p>{{ slide.description }}</p>
 
-										<BButton :variant="buttonColor" size="lg" class="">
-											Check it Out
-										</BButton>
+										<BButton
+											:variant="buttonColor"
+											size="lg"
+											class=""
+										>Check it Out</BButton>
 									</div>
 								</VueTinySlider>
 
 								<!-- sm -->
-								<VueTinySlider ref="slider" v-bind="sliders[2].options" :class="sliders[2].class">
-									<div v-for="(slide, index) in slides" :key="index" :class="contentClass">
+								<VueTinySlider
+									ref="slider"
+									v-bind="sliders[2].options"
+									:class="sliders[2].class"
+								>
+									<div
+										v-for="(slide, index) in slides"
+										:key="index"
+										:class="contentClass"
+									>
 										<img :src="slide.image" :class="imageClass">
 
 										<h3 :class="titleClass">{{ slide.title }}</h3>
 
 										<p>{{ slide.description }}</p>
 
-										<BButton :variant="buttonColor" size="lg" class="">
-											Check it Out
-										</BButton>
+										<BButton
+											:variant="buttonColor"
+											size="lg"
+											class=""
+										>Check it Out</BButton>
 									</div>
 								</VueTinySlider>
 
 								<!-- xs -->
-								<VueTinySlider ref="slider" v-bind="sliders[3].options" :class="sliders[3].class">
-									<div v-for="(slide, index) in slides" :key="index" :class="contentClass">
+								<VueTinySlider
+									ref="slider"
+									v-bind="sliders[3].options"
+									:class="sliders[3].class"
+								>
+									<div
+										v-for="(slide, index) in slides"
+										:key="index"
+										:class="contentClass"
+									>
 										<img :src="slide.image" :class="imageClass">
 
 										<h3 :class="titleClass">{{ slide.title }}</h3>
 
 										<p>{{ slide.description }}</p>
 
-										<BButton :variant="buttonColor" size="lg" class="">
-											Check it Out
-										</BButton>
+										<BButton
+											:variant="buttonColor"
+											size="lg"
+											class=""
+										>Check it Out</BButton>
 									</div>
 								</VueTinySlider>
 							</BCol>
