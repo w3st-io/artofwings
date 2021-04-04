@@ -63,14 +63,12 @@
 								cols="12"
 								class="text-center"
 							>
-								<!--
-									<RouterLink :to="`/order/add/${variant._id}`">
-										<BButton
-											variant="secondary"
-											class="w-100"
-										>Add to Order</BButton>
-									</RouterLink>
-								-->
+								<RouterLink :to="`/order/add/${variant._id}`">
+									<BButton
+										variant="secondary"
+										class="w-100"
+									>Add to Order</BButton>
+								</RouterLink>
 							</BCol>
 						</BRow>
 					</BListGroupItem>
@@ -185,7 +183,7 @@
 </template>
 
 <script>
-	import Loading from '../components/inform/Loading'
+	import Loading from '@/components/inform/Loading'
 	import PageService from '@/services/PageService'
 
 	export default {
