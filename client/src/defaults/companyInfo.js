@@ -29,4 +29,5 @@ module.exports = {
 	grubhubLink: 'https://www.grubhub.com/restaurant/art-of-wings-48-college-ave-new-brunswick/2488947',
 	twitterLink: '',
 	youtubeLink: '',
+	orderingSystemLink: 'https://artofwings.revelup.online/'
 }

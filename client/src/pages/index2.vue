@@ -16,7 +16,7 @@
 		<BContainer fluid class="p-0 text-center">
 			<SecondHero
 				:video="pageData.cnt3.video"
-				:link="pageData.companyInfo.grubhubLink"
+				:link="pageData.companyInfo.orderingSystemLink"
 			/>
 		</BContainer>
 	
@@ -55,7 +55,7 @@
 					</RouterLink>
 				</BCol>
 				<BCol cols="12" md="3" class="text-center" data-aos="fade">
-					<a :href="pageData.companyInfo.grubhubLink">
+					<a :href="pageData.companyInfo.orderingSystemLink">
 						<BButton size="lg" class="mb-3 p-4 w-100">Order Now</BButton>
 					</a>
 				</BCol>

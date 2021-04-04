@@ -14,7 +14,7 @@
 				<div class="d-block d-lg-none ml-auto text-right">
 					<ShopPortal v-if="1 == 2" />
 
-					<a :href="defaultData.grubhubLink">
+					<a :href="defaultData.orderingSystemLink">
 						<BButton>Order Now</BButton>
 					</a>
 				</div>
@@ -46,7 +46,7 @@
 
 					<ShopPortal v-if="1 == 2" />
 					
-					<a :href="defaultData.grubhubLink">
+					<a :href="defaultData.orderingSystemLink">
 						<BButton>Order Now</BButton>
 					</a>
 				</div>
