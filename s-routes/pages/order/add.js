@@ -9,6 +9,7 @@ const Auth = require('../../../s-middleware/Auth')
 const productAdditionsCollection = require('../../../s-collections/productAdditionsCollection')
 const productsCollection = require('../../../s-collections/productsCollection')
 const productVariantsCollection = require('../../../s-collections/productVariantsCollection')
+const s = require('../../../s-collections/orderItemsCollection')
 
 
 // [EXPRESS + USE] //
@@ -25,7 +26,9 @@ router.get(
 				// [READ] //
 				const { product } = await productsCollection.c_read({
 					product_id: req.params.product_id
-				})	
+				})
+				
+				await s.c_create()
 
 				res.send({
 					executed: true,

@@ -39,14 +39,14 @@
 						<!-- Labels -->
 						<label :for="productVariant.name">
 							<h3 class="text-secondary">{{ productVariant.name }}</h3>
-							<h5 class="text-dark">{{ productVariant.description }}</h5>
+							<h6 class="text-dark">{{ productVariant.description }}</h6>
 						</label>
 						<br>
 
 						<select
 							v-model="order.productVariant[i]"
 							:name="productVariant.name"
-							class="mb-3"
+							class="form-control mb-3"
 						>
 							<!-- For Every option -->
 							<option

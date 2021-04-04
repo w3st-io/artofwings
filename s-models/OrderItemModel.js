@@ -15,37 +15,23 @@ module.exports = mongoose.model(
 		},
 
 		// Product Variants //
-		productVariants: [
+		productVariantChoices: [
 			{
 				type: mongoose.Schema.Types.ObjectId,
 				ref: 'ProductVariant',
 			},
 		],
 
-		variantsTotalCost: {
-			type: Number,
-			maxlength: 4,
-			required: true,
-			default: 0,
-		},
-
 		// Product Extras //
-		productExtras: [
+		productExtraChoices: [
 			{
 				type: mongoose.Schema.Types.ObjectId,
 				ref: 'ProductExtra',
 			},
 		],
 
-		productExtrasTotalCost: {
-			type: Number,
-			maxlength: 4,
-			required: true,
-			default: 0,
-		},
-
 		// Product Additions //
-		productAdditions: [
+		productAdditionChoices: [
 			{
 				productAddition: {
 					type: mongoose.Schema.Types.ObjectId,
@@ -59,32 +45,10 @@ module.exports = mongoose.model(
 			},
 		],
 
-		productAdditionsTotalCost: {
-			type: Number,
-			maxlength: 4,
-			required: true,
-			default: 0,
-		},
-
 		quantity: {
 			type: Number,
-			required: true,
+			required: false,
 			default: 1,
-		},
-
-		preTaxTotal: {
-			type: Number,
-			required: true,
-		},
-
-		taxTotal: {
-			type: Number,
-			required: true,
-		},
-
-		orderTotal: {
-			type: Number,
-			required: true,
 		},
 
 		created_at: {
