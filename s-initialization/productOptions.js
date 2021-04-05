@@ -2,6 +2,7 @@
 module.exports = [
 	// Wing Flavor //
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Plain',
 		description: '',
