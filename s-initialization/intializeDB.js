@@ -10,6 +10,7 @@ const products = require('./products')
 const ProductAdditionsModel = require('../s-models/ProductAdditionModel')
 const ProductExtrasModel = require('../s-models/ProductExtraModel')
 const ProductModel = require('../s-models/ProductModel')
+const ProductOptionsModel = require('../s-models/ProductOptionModel')
 const ProductVariantModel = require('../s-models/ProductVariantModel')
 
 
@@ -36,6 +37,7 @@ async function insert() {
 		await ProductAdditionsModel.deleteMany()
 		await ProductExtrasModel.deleteMany()
 		await ProductModel.deleteMany()
+		await ProductOptionsModel.deleteMany()
 		await ProductVariantModel.deleteMany()
 
 
