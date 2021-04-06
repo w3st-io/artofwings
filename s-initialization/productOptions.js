@@ -1,5 +1,6 @@
 // [EXPORT] //
 module.exports = [
+	// [VARIANT] //
 	// Wing Flavor //
 	{
 		cat: 'variant',
@@ -10,6 +11,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Pineapple BBQ',
 		description: '',
@@ -17,6 +19,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Honey BBQ',
 		description: '',
@@ -24,6 +27,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Honey Garlic',
 		description: '',
@@ -31,6 +35,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Asian Sesame',
 		description: '',
@@ -38,6 +43,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'General Tso',
 		description: '',
@@ -45,6 +51,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Mojita Lime',
 		description: '',
@@ -52,6 +59,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Buffalo Dry Rub',
 		description: '',
@@ -59,6 +67,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Buffalo Mild',
 		description: '',
@@ -66,6 +75,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Teriyaki Sauce',
 		description: '',
@@ -73,6 +83,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Lousiana Sauce',
 		description: '',
@@ -80,6 +91,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Korean BBQ',
 		description: '',
@@ -87,6 +99,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Ragin\' Cajun',
 		description: '',
@@ -94,6 +107,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Mango Habanero',
 		description: '',
@@ -101,6 +115,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'flavor',
 		name: 'Knockout',
 		description: '',
@@ -110,6 +125,7 @@ module.exports = [
 
 	// Wing Type //
 	{
+		cat: 'variant',
 		type: 'wing-type',
 		name: 'Traditional',
 		description: '',
@@ -117,6 +133,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'wing-type',
 		name: 'Boneless',
 		description: '',
@@ -126,6 +143,7 @@ module.exports = [
 
 	// Slider Sauce //
 	{
+		cat: 'variant',
 		type: 'sauce',
 		name: 'Spicy Mayo',
 		description: '',
@@ -133,6 +151,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'sauce',
 		name: 'Chipotle Mayo',
 		description: '',
@@ -140,6 +159,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'sauce',
 		name: 'Teriyaki Aoli',
 		description: '',
@@ -147,6 +167,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'sauce',
 		name: 'Thousand Island',
 		description: '',
@@ -154,6 +175,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'variant',
 		type: 'sauce',
 		name: 'BBQ',
 		description: '',
@@ -161,8 +183,10 @@ module.exports = [
 		cost: 0.00,
 	},
 
+	// [ADDITION] //
 	// Slider Appetizer //
 	{
+		cat: 'addition',
 		type: 'slider-appetizer',
 		name: 'Fried Mac and Cheese Bites',
 		description: '',
@@ -170,6 +194,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'addition',
 		type: 'slider-appetizer',
 		name: 'Fried Cauliflower Pops',
 		description: '',
@@ -177,6 +202,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'addition',
 		type: 'slider-appetizer',
 		name: 'Fried Pickles',
 		description: '',
@@ -184,6 +210,7 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'addition',
 		type: 'slider-appetizer',
 		name: 'Mozzerella Sticks',
 		description: '',
@@ -191,10 +218,78 @@ module.exports = [
 		cost: 0.00,
 	},
 	{
+		cat: 'addition',
 		type: 'slider-appetizer',
 		name: 'Onion Rings',
 		description: '',
 		image: '',
 		cost: 0.00,
+	},
+
+	// [EXTRAS] //
+	// Toppings //
+	{
+		cat: 'extra',
+		type: 'topping',
+		name: 'Extra Patty',
+		description: '',
+		image: '',
+		cost: 1.00,
+	},
+	{
+		cat: 'extra',
+		type: 'topping',
+		name: 'Sauteed Onions',
+		description: '',
+		image: '',
+		cost: 0.50,
+	},
+	{
+		cat: 'extra',
+		type: 'topping',
+		name: 'Jalapenos',
+		description: '',
+		image: '',
+		cost: 0.50,
+	},
+	{
+		cat: 'extra',
+		type: 'topping',
+		name: 'Mushrooms',
+		description: '',
+		image: '',
+		cost: 0.50,
+	},
+	{
+		cat: 'extra',
+		type: 'topping',
+		name: 'Beef Bacon',
+		description: '',
+		image: '',
+		cost: 1.75,
+	},
+	{
+		cat: 'extra',
+		type: 'topping',
+		name: 'Bacon Jam',
+		description: '',
+		image: '',
+		cost: 1.75,
+	},
+	{
+		cat: 'extra',
+		type: 'topping',
+		name: 'Avacado',
+		description: '',
+		image: '',
+		cost: 1.75,
+	},
+	{
+		cat: 'extra',
+		type: 'topping',
+		name: 'Crispy Fried Onions',
+		description: '',
+		image: '',
+		cost: 0.75,
 	},
 ]

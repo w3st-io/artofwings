@@ -4,8 +4,9 @@ const mongoose = require('mongoose')
 
 // [REQUIRE] Personal //
 const productAddition = require('./productAdditions')
-const productVariants = require('./productVariants')
 const productExtras = require('./productExtras')
+const productOptions = require('./productOptions')
+const productVariants = require('./productVariants')
 const products = require('./products')
 const ProductAdditionsModel = require('../s-models/ProductAdditionModel')
 const ProductExtrasModel = require('../s-models/ProductExtraModel')
@@ -21,7 +22,7 @@ async function insert() {
 
 		// [MONGOOSE-CONNECTION] //
 		mongoose.connect(
-			'mongodb://localhost:27017/artofwings',
+			'mongodb://localhost:27017/artofwings2',
 			{
 				useNewUrlParser: true,
 				useUnifiedTopology: true,
@@ -41,9 +42,34 @@ async function insert() {
 		await ProductVariantModel.deleteMany()
 
 
+		// PRODUCT OPTIONS //
+		for (let i = 0; i < productOptions.length; i++) {
+			const p = productOptions[i]
+			
+			// [SAVE] //
+			await new ProductOptionsModel({
+				_id: mongoose.Types.ObjectId(),
+				cat: p.cat,
+				type: p.type,
+				name: p.name,
+				description: p.description,
+				image: p.image,
+				cost: p.cost,
+			}).save()
+		}
+
+
 		// PRODUCT VARIANT //
 		for (let i = 0; i < productVariants.length; i++) {
 			const p = productVariants[i]
+
+			const options = await ProductOptionsModel.find({
+				type: p.options
+			})
+
+			let option_ids = []
+
+			options.forEach(o => { option_ids.push(o._id) })
 			
 			// [SAVE] //
 			await new ProductVariantModel({
@@ -52,7 +78,7 @@ async function insert() {
 				name: p.name,
 				description: p.description,
 				image: p.image,
-				options: p.options,
+				options: option_ids,
 			}).save()
 		}
 
@@ -60,6 +86,16 @@ async function insert() {
 		// PRODUCT EXTRA //
 		for (let i = 0; i < productExtras.length; i++) {
 			const p = productExtras[i]
+
+			const options = await ProductOptionsModel.find({
+				type: p.options
+			})
+
+			let option_ids = []
+
+			options.forEach(o => { option_ids.push(o._id) })
+
+			console.log(option_ids);
 			
 			// [SAVE] //
 			await new ProductExtrasModel({
@@ -68,7 +104,7 @@ async function insert() {
 				name: p.name,
 				description: p.description,
 				image: p.image,
-				options: p.options,
+				options: option_ids,
 			}).save()
 		}
 
