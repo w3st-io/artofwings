@@ -1,24 +1,24 @@
-// [EXPORT] //
+ // [EXPORT] //
 module.exports = [
 	// sliders //
 	{
-		type: 'slider',
+		type: 'slider-appetizers',
 		name: 'Add Art Appetizer',
 		description: 'Add any art appetizers (except for Quesadilla, Chicken Quesadilla, & Beef Quesadilla)',
 		image: '',
-		productVariants: [],
+		cost: 2.99,
+		productVariants: ['sauces'],
 		productExtras: [],
 		productAdditions: [],
-		cost: 2.99,
 	},
 	{
-		type: 'slider',
+		type: 'slider-wings',
 		name: 'Traditional or Boneless 4pc wings',
 		description: 'With any choice of sauce',
 		image: '',
-		productVariants: [],
+		cost: 4.99,
+		productVariants: ['wing-types', 'flavors'],
 		productExtras: [],
 		productAdditions: [],
-		cost: 4.99,
 	},
 ]
