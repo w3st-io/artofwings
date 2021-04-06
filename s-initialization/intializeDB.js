@@ -17,9 +17,6 @@ const ProductVariantModel = require('../s-models/ProductVariantModel')
 
 async function insert() {
 	try {
-		let pv = null
-		let pv2 = null
-
 		// [MONGOOSE-CONNECTION] //
 		mongoose.connect(
 			'mongodb://localhost:27017/artofwings',
@@ -59,35 +56,6 @@ async function insert() {
 		}
 
 
-		// PRODUCT VARIANT //
-		for (let i = 0; i < productVariants.length; i++) {
-			// [INIT] //
-			const p = productVariants[i]
-
-
-			// [INIT] //
-			let option_ids = []
-
-
-			const options = await ProductOptionModel.find({
-				type: p.options
-			})
-
-
-			options.forEach(o => { option_ids.push(o._id) })
-			
-			// [SAVE] //
-			await new ProductVariantModel({
-				_id: mongoose.Types.ObjectId(),
-				type: p.type,
-				name: p.name,
-				description: p.description,
-				image: p.image,
-				options: option_ids,
-			}).save()
-		}
-
-
 		// PRODUCT EXTRA //
 		for (let i = 0; i < productExtras.length; i++) {
 			// [INIT] Const //
@@ -108,6 +76,35 @@ async function insert() {
 
 			// [SAVE] //
 			await new ProductExtraModel({
+				_id: mongoose.Types.ObjectId(),
+				type: p.type,
+				name: p.name,
+				description: p.description,
+				image: p.image,
+				options: option_ids,
+			}).save()
+		}
+
+
+		// PRODUCT VARIANT //
+		for (let i = 0; i < productVariants.length; i++) {
+			// [INIT] Const //
+			const p = productVariants[i]
+
+
+			// [INIT] //
+			let option_ids = []
+
+
+			// Product Options //
+			const options = await ProductOptionModel.find({
+				type: p.options
+			})
+
+			options.forEach(o => { option_ids.push(o._id) })
+			
+			// [SAVE] //
+			await new ProductVariantModel({
 				_id: mongoose.Types.ObjectId(),
 				type: p.type,
 				name: p.name,
