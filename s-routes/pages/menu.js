@@ -81,7 +81,7 @@ router.get(
 
 					additions: (
 						await productAdditionsCollection.c_readAllByType({
-							type: 'slider'
+							type: 'slider-appetizers'
 						})
 					).productAdditions,
 					
