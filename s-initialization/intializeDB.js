@@ -22,7 +22,7 @@ async function insert() {
 
 		// [MONGOOSE-CONNECTION] //
 		mongoose.connect(
-			'mongodb://localhost:27017/artofwings2',
+			'mongodb://localhost:27017/artofwings',
 			{
 				useNewUrlParser: true,
 				useUnifiedTopology: true,
