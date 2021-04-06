@@ -2,90 +2,51 @@
 const mongoose = require('mongoose')
 
 
-const productVariant = mongoose.Schema({
+const productOption = mongoose.Schema({
 	_id: mongoose.Schema.Types.ObjectId,
+	
+	cat: {
+		type: String,
+		required: false,
+		default: '',
+		maxlength: 100,
+	},
 
 	type: {
 		type: String,
-		maxlength: 50,
 		required: false,
 		default: '',
+		maxlength: 100,
 	},
 
 	name: {
 		type: String,
-		maxlength: 100,
 		required: true,
+		maxlength: 100,
 	},
 
 	description: {
 		type: String,
-		maxlength: 500,
 		required: false,
+		maxlength: 500,
 		default: '',
 	},
 
 	image: {
 		type: String,
-		maxlength: 500,
 		required: false,
+		maxlength: 500,
 		default: '',
 	},
 
-	options: [
-		{
-			name: {
-				type: String,
-				required: true,
-				maxlength: 100,
-			},
-
-			description: {
-				type: String,
-				required: false,
-				maxlength: 500,
-				default: '',
-			},
-
-			image: {
-				type: String,
-				required: false,
-				maxlength: 500,
-				default: '',
-			},
-
-			cost: {
-				type: Number,
-				required: false,
-				maxlength: 10,
-				default: 0.00,
-			},
-		}
-	],
-
-	created_at: {
-		type: Date,
-		default: Date.now,
-		maxlength: 50
+	cost: {
+		type: Number,
+		required: false,
+		maxlength: 10,
+		default: 0.00,
 	},
-})
-
-
-productVariant.pre('validate', function (next) {
-	// [LENGTH-CHECK] Blocks //
-	if (this.options.length > 20) { throw ('Error: Too many options') }
-	
-	next()
-})
-
-
-productVariant.pre('updateOne', function (next) {
-	// [LENGTH-CHECK] Blocks //
-	if (this._update.$set.options.length > 20) { throw ('Error: Too many options') }
-	
-	next()
 })
 
 
 // [EXPORT] //
-module.exports = mongoose.model('ProductOption', productVariant)
+module.exports = mongoose.model('ProductOption', productOption)
