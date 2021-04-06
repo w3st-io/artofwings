@@ -35,7 +35,7 @@ const productExtra = mongoose.Schema({
 	options: [
 		{
 			type: mongoose.Schema.Types.ObjectId,
-			ref: 'ProductOptions',
+			ref: 'ProductOption',
 			required: true,
 		}
 	],

@@ -21,10 +21,15 @@ const c_read = async ({ product_id }) => {
 		}
 
 		const product = await productModel.findById(product_id)
-			.populate('productVariants')
+			.populate({
+				path: 'productVariants',
+				populate: { path: 'options' }
+			})
 			.populate('productExtras')
 			.populate('productAdditions')
 			.exec()
+
+		console.log('PRODUCT', product);
 		
 		return {
 			executed: true,
@@ -33,6 +38,7 @@ const c_read = async ({ product_id }) => {
 		}
 	}
 	catch (err) {
+		console.log(err);
 		return {
 			executed: false,
 			status: false,

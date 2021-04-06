@@ -11,7 +11,7 @@ const products = require('./products')
 const ProductAdditionModel = require('../s-models/ProductAdditionModel')
 const ProductExtraModel = require('../s-models/ProductExtraModel')
 const ProductModel = require('../s-models/ProductModel')
-const ProductOptionsModel = require('../s-models/ProductOptionModel')
+const ProductOptionModel = require('../s-models/ProductOptionModel')
 const ProductVariantModel = require('../s-models/ProductVariantModel')
 
 
@@ -38,7 +38,7 @@ async function insert() {
 		await ProductAdditionModel.deleteMany()
 		await ProductExtraModel.deleteMany()
 		await ProductModel.deleteMany()
-		await ProductOptionsModel.deleteMany()
+		await ProductOptionModel.deleteMany()
 		await ProductVariantModel.deleteMany()
 
 
@@ -47,7 +47,7 @@ async function insert() {
 			const p = productOptions[i]
 			
 			// [SAVE] //
-			await new ProductOptionsModel({
+			await new ProductOptionModel({
 				_id: mongoose.Types.ObjectId(),
 				cat: p.cat,
 				type: p.type,
@@ -69,7 +69,7 @@ async function insert() {
 			let option_ids = []
 
 
-			const options = await ProductOptionsModel.find({
+			const options = await ProductOptionModel.find({
 				type: p.options
 			})
 
@@ -99,7 +99,7 @@ async function insert() {
 
 
 			// Product Options //
-			const options = await ProductOptionsModel.find({
+			const options = await ProductOptionModel.find({
 				type: p.options
 			})
 
