@@ -69,7 +69,10 @@ const c_readByCatAndSubCat = async ({ cat, subCat }) => {
 		}
 
 		const products = await productModel.find({ cat: cat, subCat: subCat })
-			.populate('productVariants')
+			.populate({
+				path: 'productVariants',
+				populate: { path: 'options' }
+			})
 			.populate('productExtras')
 			.populate('productAdditions')
 			.exec()

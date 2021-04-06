@@ -21,7 +21,8 @@ const c_readByType = async ({ type }) => {
 		}
 
 		const productVariants = await ProductVariantModel.findOne({ type: type })
-		.exec()
+			.populate('options')
+			.exec()
 
 		return {
 			executed: true,

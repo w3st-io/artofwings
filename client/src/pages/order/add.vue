@@ -1,6 +1,6 @@
 <template>
-	<BContainer class="py-3">
-		<BCard>
+	<BContainer class="py-5">
+		<BCard class="shadow">
 			<BRow v-if="loading">
 				<BCol cols="12">
 					<Loading />
@@ -14,8 +14,8 @@
 					</h2>
 				</BCol>
 
-				<BCol cols="12" sm="12" md="5" lg="3" xl="3" class="mb-3 px-2">
-					<img :src="product.image" class="w-100 rounded shadow">
+				<BCol cols="12" sm="12" md="5" lg="3" xl="3" class="mb-3 px-3">
+					<img :src="product.image" class="w-100 rounded">
 				</BCol>
 
 				<BCol cols="12" sm="12" md="7" lg="5" xl="5" class="mb-5">
