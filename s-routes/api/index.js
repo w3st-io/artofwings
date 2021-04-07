@@ -132,7 +132,6 @@ router.get(
 				// [INIT] //
 				let productVariant_ids = []
 				let productExtra_ids = []
-				let productAddition_ids = []
 
 
 				// Product Variants //
@@ -161,21 +160,6 @@ router.get(
 						productExtra_ids.push(productExtra._id)
 					}
 				}
-
-
-				// Product additions //
-				if (p.productAdditions.length > 0) {
-					for (let i = 0; i < p.productAdditions.length; i++) {
-						const pa = p.productAdditions[i]
-
-						const productExtra = await ProductAdditionModel.findOne({
-							cat: pa.cat,
-							subCat: pa.subCat,
-						})
-
-						productAddition_ids.push(productExtra._id)
-					}
-				}
 				
 
 				// [SAVE] //
@@ -189,7 +173,6 @@ router.get(
 					cost: p.cost,
 					productVariants: productVariant_ids,
 					productExtras: productExtra_ids,
-					productAdditions: productAddition_ids,
 				}).save()
 			}
 

@@ -10,7 +10,6 @@ module.exports = [
 		cost: 2.99,
 		productVariants: ['sauces'],
 		productExtras: [],
-		productAdditions: [],
 	},
 	{
 		cat: 'slider',
@@ -21,6 +20,5 @@ module.exports = [
 		cost: 4.99,
 		productVariants: ['wing-types', 'flavors'],
 		productExtras: [],
-		productAdditions: [],
 	},
 ]

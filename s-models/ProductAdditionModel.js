@@ -56,14 +56,6 @@ const productAddition = mongoose.Schema({
 		}
 	],
 
-	productAdditions: [
-		{
-			type: mongoose.Schema.Types.ObjectId,
-			ref: 'ProductAddition',
-			required: true,
-		}
-	],
-
 	cost: {
 		type: Number,
 		maxlength: 6,
@@ -85,8 +77,6 @@ productAddition.pre('validate', function (next) {
 
 	if (this.productExtras.length > 20) { throw ('Error: too many extras') }
 	
-	if (this.productAdditions.length > 20) { throw ('Error: too many additions') }
-	
 	next()
 })
 	
@@ -99,10 +89,6 @@ productAddition.pre('updateOne', function (next) {
 
 	if (this._update.$set.productExtras.length > 20) {
 		throw ('Error: too many extras')
-	}
-
-	if (this._update.$set.productAddition.length > 20) {
-		throw ('Error: too many additions')
 	}
 	
 	next()
