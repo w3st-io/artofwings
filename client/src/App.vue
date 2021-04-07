@@ -3,8 +3,11 @@
 		<!-- UI -->
 		<UI />
 
+		<div class="aw-background">
+			<RouterView :key="$route.name + ($route.params.id || '')" />
+
+		</div>
 		<!-- Router -->
-		<RouterView :key="$route.name + ($route.params.id || '')" />
 
 		<!-- Bottom Footer -->
 		<Footer />

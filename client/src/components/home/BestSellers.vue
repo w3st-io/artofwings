@@ -1,21 +1,19 @@
 <template>
-	<div>
-		<BListGroup flush>
-			<BListGroupItem>
-				<h1 class="m-0 text-primary">Best Sellers</h1>
-			</BListGroupItem>
+	<BListGroup flush class="shadow">
+		<BListGroupItem>
+			<h1 class="m-0 text-primary">Best Sellers</h1>
+		</BListGroupItem>
 
-			<BListGroupItem
-				v-for="(bestSeller, i) in bestSellers" :key="i"
-				:variant="variant"
-			>
-				<BRow>
-					<BCol cols="9" class="text-left">{{ bestSeller.title }}</BCol>
-					<BCol cols="3" class="price">${{ bestSeller.cost.toFixed(2) }}</BCol>
-				</BRow>
-			</BListGroupItem>
-		</BListGroup>
-	</div>
+		<BListGroupItem
+			v-for="(bestSeller, i) in bestSellers" :key="i"
+			:variant="variant"
+		>
+			<BRow>
+				<BCol cols="9" class="text-left">{{ bestSeller.title }}</BCol>
+				<BCol cols="3" class="price">${{ bestSeller.cost.toFixed(2) }}</BCol>
+			</BRow>
+		</BListGroupItem>
+	</BListGroup>
 </template>
 
 

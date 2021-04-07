@@ -1,6 +1,6 @@
 <template>
-		<BContainer fluid class="p-0 bg-light">
-			<div class="py-4 bg-light suggestion-container">
+		<BContainer fluid class="p-0">
+			<div class="py-4">
 				<BContainer class="my-3 text-center">
 					<BCard bg-variant="light" class="shadow">
 						<!-- Title -->
@@ -162,36 +162,5 @@
 		&:hover {
 			transform: translate(0px, -10px);
 		}
-	}
-
-	.suggestion-container {
-		width: 100%;
-		
-		background-image: url('./bd.png');
-		background-repeat: repeat;
-		background-size: 20%;
-
-		-webkit-animation-name: slide;
-		-webkit-animation-duration: 100s;
-		animation-iteration-count: infinite;
-		animation-timing-function: linear;
-
-		@media (max-width: 800px) {
-			background-size: 80%;
-		}
-
-		@media (max-width: 1200px) {
-			background-size: 40%;
-		}
-	}
-
-	@-webkit-keyframes slide {
-		from { background-position: left 0; }
-		to { background-position: right 100%; }
-	}
-
-	@-moz-keyframes slide {
-		from { background-position: 0%; }
-		to { background-position: 100%; }
 	}
 </style>

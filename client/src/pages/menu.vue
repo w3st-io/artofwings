@@ -1,184 +1,186 @@
 <template>
-	<BContainer class="my-3">
+	<BContainer class="py-5">
 		<Loading v-if="loading" />
 
-		<BRow v-if="!loading && !error">
-			<BCol
-				v-for="(section, i) in pageData.menu" :key="i"
-				cols="12" md="6" lg="4" xl="4"
-				data-aos="fade-up"
-				:data-aos-delay="calcDelay(i)"
-			>
-				<h1 class="m-0 text-center font-weight-bold text-primary">
-					{{ section.title }}
-				</h1>
-				<h4 class="mb-3 text-center text-secondary">
-					{{ section.description }}
-				</h4>
-
-				<!-- Options -->
-				<BListGroup
-					v-for="(option, i) in section.options"
-					:key="i"
-					class="mb-4"
+		<BCard v-if="!loading" bg-variant="none" class="mb-3 shadow">
+			<BRow v-if="!error">
+				<BCol
+					v-for="(section, i) in pageData.menu" :key="i"
+					cols="12" md="6" lg="4" xl="4"
+					data-aos="fade-up"
+					:data-aos-delay="calcDelay(i)"
 				>
-					<!-- Title -->
-					<BListGroupItem v-if="option.title" variant="secondary">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">
-								{{ option.title }}
-							</span>
-						</h4>
-					</BListGroupItem>
+					<h1 class="m-0 text-center font-weight-bold text-primary">
+						{{ section.title }}
+					</h1>
+					<h4 class="mb-3 text-center text-secondary">
+						{{ section.description }}
+					</h4>
 
-					<!-- variants -->
-					<BListGroupItem
-						v-for="(variant, i) in option.variants"
+					<!-- Options -->
+					<BListGroup
+						v-for="(option, i) in section.options"
 						:key="i"
-						variant="secondary"
-						class="py-4"
+						class="mb-4"
 					>
-						<BRow>
-							<BCol cols="9" class="pr-0 text-primary">
-								<h5 class="font-weight-bold">
-									{{ variant.name }}
-								</h5>
-							</BCol>
-								
-							<BCol cols="3" class="pl-0 text-right text-dark">
-								<h5 class="m-0 price">
-									${{ variant.cost.toFixed(2) }}
-								</h5>
-							</BCol>
+						<!-- Title -->
+						<BListGroupItem v-if="option.title" variant="secondary">
+							<h4 class="m-0 text-center">
+								<span class="font-weight-bold text-primary">
+									{{ option.title }}
+								</span>
+							</h4>
+						</BListGroupItem>
 
-							<BCol v-if="variant.description" cols="12">
-								<p>{{ variant.description }}</p>
-							</BCol>
+						<!-- variants -->
+						<BListGroupItem
+							v-for="(variant, i) in option.variants"
+							:key="i"
+							variant="secondary"
+							class="py-4"
+						>
+							<BRow>
+								<BCol cols="9" class="pr-0 text-primary">
+									<h5 class="font-weight-bold">
+										{{ variant.name }}
+									</h5>
+								</BCol>
+									
+								<BCol cols="3" class="pl-0 text-right text-dark">
+									<h5 class="m-0 price">
+										${{ variant.cost.toFixed(2) }}
+									</h5>
+								</BCol>
 
-							<BCol
-								v-if="
-									variant.subCat != 'extras' &&
-									variant.subCat != 'toppings'
-								"
-								cols="12"
-								class="text-center"
-							>
-								<RouterLink :to="`/shop/add/${variant._id}`">
-									<BButton
-										variant="secondary"
-										class="w-100"
-									>Add to Order</BButton>
-								</RouterLink>
-							</BCol>
-						</BRow>
-					</BListGroupItem>
-				</BListGroup>
+								<BCol v-if="variant.description" cols="12">
+									<p>{{ variant.description }}</p>
+								</BCol>
 
-				<!-- Flavor Options -->
-				<BListGroup v-if="section.flavors" class="mb-3">
-					<BListGroupItem variant="secondary" class="text-center">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">Flavors</span>
-						</h4>
-					</BListGroupItem>
+								<BCol
+									v-if="
+										variant.subCat != 'extras' &&
+										variant.subCat != 'toppings'
+									"
+									cols="12"
+									class="text-center"
+								>
+									<RouterLink :to="`/shop/add/${variant._id}`">
+										<BButton
+											variant="secondary"
+											class="w-100"
+										>Add to Order</BButton>
+									</RouterLink>
+								</BCol>
+							</BRow>
+						</BListGroupItem>
+					</BListGroup>
 
-					<BListGroupItem
-						v-for="(option, i) in section.flavors.options"
-						:key="i"
-						class="p-0 text-center"
-						:style="spiceColor(section.flavors.options.length, i)"
-					>
-						<h5 class="m-0 px-5 py-0 text-light">
-							{{ option.name }}
-						</h5>
-					</BListGroupItem>
-				</BListGroup>
+					<!-- Flavor Options -->
+					<BListGroup v-if="section.flavors" class="mb-3">
+						<BListGroupItem variant="secondary" class="text-center">
+							<h4 class="m-0 text-center">
+								<span class="font-weight-bold text-primary">Flavors</span>
+							</h4>
+						</BListGroupItem>
 
-				<!-- Toppings Options -->
-				<BListGroup v-if="section.toppings" class="mb-3">
-					<BListGroupItem variant="secondary" class="text-center">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">
-								{{ section.toppings.name }}
-							</span>
-						</h4>
-					</BListGroupItem>
+						<BListGroupItem
+							v-for="(option, i) in section.flavors.options"
+							:key="i"
+							class="p-0 text-center"
+							:style="spiceColor(section.flavors.options.length, i)"
+						>
+							<h5 class="m-0 px-5 py-0 text-light">
+								{{ option.name }}
+							</h5>
+						</BListGroupItem>
+					</BListGroup>
 
-					<BListGroupItem
-						v-for="(option, i) in section.toppings.options"
-						:key="i"
-						variant="info"
-						class=" py-1"
-					>
-						<BRow>
-							<BCol cols="9" class="text-left">
-								<h5 class="m-0 py-0">{{ option.name }}</h5>
-							</BCol>
+					<!-- Toppings Options -->
+					<BListGroup v-if="section.toppings" class="mb-3">
+						<BListGroupItem variant="secondary" class="text-center">
+							<h4 class="m-0 text-center">
+								<span class="font-weight-bold text-primary">
+									{{ section.toppings.name }}
+								</span>
+							</h4>
+						</BListGroupItem>
 
-							<BCol cols="3" class="text-right price">
-								<h5 class="m-0 py-0">
-									${{ option.cost.toFixed(2) }}
-								</h5>
-							</BCol>
-						</BRow>
-					</BListGroupItem>
-				</BListGroup>
+						<BListGroupItem
+							v-for="(option, i) in section.toppings.options"
+							:key="i"
+							variant="info"
+							class=" py-1"
+						>
+							<BRow>
+								<BCol cols="9" class="text-left">
+									<h5 class="m-0 py-0">{{ option.name }}</h5>
+								</BCol>
 
-				<!-- Additions -->
-				<BListGroup v-if="section.additions" class="mb-4">
-					<BListGroupItem variant="secondary" class="text-center">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">
-								Additions
-							</span>
-						</h4>
-					</BListGroupItem>
+								<BCol cols="3" class="text-right price">
+									<h5 class="m-0 py-0">
+										${{ option.cost.toFixed(2) }}
+									</h5>
+								</BCol>
+							</BRow>
+						</BListGroupItem>
+					</BListGroup>
+
+					<!-- Additions -->
+					<BListGroup v-if="section.additions" class="mb-4">
+						<BListGroupItem variant="secondary" class="text-center">
+							<h4 class="m-0 text-center">
+								<span class="font-weight-bold text-primary">
+									Additions
+								</span>
+							</h4>
+						</BListGroupItem>
+						
+						<BListGroupItem
+							v-for="(addition, i) in section.additions"
+							:key="i"
+							variant="info"
+							class=" py-1"
+						>
+							<BRow>
+								<BCol cols="9" class="text-left">
+									<h5 class="m-0 py-0">{{ addition.name }}</h5>
+								</BCol>
+
+								<BCol cols="3" class="text-right price">
+									<h5 class="m-0 py-0">
+										${{ addition.cost.toFixed(2) }}
+									</h5>
+								</BCol>
+							</BRow>
+						</BListGroupItem>
+					</BListGroup>
 					
-					<BListGroupItem
-						v-for="(addition, i) in section.additions"
-						:key="i"
-						variant="info"
-						class=" py-1"
-					>
-						<BRow>
-							<BCol cols="9" class="text-left">
-								<h5 class="m-0 py-0">{{ addition.name }}</h5>
-							</BCol>
+					<!-- Sauces -->
+					<BListGroup v-if="section.sauces" class="mb-4">
+						<BListGroupItem variant="secondary" class="text-center">
+							<h4 class="m-0 text-center">
+								<span class="font-weight-bold text-primary">
+									{{ section.sauces.name }}
+								</span>
+							</h4>
+						</BListGroupItem>
 
-							<BCol cols="3" class="text-right price">
-								<h5 class="m-0 py-0">
-									${{ addition.cost.toFixed(2) }}
-								</h5>
-							</BCol>
-						</BRow>
-					</BListGroupItem>
-				</BListGroup>
-				
-				<!-- Sauces -->
-				<BListGroup v-if="section.sauces" class="mb-4">
-					<BListGroupItem variant="secondary" class="text-center">
-						<h4 class="m-0 text-center">
-							<span class="font-weight-bold text-primary">
-								{{ section.sauces.name }}
-							</span>
-						</h4>
-					</BListGroupItem>
+						<BListGroupItem
+							v-for="(sauce, i) in section.sauces.options"
+							:key="i"
+							variant="info"
+							class="p-1 text-center"
+						><h5 class="m-0">{{ sauce.name }}</h5></BListGroupItem>
+					</BListGroup>
+				</BCol>
+			</BRow>
 
-					<BListGroupItem
-						v-for="(sauce, i) in section.sauces.options"
-						:key="i"
-						variant="info"
-						class="p-1 text-center"
-					><h5 class="m-0">{{ sauce.name }}</h5></BListGroupItem>
-				</BListGroup>
-			</BCol>
-		</BRow>
-
-		<BRow v-else>
-			<BCol cols="12">
-				<h5 class="text-danger">{{ error }}</h5>
-			</BCol>
-		</BRow>
+			<BRow v-else>
+				<BCol cols="12">
+					<h5 class="text-danger">{{ error }}</h5>
+				</BCol>
+			</BRow>
+		</BCard>
 	</BContainer>
 </template>
 

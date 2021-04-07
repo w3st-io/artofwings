@@ -1,5 +1,5 @@
 <template>
-	<BRow>
+	<BRow class="py-3 bg-light shadow">
 		<BCol cols="12">
 			<h3 class="text-dark">Our Flavors</h3>
 		</BCol>

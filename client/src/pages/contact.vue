@@ -1,6 +1,6 @@
 <template>
-	<BContainer class="my-3">
-		<BJumbotron variant="light">
+	<BContainer class="py-5">
+		<BJumbotron variant="light" class="shadow">
 			<BRow>
 				<BCol cols="12" class="mb-4 text-center" data-aos="fade">
 					<h1 class="mb-3 font-weight-bold text-primary">Visit Us</h1>

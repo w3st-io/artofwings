@@ -1,8 +1,8 @@
 <template>
-	<BContainer class="my-5">
-		<BRow class="">
-			<BCol cols="12" class="mb-3">
-				<h1 class="text-center font-weight-bold text-primary">
+	<BContainer class="py-5">
+		<BRow class="shadow">
+			<BCol cols="12" class="py-3 bg-primary">
+				<h1 class="text-center font-weight-bold text-light">
 					{{ pData.r1.c1.title }}
 				</h1>
 			</BCol>
