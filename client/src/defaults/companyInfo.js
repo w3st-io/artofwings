@@ -19,8 +19,8 @@ module.exports = {
 		},
 	],
 
-	phoneNumber: '(123) 456-7890',
-	phoneNumberLink: 'tel:123-456-7890',
+	phoneNumber: '(917) 945-0274',
+	phoneNumberLink: 'tel:917-945-0274',
 	faxNumber: '(123) 456-7890',
 	faxNumberLink: 'tel:123-456-7890',
 

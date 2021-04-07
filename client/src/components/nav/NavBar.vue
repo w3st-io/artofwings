@@ -14,13 +14,19 @@
 				<div class="d-block d-lg-none ml-auto text-right">
 					<ShopPortal v-if="1 == 2" />
 
+					<a :href="defaultData.phoneNumberLink" class="text-light">
+						<BButton class="mr-2">
+							<PhoneIcon size="1x" />
+						</BButton>
+					</a>
+
 					<a :href="defaultData.orderingSystemLink">
 						<BButton>Order Now</BButton>
 					</a>
 				</div>
 
 				<!-- [CENTER] Menu Items -->
-				<div class="d-none d-lg-block mx-auto text-center text-lg-left py-3">
+				<div class="d-none d-lg-block mx-auto text-lg-left py-4">
 					<RouterLink
 						v-for="button in buttons"
 						:key="button.type"
@@ -45,7 +51,12 @@
 					<SocialMediaPlug size="2x" variant="light" class="mb-3"/>
 
 					<ShopPortal v-if="1 == 2" />
-					
+					<a :href="defaultData.phoneNumberLink" class="text-light">
+						<BButton class="mr-2">
+							<PhoneIcon size="1x" />
+						</BButton>
+					</a>
+
 					<a :href="defaultData.orderingSystemLink">
 						<BButton>Order Now</BButton>
 					</a>
@@ -71,7 +82,7 @@
 
 <script>
 	// [IMPORT] //
-	import { MenuIcon } from 'vue-feather-icons'
+	import { MenuIcon, PhoneIcon } from 'vue-feather-icons'
 
 	// [IMPORT] Personal //
 	import SideMenu from '@/components/nav/SideMenu'
@@ -85,6 +96,7 @@
 	export default {
 		components: {
 			MenuIcon,
+			PhoneIcon,
 			SideMenu,
 			ShopPortal,
 			SocialMediaPlug,
