@@ -53,7 +53,7 @@
 								v-for="(option, i) in productVariant.options"
 								:key="i"
 								:value="option.name"
-							>{{ option.name }}</option>
+							>{{ option._id }} {{ option.name }}</option>
 						</select>
 					</div>
 					{{ order }}
