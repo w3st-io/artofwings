@@ -105,7 +105,7 @@
 
 		methods: {
 			async getPageData() {
-				this.reqData = await PageService.s_order_add({
+				this.reqData = await PageService.s_shop_add({
 					product_id:	this.product_id
 				})
 

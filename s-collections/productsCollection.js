@@ -28,8 +28,6 @@ const c_read = async ({ product_id }) => {
 			.populate('productExtras')
 			.populate('productAdditions')
 			.exec()
-
-		console.log('PRODUCT', product);
 		
 		return {
 			executed: true,
