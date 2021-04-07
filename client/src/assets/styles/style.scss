@@ -1,10 +1,24 @@
+// [IMPORT] //
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 // [IMPORT] Personal //
 @import './sass-variables.scss';
 
+@font-face {
+	font-family: 'meltix';
+	src: url('../fonts/meltix/Meltix_Regular_Demo.otf');
+}
+
+// [HTML-TAGS] //
 body {
+	font-family: 'Open Sans', sans-serif !important;
 	opacity: 1;
 	background: white;
 }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'meltix' !important; }
+
+button { font-family: 'meltix' !important; }
 
 // Comment List Image Fix //
 .comment img { max-width: 100%; }
@@ -28,11 +42,6 @@ body {
 @media only screen and (max-width: 991px) { .nav-spacer { padding-top: 178px; } }
 
 @media only screen and (max-width: 768px) { .nav-spacer { padding-top: 186px; } }
-
-
-.price {
-	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
 
 
 .aw-background {

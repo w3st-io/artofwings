@@ -10,7 +10,7 @@
 		>
 			<BRow>
 				<BCol cols="9" class="text-left">{{ bestSeller.title }}</BCol>
-				<BCol cols="3" class="price">${{ bestSeller.cost.toFixed(2) }}</BCol>
+				<BCol cols="3">${{ bestSeller.cost.toFixed(2) }}</BCol>
 			</BRow>
 		</BListGroupItem>
 	</BListGroup>

@@ -2,7 +2,7 @@
 	<BContainer class="py-5">
 		<BRow class="shadow">
 			<BCol cols="12" class="py-3 bg-primary">
-				<h1 class="text-center font-weight-bold text-light">
+				<h1 class="m-0 text-center font-weight-bold text-light">
 					{{ pData.r1.c1.title }}
 				</h1>
 			</BCol>

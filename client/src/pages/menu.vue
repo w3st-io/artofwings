@@ -47,9 +47,9 @@
 								</BCol>
 									
 								<BCol cols="3" class="pl-0 text-right text-dark">
-									<h5 class="m-0 price">
+									<p class="m-0 h5">
 										${{ variant.cost.toFixed(2) }}
-									</h5>
+									</p>
 								</BCol>
 
 								<BCol v-if="variant.description" cols="12">
@@ -112,14 +112,14 @@
 							class=" py-1"
 						>
 							<BRow>
-								<BCol cols="9" class="text-left">
+								<BCol cols="8" class="text-left">
 									<h5 class="m-0 py-0">{{ option.name }}</h5>
 								</BCol>
 
-								<BCol cols="3" class="text-right price">
-									<h5 class="m-0 py-0">
+								<BCol cols="4" class="text-right">
+									<p class="m-0 py-0 h5">
 										${{ option.cost.toFixed(2) }}
-									</h5>
+									</p>
 								</BCol>
 							</BRow>
 						</BListGroupItem>
@@ -142,14 +142,14 @@
 							class=" py-1"
 						>
 							<BRow>
-								<BCol cols="9" class="text-left">
+								<BCol cols="8" class="text-left">
 									<h5 class="m-0 py-0">{{ addition.name }}</h5>
 								</BCol>
 
-								<BCol cols="3" class="text-right price">
-									<h5 class="m-0 py-0">
+								<BCol cols="4" class="text-right">
+									<p class="m-0 py-0 h5">
 										${{ addition.cost.toFixed(2) }}
-									</h5>
+									</p>
 								</BCol>
 							</BRow>
 						</BListGroupItem>
