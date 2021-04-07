@@ -1,7 +1,7 @@
 <template>
-	<BRow class="py-3 bg-white shadow">
+	<BRow class="py-3 bg-white">
 		<BCol cols="12">
-			<h3 class="text-dark">Our Flavors</h3>
+			<h3 class="font-weight-bold text-primary">Our Flavors</h3>
 		</BCol>
 
 		<BCol cols="3">

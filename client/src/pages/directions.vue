@@ -1,5 +1,5 @@
 <template>
-	<BContainer fluid class="bg-light">
+	<BContainer fluid class="bg-white">
 		<BRow>
 			<BCol
 				cols="12" md="6" lg="4"

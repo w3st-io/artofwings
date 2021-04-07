@@ -1,7 +1,7 @@
 <template>
-	<div class="mb-5">
+	<div>
 		<!-- Hero -->
-		<BContainer fluid class="py-2 text-center">
+		<BContainer fluid class="py-2 text-center bg-white">
 			<Hero
 				:centerImg="pageData.cnt1.heroCenterImg"
 				:backgroundImgs="pageData.cnt1.heroBackgoundImgs"
@@ -26,30 +26,30 @@
 				<BCol cols="12" md="6" lg="4" class="mb-3">
 					<GalleryPreview
 						:slideImgs="pageData.cnt4.r1.c2.slideImgs"
-						class="w-100"
+						class="w-100 shadow"
 					/>
 				</BCol>
 
 				<BCol cols="12" md="6" lg="4" class="mb-3">
-					<BestSellers />
+					<BestSellers class="shadow"/>
 				</BCol>
 				
 				<BCol cols="12" md="6" lg="4" class="mb-3">
-					<FlavorSlider class="" />
+					<FlavorSlider class="shadow" />
 				</BCol>
 			</BRow>
 		</BContainer>
 
 		<!-- Chicken Wing Gates -->
-		<BContainer fluid class="text-center">
-			<BRow class="mb-3 bg-white">
+		<BContainer fluid class="py-5 text-center bg-light">
+			<BRow>
 				<BCol cols="3" class="p-0 d-none d-md-block">
 					<img :src="pageData.cnt5.imgLeft" class="w-100" >
 				</BCol>
 
 				<BCol cols="12" md="3" class="text-center" data-aos="fade">
 					<RouterLink to="/menu">
-						<BButton size="lg" class="mb-3 p-4 w-100">
+						<BButton variant="primary" size="lg" class="mb-3 p-4 w-100">
 							Check Out the Menu
 						</BButton>
 					</RouterLink>

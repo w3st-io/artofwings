@@ -1,7 +1,7 @@
 <template>
-	<BListGroup flush class="shadow">
+	<BListGroup flush>
 		<BListGroupItem>
-			<h1 class="m-0 text-primary">Best Sellers</h1>
+			<h1 class="m-0 font-weight-bold text-primary">Best Sellers</h1>
 		</BListGroupItem>
 
 		<BListGroupItem
