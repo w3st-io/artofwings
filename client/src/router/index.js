@@ -44,12 +44,12 @@ import gallery_seasonOne from '@/pages/gallery/season-one'
 import gallery_seasonTwo from '@/pages/gallery/season-two'
 // Menu //
 import menu from '@/pages/menu'
-// Order //
-import order from '@/pages/order'
-import order_add from '@/pages/order/add'
 // Post //
 import post from '@/pages/post'
 import post_create from '@/pages/post/create'
+// Shop //
+import shop from '@/pages/shop'
+import shop_add from '@/pages/shop/add'
 // User //
 import user_activity from '@/pages/user/activity'
 import user_activity_lookup from '@/pages/user/activity/lookup'
@@ -404,21 +404,21 @@ const router = new Router ({
 			}
 		},
 		{
-			path: '/order',
-			name: 'order',
-			component: order,
+			path: '/shop',
+			name: 'shop',
+			component: shop,
 			meta: {
 				auth: true,
-				title: 'Your Order'
+				title: 'Your Cart'
 			}
 		},
 		{
-			path: '/order/add/:product_id',
-			name: 'order_add',
-			component: order_add,
+			path: '/shop/add/:product_id',
+			name: 'shop_add',
+			component: shop_add,
 			meta: {
 				auth: true,
-				title: 'Add to Order'
+				title: 'Add to Cart'
 			}
 		},
 		{

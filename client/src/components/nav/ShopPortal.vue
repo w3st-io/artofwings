@@ -43,7 +43,7 @@
 		methods: {
 			mainRedirect() {
 				if (this.userLogged) {
-					router.push({ name: 'order' })
+					router.push({ name: 'shop' })
 				}
 				else { router.push({ name: 'user_login' }) }
 			},

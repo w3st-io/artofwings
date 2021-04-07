@@ -260,24 +260,6 @@ async function s_menu() {
 }
 
 
-// [ORDER] //
-async function s_order_add({ product_id }) {
-	try {
-		console.log(product_id)
-		const authAxios = await this.authAxios()
-
-		return (await authAxios.get(`/order/add/${product_id}`)).data
-	}
-	catch (err) {
-		return {
-			executed: false,
-			status: false,
-			message: `PageService: Error --> ${err}`
-		}
-	}
-}
-
-
 // [POST] //
 async function s_post(post_id, limit, page) {
 	try {
@@ -308,6 +290,40 @@ async function s_post_create() {
 			executed: false,
 			status: false,
 			error: `PageService: Error --> ${err}`
+		}
+	}
+}
+
+
+// [SEARCH] //
+async function s_search(query, type, limit, page) {
+	try {
+		const authAxios = await this.authAxios()
+		
+		return (await authAxios.get(`/search/${query}/${type}/${limit}/${page}`)).data
+	}
+	catch (err) {
+		return {
+			executed: false,
+			status: false,
+			message: `PageService: Error --> ${err}`
+		}
+	}
+}
+
+
+// [SHOP] //
+async function s_shop_add({ product_id }) {
+	try {
+		const authAxios = await this.authAxios()
+
+		return (await authAxios.get(`/shop/add/${product_id}`)).data
+	}
+	catch (err) {
+		return {
+			executed: false,
+			status: false,
+			message: `PageService: Error --> ${err}`
 		}
 	}
 }
@@ -434,22 +450,6 @@ async function s_user_profile_lookup(user_id) {
 }
 
 
-async function s_search(query, type, limit, page) {
-	try {
-		const authAxios = await this.authAxios()
-	
-		return (await authAxios.get(`/search/${query}/${type}/${limit}/${page}`)).data
-	}
-	catch (err) {
-		return {
-			executed: false,
-			status: false,
-			message: `PageService: Error --> ${err}`
-		}
-	}
-}
-
-
 // [EXPORT] //
 export default {
 	authAxios,
@@ -467,9 +467,10 @@ export default {
 	s_comment_edit,
 	s_comment_reply,
 	s_menu,
-	s_order_add,
 	s_post,
 	s_post_create,
+	s_search,
+	s_shop_add,
 	s_user_activity,
 	s_user_profile_edit,
 	s_user_activity_lookup,
@@ -477,5 +478,4 @@ export default {
 	s_user_notifications,
 	s_user_profile,
 	s_user_profile_lookup,
-	s_search,
 }

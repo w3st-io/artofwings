@@ -66,7 +66,7 @@
 							>Log Out</BButton>
 						</li>
 						<li>
-							<RouterLink to="/order">
+							<RouterLink to="/shop">
 								Your Order
 							</RouterLink>
 						</li>

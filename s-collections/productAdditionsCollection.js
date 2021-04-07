@@ -32,8 +32,6 @@ const c_readByCat = async ({ cat }) => {
 			.populate('productAdditions')
 			.exec()
 
-		console.log(productAdditions)
-
 		return {
 			executed: true,
 			status: true,

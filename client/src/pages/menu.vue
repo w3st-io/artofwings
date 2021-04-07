@@ -63,7 +63,7 @@
 								cols="12"
 								class="text-center"
 							>
-								<RouterLink :to="`/order/add/${variant._id}`">
+								<RouterLink :to="`/shop/add/${variant._id}`">
 									<BButton
 										variant="secondary"
 										class="w-100"

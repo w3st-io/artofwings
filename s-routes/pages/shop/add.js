@@ -28,7 +28,7 @@ router.get(
 				res.send({
 					executed: true,
 					status: true,
-					location: '/pages/order/add',
+					location: '/pages/shop/add',
 					product: product,
 				})
 			}
@@ -36,8 +36,8 @@ router.get(
 				res.status(200).send({
 					executed: true,
 					status: false,
-					location: '/pages/order/add',
-					message: `/pages/order/add: Invalid Params`
+					location: '/pages/shop/add',
+					message: `/pages/shop/add: Invalid Params`
 				})
 			}
 		}
@@ -45,8 +45,8 @@ router.get(
 			res.status(200).send({
 				executed: false,
 				status: false,
-				location: '/pages/order/add',
-				message: `/pages/order/add: Error --> ${err}`
+				location: '/pages/shop/add',
+				message: `/pages/shop/add: Error --> ${err}`
 			})
 		}
 	},

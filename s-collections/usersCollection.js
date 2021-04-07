@@ -122,8 +122,6 @@ const c_register = async ({ username, email, phone, password }) => {
 
 		// [VALIDATE] phone //
 		if (!Number.isInteger(phone)) {
-			console.log(phone)
-
 			return {
 				executed: true,
 				status: false,
