@@ -80,8 +80,8 @@ router.get(
 					).productExtras,
 
 					additions: (
-						await productAdditionsCollection.c_readAllByType({
-							type: 'slider-appetizers'
+						await productAdditionsCollection.c_readByCat({
+							cat: 'slider'
 						})
 					).productAdditions,
 					

@@ -6,6 +6,13 @@ const mongoose = require('mongoose')
 const productAddition = mongoose.Schema({
 	_id: mongoose.Schema.Types.ObjectId,
 
+	cat: {
+		type: String,
+		maxlength: 50,
+		required: false,
+		default: '',
+	},
+
 	type: {
 		type: String,
 		maxlength: 50,

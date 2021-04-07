@@ -69,7 +69,16 @@ module.exports = [
 		cost: 2.99,
 		productVariants: ['sauces'],
 		productExtras: ['toppings'],
-		productAdditions: ['slider-appetizers', 'slider-wings'],
+		productAdditions: [
+			{
+				cat: 'slider',
+				type: 'slider-appetizers',
+			},
+			{
+				cat: 'slider',
+				type: 'slider-wings'
+			}
+		],
 	},
 	{
 		cat: 'sliders',
@@ -80,7 +89,16 @@ module.exports = [
 		cost: 4.99,
 		productVariants: ['sauces'],
 		productExtras: ['toppings'],
-		productAdditions: ['slider-appetizers', 'slider-wings'],
+		productAdditions: [
+			{
+				cat: 'slider',
+				type: 'slider-appetizers'
+			},
+			{
+				cat: 'slider',
+				type: 'slider-wings'
+			}
+		],
 	},
 	{
 		cat: 'sliders',
@@ -91,7 +109,16 @@ module.exports = [
 		cost: 6.99,
 		productVariants: ['sauces'],
 		productExtras: ['toppings'],
-		productAdditions: ['slider-appetizers', 'slider-wings'],
+		productAdditions: [
+			{
+				cat: 'slider',
+				type: 'slider-appetizers',
+			},
+			{
+				cat: 'slider',
+				type: 'slider-wings'
+			},
+		],
 	},
 
 	// signatureDishes burgers //

@@ -138,7 +138,7 @@ router.get(
 				// Product Variants //
 				if (p.productVariants.length > 0) {
 					for (let i = 0; i < p.productVariants.length; i++) {
-						const pv = p.productVariants[i];
+						const pv = p.productVariants[i]
 
 						const productVariant = await ProductVariantModel.findOne({
 							type: pv
@@ -152,7 +152,7 @@ router.get(
 				// Product extras //
 				if (p.productExtras.length > 0) {
 					for (let i = 0; i < p.productExtras.length; i++) {
-						const pe = p.productExtras[i];
+						const pe = p.productExtras[i]
 
 						const productExtra = await ProductExtraModel.findOne({
 							type: pe
@@ -166,7 +166,7 @@ router.get(
 				// Product additions //
 				if (p.productAdditions.length > 0) {
 					for (let i = 0; i < p.productAdditions.length; i++) {
-						const pa = p.productAdditions[i];
+						const pa = p.productAdditions[i]
 
 						const productExtra = await ProductAdditionModel.findOne({
 							type: pa
@@ -180,6 +180,7 @@ router.get(
 				// [SAVE] //
 				await new ProductAdditionModel({
 					_id: mongoose.Types.ObjectId(),
+					cat: p.cat,
 					type: p.type,
 					name: p.name,
 					description: p.description,
@@ -207,7 +208,7 @@ router.get(
 				// Product Variants //
 				if (p.productVariants.length > 0) {
 					for (let i = 0; i < p.productVariants.length; i++) {
-						const pv = p.productVariants[i];
+						const pv = p.productVariants[i]
 
 						const productVariant = await ProductVariantModel.findOne({
 							type: pv
@@ -221,7 +222,7 @@ router.get(
 				// Product extras //
 				if (p.productExtras.length > 0) {
 					for (let i = 0; i < p.productExtras.length; i++) {
-						const pv = p.productExtras[i];
+						const pv = p.productExtras[i]
 
 						const productExtra = await ProductExtraModel.findOne({
 							type: pv
@@ -235,10 +236,11 @@ router.get(
 				// Product additions //
 				if (p.productAdditions.length > 0) {
 					for (let i = 0; i < p.productAdditions.length; i++) {
-						const pa = p.productAdditions[i];
+						const pa = p.productAdditions[i]
 
 						const productExtra = await ProductAdditionModel.findOne({
-							type: pa
+							cat: pa.cat,
+							type: pa.type
 						})
 
 						productAddition_ids.push(productExtra._id)
