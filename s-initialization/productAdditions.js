@@ -3,7 +3,7 @@ module.exports = [
 	// sliders //
 	{
 		cat: 'slider',
-		type: 'slider-appetizers',
+		subCat: 'appetizers',
 		name: 'Add Art Appetizer',
 		description: 'Add any art appetizers (except for Quesadilla, Chicken Quesadilla, & Beef Quesadilla)',
 		image: '',
@@ -14,7 +14,7 @@ module.exports = [
 	},
 	{
 		cat: 'slider',
-		type: 'slider-wings',
+		subCat: 'wings',
 		name: 'Traditional or Boneless 4pc wings',
 		description: 'With any choice of sauce',
 		image: '',

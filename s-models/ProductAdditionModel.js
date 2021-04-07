@@ -13,7 +13,7 @@ const productAddition = mongoose.Schema({
 		default: '',
 	},
 
-	type: {
+	subCat: {
 		type: String,
 		maxlength: 50,
 		required: false,

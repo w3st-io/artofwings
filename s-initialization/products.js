@@ -72,11 +72,11 @@ module.exports = [
 		productAdditions: [
 			{
 				cat: 'slider',
-				type: 'slider-appetizers',
+				subCat: 'appetizers',
 			},
 			{
 				cat: 'slider',
-				type: 'slider-wings'
+				subCat: 'wings'
 			}
 		],
 	},
@@ -92,11 +92,11 @@ module.exports = [
 		productAdditions: [
 			{
 				cat: 'slider',
-				type: 'slider-appetizers'
+				subCat: 'appetizers'
 			},
 			{
 				cat: 'slider',
-				type: 'slider-wings'
+				subCat: 'wings'
 			}
 		],
 	},
@@ -112,11 +112,11 @@ module.exports = [
 		productAdditions: [
 			{
 				cat: 'slider',
-				type: 'slider-appetizers',
+				subCat: 'appetizers',
 			},
 			{
 				cat: 'slider',
-				type: 'slider-wings'
+				subCat: 'wings'
 			},
 		],
 	},

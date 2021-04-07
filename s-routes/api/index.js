@@ -169,7 +169,8 @@ router.get(
 						const pa = p.productAdditions[i]
 
 						const productExtra = await ProductAdditionModel.findOne({
-							type: pa
+							cat: pa.cat,
+							subCat: pa.subCat,
 						})
 
 						productAddition_ids.push(productExtra._id)
@@ -181,7 +182,7 @@ router.get(
 				await new ProductAdditionModel({
 					_id: mongoose.Types.ObjectId(),
 					cat: p.cat,
-					type: p.type,
+					subCat: p.subCat,
 					name: p.name,
 					description: p.description,
 					image: p.image,
@@ -240,7 +241,7 @@ router.get(
 
 						const productExtra = await ProductAdditionModel.findOne({
 							cat: pa.cat,
-							type: pa.type
+							subCat: pa.subCat
 						})
 
 						productAddition_ids.push(productExtra._id)

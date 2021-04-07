@@ -8,47 +8,7 @@ const ProductAdditionModel = require('../s-models/ProductAdditionModel')
 
 
 /******************* [CRUD] *******************/
-// [READ] type //
-const c_readAllByType = async ({ type }) => {
-	try {
-		// [VALIDATE] cat //
-		if (!validator.isAscii(type)) {
-			return {
-				executed: true,
-				status: false,
-				message: 'productAdditionsCollection: Invalid type',
-			}
-		}
-
-		const productAdditions = await ProductAdditionModel.find({ type: type })
-			.populate({
-				path: 'productVariants',
-				populate: { path: 'options' }
-			})
-			.populate({
-				path: 'productExtras',
-				populate: { path: 'options' }
-			})
-			.populate('productAdditions')
-			.exec()
-
-		return {
-			executed: true,
-			status: true,
-			productAdditions: productAdditions,
-		}
-	}
-	catch (err) {
-		return {
-			executed: false,
-			status: false,
-			message: `productAdditionsCollection: Error --> ${err}`,
-		}
-	}
-}
-
-
-// [READ] type //
+// [READ] Cats //
 const c_readByCat = async ({ cat }) => {
 	try {
 		// [VALIDATE] cat //
@@ -73,7 +33,7 @@ const c_readByCat = async ({ cat }) => {
 			.exec()
 
 		console.log(productAdditions)
-		
+
 		return {
 			executed: true,
 			status: true,
@@ -92,6 +52,5 @@ const c_readByCat = async ({ cat }) => {
 
 // [EXPORT] //
 module.exports = {
-	c_readAllByType,
 	c_readByCat,
 }
