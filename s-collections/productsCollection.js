@@ -25,7 +25,10 @@ const c_read = async ({ product_id }) => {
 				path: 'productVariants',
 				populate: { path: 'options' }
 			})
-			.populate('productExtras')
+			.populate({
+				path: 'productExtras',
+				populate: { path: 'options' }
+			})
 			.populate({
 				path: 'productAdditions',
 				populate: {
