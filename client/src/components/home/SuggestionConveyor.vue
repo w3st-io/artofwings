@@ -4,9 +4,13 @@
 				<BContainer class="my-3 text-center">
 					<BCard bg-variant="none" class="shadow">
 						<!-- Title -->
-						<h1 class="mb-3 text-center text-dark">
-							Combos & Deals
-						</h1>
+						<div class="mt-2 mb-4">
+							<h1 class="text-center text-light">
+								<span class="px-5 bg-primary">
+								Combos <span class="text-secondary">&</span> Deals
+								</span>
+							</h1>
+						</div>
 
 						<BRow>
 							<BCol cols="1" class="d-none d-md-block m-0 p-0">
