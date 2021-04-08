@@ -239,6 +239,7 @@ router.get(
 					subCat: p.subCat,
 					name: p.name,
 					description: p.description,
+					link: p.link,
 					image: p.image,
 					cost: p.cost,
 					productVariants: productVariant_ids,

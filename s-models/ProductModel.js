@@ -30,6 +30,13 @@ const product = mongoose.Schema({
 		description: '',
 	},
 
+	link: {
+		type: String,
+		maxlength: 500,
+		required: false,
+		default: '',
+	},
+
 	image: {
 		type: String,
 		maxlength: 500,

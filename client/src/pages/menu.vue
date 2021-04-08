@@ -13,9 +13,9 @@
 					<h1 class="m-0 text-center font-weight-bold text-primary">
 						{{ section.title }}
 					</h1>
-					<h4 class="mb-3 text-center text-secondary">
+					<p class="h4 mb-3 text-center text-secondary">
 						{{ section.description }}
-					</h4>
+					</p>
 
 					<!-- Options -->
 					<BListGroup
@@ -64,12 +64,21 @@
 									cols="12"
 									class="text-center"
 								>
+									<a :href="variant.link">
+										<BButton
+											variant="secondary"
+											class="w-100"
+										>Order</BButton>
+									</a>
+
+									<!--
 									<RouterLink :to="`/shop/add/${variant._id}`">
 										<BButton
 											variant="secondary"
 											class="w-100"
 										>Add to Order</BButton>
 									</RouterLink>
+									-->
 								</BCol>
 							</BRow>
 						</BListGroupItem>
