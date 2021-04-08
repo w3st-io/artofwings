@@ -59,7 +59,7 @@
 			</BCol>
 
 			<!-- Product Additions -->
-			<BCol cols="12" lg="4">
+			<BCol v-if="product.productAdditions.length > 0" cols="12" lg="4">
 				<BCard bg-variant="none" class="shadow">
 					<div v-for="pa in product.productAdditions" :key="pa._id">
 						<!-- Input -->
