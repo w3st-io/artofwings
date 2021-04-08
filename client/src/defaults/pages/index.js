@@ -34,14 +34,14 @@ module.exports = {
 			},
 			{
 				title: 'Sliders + Art Appetizer',
-				description: 'Your choice of sliders and add any art appetizers (except for Quesadilla, Chicken Quesadilla, & Beef Quesadilla',
+				description: 'Your choice of sliders with any art appetizers (except for Quesadilla, Chicken Quesadilla, & Beef Quesadilla)',
 				image: require('../../assets/media/pages/index/GalleryPreview/4.jpg'),
 				link: 'https://artofwings.revelup.online/',
 				cost: '$5.98 - $9.98',
 			},
 			{
 				title: 'Sliders + Traditional or Boneless 4pc wings',
-				description: 'Your choice of sliders and our classic traditional or boneless 4pc wings.',
+				description: 'Your choice of sliders with classic traditional or boneless 4pc wingswith you choice of sauce.',
 				image: require('../../assets/media/pages/index/GalleryPreview/5.jpg'),
 				link: 'https://artofwings.revelup.online/',
 				cost: '$7.98 - $11.98',
