@@ -59,11 +59,11 @@
 					{{ order }}
 				</BCol>
 			</BRow>
-		</BCard>
 
-		<BRow v-if="error" class="mb-3">
-			<h3 class="text-danger">{{ error }}</h3>
-		</BRow>
+			<BRow v-if="error != ''" class="mb-3">
+				<h3 class="text-danger">Error: {{ error }}</h3>
+			</BRow>
+		</BCard>
 	</BContainer>
 </template>
 
@@ -122,6 +122,7 @@
 				console.log('%%% [PAGE] order_add %%%')
 				console.log('pageData:', this.pageData)
 				console.log('product:', this.product)
+				if (this.error) { console.log('error:', this.error) }
 			},
 		}
 	}

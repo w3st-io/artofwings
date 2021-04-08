@@ -26,7 +26,15 @@ const c_read = async ({ product_id }) => {
 				populate: { path: 'options' }
 			})
 			.populate('productExtras')
-			.populate('productAdditions')
+			.populate({
+				path: 'productAdditions',
+				populate: {
+					path: 'productVariants',
+					populate: {
+						path: 'options'
+					}
+				}
+			})
 			.exec()
 		
 		return {
@@ -36,7 +44,6 @@ const c_read = async ({ product_id }) => {
 		}
 	}
 	catch (err) {
-		console.log(err);
 		return {
 			executed: false,
 			status: false,

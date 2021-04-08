@@ -8,7 +8,7 @@ module.exports = [
 		description: 'Add any art appetizers (except for Quesadilla, Chicken Quesadilla, & Beef Quesadilla)',
 		image: '',
 		cost: 2.99,
-		productVariants: ['sauces'],
+		productVariants: ['appetizers'],
 		productExtras: [],
 	},
 	{

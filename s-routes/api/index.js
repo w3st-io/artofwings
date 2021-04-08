@@ -6,11 +6,11 @@ const mongoose = require('mongoose')
 
 // [REQUIRE] Personal //
 const config = require('../../s-config')
-const productAddition = require('../../s-initialization/productAdditions')
-const productExtras = require('../../s-initialization/productExtras')
-const productOptions = require('../../s-initialization/productOptions')
-const productVariants = require('../../s-initialization/productVariants')
-const products = require('../../s-initialization/products')
+const productAddition = require('../../s-defaults/productAdditions')
+const productExtras = require('../../s-defaults/productExtras')
+const productOptions = require('../../s-defaults/productOptions')
+const productVariants = require('../../s-defaults/productVariants')
+const products = require('../../s-defaults/products')
 
 const ProductAdditionModel = require('../../s-models/ProductAdditionModel')
 const ProductExtraModel = require('../../s-models/ProductExtraModel')
