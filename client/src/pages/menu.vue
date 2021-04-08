@@ -1,9 +1,9 @@
 <template>
 	<BContainer class="py-5">
-		<Loading v-if="loading" />
+		<BCard bg-variant="none" class="mb-3 shadow">
+			<Loading v-if="loading" />
 
-		<BCard v-if="!loading" bg-variant="none" class="mb-3 shadow">
-			<BRow v-if="!error">
+			<BRow v-if="!loading && !error">
 				<BCol
 					v-for="(section, i) in pageData.menu" :key="i"
 					cols="12" md="6" lg="4" xl="4"
