@@ -20,7 +20,7 @@
 
 				<BCol cols="12" sm="12" md="7" lg="5" xl="5" class="mb-5">
 					<h2 class="mb-3 text-primary">{{ product.title }}</h2>
-					<h5 class="mb-3">{{ product.description }}</h5>
+					<p class="mb-3 h5">{{ product.description }}</p>
 					<p class="mb-3 h4">Price: {{ product.cost.toFixed(2) }}</p>
 				
 					<BButton
@@ -38,8 +38,12 @@
 					>
 						<!-- Labels -->
 						<label :for="productVariant.name">
-							<h3 class="text-secondary">{{ productVariant.name }}</h3>
-							<h6 class="text-dark">{{ productVariant.description }}</h6>
+							<h3 class="text-secondary">
+								{{ productVariant.name }}
+							</h3>
+							<p class="h6 text-dark">
+								{{ productVariant.description }}
+							</p>
 						</label>
 						<br>
 
