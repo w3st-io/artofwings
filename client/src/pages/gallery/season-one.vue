@@ -1,5 +1,5 @@
 <template>
-	<BContainer fluid class="my-3">
+	<BContainer fluid class="py-3 bg-light">
 		<Gallery :images="data.images" />
 	</BContainer>
 </template>

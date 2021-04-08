@@ -1,11 +1,11 @@
 // [EXPORT] //
 module.exports = {
 	images: [
-		'https://i.imgur.com/25S1jiX.jpeg',
-		'https://i.imgur.com/luAN3g8.jpeg',
-		'https://i.imgur.com/OzuvbsX.jpeg',
+		//'https://i.imgur.com/25S1jiX.jpeg',
+		//'https://i.imgur.com/luAN3g8.jpeg',
+		//'https://i.imgur.com/OzuvbsX.jpeg',
 		'https://i.imgur.com/p5I1ABn.jpeg',
-		'https://i.imgur.com/wL2mfIU.jpeg',
+		//'https://i.imgur.com/wL2mfIU.jpeg',
 		'https://i.imgur.com/Fy3b1nS.jpeg',
 		'https://i.imgur.com/Iip69Vq.jpeg',
 		'https://i.imgur.com/Ei95PMk.jpeg',
@@ -18,10 +18,10 @@ module.exports = {
 		'https://i.imgur.com/bVaptj3.jpeg',
 		'https://i.imgur.com/8bLfcY9.jpeg',
 		'https://i.imgur.com/iIyX21Y.jpeg',
-		'https://i.imgur.com/34D7UGc.jpeg',
+		//'https://i.imgur.com/34D7UGc.jpeg',
 		'https://i.imgur.com/ttqCrMQ.jpeg',
 		'https://i.imgur.com/SVMO1l9.jpeg',
-		'https://i.imgur.com/P8abz6w.jpeg',
+		//'https://i.imgur.com/P8abz6w.jpeg',
 		'https://i.imgur.com/0U6BS3L.jpeg',
 		'https://i.imgur.com/1HS2vh9.jpeg',
 		'https://i.imgur.com/glzpOtK.jpeg',
