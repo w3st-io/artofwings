@@ -4,10 +4,9 @@
 		<UI />
 
 		<div class="aw-background">
+			<!-- Router -->
 			<RouterView :key="$route.name + ($route.params.id || '')" />
-
 		</div>
-		<!-- Router -->
 
 		<!-- Bottom Footer -->
 		<Footer />
