@@ -11,7 +11,7 @@
 				/>
 			</div>
 			
-			<BRow>
+			<BRow class="">
 				<BCol
 					v-for="(col, index) in cols"
 					:key="index"

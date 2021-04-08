@@ -79,7 +79,9 @@
 					<BListGroup v-if="section.flavors" class="mb-3">
 						<BListGroupItem variant="secondary" class="text-center">
 							<h4 class="m-0 text-center">
-								<span class="font-weight-bold text-primary">Flavors</span>
+								<span class="font-weight-bold text-primary">
+									Flavors
+								</span>
 							</h4>
 						</BListGroupItem>
 

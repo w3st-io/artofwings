@@ -2,7 +2,7 @@
 		<BContainer fluid class="p-0">
 			<div class="py-4">
 				<BContainer class="my-3 text-center">
-					<BCard bg-variant="light" class="shadow">
+					<BCard bg-variant="none" class="shadow">
 						<!-- Title -->
 						<h1 class="mb-3 text-center text-dark">
 							Combos & Deals
@@ -32,20 +32,28 @@
 											class="w-100 rounded-lg image"
 										>
 
-										<h3 class="
-											my-1
-											text-center
-											font-weight-bold
-											text-primary
-										">{{ slide.title }}</h3>
+										<h3
+											class="
+												my-2
+												text-center
+												font-weight-bold
+												text-primary
+											"
+										>{{ slide.title }}</h3>
+
+										<p class="h5 font-weight-bold text-secondary">
+											{{ slide.cost }}
+										</p>
 
 										<p>{{ slide.description }}</p>
 
-										<BButton
-											variant="primary"
-											size="lg"
-											class=""
-										>Check it Out</BButton>
+										<a :href="slide.link">
+											<BButton
+												variant="primary"
+												size="lg"
+												class=""
+											>Check it Out</BButton>
+										</a>
 									</div>
 								</VueTinySlider>
 							</BCol>

@@ -26,29 +26,32 @@ module.exports = {
 	cnt2: {
 		slides: [
 			{
-				title: 'Dish 1',
-				description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
-				image: require('../../assets/media/pages/index/GalleryPreview/1.jpg'),
-			},
-			{
-				title: 'Dish 2',
-				description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
-				image: require('../../assets/media/pages/index/GalleryPreview/2.jpg'),
-			},
-			{
-				title: 'Dish 3',
-				description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
+				title: 'Art Wings',
+				description: 'Choose between 6, 12, or 24 pieces of our classic traditional wings',
 				image: require('../../assets/media/pages/index/GalleryPreview/3.jpg'),
+				link: 'https://artofwings.revelup.online/',
+				cost: '$6.99 - $24.99',
 			},
 			{
-				title: 'Dish 4',
-				description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
+				title: 'Sliders + Art Appetizer',
+				description: 'Your choice of sliders and add any art appetizers (except for Quesadilla, Chicken Quesadilla, & Beef Quesadilla',
 				image: require('../../assets/media/pages/index/GalleryPreview/4.jpg'),
+				link: 'https://artofwings.revelup.online/',
+				cost: '$5.98 - $9.98',
 			},
 			{
-				title: 'Dish 5',
-				description: '10 Boneless or Classic (Bone-In) wings with up to 2 flavors, regular fries or veggie sticks, 1',
+				title: 'Sliders + Traditional or Boneless 4pc wings',
+				description: 'Your choice of sliders and our classic traditional or boneless 4pc wings.',
 				image: require('../../assets/media/pages/index/GalleryPreview/5.jpg'),
+				link: 'https://artofwings.revelup.online/',
+				cost: '$7.98 - $11.98',
+			},
+			{
+				title: 'Art Tenders',
+				description: 'Choose between 3 or 6 pieces of our classic tenders',
+				image: require('../../assets/media/pages/index/SuggestionConveyor/tenders.jpeg'),
+				link: 'https://artofwings.revelup.online/',
+				cost: '$4.99 - $6.99',
 			},
 		]
 	},
