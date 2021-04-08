@@ -1,73 +1,90 @@
 <template>
 	<BContainer class="py-5">
-		<BCard class="shadow">
-			<BRow v-if="loading">
-				<BCol cols="12">
-					<Loading />
-				</BCol>
-			</BRow>
+		<!-- Product -->
+		<BRow v-if="!loading && !error && product != {}">
+			<BCol cols="12" lg="9">
+				<BCard class="shadow">
+					<BRow>
+						<BCol cols="12" class="mb-3">
+							<h2 class="text-center font-weight-bold text-primary">
+								Add Item to Your Order
+							</h2>
+						</BCol>
 
-			<BRow v-if="!loading && product != {}">
-				<BCol cols="12" class="mb-3">
-					<h2 class="text-center font-weight-bold text-primary">
-						Add Item to Your Order
-					</h2>
-				</BCol>
+						<BCol cols="12" sm="12" md="5" lg="3" xl="3" class="mb-3 px-3">
+							<img :src="product.image" class="w-100 rounded">
+						</BCol>
 
-				<BCol cols="12" sm="12" md="5" lg="3" xl="3" class="mb-3 px-3">
-					<img :src="product.image" class="w-100 rounded">
-				</BCol>
+						<BCol cols="12" sm="12" md="7" lg="5" xl="5" class="mb-5">
+							<h2 class="mb-3 text-primary">{{ product.title }}</h2>
+							<p class="mb-3 h5">{{ product.description }}</p>
+							<p class="mb-3 h4">Price: {{ product.cost.toFixed(2) }}</p>
+						
+							<BButton
+								variant="secondary"
+								size="lg"
+							>+ Add to Order</BButton>
+						</BCol>
 
-				<BCol cols="12" sm="12" md="7" lg="5" xl="5" class="mb-5">
-					<h2 class="mb-3 text-primary">{{ product.title }}</h2>
-					<p class="mb-3 h5">{{ product.description }}</p>
-					<p class="mb-3 h4">Price: {{ product.cost.toFixed(2) }}</p>
-				
-					<BButton
-						variant="secondary"
-						size="lg"
-					>+ Add to Order</BButton>
-				</BCol>
-
-				<!-- For Every productVariant -->
-				<BCol cols="12" sm="12" md="12" lg="4" xl="4" class="">
-					<div
-						v-for="(productVariant, i) in product.productVariants"
-						:key="i"
-						class=""
-					>
-						<!-- Labels -->
-						<label :for="productVariant.name">
-							<h3 class="text-secondary">
-								{{ productVariant.name }}
-							</h3>
-							<p class="h6 text-dark">
-								{{ productVariant.description }}
-							</p>
-						</label>
-						<br>
-
-						<select
-							v-model="order.productVariant[i]"
-							:name="productVariant.name"
-							class="form-control mb-3"
-						>
-							<!-- For Every option -->
-							<option
-								v-for="(option, i) in productVariant.options"
+						<!-- For Every productVariant -->
+						<BCol cols="12" sm="12" md="12" lg="4" xl="4" class="">
+							<div
+								v-for="(productVariant, i) in product.productVariants"
 								:key="i"
-								:value="option.name"
-							>{{ option._id }} {{ option.name }}</option>
-						</select>
-					</div>
-					{{ order }}
-				</BCol>
-			</BRow>
+							>
+								<!-- Labels -->
+								<label :for="productVariant.name">
+									<h3 class="text-secondary">
+										{{ productVariant.name }}
+									</h3>
+									<p class="h6 text-dark">
+										{{ productVariant.description }}
+									</p>
+								</label>
+								<br>
 
-			<BRow v-if="error != ''" class="mb-3">
-				<h3 class="text-danger">Error: {{ error }}</h3>
-			</BRow>
-		</BCard>
+								<select
+									v-model="order.productVariant[i]"
+									:name="productVariant.name"
+									class="form-control mb-3"
+								>
+									<!-- For Every option -->
+									<option
+										v-for="(option, i) in productVariant.options"
+										:key="i"
+										:value="option._id"
+									>{{ option.name }}</option>
+								</select>
+							</div>
+						</BCol>
+					</BRow>
+				</BCard>
+			</BCol>
+
+			<BCol cols="12" lg="3">
+				<BCard bg-variant="none" class="shadow">
+
+				</BCard>
+			</BCol>
+		</BRow>
+
+		<!-- Loading -->
+		<BRow v-if="loading">
+			<BCol cols="12">
+				<BCard bg-variant="none" class="mb-3 shadow"><Loading /></BCard>
+			</BCol>
+		</BRow>
+
+		<!-- Error -->
+		<BRow v-if="error != ''" class="mb-3">
+			<BCol cols="12">
+				<BCard bg-variant="none" class="shadow">
+					<p class="h3 text-danger">Error: {{ error }}</p>
+				</BCard>
+			</BCol>
+		</BRow>
+		
+		<h5 class="my-5 text-light bg-dark">{{ order }}</h5>
 	</BContainer>
 </template>
 

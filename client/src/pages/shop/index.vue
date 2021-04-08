@@ -12,9 +12,9 @@
 
 			<p class="lead">
 				<RouterLink
-				to="/"
-				class="btn btn-primary btn-lg"
-				role="button"
+					to="/"
+					class="btn btn-primary btn-lg"
+					role="button"
 				>Go Home</RouterLink>
 			</p>
 		</BJumbotron>

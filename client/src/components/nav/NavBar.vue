@@ -12,8 +12,6 @@
 
 				<!-- [HIDDEN] Shopping Cart + User -->
 				<div class="d-block d-lg-none ml-auto text-right">
-					<ShopPortal v-if="1 == 2" />
-
 					<a :href="defaultData.phoneNumberLink" class="text-light">
 						<BButton class="mr-2">
 							<PhoneIcon size="1x" />
@@ -23,6 +21,8 @@
 					<a :href="defaultData.orderingSystemLink">
 						<BButton>Order Now</BButton>
 					</a>
+
+					<ShopPortal v-if="localStorage.node_env !== 'production'" />
 				</div>
 
 				<!-- [CENTER] Menu Items -->
@@ -49,8 +49,7 @@
 				<!-- [RIGHT] Shopping Cart + User -->
 				<div class="d-none d-lg-block ml-auto text-right">
 					<SocialMediaPlug size="2x" variant="light" class="mb-3"/>
-
-					<ShopPortal v-if="1 == 2" />
+					
 					<a :href="defaultData.phoneNumberLink" class="text-light">
 						<BButton class="mr-2">
 							<PhoneIcon size="1x" />
@@ -60,6 +59,8 @@
 					<a :href="defaultData.orderingSystemLink">
 						<BButton>Order Now</BButton>
 					</a>
+
+					<ShopPortal v-if="localStorage.node_env !== 'production'" />
 				</div>
 			</BContainer>
 
@@ -104,6 +105,7 @@
 
 		data() {
 			return {
+				localStorage: localStorage,
 				logo: require('../../assets/media/company/logo.png'),
 				buttons: buttons,
 				defaultData: defaultData,

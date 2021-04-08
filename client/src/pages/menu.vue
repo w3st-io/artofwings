@@ -71,14 +71,15 @@
 										>Order</BButton>
 									</a>
 
-									<!--
-									<RouterLink :to="`/shop/add/${variant._id}`">
+									<RouterLink
+										v-if="localStorage.node_env !== 'production'"
+										:to="`/shop/add/${variant._id}`"
+									>
 										<BButton
 											variant="secondary"
 											class="w-100"
 										>Add to Order</BButton>
 									</RouterLink>
-									-->
 								</BCol>
 							</BRow>
 						</BListGroupItem>
@@ -206,6 +207,7 @@
 
 		data() {
 			return {
+				localStorage: localStorage,
 				reqData: {},
 				loading: true,
 				error: '',
