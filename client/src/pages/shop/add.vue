@@ -2,7 +2,7 @@
 	<BContainer class="py-5">
 		<!-- Product -->
 		<BRow v-if="!loading && !error && product != {}">
-			<BCol cols="12" lg="9">
+			<BCol cols="12" lg="8" class="mb-3">
 				<BCard class="shadow">
 					<BRow>
 						<BCol cols="12" class="mb-3">
@@ -27,30 +27,27 @@
 						</BCol>
 
 						<!-- For Every productVariant -->
-						<BCol cols="12" sm="12" md="12" lg="4" xl="4" class="">
-							<div
-								v-for="(productVariant, i) in product.productVariants"
-								:key="i"
-							>
+						<BCol cols="12" sm="12" md="12" lg="4" xl="4">
+							<div v-for="(pv, i) in product.productVariants" :key="i">
 								<!-- Labels -->
-								<label :for="productVariant.name">
+								<label :for="pv.name">
 									<h3 class="text-secondary">
-										{{ productVariant.name }}
+										{{ pv.name }}
 									</h3>
 									<p class="h6 text-dark">
-										{{ productVariant.description }}
+										{{ pv.description }}
 									</p>
 								</label>
 								<br>
 
 								<select
 									v-model="order.productVariant[i]"
-									:name="productVariant.name"
+									:name="pv.name"
 									class="form-control mb-3"
 								>
 									<!-- For Every option -->
 									<option
-										v-for="(option, i) in productVariant.options"
+										v-for="(option, i) in pv.options"
 										:key="i"
 										:value="option._id"
 									>{{ option.name }}</option>
@@ -61,9 +58,45 @@
 				</BCard>
 			</BCol>
 
-			<BCol cols="12" lg="3">
+			<!-- Product Additions -->
+			<BCol cols="12" lg="4">
 				<BCard bg-variant="none" class="shadow">
+					<div v-for="pa in product.productAdditions" :key="pa._id">
+						<!-- Input -->
+						<input
+							v-model="order.productAddition._id"
+							type="radio"
+							:value="pa._id"
+							@click="order.productAddition.productVariant = []"
+						>
 
+						<!-- Title -->
+						<h5 class="font-weight-bold text-primary">{{ pa.name }}</h5>
+						<p class="h6 text-dark">{{ pa.name }}</p>
+
+						<div v-if="order.productAddition._id == pa._id">
+							<!-- productVariants -->
+							<div v-for="(pv, i) in pa.productVariants" :key="i">
+								<select
+									v-if="pv.options"
+									v-model="order.productAddition.productVariant[i]"
+									:name="pv.options"
+									class="form-control mb-3"
+								>
+									<!-- For Every option -->
+									<option
+										v-for="option in pv.options"
+										:key="option._id"
+										:value="option._id"
+									>{{ option.name }}</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<h5 class="my-5 text-light bg-dark">
+						{{ order.productAddition }}
+					</h5>
 				</BCard>
 			</BCol>
 		</BRow>
@@ -109,8 +142,12 @@
 				order: {
 					product: product_id,
 					productVariant: [],
+					productAddition: {
+						_id: '',
+						productVariant: [],
+						productExtra: [],
+					},
 				},
-				option: [],
 				loading: true,
 				error: '',
 			}
