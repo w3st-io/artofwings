@@ -4,9 +4,9 @@
 		
 		<div class="center-content filter">
 			<div class="center-content">
-				<mark class="h1 text-center bg-dark text-light">
+				<h1 class="h1 p-2 text-center bg-dark text-light">
 					Ready <span class="text-secondary">to</span> Order?
-				</mark>
+				</h1>
 				<br><br>
 
 				<a :href="link">

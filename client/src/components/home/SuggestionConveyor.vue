@@ -5,11 +5,9 @@
 					<BCard bg-variant="none" class="shadow">
 						<!-- Title -->
 						<div class="mt-2 mb-4">
-							<h1 class="text-center text-light">
-								<span class="px-5 bg-primary">
+							<span class="h1 px-2 text-center text-light bg-primary">
 								Combos <span class="text-secondary">&</span> Deals
-								</span>
-							</h1>
+							</span>
 						</div>
 
 						<BRow>
