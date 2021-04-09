@@ -55,6 +55,10 @@
 										:value="option._id"
 									>{{ option.name }}</option>
 								</select>
+
+								<h5 class="my-5 text-light bg-dark">
+									{{ order.productVariants }}
+								</h5>
 							</div>
 						</BCol>
 
