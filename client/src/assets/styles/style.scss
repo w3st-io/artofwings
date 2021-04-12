@@ -53,6 +53,10 @@ button { font-family: 'meltix' !important; }
 
 	-webkit-animation-name: slide;
 	-webkit-animation-duration: 100s;
+
+	animation-name: slide;
+	animation-duration: 100s;
+	
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 
@@ -73,4 +77,9 @@ button { font-family: 'meltix' !important; }
 @-moz-keyframes slide {
 	from { background-position: 0%; }
 	to { background-position: 100%; }
+}
+
+@keyframes slide {
+	from { background-position: left 0; }
+	to { background-position: right 100%; }
 }
