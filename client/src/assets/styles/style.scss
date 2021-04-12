@@ -60,13 +60,9 @@ button { font-family: 'meltix' !important; }
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 
-	@media (max-width: 800px) {
-		background-size: 80%;
-	}
-
-	@media (max-width: 1200px) {
-		background-size: 40%;
-	}
+	// [MEDIA] //
+	@media (max-width: 800px) { background-size: 80%; }
+	@media (max-width: 1200px) { background-size: 40%; }
 }
 
 @-webkit-keyframes slide {
