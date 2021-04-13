@@ -13,8 +13,8 @@
 
 		<RouterLink
 			v-show="sideMenuOpen"
-			v-for="button in buttons"
-			:key="button.type"
+			v-for="(button, i) in buttons"
+			:key="i"
 			:to="button.path"
 		>
 			<!-- Menu Items -->

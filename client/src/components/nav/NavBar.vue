@@ -28,8 +28,8 @@
 				<!-- [CENTER] Menu Items -->
 				<div class="d-none d-lg-block mx-auto text-lg-left py-4">
 					<RouterLink
-						v-for="button in buttons"
-						:key="button.type"
+						v-for="(button, i) in buttons"
+						:key="i"
 						:to="button.path"
 					>
 						<BButton
