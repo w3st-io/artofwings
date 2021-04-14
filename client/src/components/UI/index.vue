@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<!-- Top Navbar & Side Menu -->
-		<NavBar id="navbar-element" ref="navbarElement" class="position-fixed w-100 nav-z-index" />
+		<NavBar class="position-fixed w-100 nav-z-index" />
 
 		<div class="nav-spacer2"></div>
 

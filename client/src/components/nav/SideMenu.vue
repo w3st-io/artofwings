@@ -11,6 +11,7 @@
 			@click="closeMenu()"
 		><XIcon size="36" /></BButton>
 
+		<!-- Menu Page Link -->
 		<RouterLink
 			v-show="sideMenuOpen"
 			v-for="(button, i) in buttons"
@@ -28,10 +29,12 @@
 			</BButton>
 		</RouterLink>
 
+		<!-- Address -->
 		<a v-show="sideMenuOpen" :href="companyInfo.googleMapsLink" class="text-center">
 			<h4 class="m-4 text-light">{{ companyInfo.address }}</h4>
 		</a>
 
+		<!-- Social Media -->
 		<SocialMediaPlug v-show="sideMenuOpen" size="2x" variant="light" class="m-4" />
 	</nav>
 </template>
