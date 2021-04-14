@@ -7,8 +7,6 @@ import Router from 'vue-router'
 import companyInfo from '@/defaults/companyInfo'
 // Index //
 import index from '@/pages'
-// Home //
-import home from '@/pages/home'
 // About //
 import about from '@/pages/about'
 // Activity //
@@ -44,6 +42,8 @@ import emailSent from '@/pages/email-sent'
 import gallery from '@/pages/gallery'
 import gallery_seasonOne from '@/pages/gallery/season-one'
 import gallery_seasonTwo from '@/pages/gallery/season-two'
+// Home //
+import home from '@/pages/home'
 // Menu //
 import menu from '@/pages/menu'
 // Post //
