@@ -9,10 +9,10 @@ module.exports = {
 
 	// [FUNCTIONALITY] //
 	ADMIN_FUNCTIONALITY: process.env.ADMIN_FUNCTIONALITY || false,
-	USER_FUNCTIONALITY: process.env.USER_FUNCTIONALITY || false,
-	SHOP_FUNCTIONALITY: process.env.SHOP_FUNCTIONALITY || false,
-	POST_FUNCTIONALITY: process.env.POST_FUNCTIONALITY || false,
 	COMMENT_FUNCTIONALITY: process.env.COMMENT_FUNCTIONALITY || false,
+	POST_FUNCTIONALITY: process.env.POST_FUNCTIONALITY || false,
+	SHOP_FUNCTIONALITY: process.env.SHOP_FUNCTIONALITY || false,
+	USER_FUNCTIONALITY: process.env.USER_FUNCTIONALITY || false,
 
 	// [URL] //
 	CLIENT_BASE_URL: process.env.BASE_URL || 'http://localhost:8080',

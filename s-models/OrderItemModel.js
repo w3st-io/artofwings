@@ -2,28 +2,28 @@
 const mongoose = require('mongoose')
 
 
-// [EXPORT] //
 module.exports = mongoose.model(
 	'OrderItem',
 	mongoose.Schema({
 		_id: mongoose.Schema.Types.ObjectId,
 
+		// [REF] Product //
 		product: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'Product',
 			required: true,
 		},
 
-		// Product Variants //
-		productVariantChoices: [
+		// [REF] ProductVariant //
+		productVariants: [
 			{
 				type: mongoose.Schema.Types.ObjectId,
 				ref: 'ProductVariant',
 			},
 		],
 
-		// Product Extras //
-		productExtraChoices: [
+		// [REF] ProductExtra //
+		productExtras: [
 			{
 				type: mongoose.Schema.Types.ObjectId,
 				ref: 'ProductExtra',
@@ -31,17 +31,29 @@ module.exports = mongoose.model(
 		],
 
 		// Product Additions //
-		productAdditionChoices: [
+		productAdditions: [
 			{
+				// [OBJECT_ID] //
 				productAddition: {
 					type: mongoose.Schema.Types.ObjectId,
 					ref: 'ProductAddition',
 				},
 
-				variant: {
-					type: String,
-					maxlength: 20,
-				}
+				// [REF] ProductVariant //
+				productAdditionVariants: [
+					{
+						type: mongoose.Schema.Types.ObjectId,
+						ref: 'ProductVariant',
+					},
+				],
+
+				// [REF] ProductExtra //
+				productAdditionExtras: [
+					{
+						type: mongoose.Schema.Types.ObjectId,
+						ref: 'ProductExtra',
+					},
+				],
 			},
 		],
 
