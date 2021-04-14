@@ -6,12 +6,12 @@
 
 		<BCol cols="3">
 			<BButton
-				variant="primary"
+				variant="success"
 				size="sm"
 				class="h1 p-0 rounded-circle shadow"
 				style="width: 42px; height: 42px;"
 				@click="decrementValue()"
-			><h2 class="m-0">-</h2></BButton>
+			><img :src="fireIcon" class="w-100 p-2" /></BButton>
 		</BCol>
 
 		<BCol cols="6" class="p-0">
@@ -36,7 +36,7 @@
 				class="h1 p-0 rounded-circle shadow"
 				style="width: 42px; height: 42px;"
 				@click="incrementValue()"
-			><h2 class="m-0">+</h2></BButton>
+			><img :src="fireIcon" class="w-100 p-2" /></BButton>
 		</BCol>
 
 		<BCol cols="12" class="my-2">
@@ -63,6 +63,7 @@
 
 <script>
 	// [IMPORT] //
+	import f from '../../assets/media/symbol-icons/fire.png'
 	import VueSlider from 'vue-slider-component'
 	import VueTinySlider from 'vue-tiny-slider'
 
@@ -85,6 +86,7 @@
 
 		data() {
 			return {
+				fireIcon: f,
 				value: 1,
 
 				slider: {

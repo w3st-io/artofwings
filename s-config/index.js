@@ -7,6 +7,9 @@ module.exports = {
 	// [APP] //
 	NODE_ENV: process.env.NODE_ENV || 'development',
 
+	// [HOME] //
+	CUSTOM_HOME: process.env.CUSTOM_HOME || 'false',
+	
 	// [FUNCTIONALITY] //
 	ADMIN_FUNCTIONALITY: process.env.ADMIN_FUNCTIONALITY || false,
 	COMMENT_FUNCTIONALITY: process.env.COMMENT_FUNCTIONALITY || false,
