@@ -25,7 +25,7 @@
 				<h2 class="mb-4 text-center text-primary">
 					{{ pData.r1.c3.title }}
 				</h2>
-				<p>{{ pData.r1.c3.description }}</p>
+				<p class="text-justify">{{ pData.r1.c3.description }}</p>
 			</BCol>
 		</BRow>
 	</BContainer>
