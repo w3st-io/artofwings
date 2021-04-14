@@ -40,7 +40,6 @@ const c_readByType = async ({ type }) => {
 }
 
 
-// [EXPORT] //
 module.exports = {
 	c_readByType,
 }

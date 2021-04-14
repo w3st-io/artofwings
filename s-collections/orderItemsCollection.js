@@ -69,7 +69,6 @@ const c_read = async ({ orderItem_id }) => {
 }
 
 
-// [EXPORT] //
 module.exports = {
 	c_create,
 	c_read,

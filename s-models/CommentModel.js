@@ -223,6 +223,4 @@ comment.pre('updateOne', function (next) {
 	next()
 })
 
-
-// [EXPORT] //
 module.exports = mongoose.model('Comment', comment)

@@ -90,7 +90,7 @@ async function s_register({ username, email, password }) {
 }
 
 
-// [EXPORT] //
+
 export default {
 	authAxios,
 	s_getAdminTokenDecodeData,

@@ -99,7 +99,7 @@ async function s_unfollow(post_id) {
 }
 
 
-// [EXPORT] //
+
 export default {
 	authAxios,
 	s_create,

@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 
 
-// [EXPORT] //
+
 const productAddition = mongoose.Schema({
 	_id: mongoose.Schema.Types.ObjectId,
 
@@ -95,5 +95,4 @@ productAddition.pre('updateOne', function (next) {
 })
 
 
-// [EXPORT] //
 module.exports = mongoose.model('ProductAddition', productAddition)

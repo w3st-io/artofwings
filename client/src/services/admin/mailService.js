@@ -33,7 +33,7 @@ async function s_getQuote(type, email, name, subject, message) {
 }
 
 
-// [EXPORT] //
+
 export default {
 	authAxios,
 	s_getQuote

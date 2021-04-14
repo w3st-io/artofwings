@@ -79,7 +79,7 @@ import NotFound from '@/pages/404'
 Vue.use(Router)
 
 
-// [EXPORT] //
+
 const router = new Router ({
 	mode: 'history',
 

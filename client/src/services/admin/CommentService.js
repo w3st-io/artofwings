@@ -32,7 +32,7 @@ async function s_delete(comment_id) {
 }
 
 
-// [EXPORT] //
+
 export default {
 	authAxios,
 	s_delete,

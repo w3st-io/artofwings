@@ -27,7 +27,7 @@ async function s_markHandled(report_id) {
 }
 
 
-// [EXPORT] //
+
 export default {
 	authAxios,
 	s_markHandled,

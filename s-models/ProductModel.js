@@ -112,5 +112,4 @@ product.pre('updateOne', function (next) {
 })
 
 
-// [EXPORT] //
 module.exports = mongoose.model('Product', product)

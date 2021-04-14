@@ -64,5 +64,4 @@ productVariant.pre('updateOne', function (next) {
 })
 
 
-// [EXPORT] //
 module.exports = mongoose.model('ProductVariant', productVariant)

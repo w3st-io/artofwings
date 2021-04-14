@@ -101,7 +101,6 @@ const c_readByCatAndSubCat = async ({ cat, subCat }) => {
 }
 
 
-// [EXPORT] //
 module.exports = {
 	c_read,
 	c_readByCatAndSubCat,

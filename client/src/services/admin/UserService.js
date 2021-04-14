@@ -31,7 +31,7 @@ async function s_banUser(user_id, hours) {
 }
 
 
-// [EXPORT] //
+
 export default {
 	authAxios,
 	s_banUser,

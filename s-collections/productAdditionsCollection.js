@@ -48,7 +48,6 @@ const c_readByCat = async ({ cat }) => {
 }
 
 
-// [EXPORT] //
 module.exports = {
 	c_readByCat,
 }

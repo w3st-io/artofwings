@@ -1,8 +1,6 @@
 // [REQUIRE] //
 const mongoose = require('mongoose')
 
-
-// [EXPORT] //
 module.exports = mongoose.model(
 	'Activity',
 	mongoose.Schema({

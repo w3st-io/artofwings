@@ -22,7 +22,7 @@ async function index() {
 }
 
 
-// [EXPORT] //
+
 export default {
 	authAxios,
 	index,

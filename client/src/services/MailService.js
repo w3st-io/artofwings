@@ -49,7 +49,7 @@ async function s_careers(formData) {
 }
 
 
-// [EXPORT] //
+
 export default {
 	authAxios,
 	s_getQuote,

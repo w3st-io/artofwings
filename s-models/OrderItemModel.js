@@ -1,7 +1,6 @@
 // [REQUIRE] //
 const mongoose = require('mongoose')
 
-
 module.exports = mongoose.model(
 	'OrderItem',
 	mongoose.Schema({

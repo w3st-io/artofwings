@@ -64,5 +64,4 @@ productExtra.pre('updateOne', function (next) {
 })
 
 
-// [EXPORT] //
 module.exports = mongoose.model('ProductExtra', productExtra)

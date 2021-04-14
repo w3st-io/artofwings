@@ -54,7 +54,6 @@ const c_create = async ({ user_id, stripe_customer_id }) => {
 }
 
 
-// [EXPORT] //
 module.exports = {
 	c_create,
 }

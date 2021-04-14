@@ -215,7 +215,7 @@ async function s_report(reportType, reportedUser) {
 }
 
 
-// [EXPORT] //
+
 export default {
 	authAxios,
 	s_getUserTokenDecodeData,

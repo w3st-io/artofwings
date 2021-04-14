@@ -35,7 +35,7 @@ async function s_markRead(notification_id) {
 }
 
 
-// [EXPORT] //
+
 export default {
 	authAxios,
 	s_readUnread,

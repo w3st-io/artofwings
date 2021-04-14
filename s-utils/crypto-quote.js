@@ -99,7 +99,6 @@ else {
 		}
 	}, 2000)
 }
-
 module.exports = {
 	prices
 }

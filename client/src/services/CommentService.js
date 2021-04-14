@@ -128,7 +128,7 @@ async function s_report(post_id, comment_id, reportType) {
 }
 
 
-// [EXPORT] //
+
 export default {
 	authAxios,
 	s_create,
