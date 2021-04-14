@@ -5,8 +5,10 @@ import Router from 'vue-router'
 
 // [IMPORT] Personal (Ordered by path) //
 import companyInfo from '@/defaults/companyInfo'
+// Index //
+import index from '@/pages/'
 // Home //
-import home from '@/pages/index2'
+import home from '@/pages/home'
 // About //
 import about from '@/pages/about'
 // Activity //
@@ -82,11 +84,11 @@ const router = new Router ({
 	mode: 'history',
 
 	routes: [
-		// Home //
+		// root //
 		{
 			path: '/',
 			name: '/',
-			component: home,
+			component: index,
 			meta: {
 				auth: true,
 				title: 'Home'
@@ -326,6 +328,16 @@ const router = new Router ({
 			meta: {
 				auth: true,
 				title: 'Season Two'
+			},
+		},
+		// Home //
+		{
+			path: '/home',
+			name: 'home',
+			component: home,
+			meta: {
+				auth: true,
+				title: 'Home'
 			},
 		},
 		// Menu //

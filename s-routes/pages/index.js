@@ -50,6 +50,7 @@ router.get(
 			res.status(200).send({
 				executed: true,
 				status: true,
+				customHome: true,
 				cats: cats,
 				topPosts: topPosts,
 				cryptoQuote: cryptoQuote.prices,
