@@ -100,10 +100,19 @@
 			<!-- Product Additions -->
 			<BCol v-if="product.productAdditions.length > 0" cols="12" lg="4">
 				<BCard bg-variant="none" class="shadow">
-					<div v-for="pa in product.productAdditions" :key="pa._id">
-						<!-- Input -->
+					<h2 class="mb-3 text-center font-weight-bold text-primary">
+						Add More!
+					</h2>
+
+					<!-- [FOR] productAdditions -->
+					<BCard
+						v-for="pa in product.productAdditions" :key="pa._id"
+						bg-variant="none"
+						class="mb-3"
+					>
+						<!-- [INPUT] Radio -->
 						<input
-							v-model="order.productAddition._id"
+							v-model="order.productAdditions[0].productAddition"
 							type="radio"
 							:value="pa._id"
 							@click="order.productAddition.productVariants = []"
@@ -113,12 +122,12 @@
 						<h5 class="font-weight-bold text-primary">{{ pa.name }}</h5>
 						<p class="h6 text-dark">{{ pa.name }}</p>
 
-						<div v-if="order.productAddition._id == pa._id">
+						<div v-if="order.productAdditions[0].productAddition == pa._id">
 							<!-- productVariants -->
 							<div v-for="(pv, i) in pa.productVariants" :key="i">
 								<select
 									v-if="pv.options"
-									v-model="order.productAddition.productVariants[i]"
+									v-model="order.productAdditions[0].productVariants[i]"
 									:name="pv.options"
 									class="form-control mb-3"
 								>
@@ -131,10 +140,10 @@
 								</select>
 							</div>
 						</div>
-					</div>
+					</BCard>
 
 					<h5 class="my-5 text-light bg-dark">
-						{{ order.productAddition }}
+						{{ order.productAdditions }}
 					</h5>
 				</BCard>
 			</BCol>
@@ -182,11 +191,13 @@
 					product: product_id,
 					productVariants: [],
 					productExtras: [],
-					productAddition: {
-						_id: '',
-						productVariants: [],
-						productExtra: [],
-					},
+					productAdditions: [
+						{
+							productAddition: '',
+							productVariants: [],
+							productExtra: [],
+						}
+					],
 				},
 				loading: true,
 				error: '',
@@ -217,6 +228,24 @@
 			},
 
 			extras(option_id) {
+				// [INIT] //
+				let updatedArray = []
+				let found = false
+				
+				// [FLAG] //
+				this.order.productExtras.forEach(pe => {
+					if (pe == option_id) { found = true }
+					else { updatedArray.push(pe) }
+				})
+				
+				// Add
+				if (found == false) { updatedArray.push(option_id) }
+
+				// Update Array //
+				this.order.productExtras = updatedArray
+			},
+
+			additions(option_id) {
 				// [INIT] //
 				let updatedArray = []
 				let found = false
