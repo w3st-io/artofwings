@@ -6,7 +6,7 @@ import Router from 'vue-router'
 // [IMPORT] Personal (Ordered by path) //
 import companyInfo from '@/defaults/companyInfo'
 // Index //
-import index from '@/pages/'
+import index from '@/pages'
 // Home //
 import home from '@/pages/home'
 // About //
