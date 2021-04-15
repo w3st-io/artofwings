@@ -2,7 +2,7 @@
 	<BContainer class="py-5">
 		<!-- Product -->
 		<BRow v-if="!loading && !error && product != {}">
-			<BCol cols="12" lg="8" class="mb-3">
+			<BCol cols="12" lg="9" class="mb-3">
 				<BCard class="shadow">
 					<BRow>
 						<!-- Title -->
@@ -19,14 +19,41 @@
 
 						<!-- Product Details -->
 						<BCol cols="12" sm="12" md="7" lg="5" xl="5" class="mb-5">
-							<h2 class="mb-3 text-primary">{{ product.title }}</h2>
-							<p class="mb-3 h5">{{ product.description }}</p>
-							<p class="mb-3 h4">Price: {{ product.cost.toFixed(2) }}</p>
-						
-							<BButton
-								variant="secondary"
-								size="lg"
-							>+ Add to Order</BButton>
+							<BRow>
+								<BCol cols="12">
+									<h2 class="mb-3 text-primary">{{ product.name }}</h2>
+									<p class="mb-3 h5">{{ product.description }}</p>
+									
+								</BCol>
+
+								<BCol cols="12">
+									<p class="mb-3 h4">${{ product.cost.toFixed(2) }}</p>
+								</BCol>
+
+								<BCol cols="12">
+									<label for="quantity" class="h5">
+										Quantity
+									</label>
+								
+									<input
+										v-model="order.quantity"
+										name="quantity"
+										type="number"
+										min="1"
+										max="100"
+										class="form-control w-100 mb-3"
+										style="max-width: 100px;"
+									>
+								</BCol>
+
+								<BCol cols="12">
+									<BButton
+										variant="secondary"
+										size="lg"
+										class="w-100"
+									>+ Add to Order</BButton>
+								</BCol>
+							</BRow>
 						</BCol>
 
 						<!-- For Every productVariant -->
@@ -98,7 +125,7 @@
 			</BCol>
 
 			<!-- Product Additions -->
-			<BCol v-if="product.productAdditions.length > 0" cols="12" lg="4">
+			<BCol v-if="product.productAdditions.length > 0" cols="12" lg="3">
 				<BCard bg-variant="none" class="shadow">
 					<h2 class="mb-3 text-center font-weight-bold text-primary">
 						Add More!
@@ -198,6 +225,7 @@
 							productExtra: [],
 						}
 					],
+					quantity: 1,
 				},
 				loading: true,
 				error: '',
