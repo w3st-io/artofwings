@@ -13,21 +13,26 @@
 						</BCol>
 
 						<!-- Image -->
-						<BCol cols="12" sm="12" md="5" lg="3" xl="3" class="mb-3 px-3">
-							<img :src="product.image" class="w-100 rounded">
-						</BCol>
+						<BCol
+							cols="12" sm="12" md="5" lg="3" xl="3"
+							class="mb-3 px-3"
+						><img :src="product.image" class="w-100 rounded"></BCol>
 
 						<!-- Product Details -->
 						<BCol cols="12" sm="12" md="7" lg="5" xl="5" class="mb-5">
 							<BRow>
 								<BCol cols="12">
-									<h2 class="mb-3 text-primary">{{ product.name }}</h2>
+									<h2 class="mb-3 text-primary">
+										{{ product.name }}
+									</h2>
 									<p class="mb-3 h5">{{ product.description }}</p>
 									
 								</BCol>
 
 								<BCol cols="12">
-									<p class="mb-3 h4">${{ product.cost.toFixed(2) }}</p>
+									<p class="mb-3 h4">
+										${{ product.cost.toFixed(2) }}
+									</p>
 								</BCol>
 
 								<BCol cols="12">
@@ -36,7 +41,7 @@
 									</label>
 								
 									<input
-										v-model="order.quantity"
+										v-model="orderItem.quantity"
 										name="quantity"
 										type="number"
 										min="1"
@@ -71,7 +76,7 @@
 								<br>
 
 								<select
-									v-model="order.productVariants[i]"
+									v-model="orderItem.productVariants[i]"
 									:name="pv.name"
 									class="form-control mb-3"
 								>
@@ -84,7 +89,7 @@
 								</select>
 
 								<h5 class="my-5 text-light bg-dark">
-									{{ order.productVariants }}
+									{{ orderItem.productVariants }}
 								</h5>
 							</div>
 						</BCol>
@@ -116,9 +121,9 @@
 								</div>
 							</div>
 
-							<h5 class="my-5 text-light bg-dark">
-								{{ order.productExtras }}
-							</h5>
+							<p class="h5 my-5 text-light bg-dark">
+								orderItem.productExtras: {{ orderItem.productExtras }}
+							</p>
 						</BCol>
 					</BRow>
 				</BCard>
@@ -133,45 +138,51 @@
 
 					<!-- [FOR] productAdditions -->
 					<BCard
-						v-for="pa in product.productAdditions" :key="pa._id"
+						v-for="(pa, i) in product.productAdditions" :key="i"
 						bg-variant="none"
 						class="mb-3"
 					>
 						<!-- [INPUT] Radio -->
 						<input
-							v-model="order.productAdditions[0].productAddition"
+							v-model="orderItem.productAdditions[0].productAddition"
 							type="radio"
 							:value="pa._id"
-							@click="order.productAddition.productVariants = []"
+							@click="orderItem.productAdditions[0].productAdditionVariants = []"
 						>
 
-						<!-- Title -->
-						<h5 class="font-weight-bold text-primary">{{ pa.name }}</h5>
-						<p class="h6 text-dark">{{ pa.name }}</p>
-
-						<div v-if="order.productAdditions[0].productAddition == pa._id">
-							<!-- productVariants -->
-							<div v-for="(pv, i) in pa.productVariants" :key="i">
-								<select
-									v-if="pv.options"
-									v-model="order.productAdditions[0].productVariants[i]"
-									:name="pv.options"
-									class="form-control mb-3"
-								>
-									<!-- For Every option -->
-									<option
-										v-for="option in pv.options"
-										:key="option._id"
-										:value="option._id"
-									>{{ option.name }}</option>
-								</select>
+						<div>
+							<!-- Title -->
+							<h5 class="font-weight-bold text-primary">
+								{{ pa.name }}
+							</h5>
+							<p class="h6 text-dark">{{ pa.name }}</p>
+							
+							<!-- Product Variants -->
+							<div v-if="pa.productVariants.length > 0">
+								<!-- For Every productVariants -->
+								<div v-for="(pv, i) in pa.productVariants" :key="i">
+									<select
+										v-if="pv.options"
+										v-model="orderItem.productAdditions[0].productAdditionVariants[i]"
+										:name="pv.options"
+										class="form-control mb-3"
+									>
+										<!-- For Every option -->
+										<option
+											v-for="(option, i) in pv.options"
+											:key="i"
+											:value="option._id"
+										>{{ option.name }}</option>
+									</select>
+								</div>
 							</div>
 						</div>
 					</BCard>
 
-					<h5 class="my-5 text-light bg-dark">
-						{{ order.productAdditions }}
-					</h5>
+					<p class="h5 my-5 text-light bg-dark">
+						orderItem.productAdditions: {{ orderItem.productAdditions }}
+					</p>
+
 				</BCard>
 			</BCol>
 		</BRow>
@@ -192,7 +203,10 @@
 			</BCol>
 		</BRow>
 		
-		<h5 class="my-5 text-light bg-dark">{{ order }}</h5>
+		<p class="h5 my-5 text-light bg-dark">
+			<!-- product: {{ product }} -->
+			orderItem: {{ orderItem }},
+		</p>
 	</BContainer>
 </template>
 
@@ -214,18 +228,18 @@
 				pageData: {},
 				product: {},
 				reqData: {},
-				order: {
+				orderItem: {
 					product: product_id,
+					quantity: 1,
 					productVariants: [],
 					productExtras: [],
 					productAdditions: [
 						{
 							productAddition: '',
-							productVariants: [],
-							productExtra: [],
-						}
+							productAdditionVariants: [],
+							productAdditionExtras: [],
+						},
 					],
-					quantity: 1,
 				},
 				loading: true,
 				error: '',
@@ -261,7 +275,7 @@
 				let found = false
 				
 				// [FLAG] //
-				this.order.productExtras.forEach(pe => {
+				this.orderItem.productExtras.forEach(pe => {
 					if (pe == option_id) { found = true }
 					else { updatedArray.push(pe) }
 				})
@@ -270,25 +284,7 @@
 				if (found == false) { updatedArray.push(option_id) }
 
 				// Update Array //
-				this.order.productExtras = updatedArray
-			},
-
-			additions(option_id) {
-				// [INIT] //
-				let updatedArray = []
-				let found = false
-				
-				// [FLAG] //
-				this.order.productExtras.forEach(pe => {
-					if (pe == option_id) { found = true }
-					else { updatedArray.push(pe) }
-				})
-				
-				// Add
-				if (found == false) { updatedArray.push(option_id) }
-
-				// Update Array //
-				this.order.productExtras = updatedArray
+				this.orderItem.productExtras = updatedArray
 			},
 
 			log() {
