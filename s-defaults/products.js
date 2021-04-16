@@ -11,6 +11,7 @@ module.exports = [
 		cost: 6.99,
 		productVariants: ['wing-types', 'flavors'],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -23,6 +24,7 @@ module.exports = [
 		cost: 12.99,
 		productVariants: ['wing-types', 'flavors'],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -35,6 +37,7 @@ module.exports = [
 		cost: 24.99,
 		productVariants: ['wing-types', 'flavors'],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 
@@ -49,6 +52,7 @@ module.exports = [
 		cost: 4.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -61,6 +65,7 @@ module.exports = [
 		cost: 12.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 
@@ -75,6 +80,7 @@ module.exports = [
 		cost: 2.99,
 		productVariants: ['sauces'],
 		productExtras: ['toppings'],
+		totalProductAdditions: 1,
 		productAdditions: [
 			{
 				cat: 'slider',
@@ -96,6 +102,7 @@ module.exports = [
 		cost: 4.99,
 		productVariants: ['sauces'],
 		productExtras: ['toppings'],
+		totalProductAdditions: 1,
 		productAdditions: [
 			{
 				cat: 'slider',
@@ -117,6 +124,7 @@ module.exports = [
 		cost: 6.99,
 		productVariants: ['sauces'],
 		productExtras: ['toppings'],
+		totalProductAdditions: 1,
 		productAdditions: [
 			{
 				cat: 'slider',
@@ -140,6 +148,7 @@ module.exports = [
 		cost: 8.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -152,6 +161,7 @@ module.exports = [
 		cost: 7.50,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -164,6 +174,7 @@ module.exports = [
 		cost: 7.50,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -176,6 +187,7 @@ module.exports = [
 		cost: 6.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 
@@ -190,6 +202,7 @@ module.exports = [
 		cost: 4.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -202,6 +215,7 @@ module.exports = [
 		cost: 6.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -214,6 +228,7 @@ module.exports = [
 		cost: 7.50,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -226,6 +241,7 @@ module.exports = [
 		cost: 7.50,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -238,6 +254,7 @@ module.exports = [
 		cost: 7.50,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 
@@ -252,6 +269,7 @@ module.exports = [
 		cost: 6.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -264,6 +282,7 @@ module.exports = [
 		cost: 6.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 
@@ -278,6 +297,7 @@ module.exports = [
 		cost: 2.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -290,6 +310,7 @@ module.exports = [
 		cost: 3.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -302,6 +323,7 @@ module.exports = [
 		cost: 5.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -314,6 +336,7 @@ module.exports = [
 		cost: 5.75,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -326,6 +349,7 @@ module.exports = [
 		cost: 5.25,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -338,6 +362,7 @@ module.exports = [
 		cost: 5.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -350,6 +375,7 @@ module.exports = [
 		cost: 4.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -362,6 +388,7 @@ module.exports = [
 		cost: 4.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -374,6 +401,7 @@ module.exports = [
 		cost: 6.49,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -386,6 +414,7 @@ module.exports = [
 		cost: 4.95,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 
@@ -400,6 +429,7 @@ module.exports = [
 		cost: 5.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -412,6 +442,7 @@ module.exports = [
 		cost: 7.49,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -424,6 +455,7 @@ module.exports = [
 		cost: 7.49,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -436,6 +468,7 @@ module.exports = [
 		cost: 5.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -448,6 +481,7 @@ module.exports = [
 		cost: 4.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -460,6 +494,7 @@ module.exports = [
 		cost: 5.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -472,6 +507,7 @@ module.exports = [
 		cost: 4.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -484,6 +520,7 @@ module.exports = [
 		cost: 2.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 
@@ -498,6 +535,7 @@ module.exports = [
 		cost: 4.95,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -510,6 +548,7 @@ module.exports = [
 		cost: 6.95,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -522,6 +561,7 @@ module.exports = [
 		cost: 5.95,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -534,6 +574,7 @@ module.exports = [
 		cost: 7.95,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 
@@ -548,6 +589,7 @@ module.exports = [
 		cost: 9.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -560,6 +602,7 @@ module.exports = [
 		cost: 9.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -572,6 +615,7 @@ module.exports = [
 		cost: 9.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	
@@ -586,6 +630,7 @@ module.exports = [
 		cost: 6.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 	{
@@ -598,6 +643,7 @@ module.exports = [
 		cost: 7.99,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 
@@ -612,6 +658,7 @@ module.exports = [
 		cost: 2.69,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 
@@ -626,6 +673,7 @@ module.exports = [
 		cost: 1.69,
 		productVariants: [],
 		productExtras: [],
+		totalProductAdditions: 1,
 		productAdditions: [],
 	},
 ]

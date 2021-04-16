@@ -244,6 +244,7 @@ router.get(
 					cost: p.cost,
 					productVariants: productVariant_ids,
 					productExtras: productExtra_ids,
+					totalProductAdditions: p.totalProductAdditions,
 					productAdditions: productAddition_ids,
 				}).save()
 			}

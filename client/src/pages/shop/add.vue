@@ -131,56 +131,98 @@
 
 			<!-- Product Additions -->
 			<BCol v-if="product.productAdditions.length > 0" cols="12" lg="3">
-				<BCard bg-variant="none" class="shadow">
+				<BCard
+					v-for="i in product.totalProductAdditions"
+					:key="i"
+					bg-variant="none"
+					class="mb-3 shadow"
+				>
 					<h2 class="mb-3 text-center font-weight-bold text-primary">
 						Add More!
 					</h2>
 
+					<!-- NONE -->
+					<BCard bg-variant="none" class="mb-3">
+						<BRow>
+							<BCol cols="2" class="pr-0">
+								<!-- [INPUT] Radio -->
+								<input
+									:name="`pa${i}`"
+									type="radio"
+									value=""
+									v-model="orderItem.productAdditions[i - 1].productAddition"
+									@click="clearPAPAV(i)"
+								>
+							</BCol>
+
+							<BCol cols="10" class="p-0">
+								<!-- Title -->
+								<h5 class="font-weight-bold text-primary">
+									None
+								</h5>
+							</BCol>
+						</BRow>
+
+					</BCard>
+
 					<!-- [FOR] productAdditions -->
 					<BCard
-						v-for="(pa, i) in product.productAdditions" :key="i"
+						v-for="(pa, ii) in product.productAdditions" :key="ii"
 						bg-variant="none"
 						class="mb-3"
 					>
-						<!-- [INPUT] Radio -->
-						<input
-							v-model="orderItem.productAdditions[0].productAddition"
-							type="radio"
-							:value="pa._id"
-							@click="orderItem.productAdditions[0].productAdditionVariants = []"
-						>
+						<BRow>
+							<BCol cols="2" class="pr-0">
+								<!-- [INPUT] Radio -->
+								<input
+									:name="`pa${i}`"
+									type="radio"
+									:value="pa._id"
+									v-model="orderItem.productAdditions[i - 1].productAddition"
+									@click="clearPAPAV(i)"
+								>
+							</BCol>
 
-						<div>
-							<!-- Title -->
-							<h5 class="font-weight-bold text-primary">
-								{{ pa.name }}
-							</h5>
-							<p class="h6 text-dark">{{ pa.name }}</p>
-							
-							<!-- Product Variants -->
-							<div v-if="pa.productVariants.length > 0">
-								<!-- For Every productVariants -->
-								<div v-for="(pv, i) in pa.productVariants" :key="i">
-									<select
-										v-if="pv.options"
-										v-model="orderItem.productAdditions[0].productAdditionVariants[i]"
-										:name="pv.options"
-										class="form-control mb-3"
+							<BCol cols="10" class="p-0">
+								<!-- Title -->
+								<h5 class="font-weight-bold text-primary">
+									{{ pa.name }}
+								</h5>
+								<p class="h6 text-dark">{{ pa.name }}</p>
+							</BCol>
+						</BRow>	
+						
+						<BRow>
+							<BCol cols="12">
+								<!-- Product Variants -->
+								<div v-if="pa.productVariants.length > 0">
+									<!-- [FOR] Every productVariants -->
+									<div
+										v-for="(pv, iii) in pa.productVariants"
+										:key="iii"
 									>
-										<!-- For Every option -->
-										<option
-											v-for="(option, i) in pv.options"
-											:key="i"
-											:value="option._id"
-										>{{ option.name }}</option>
-									</select>
+										<select
+											v-if="pv.options"
+											:name="pv.options"
+											v-model="orderItem.productAdditions[i - 1].productAdditionVariants[iii]"
+											class="form-control mb-3"
+										>
+											<!-- [FOR] Every option -->
+											<option
+												v-for="(option, iiii) in pv.options"
+												:key="iiii"
+												:value="option._id"
+											>{{ option.name }}</option>
+										</select>
+									</div>
 								</div>
-							</div>
-						</div>
+							</BCol>
+						</BRow>
 					</BCard>
 
 					<p class="h5 my-5 text-light bg-dark">
-						orderItem.productAdditions: {{ orderItem.productAdditions }}
+						orderItem.productAdditions[{{ i - 1 }}]:
+						{{ orderItem.productAdditions[i - 1] }}
 					</p>
 
 				</BCard>
@@ -204,7 +246,6 @@
 		</BRow>
 		
 		<p class="h5 my-5 text-light bg-dark">
-			<!-- product: {{ product }} -->
 			orderItem: {{ orderItem }},
 		</p>
 	</BContainer>
@@ -233,13 +274,7 @@
 					quantity: 1,
 					productVariants: [],
 					productExtras: [],
-					productAdditions: [
-						{
-							productAddition: '',
-							productAdditionVariants: [],
-							productAdditionExtras: [],
-						},
-					],
+					productAdditions: [],
 				},
 				loading: true,
 				error: '',
@@ -250,6 +285,15 @@
 			if (!localStorage.usertoken) { router.push({ name: 'user_login' }) }
 
 			await this.getPageData()
+
+			// Inialize productAdditions
+			for (let i = 0; i < this.product.totalProductAdditions; i++) {	
+				this.orderItem.productAdditions.push({
+					productAddition: '',
+					productAdditionVariants: [],
+					productAdditionExtras: [],
+				})
+			}
 
 			this.log()
 		},
@@ -285,6 +329,12 @@
 
 				// Update Array //
 				this.orderItem.productExtras = updatedArray
+			},
+
+			clearPAPAV(i) {
+				console.log(this.orderItem.productAdditions[i - 1].productAdditionVariants)
+				this.orderItem.productAdditions[i - 1].productAdditionVariants = []
+				console.log(this.orderItem.productAdditions[i - 1].productAdditionVariants)
 			},
 
 			log() {
