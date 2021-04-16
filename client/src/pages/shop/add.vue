@@ -151,13 +151,13 @@
 							@click="clearPAPAV()"
 						>
 
-						<div>
-							<!-- Title -->
-							<h5 class="font-weight-bold text-primary">
-								{{ pa.name }}
-							</h5>
-							<p class="h6 text-dark">{{ pa.name }}</p>
+						<!-- Title -->
+						<h5 class="font-weight-bold text-primary">
+							{{ pa.name }}
+						</h5>
+						<p class="h6 text-dark">{{ pa.name }}</p>
 							
+						<div v-if="orderItem.productAdditions[0].productAddition == pa._id">
 							<!-- Product Variants -->
 							<div v-if="pa.productVariants.length > 0">
 								<!-- For Every productVariants -->
@@ -168,7 +168,7 @@
 									<select
 										v-if="pv.options"
 										:name="pv.options"
-										v-model="orderItem.productAdditions[0].productAdditionVariants[i]"
+										v-model="orderItem.productAdditions[0].productAdditionVariants[ii]"
 										class="form-control mb-3"
 									>
 										<!-- For Every option -->
