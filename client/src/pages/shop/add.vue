@@ -143,6 +143,26 @@
 
 					<!-- [FOR] productAdditions -->
 					<BCard
+						bg-variant="none"
+						class="mb-3"
+					>
+						<!-- [INPUT] Radio -->
+						<input
+							:name="`pa${i}`"
+							type="radio"
+							value=""
+							v-model="orderItem.productAdditions[i - 1].productAddition"
+							@click="clearPAPAV(i)"
+						>
+
+						<!-- Title -->
+						<h5 class="font-weight-bold text-primary">
+							None
+						</h5>
+					</BCard>
+
+					<!-- [FOR] productAdditions -->
+					<BCard
 						v-for="(pa, ii) in product.productAdditions" :key="ii"
 						bg-variant="none"
 						class="mb-3"
