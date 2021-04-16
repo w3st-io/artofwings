@@ -141,24 +141,28 @@
 						Add More!
 					</h2>
 
-					<!-- [FOR] productAdditions -->
-					<BCard
-						bg-variant="none"
-						class="mb-3"
-					>
-						<!-- [INPUT] Radio -->
-						<input
-							:name="`pa${i}`"
-							type="radio"
-							value=""
-							v-model="orderItem.productAdditions[i - 1].productAddition"
-							@click="clearPAPAV(i)"
-						>
+					<!-- NONE -->
+					<BCard bg-variant="none" class="mb-3">
+						<BRow>
+							<BCol cols="2" class="pr-0">
+								<!-- [INPUT] Radio -->
+								<input
+									:name="`pa${i}`"
+									type="radio"
+									value=""
+									v-model="orderItem.productAdditions[i - 1].productAddition"
+									@click="clearPAPAV(i)"
+								>
+							</BCol>
 
-						<!-- Title -->
-						<h5 class="font-weight-bold text-primary">
-							None
-						</h5>
+							<BCol cols="10" class="p-0">
+								<!-- Title -->
+								<h5 class="font-weight-bold text-primary">
+									None
+								</h5>
+							</BCol>
+						</BRow>
+
 					</BCard>
 
 					<!-- [FOR] productAdditions -->
@@ -167,43 +171,53 @@
 						bg-variant="none"
 						class="mb-3"
 					>
-						<!-- [INPUT] Radio -->
-						<input
-							:name="`pa${i}`"
-							type="radio"
-							:value="pa._id"
-							v-model="orderItem.productAdditions[i - 1].productAddition"
-							@click="clearPAPAV(i)"
-						>
-
-						<!-- Title -->
-						<h5 class="font-weight-bold text-primary">
-							{{ pa.name }}
-						</h5>
-						<p class="h6 text-dark">{{ pa.name }}</p>
-							
-						<!-- Product Variants -->
-						<div v-if="pa.productVariants.length > 0">
-							<!-- [FOR] Every productVariants -->
-							<div
-								v-for="(pv, iii) in pa.productVariants"
-								:key="iii"
-							>
-								<select
-									v-if="pv.options"
-									:name="pv.options"
-									v-model="orderItem.productAdditions[i - 1].productAdditionVariants[iii]"
-									class="form-control mb-3"
+						<BRow>
+							<BCol cols="2" class="pr-0">
+								<!-- [INPUT] Radio -->
+								<input
+									:name="`pa${i}`"
+									type="radio"
+									:value="pa._id"
+									v-model="orderItem.productAdditions[i - 1].productAddition"
+									@click="clearPAPAV(i)"
 								>
-									<!-- [FOR] Every option -->
-									<option
-										v-for="(option, iiii) in pv.options"
-										:key="iiii"
-										:value="option._id"
-									>{{ option.name }}</option>
-								</select>
-							</div>
-						</div>
+							</BCol>
+
+							<BCol cols="10" class="p-0">
+								<!-- Title -->
+								<h5 class="font-weight-bold text-primary">
+									{{ pa.name }}
+								</h5>
+								<p class="h6 text-dark">{{ pa.name }}</p>
+							</BCol>
+						</BRow>	
+						
+						<BRow>
+							<BCol cols="12">
+								<!-- Product Variants -->
+								<div v-if="pa.productVariants.length > 0">
+									<!-- [FOR] Every productVariants -->
+									<div
+										v-for="(pv, iii) in pa.productVariants"
+										:key="iii"
+									>
+										<select
+											v-if="pv.options"
+											:name="pv.options"
+											v-model="orderItem.productAdditions[i - 1].productAdditionVariants[iii]"
+											class="form-control mb-3"
+										>
+											<!-- [FOR] Every option -->
+											<option
+												v-for="(option, iiii) in pv.options"
+												:key="iiii"
+												:value="option._id"
+											>{{ option.name }}</option>
+										</select>
+									</div>
+								</div>
+							</BCol>
+						</BRow>
 					</BCard>
 
 					<p class="h5 my-5 text-light bg-dark">
