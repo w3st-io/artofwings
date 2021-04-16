@@ -144,10 +144,11 @@
 					>
 						<!-- [INPUT] Radio -->
 						<input
-							v-model="orderItem.productAdditions[0].productAddition"
+							:name="pa._id"
 							type="radio"
 							:value="pa._id"
-							@click="orderItem.productAdditions[0].productAdditionVariants = []"
+							v-model="orderItem.productAdditions[0].productAddition"
+							@click="clearPAPAV()"
 						>
 
 						<div>
@@ -160,17 +161,20 @@
 							<!-- Product Variants -->
 							<div v-if="pa.productVariants.length > 0">
 								<!-- For Every productVariants -->
-								<div v-for="(pv, i) in pa.productVariants" :key="i">
+								<div
+									v-for="(pv, ii) in pa.productVariants"
+									:key="ii"
+								>
 									<select
 										v-if="pv.options"
-										v-model="orderItem.productAdditions[0].productAdditionVariants[i]"
 										:name="pv.options"
+										v-model="orderItem.productAdditions[0].productAdditionVariants[i]"
 										class="form-control mb-3"
 									>
 										<!-- For Every option -->
 										<option
-											v-for="(option, i) in pv.options"
-											:key="i"
+											v-for="(option, iii) in pv.options"
+											:key="iii"
 											:value="option._id"
 										>{{ option.name }}</option>
 									</select>
@@ -180,7 +184,8 @@
 					</BCard>
 
 					<p class="h5 my-5 text-light bg-dark">
-						orderItem.productAdditions: {{ orderItem.productAdditions }}
+						orderItem.productAdditions:
+						{{ orderItem.productAdditions }}
 					</p>
 
 				</BCard>
@@ -204,7 +209,6 @@
 		</BRow>
 		
 		<p class="h5 my-5 text-light bg-dark">
-			<!-- product: {{ product }} -->
 			orderItem: {{ orderItem }},
 		</p>
 	</BContainer>
@@ -285,6 +289,10 @@
 
 				// Update Array //
 				this.orderItem.productExtras = updatedArray
+			},
+
+			clearPAPAV() {
+				this.orderItem.productAdditions[0].productAdditionVariants = []
 			},
 
 			log() {
