@@ -131,23 +131,28 @@
 
 			<!-- Product Additions -->
 			<BCol v-if="product.productAdditions.length > 0" cols="12" lg="3">
-				<BCard bg-variant="none" class="shadow">
+				<BCard
+					v-for="i in product.totalProductAdditions"
+					:key="i"
+					bg-variant="none"
+					class="shadow"
+				>
 					<h2 class="mb-3 text-center font-weight-bold text-primary">
-						Add More!
+						Add More! {{ n - 1 }}
 					</h2>
 
 					<!-- [FOR] productAdditions -->
 					<BCard
-						v-for="(pa, i) in product.productAdditions" :key="i"
+						v-for="(pa, ii) in product.productAdditions" :key="ii"
 						bg-variant="none"
 						class="mb-3"
 					>
 						<!-- [INPUT] Radio -->
 						<input
-							:name="pa._id"
+							name="pa"
 							type="radio"
 							:value="pa._id"
-							v-model="orderItem.productAdditions[0].productAddition"
+							v-model="orderItem.productAdditions[i - 1].productAddition"
 							@click="clearPAPAV()"
 						>
 
@@ -157,28 +162,26 @@
 						</h5>
 						<p class="h6 text-dark">{{ pa.name }}</p>
 							
-						<div v-if="orderItem.productAdditions[0].productAddition == pa._id">
-							<!-- Product Variants -->
-							<div v-if="pa.productVariants.length > 0">
-								<!-- For Every productVariants -->
-								<div
-									v-for="(pv, ii) in pa.productVariants"
-									:key="ii"
+						<!-- Product Variants -->
+						<div v-if="pa.productVariants.length > 0">
+							<!-- [FOR] Every productVariants -->
+							<div
+								v-for="(pv, iii) in pa.productVariants"
+								:key="iii"
+							>
+								<select
+									v-if="pv.options"
+									:name="pv.options"
+									v-model="orderItem.productAdditions[i - 1].productAdditionVariants[iii]"
+									class="form-control mb-3"
 								>
-									<select
-										v-if="pv.options"
-										:name="pv.options"
-										v-model="orderItem.productAdditions[0].productAdditionVariants[ii]"
-										class="form-control mb-3"
-									>
-										<!-- For Every option -->
-										<option
-											v-for="(option, iii) in pv.options"
-											:key="iii"
-											:value="option._id"
-										>{{ option.name }}</option>
-									</select>
-								</div>
+									<!-- [FOR] Every option -->
+									<option
+										v-for="(option, iiii) in pv.options"
+										:key="iiii"
+										:value="option._id"
+									>{{ option.name }}</option>
+								</select>
 							</div>
 						</div>
 					</BCard>
@@ -237,13 +240,7 @@
 					quantity: 1,
 					productVariants: [],
 					productExtras: [],
-					productAdditions: [
-						{
-							productAddition: '',
-							productAdditionVariants: [],
-							productAdditionExtras: [],
-						},
-					],
+					productAdditions: [],
 				},
 				loading: true,
 				error: '',
@@ -254,6 +251,15 @@
 			if (!localStorage.usertoken) { router.push({ name: 'user_login' }) }
 
 			await this.getPageData()
+
+			// Inialize productAdditions
+			for (let i = 0; i < this.product.totalProductAdditions; i++) {	
+				this.orderItem.productAdditions.push({
+					productAddition: '',
+					productAdditionVariants: [],
+					productAdditionExtras: [],
+				})
+			}
 
 			this.log()
 		},
@@ -292,7 +298,11 @@
 			},
 
 			clearPAPAV() {
-				this.orderItem.productAdditions[0].productAdditionVariants = []
+				for (let i = 0; i < this.orderItem.productAdditions.length; i++) {
+					console.log(this.orderItem.productAdditions[i].productAdditionVariants)
+					this.orderItem.productAdditions[i].productAdditionVariants = []
+					console.log(this.orderItem.productAdditions[i].productAdditionVariants)
+				}
 			},
 
 			log() {

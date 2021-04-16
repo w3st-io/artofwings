@@ -66,6 +66,12 @@ const product = mongoose.Schema({
 		}
 	],
 
+	totalProductAdditions: {
+		type: Number,
+		require: false,
+		default: 1,
+	},
+
 	productAdditions: [
 		{
 			type: mongoose.Schema.Types.ObjectId,
