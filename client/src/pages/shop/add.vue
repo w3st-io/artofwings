@@ -135,10 +135,10 @@
 					v-for="i in product.totalProductAdditions"
 					:key="i"
 					bg-variant="none"
-					class="shadow"
+					class="mb-3 shadow"
 				>
 					<h2 class="mb-3 text-center font-weight-bold text-primary">
-						Add More! {{ n - 1 }}
+						Add More!
 					</h2>
 
 					<!-- [FOR] productAdditions -->
@@ -149,11 +149,11 @@
 					>
 						<!-- [INPUT] Radio -->
 						<input
-							name="pa"
+							:name="`pa${i}`"
 							type="radio"
 							:value="pa._id"
 							v-model="orderItem.productAdditions[i - 1].productAddition"
-							@click="clearPAPAV()"
+							@click="clearPAPAV(i)"
 						>
 
 						<!-- Title -->
@@ -187,8 +187,8 @@
 					</BCard>
 
 					<p class="h5 my-5 text-light bg-dark">
-						orderItem.productAdditions:
-						{{ orderItem.productAdditions }}
+						orderItem.productAdditions[{{ i - 1 }}]:
+						{{ orderItem.productAdditions[i - 1] }}
 					</p>
 
 				</BCard>
@@ -297,12 +297,10 @@
 				this.orderItem.productExtras = updatedArray
 			},
 
-			clearPAPAV() {
-				for (let i = 0; i < this.orderItem.productAdditions.length; i++) {
-					console.log(this.orderItem.productAdditions[i].productAdditionVariants)
-					this.orderItem.productAdditions[i].productAdditionVariants = []
-					console.log(this.orderItem.productAdditions[i].productAdditionVariants)
-				}
+			clearPAPAV(i) {
+				console.log(this.orderItem.productAdditions[i - 1].productAdditionVariants)
+				this.orderItem.productAdditions[i - 1].productAdditionVariants = []
+				console.log(this.orderItem.productAdditions[i - 1].productAdditionVariants)
 			},
 
 			log() {
