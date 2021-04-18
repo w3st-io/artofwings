@@ -6,8 +6,18 @@ module.exports = {
 	// [APP] //
 	NODE_ENV: process.env.NODE_ENV || 'development',
 
-	// [HOME] //
-	CUSTOM_HOME: process.env.CUSTOM_HOME || 'false',
+	// [PORT] //
+	PORT: process.env.PORT || 5000,
+
+	// [MONGODB] //
+	MONGO_URI: process.env.MONGO_URI || '',
+
+	// [URL] //
+	CLIENT_BASE_URL: process.env.BASE_URL || 'http://localhost:8080',
+	SERVER_BASE_URL: process.env.BASE_URL || 'http://localhost:5000',
+
+	// [SECRET] //
+	SECRET_KEY: process.env.SECRET_KEY || 'secret',
 
 	// [FUNCTIONALITY] //
 	ADMIN_FUNCTIONALITY: process.env.ADMIN_FUNCTIONALITY || false,
@@ -16,15 +26,8 @@ module.exports = {
 	SHOP_FUNCTIONALITY: process.env.SHOP_FUNCTIONALITY || false,
 	USER_FUNCTIONALITY: process.env.USER_FUNCTIONALITY || false,
 
-	// [URL] //
-	CLIENT_BASE_URL: process.env.BASE_URL || 'http://localhost:8080',
-	SERVER_BASE_URL: process.env.BASE_URL || 'http://localhost:5000',
-
-	// [PORT] //
-	PORT: process.env.PORT || 5000,
-	
-	// [MONGODB] //
-	MONGO_URI: process.env.MONGO_URI || '',
+	// [HOME] //
+	CUSTOM_HOME: process.env.CUSTOM_HOME || 'false',
 	
 	// [EMAIL] //
 	EMAIL: process.env.EMAIL || '',
@@ -37,9 +40,6 @@ module.exports = {
 	DESIGNS_EMAIL: process.env.DESIGNS_EMAIL || '',
 	INSTALLS_EMAIL: process.env.INSTALLS_EMAIL || '',
 	SERVICES_EMAIL: process.env.SERVICES_EMAIL || '',
-	
-	// [SECRET] //
-	SECRET_KEY: process.env.SECRET_KEY || 'secret',
 
 	// [STRIPE] //
 	STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLIC_KEY || '',
