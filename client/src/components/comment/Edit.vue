@@ -39,7 +39,7 @@
 </template>
 
 <script>
-	import CommentService from '@/services/CommentService'
+	import CommentService from '@/services/user/CommentService'
 	import router from '@/router'
 
 	// [EXPORT] //

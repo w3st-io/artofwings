@@ -87,7 +87,7 @@
 <script>
 	import companyInfo from '@/defaults/companyInfo'
 	import router from '@/router'
-	import UserService from '@/services/UserService'
+	import UserService from '@/services/user/UserService'
 
 	export default {
 		data() {

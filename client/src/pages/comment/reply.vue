@@ -20,7 +20,7 @@
 	// [IMPORT] Personal //
 	import CommentCreate from '@/components/comment/Create'
 	import Alert from '@/components/inform/Alert'
-	import CommentService from '@/services/CommentService'
+	import CommentService from '@/services/user/CommentService'
 	import PageService from '@/services/PageService'
 	import router from '@/router'
 

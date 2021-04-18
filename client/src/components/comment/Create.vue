@@ -40,7 +40,7 @@
 <script>
 	// [IMPORT] //
 	import Alert from '@/components/inform/Alert'
-	import CommentService from '@/services/CommentService'
+	import CommentService from '@/services/user/CommentService'
 	import router from '@/router'
 
 	// [EXPORT] //

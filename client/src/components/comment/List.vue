@@ -173,9 +173,9 @@
 	import DropDownMenuBtn from '@/components/controls/DropDownMenuBtn'
 	import NoContent from '@/components/placeholders/NoContent'
 	import router from '@/router'
-	import CommentService from '@/services/CommentService'
+	import CommentService from '@/services/user/CommentService'
 	import ACommentService from '@/services/admin/CommentService'
-	import UserService from '@/services/UserService'
+	import UserService from '@/services/user/UserService'
 	
 	// [EXPORT] //
 	export default {
