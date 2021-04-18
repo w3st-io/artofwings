@@ -380,7 +380,7 @@ router.post(
 
 
 router.post(
-	'/request-password-reset',
+	'/request-reset-password',
 	async (req, res) => {
 		try {
 			// [VALIDATE] //
