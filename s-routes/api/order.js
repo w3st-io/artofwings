@@ -56,7 +56,7 @@ router.delete(
 				// [DELETE] //
 				const comment = await commentsCollection.c_deleteByIdAndUser({
 					comment_id: req.params.comment_id,
-					user_id: req.decoded.user_id,
+					user_id: req.user_decoded.user_id,
 				})
 					
 				if (comment.status) {
