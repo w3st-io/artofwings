@@ -109,7 +109,7 @@
 				logo: require('../../assets/media/company/logo.png'),
 				buttons: buttons,
 				defaultData: defaultData,
-				decoded: {},
+				user_decoded: {},
 				userLogged: false,
 				query: '',
 				notifications: '',
@@ -132,7 +132,7 @@
 					if (localStorage.usertoken) {
 						this.userLogged = true
 
-						this.decoded = await UserService.s_getUserTokenDecodeData()
+						this.user_decoded = await UserService.s_getUserTokenDecodeData()
 					}
 				}
 				catch (err) { console.log(`Navbar: ${err}`) }

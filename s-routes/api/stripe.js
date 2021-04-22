@@ -51,14 +51,14 @@ router.get(
 				address: req.body.address,
 				shipping: req.body.shipping,
 				metadata: {
-					user_id: req.decoded.user_id,
+					user_id: req.user_decoded.user_id,
 				},
 			})
 
 			if (createdCustomer.created != null) {
 				// [CREATE] stripeCustomer //
 				stripeCustomersCollection.c_create({
-					user_id: eq.decoded.user_id,
+					user_id: eq.user_decoded.user_id,
 					stripe_customer_id: createdCustomer.id
 				})
 
