@@ -22,7 +22,7 @@
 						<BButton>Order Now</BButton>
 					</a>
 
-					<ShopPortal v-if="localStorage.node_env !== 'production'" />
+					<ShopPortal v-if="localStorage.node_env == 'development'" />
 				</div>
 
 				<!-- [CENTER] Menu Items -->
@@ -60,7 +60,7 @@
 						<BButton>Order Now</BButton>
 					</a>
 
-					<ShopPortal v-if="localStorage.node_env !== 'production'" />
+					<ShopPortal v-if="localStorage.node_env == 'development'" />
 				</div>
 			</BContainer>
 
