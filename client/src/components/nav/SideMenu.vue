@@ -11,6 +11,14 @@
 			@click="closeMenu()"
 		><XIcon size="36" /></BButton>
 
+		<!-- Close Button -->
+		<BButton
+			v-show="sideMenuOpen"
+			variant="outline-primary"
+			class="mb-2 w-100 text-primary"
+			@click="closeMenu()"
+		><p class="h1 my-1">Order Now</p></BButton>
+
 		<!-- Menu Page Link -->
 		<RouterLink
 			v-show="sideMenuOpen"

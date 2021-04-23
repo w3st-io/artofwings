@@ -1,5 +1,5 @@
 <template>
-	<BContainer class="my-3">
+	<BContainer class="py-3">
 		<BRow>
 			<BCol cols="12" class="text-light">
 				<!-- Title -->

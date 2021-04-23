@@ -57,6 +57,6 @@
 	.nav-spacer2 {
 		padding-top: 120px;
 
-		@media (max-width: 990px) { padding-top: 151px; }		
+		@media (max-width: 1200px) { padding-top: 151px; }		
 	}
 </style>

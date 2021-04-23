@@ -4,14 +4,14 @@
 		<div class="bg-primary">
 			<BContainer class="py-3 d-flex container-fluid">
 				<!-- [LEFT] Logo -->
-				<div>
+				<div class="">
 					<RouterLink to="/" class="text-decoration-none text-light">
 						<img :src="logo" class="w-100 logo-img" style="max-width: 260px;">
 					</RouterLink>
 				</div>
 
 				<!-- [HIDDEN] Shopping Cart + User -->
-				<div class="d-block d-lg-none ml-auto text-right">
+				<div class="d-block d-xl-none ml-auto text-right">
 					<a :href="defaultData.phoneNumberLink" class="text-light">
 						<BButton class="mr-2">
 							<PhoneIcon size="1x" />
@@ -19,14 +19,14 @@
 					</a>
 
 					<a :href="defaultData.orderingSystemLink">
-						<BButton>Order Now</BButton>
+						<BButton>Order!</BButton>
 					</a>
 
 					<ShopPortal v-if="localStorage.node_env == 'development'" />
 				</div>
 
 				<!-- [CENTER] Menu Items -->
-				<div class="d-none d-lg-block mx-auto text-lg-left py-4">
+				<div class="d-none d-xl-block mx-auto text-lg-left py-4">
 					<RouterLink
 						v-for="(button, i) in buttons"
 						:key="i"
@@ -47,7 +47,7 @@
 				</div>
 
 				<!-- [RIGHT] Shopping Cart + User -->
-				<div class="d-none d-lg-block ml-auto text-right">
+				<div class="d-none d-xl-block ml-auto text-right">
 					<SocialMediaPlug size="2x" variant="light" class="mb-3"/>
 					
 					<a :href="defaultData.phoneNumberLink" class="text-light">
@@ -64,7 +64,7 @@
 				</div>
 			</BContainer>
 
-			<BContainer fluid class="d-block d-lg-none">
+			<BContainer fluid class="d-block d-xl-none">
 				<BRow>
 					<!-- Hidden Menu Button -->
 					<BCol cols="12" class="p-0">

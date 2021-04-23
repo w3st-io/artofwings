@@ -1,11 +1,11 @@
 <template>
 	<BButtonGroup>
 		<!-- Shopping Cart -->
-		<BButton variant="secondary" class="px-4" @click="mainRedirect()">
+		<BButton variant="secondary" class="ml-2 px-4" @click="mainRedirect()">
 			<!-- <BBadge variant="danger">3</BBadge> -->
 			<ShoppingCartIcon v-if="userLogged" class="text-dark" />
 
-			<span v-if="!userLogged" style="2em">Login</span>
+			<span v-if="!userLogged">Login</span>
 		</BButton>
 
 		<!-- User Logged -->

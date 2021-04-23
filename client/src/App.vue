@@ -49,7 +49,7 @@
 			EventBus.$on('force-rerender', () => { this.forceRerender() })
 
 			// [LOG] //
-			//this.log()
+			this.log()
 		},
 
 		methods: {
@@ -70,6 +70,7 @@
 				console.log('%%% [APP] %%%')
 				console.log('usertoken:', localStorage.usertoken)
 				console.log('admintoken:', localStorage.admintoken)
+				console.log('localStorage:', localStorage)
 			}
 		}
 	}
