@@ -143,7 +143,7 @@ async function s_resendVerificationEmail(email) {
 
 
 /******************* [PASSWORD] *******************/
-async function s_resetPassword(currentPassword, password) {
+async function s_changePassword(currentPassword, password) {
 	try {
 		const authAxios = await this.authAxios()
 		
@@ -224,7 +224,7 @@ export default {
 	s_logout,
 	s_register,
 	s_verify,
-	s_resetPassword,
+	s_changePassword,
 	s_resendVerificationEmail,
 	s_requestResetPassword,
 	s_notLoggedResetPassword,
