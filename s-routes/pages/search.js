@@ -22,6 +22,7 @@ router.get(
 		// [VALIDATE] //
 		if (
 			validator.isAscii(req.params.query) &&
+			validator.isAscii(req.params.type) &&
 			Number.isInteger(parseInt(req.params.limit)) &&
 			Number.isInteger(parseInt(req.params.page))
 		) {
