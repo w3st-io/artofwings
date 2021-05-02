@@ -137,11 +137,20 @@ router.get(
 					
 					options: [
 						{
-							title: 'French Fries or Tator Tots',
+							title: 'French Fries',
 							variants: (
 								await productsCollection.c_readByCatAndSubCat({
 									cat: 'specialtySides',
-									subCat: 'FrienchFriesOrTatorTots'
+									subCat: 'fries'
+								})
+							).products,
+						},
+						{
+							title: 'Tator Tots',
+							variants: (
+								await productsCollection.c_readByCatAndSubCat({
+									cat: 'specialtySides',
+									subCat: 'tots'
 								})
 							).products,
 						},
