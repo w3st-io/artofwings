@@ -51,7 +51,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.nav-z-index { z-index: 2000; top: 0; }
 
 	.nav-spacer2 {

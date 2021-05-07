@@ -13,11 +13,15 @@
 
 		<!-- Socket -->
 		<Socket />
+
+		<!-- Loading Screen -->
+		<LoadingScreen v-if="$store.state.loading" />
 	</div>
 </template>
 
 <script>
 	// [IMPORT] Personal //
+	import LoadingScreen from '@/components/inform/LoadingScreen'
 	import Footer from '@/components/nav/Footer'
 	import Socket from '@/components/socket'
 	import UI from '@/components/UI'
@@ -29,6 +33,7 @@
 		name: 'App',
 
 		components: {
+			LoadingScreen,
 			Footer,
 			Socket,
 			UI,
@@ -77,10 +82,9 @@
 </script>
 
 <style lang="scss">
-	// [IMPORT] Personal //
-	body {
-		font-family: 'meltix' !important;
-	}
+	body { font-family: 'meltix' !important; }
+
+	body.loading-no-scroll { overflow: hidden; }
 
 	@font-face {
 		font-family: 'meltix';

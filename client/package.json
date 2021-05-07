@@ -34,7 +34,8 @@
     "vue-tiny-slider": "^0.1.39",
     "vue-videobg": "^2.0.0",
     "vue-youtube-embed": "^2.2.2",
-    "vue-zoom-on-hover": "^1.0.5"
+    "vue-zoom-on-hover": "^1.0.5",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@editorjs/code": "^2.6.0",
