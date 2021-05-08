@@ -40,6 +40,7 @@ import directions from '@/pages/directions'
 import emailSent from '@/pages/email-sent'
 // Gallery //
 import gallery from '@/pages/gallery'
+import gallery_satisfiedCustomers from '@/pages/gallery/satisfied-customers'
 import gallery_seasonOne from '@/pages/gallery/season-one'
 import gallery_seasonTwo from '@/pages/gallery/season-two'
 // Home //
@@ -310,6 +311,15 @@ const router = new Router ({
 			meta: {
 				auth: true,
 				title: 'Gallery'
+			},
+		},
+		{
+			path: '/gallery/satisfied-customers',
+			name: 'gallery_satisfied-customers',
+			component: gallery_satisfiedCustomers,
+			meta: {
+				auth: true,
+				title: 'Satisfied Customers'
 			},
 		},
 		{

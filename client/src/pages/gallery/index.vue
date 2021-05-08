@@ -10,7 +10,7 @@
 				<!-- Season 1 -->
 				<BCol
 					cols="12" sm="6"
-					class="mb-3 px-4"
+					class="mb-4 px-2 py-0"
 					data-aos="fade-up"
 					data-aos-delay="300"
 				>
@@ -26,7 +26,7 @@
 				<!-- Season 2 -->
 				<BCol
 					cols="12" sm="6"
-					class="mb-3 px-4"
+					class="mb-4 px-2 py-0"
 					data-aos="fade-up"
 					data-aos-delay="600"
 				>
@@ -36,6 +36,22 @@
 						</div>
 
 						<img :src="data.seasonTwoImg" class="w-100 rounded-lg">
+					</RouterLink>
+				</BCol>
+
+				<!-- Satisfied Customers -->
+				<BCol
+					cols="12"
+					class="mb-4 px-2"
+					data-aos="fade-up"
+					data-aos-delay="600"
+				>
+					<RouterLink to="/gallery/satisfied-customers" class="icon">
+						<div class="gallery-center">
+							<h2 class="text-secondary label">Satisfied Customers</h2>
+						</div>
+
+						<img :src="data.satisfiedCustomersImg" class="w-100 rounded-lg">
 					</RouterLink>
 				</BCol>
 			</BRow>
