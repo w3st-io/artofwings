@@ -45,16 +45,18 @@
 </template>
 
 <script>
-export default {
-	data() {
-		return {
-			img1: require('../../assets/media/artpfwingsinsta/1.png'),
-			img2: require('../../assets/media/artpfwingsinsta/2.png'),
-			img3: require('../../assets/media/artpfwingsinsta/3.png'),
-			img4: require('../../assets/media/artpfwingsinsta/4.png'),
-		}
-	},
-}
+	import companyInfo from '../../defaults/companyInfo'
+	export default {
+		data() {
+			return {
+				link: companyInfo.instagramLink,
+				img1: require('../../assets/media/artpfwingsinsta/1.png'),
+				img2: require('../../assets/media/artpfwingsinsta/2.png'),
+				img3: require('../../assets/media/artpfwingsinsta/3.png'),
+				img4: require('../../assets/media/artpfwingsinsta/4.png'),
+			}
+		},
+	}
 </script>
 
 <style lang="scss" scoped>

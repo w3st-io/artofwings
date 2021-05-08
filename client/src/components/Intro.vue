@@ -4,6 +4,12 @@
 		:class="{ 'd-none': !show }"
 	>
 		<img :src="img" class="w-100">
+
+		<BButton
+			variant="dark"
+			class="skip-button"
+			@click="skip()"
+		>Skip</BButton>
 	</div>
 </template>
 
@@ -16,9 +22,15 @@
 			}
 		},
 
+		methods: {
+			skip() {
+				this.show = false
+				document.body.classList.remove('loading-no-scroll')
+			}
+		},
+
 		created() {
 			document.body.classList.add('loading-no-scroll')
-
 
 			setTimeout(() => {
 				this.show = false
@@ -37,5 +49,13 @@
 		z-index: 100000;
 		height: 100vh;
 		width: 100%;
+	}
+
+	.skip-button {
+		position: absolute;
+		top: 90%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 100001;
 	}
 </style>

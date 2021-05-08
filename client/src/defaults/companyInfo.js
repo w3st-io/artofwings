@@ -23,10 +23,10 @@ module.exports = {
 	faxNumber: '(123) 456-7890',
 	faxNumberLink: 'tel:123-456-7890',
 
-	facebookLink: '',
-	instagramLink: '',
+	facebookLink: 'https://www.facebook.com/theartofwings',
+	instagramLink: 'https://www.instagram.com/theartofwings/',
 	grubhubLink: 'https://www.grubhub.com/restaurant/art-of-wings-48-college-ave-new-brunswick/2488947',
-	twitterLink: '',
-	youtubeLink: '',
+	twitterLink: 'https://www.instagram.com/theartofwings/',
+	youtubeLink: 'https://www.instagram.com/theartofwings/',
 	orderingSystemLink: 'https://artofwings.revelup.online/'
 }

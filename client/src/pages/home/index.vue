@@ -1,7 +1,7 @@
 <template>
 	<div class="">
-		<!-- Introl -->
-		<Intro v-if="showIntro" />
+		<!-- Intro -->
+		<Intro v-if="!showIntro" />
 
 		<!-- Hero -->
 		<BContainer fluid class="py-2 text-center bg-white">
