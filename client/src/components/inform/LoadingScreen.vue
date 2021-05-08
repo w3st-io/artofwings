@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-primary text-center custom">
+	<div class="bg-primary text-center component">
 		<img :src="logo" alt="" class="w-100 mt-5" style="max-width: 500px;">
 		
 		<div class="text-center loader">
@@ -70,7 +70,7 @@
 		animation: rotating 2s linear infinite;
 	}
 
-	.custom {
+	.component {
 		position: absolute;
 		top: 50%;
 		left: 50%;

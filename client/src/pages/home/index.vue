@@ -1,5 +1,8 @@
 <template>
-	<div>
+	<div class="">
+		<!-- Introl -->
+		<Intro />
+
 		<!-- Hero -->
 		<BContainer fluid class="py-2 text-center bg-white">
 			<Hero
@@ -70,6 +73,7 @@
 
 <script>
 	// [IMPORT] Personal //
+	import Intro from '../../components/Intro'
 	import SecondHero from '@/components/home/secondHero'
 	import BestSellers from '@/components/home/BestSellers'
 	import FlavorSlider from '@/components/home/FlavorSlider'
@@ -80,6 +84,7 @@
 
 	export default {
 		components: {
+			Intro,
 			SecondHero,
 			BestSellers,
 			GalleryPreview,
