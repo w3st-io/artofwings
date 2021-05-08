@@ -69,8 +69,9 @@
 										>Order</BButton>
 									</a>
 
+									<!-- [L:74] v-if="localStorage.node_env == 'development'" -->
 									<RouterLink
-										v-if="localStorage.node_env == 'development'"
+										
 										:to="`/shop/add/${variant._id}`"
 									>
 										<BButton

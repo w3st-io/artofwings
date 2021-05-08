@@ -1,7 +1,7 @@
 <template>
 	<div class="">
 		<!-- Introl -->
-		<Intro />
+		<Intro v-if="showIntro" />
 
 		<!-- Hero -->
 		<BContainer fluid class="py-2 text-center bg-white">
@@ -24,21 +24,32 @@
 		</BContainer>
 	
 		<!-- Sections -->
-		<BContainer class="py-5 text-center">
-			<BRow>
-				<BCol cols="12" md="6" lg="4" class="mb-3">
-					<GalleryPreview
-						:slideImgs="pageData.cnt4.r1.c2.slideImgs"
-						class="w-100 shadow"
-					/>
-				</BCol>
+		<BContainer fluid class="bg-white">
+			<BContainer class="py-5 text-center">
+				<BRow>
+					<BCol cols="12" md="6" lg="4" class="mb-3">
+						<GalleryPreview
+							:slideImgs="pageData.cnt4.r1.c2.slideImgs"
+							class="w-100 shadow"
+						/>
+					</BCol>
 
-				<BCol cols="12" md="6" lg="4" class="mb-3">
-					<BestSellers class="shadow"/>
-				</BCol>
-				
-				<BCol cols="12" md="6" lg="4" class="mb-3">
-					<FlavorSlider class="shadow" />
+					<BCol cols="12" md="6" lg="4" class="mb-3">
+						<BestSellers class="shadow"/>
+					</BCol>
+					
+					<BCol cols="12" md="6" lg="4" class="mb-3">
+						<FlavorSlider class="shadow" />
+					</BCol>
+				</BRow>
+			</BContainer>
+		</BContainer>
+
+		<!-- Sections -->
+		<BContainer fluid class="bg-white">
+			<BRow>
+				<BCol cols="12" class="mb-3">
+					<FacebookPosts class="" />
 				</BCol>
 			</BRow>
 		</BContainer>
@@ -73,13 +84,14 @@
 
 <script>
 	// [IMPORT] Personal //
-	import Intro from '../../components/Intro'
+	import Intro from '@/components/Intro'
 	import SecondHero from '@/components/home/secondHero'
 	import BestSellers from '@/components/home/BestSellers'
 	import FlavorSlider from '@/components/home/FlavorSlider'
 	import GalleryPreview from '@/components/home/GalleryPreview'
 	import SuggestionConveyor from '@/components/home/SuggestionConveyor'
 	import Hero from '@/components/home/Hero'
+	import FacebookPosts from '@/components/SocialMedia/FacebookPosts'
 	import pageData from '@/defaults/pages'
 
 	export default {
@@ -91,16 +103,22 @@
 			FlavorSlider,
 			SuggestionConveyor,
 			Hero,
+			FacebookPosts,
 		},
 
 		data() {
 			return {
+				showIntro: false,
 				pageData: pageData,
 			}
 		},
 
 		methods: {
 			isOdd(num) { return num % 2 },
+		},
+
+		created() {
+			if (localStorage.node_env == 'production') { this.showIntro = true }
 		},
 	}
 </script>
