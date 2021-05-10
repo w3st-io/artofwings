@@ -8,12 +8,14 @@
 		<BButton
 			variant="dark"
 			class="skip-button"
-			@click="skip()"
+			@click="end()"
 		>Skip</BButton>
 	</div>
 </template>
 
 <script>
+	//import { useWindowSize } from 'vue-window-size'
+
 	export default {
 		data() {
 			return {
@@ -23,19 +25,19 @@
 		},
 
 		methods: {
-			skip() {
+			end() {
 				this.show = false
 				document.body.classList.remove('loading-no-scroll')
+				this.$store.state.showIntro = false
 			}
 		},
 
 		created() {
+			if (window.innerWidth < 1200) { this.end() }
+
 			document.body.classList.add('loading-no-scroll')
 
-			setTimeout(() => {
-				this.show = false
-				document.body.classList.remove('loading-no-scroll')
-			}, 11000)
+			setTimeout(() => { this.end() }, 11000)
 		},
 	}
 </script>

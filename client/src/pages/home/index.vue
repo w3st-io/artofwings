@@ -1,7 +1,7 @@
 <template>
 	<div class="">
 		<!-- Intro -->
-		<Intro v-if="showIntro" />
+		<Intro v-if="$store.state.showIntro" />
 
 		<!-- Hero -->
 		<BContainer fluid class="py-2 text-center bg-white">
@@ -108,17 +108,12 @@
 
 		data() {
 			return {
-				showIntro: false,
 				pageData: pageData,
 			}
 		},
 
 		methods: {
 			isOdd(num) { return num % 2 },
-		},
-
-		created() {
-			if (localStorage.node_env == 'production') { this.showIntro = true }
 		},
 	}
 </script>
