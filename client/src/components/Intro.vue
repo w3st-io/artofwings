@@ -3,7 +3,7 @@
 		class="bg-light component"
 		:class="{ 'd-none': !show }"
 	>
-		<img :src="img" class="w-100">
+		<VideoBG :sources="[video]" />
 
 		<BButton
 			variant="dark"
@@ -14,13 +14,11 @@
 </template>
 
 <script>
-	//import { useWindowSize } from 'vue-window-size'
-
 	export default {
 		data() {
 			return {
 				show: true,
-				img: require('../assets/media/intro.gif')
+				video: require('../assets/media/intro.mp4'),
 			}
 		},
 
@@ -37,7 +35,7 @@
 
 			document.body.classList.add('loading-no-scroll')
 
-			setTimeout(() => { this.end() }, 11000)
+			setTimeout(() => { this.end() }, 6000)
 		},
 	}
 </script>
