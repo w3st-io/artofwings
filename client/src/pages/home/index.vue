@@ -35,11 +35,11 @@
 					</BCol>
 
 					<BCol cols="12" md="6" lg="4" class="mb-3">
-						<BestSellers class="shadow"/>
+						<BestSellers class=""/>
 					</BCol>
 					
 					<BCol cols="12" md="6" lg="4" class="mb-3">
-						<FlavorSlider class="shadow" />
+						<FlavorSlider class="" />
 					</BCol>
 				</BRow>
 			</BContainer>
