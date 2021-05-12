@@ -63,11 +63,11 @@
 
 <script>
 	// [IMPORT] //
-	import f from '../../assets/media/symbol-icons/fire.png'
 	import VueSlider from 'vue-slider-component'
 	import VueTinySlider from 'vue-tiny-slider'
 
 	// [IMPORT] Personal //
+	import fireImage from '../../assets/media/symbol-icons/fire.png'
 	import ChiliPepperSVG from '@/components/svgs/ChiliPepper'
 
 	export default {
@@ -86,7 +86,7 @@
 
 		data() {
 			return {
-				fireIcon: f,
+				fireIcon: fireImage,
 				value: 1,
 
 				slider: {

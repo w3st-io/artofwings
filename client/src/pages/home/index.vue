@@ -19,7 +19,7 @@
 		<BContainer fluid class="py-4 bg-white">
 			<BRow>
 				<BCol cols="12" md="6">
-					
+					<FacebookPosts />
 				</BCol>
 
 				<BCol cols="12" md="6">
@@ -95,6 +95,7 @@
 	import GalleryPreview from '@/components/home/GalleryPreview'
 	import SuggestionConveyor from '@/components/home/SuggestionConveyor'
 	import Hero from '@/components/home/Hero'
+	import FacebookPosts from '@/components/SocialMedia/FacebookPosts'
 	import InstagramPosts from '@/components/SocialMedia/InstagramPosts'
 	import pageData from '@/defaults/pages'
 
@@ -107,6 +108,7 @@
 			FlavorSlider,
 			SuggestionConveyor,
 			Hero,
+			FacebookPosts,
 			InstagramPosts,
 		},
 
