@@ -12,8 +12,21 @@
 			/>
 		</BContainer>
 
-		<!-- SugggestionConveyor -->
+		<!-- SuggestionConveyor -->
 		<SuggestionConveyor :slides="pageData.cnt2.slides" />
+
+		<!-- Review and Social Media -->
+		<BContainer fluid class="py-4 bg-white">
+			<BRow>
+				<BCol cols="12" md="6">
+					
+				</BCol>
+
+				<BCol cols="12" md="6">
+					<InstagramPosts />
+				</BCol>
+			</BRow>
+		</BContainer>
 			
 		<!-- Second Hero -->
 		<BContainer fluid class="p-0 text-center">
@@ -43,15 +56,6 @@
 					</BCol>
 				</BRow>
 			</BContainer>
-		</BContainer>
-
-		<!-- Sections -->
-		<BContainer fluid class="bg-white">
-			<BRow>
-				<BCol cols="12" class="mb-3">
-					<FacebookPosts class="" />
-				</BCol>
-			</BRow>
 		</BContainer>
 
 		<!-- Chicken Wing Gates -->
@@ -91,7 +95,7 @@
 	import GalleryPreview from '@/components/home/GalleryPreview'
 	import SuggestionConveyor from '@/components/home/SuggestionConveyor'
 	import Hero from '@/components/home/Hero'
-	import FacebookPosts from '@/components/SocialMedia/FacebookPosts'
+	import InstagramPosts from '@/components/SocialMedia/InstagramPosts'
 	import pageData from '@/defaults/pages'
 
 	export default {
@@ -103,7 +107,7 @@
 			FlavorSlider,
 			SuggestionConveyor,
 			Hero,
-			FacebookPosts,
+			InstagramPosts,
 		},
 
 		data() {
