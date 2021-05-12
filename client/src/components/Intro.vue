@@ -31,6 +31,9 @@
 		},
 
 		created() {
+			// [DEV] Dont show intro to Developer //
+			if (localStorage.node_env == 'development') { this.end() }
+
 			if (window.innerWidth < 1200) { this.end() }
 
 			document.body.classList.add('loading-no-scroll')
