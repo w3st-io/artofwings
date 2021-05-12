@@ -1,7 +1,20 @@
 <template>
 	<BContainer class="py-5">
-		<BCard bg-variant="none" class="mb-3 shadow">	
-			<BRow v-if="!$store.state.loading && !error">
+		<BCard bg-variant="none" class="mb-3 shadow">
+			<!-- [LOADING] -->
+			<BRow v-if="loading">
+				<BCol cols="12">
+					<Loading v-if="loading" />
+				</BCol>
+			</BRow>
+			
+			<BRow v-if="!loading && !error">
+				<BCol v-for="(image, i) in PageData.images" :key="i" cols="12">
+					<img :src="image" class="w-100 mb-3">
+				</BCol>
+			</BRow>
+
+			<BRow v-if="!loading && !error && 0 == 1">
 				<BCol
 					v-for="(section, i) in pageData.menu" :key="i"
 					cols="12" md="6" lg="4" xl="4"
@@ -196,20 +209,26 @@
 </template>
 
 <script>
+	import Loading from '@/components/inform/Loading'
+	import PageData from '../defaults/pages/menu'
 	import PageService from '@/services/PageService'
 
 	export default {
+		components: {
+			Loading,
+		},
+
 		data() {
 			return {
 				localStorage: localStorage,
+				PageData: PageData,
 				reqData: {},
+				loading: true,
 				error: '',
 			}
 		},
 
 		async created() {
-			this.$store.state.loading = true
-
 			await this.getPageData()
 
 			this.log()
@@ -222,7 +241,7 @@
 				if (this.reqData.status) { this.pageData = this.reqData }
 				else { this.error = this.reqData.message }
 
-				this.$store.state.loading = false
+				this.loading = false
 			},
 
 			calcDelay(i) {

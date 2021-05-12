@@ -98,6 +98,7 @@
 						loop: true,
 						autoplay: false,
 						autoplayButtonOutput: false,
+						autoplayTimeout: 2000,
 					},
 				},
 

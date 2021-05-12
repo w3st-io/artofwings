@@ -1,44 +1,40 @@
 <template>
 	<div class="content-container">
 		<BRow>
-			<BCol cols="6" class="p-0">
+			<BCol cols="6" class="pr-0">
 				<div :class="sharedImageClass">
 					<img :src="img1" class="image">
 				</div>
 			</BCol>
 
-			<BCol cols="6" class="p-0">
+			<BCol cols="6" class="pl-0">
 				<div :class="sharedImageClass">
 					<img :src="img2" class="image">
 				</div>
 			</BCol>
 
-			<BCol cols="6" class="p-0">
+			<BCol cols="6" class="pr-0">
 				<div :class="sharedImageClass">
 					<img :src="img3" class="image">
 				</div>
 			</BCol>
 
-			<BCol cols="6" class="p-0">
+			<BCol cols="6" class="pl-0">
 				<div :class="sharedImageClass">
 					<img :src="img4" class="image">
 				</div>
 			</BCol>
 		</BRow>
-
-		<div class="w-100 center-content filter">
-			<div class="text-center center-content">
-				<div class="p-3 rounded-lg shadow insta-color">
-					<a :href="link" class="text-decoration-none">
-						<InstagramIcon size="3x" class="text-light" />
-						<br>
-						<h4 class="m-0 font-weight-bold text-light">
-							Instagram
-						</h4>
-					</a>
-				</div>
+	
+		<a :href="link" class="text-decoration-none">
+			<div class="p-3 text-center rounded-lg shadow center-content insta-color">
+				<InstagramIcon size="3x" class="text-light" />
+				<br>
+				<h4 class="m-0 font-weight-bold text-light">
+					Find US on Instagram
+				</h4>
 			</div>
-		</div>
+		</a>
 	</div>
 </template>
 
@@ -76,9 +72,14 @@
 		-ms-transform: translate(-50%, -50%);
 	}
 
+	.filter {
+		height: 100%;
+		background: rgba(0, 0, 0, 0.40);
+	}
+
 	.image-container {
 		width: 100%;
-		height: 150px;
+		height: 175px;
 		overflow: hidden;
 	}
 

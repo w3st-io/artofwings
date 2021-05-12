@@ -13,15 +13,11 @@
 
 		<!-- Socket -->
 		<Socket />
-
-		<!-- Loading Screen -->
-		<LoadingScreen v-if="$store.state.loading" />
 	</div>
 </template>
 
 <script>
 	// [IMPORT] Personal //
-	import LoadingScreen from '@/components/inform/LoadingScreen'
 	import Footer from '@/components/nav/Footer'
 	import Socket from '@/components/socket'
 	import UI from '@/components/UI'
@@ -33,7 +29,6 @@
 		name: 'App',
 
 		components: {
-			LoadingScreen,
 			Footer,
 			Socket,
 			UI,

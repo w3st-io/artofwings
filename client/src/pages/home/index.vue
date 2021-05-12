@@ -17,15 +17,17 @@
 
 		<!-- Review and Social Media -->
 		<BContainer fluid class="py-4 bg-white">
-			<BRow>
-				<BCol cols="12" md="6">
-					<FacebookPosts />
-				</BCol>
+			<BContainer>
+				<BRow>
+					<BCol cols="12" md="6">
+						<InstagramPosts />
+					</BCol>
 
-				<BCol cols="12" md="6">
-					<InstagramPosts />
-				</BCol>
-			</BRow>
+					<BCol cols="12" md="6">
+						<FacebookPosts />
+					</BCol>
+				</BRow>
+			</BContainer>
 		</BContainer>
 			
 		<!-- Second Hero -->
