@@ -31,14 +31,18 @@
 		},
 
 		created() {
-			if (window.innerWidth < 1200) { this.end() }
-
-			document.body.classList.add('loading-no-scroll')
-
-			setTimeout(() => { this.end() }, 6000)
+			if (window.innerWidth > 1200) {
+				document.body.classList.add('loading-no-scroll')
+	
+				setTimeout(() => { this.end() }, 6000)
+			}
+			else {  this.end() }
 		},
 
 		async mounted() {
+			console.log('window.innerWidth:', window.innerWidth)
+			if (window.innerWidth < 1200) { this.end() }
+
 			// [DEV] Dont show intro to Developer //
 			if (localStorage.node_env == 'development') { this.end() }
 		},
