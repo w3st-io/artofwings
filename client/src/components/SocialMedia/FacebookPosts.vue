@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h3 class="mb-3 text-center text-light">
+		<h3 class="mb-4 text-center text-light">
 			<span class="p-2 bg-primary">See What Others are Saying About Us!</span>
 		</h3>
 
