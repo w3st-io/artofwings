@@ -28,5 +28,7 @@ module.exports = {
 	grubhubLink: 'https://www.grubhub.com/restaurant/art-of-wings-48-college-ave-new-brunswick/2488947',
 	twitterLink: 'https://www.instagram.com/theartofwings/',
 	youtubeLink: 'https://www.instagram.com/theartofwings/',
-	orderingSystemLink: 'https://artofwings.revelup.online/'
+	orderingSystemLink: 'https://artofwings.revelup.online/',
+
+	bubbleologyLogo: require('../assets/media/company/bubbleology-logo.png'),
 }

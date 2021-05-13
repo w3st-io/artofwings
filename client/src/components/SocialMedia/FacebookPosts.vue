@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<h2 class="text-center text-primary">
-			appraisals<span style="font-family: arial !important;">..</span>
-		</h2>
+		<h3 class="mb-3 text-center text-light">
+			<span class="p-2 bg-primary">See What Others are Saying About Us!</span>
+		</h3>
 
 		<VueTinySlider v-bind="options">
 			<div v-for="(slide, i) in slides" :key="i" class="px-5">
