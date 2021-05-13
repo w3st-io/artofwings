@@ -6,7 +6,25 @@
 				<!-- [LEFT] Logo -->
 				<div class="">
 					<RouterLink to="/" class="text-decoration-none text-light">
-						<img :src="logo" class="w-100 logo-img" style="max-width: 260px;">
+						<div class="d-none d-lg-block logo-img">
+							<img :src="logo" class="w-100 mb-2" style="max-width: 260px;">
+							<h6 class="text-center font-weight-bold text-secondary">
+								WINGS • BURGERS • FRIES
+							</h6>
+						</div>
+
+						<div class="d-block d-lg-none text-center logo-img">
+							<img
+								:src="logoSm"
+								class="w-100 mb-2"
+								style="max-width: 100px;"
+							>
+							<h6
+								class="text-center font-weight-bold text-secondary"
+								style="font-size: 10px;"
+							>WINGS • BURGERS • FRIES</h6>
+						</div>
+
 					</RouterLink>
 				</div>
 
@@ -107,6 +125,7 @@
 			return {
 				localStorage: localStorage,
 				logo: require('../../assets/media/company/logo.png'),
+				logoSm: require('../../assets/media/company/logo-small.png'),
 				buttons: buttons,
 				defaultData: defaultData,
 				user_decoded: {},

@@ -1,6 +1,10 @@
 <template>
 	<BContainer class="py-5">
-		<BCard bg-variant="none" class="mb-3 shadow">
+		<BCard
+			bg-variant="none"
+			class="mb-3 shadow"
+			style="background-color: #21201e !important;"
+		>
 			<!-- [LOADING] -->
 			<BRow v-if="loading">
 				<BCol cols="12">
@@ -9,6 +13,17 @@
 			</BRow>
 			
 			<BRow v-if="!loading && !error">
+				<BCol cols="12" class="text-center px-5">
+					<a :href="PageData.companyInfo.orderingSystemLink">
+						<BButton
+							variant="light"
+							size="lg"
+							class="mt-3 w-100"
+							pill
+						><h2 class="m-0">Order Now</h2></BButton>
+					</a>
+				</BCol>
+
 				<BCol v-for="(image, i) in PageData.images" :key="i" cols="12">
 					<img :src="image" class="w-100 mb-3">
 				</BCol>

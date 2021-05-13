@@ -16,15 +16,15 @@
 		<SuggestionConveyor :slides="pageData.cnt2.slides" />
 
 		<!-- Review and Social Media -->
-		<BContainer fluid class="py-4 bg-white">
+		<BContainer fluid class="py-4 bg-light">
 			<BContainer>
 				<BRow>
 					<BCol cols="12" md="6">
-						<InstagramPosts />
+						<FacebookPosts />
 					</BCol>
 
 					<BCol cols="12" md="6">
-						<FacebookPosts />
+						<InstagramPosts />
 					</BCol>
 				</BRow>
 			</BContainer>
