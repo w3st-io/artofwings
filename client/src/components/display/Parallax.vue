@@ -9,7 +9,7 @@
 	>
 		<h1
 			v-if="text"
-			class="my-auto text-center text-primary nav-spacer"
+			class="my-auto text-center text-primary p-nav-spacer"
 			style="font-size: 4em;"
 		>{{ text }}</h1>
 	</div>
@@ -58,12 +58,12 @@
 		.parallax { background-attachment: scroll; }
 	}
 
-	.nav-spacer {
+	.p-nav-spacer {
 		padding-top: 220px;
 		text-shadow: black 0.05em 0.05em 0.2em;
 	}
 
-	@media only screen and (max-width: 991px) { .nav-spacer { padding-top: 280px; } }
+	@media only screen and (max-width: 991px) { .p-nav-spacer { padding-top: 280px; } }
 
-	@media only screen and (max-width: 768px) { .nav-spacer { padding-top: 240px; } }
+	@media only screen and (max-width: 768px) { .p-nav-spacer { padding-top: 240px; } }
 </style>

@@ -6,14 +6,14 @@
 				<!-- [LEFT] Logo -->
 				<div class="">
 					<RouterLink to="/" class="text-decoration-none text-light">
-						<div class="d-none d-lg-block logo-img">
+						<div class="d-none d-xl-block logo-img">
 							<img :src="logo" class="w-100 mb-2" style="max-width: 260px;">
 							<h6 class="text-center font-weight-bold text-secondary">
 								WINGS • BURGERS • FRIES
 							</h6>
 						</div>
 
-						<div class="d-block d-lg-none text-center logo-img">
+						<div class="d-block d-xl-none text-center logo-img">
 							<img
 								:src="logoSm"
 								class="w-100 mb-2"
