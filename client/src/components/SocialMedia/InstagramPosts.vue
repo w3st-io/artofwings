@@ -31,7 +31,7 @@
 				<InstagramIcon size="3x" class="text-light" />
 				<br>
 				<h4 class="m-0 font-weight-bold text-light">
-					Find US on Instagram
+					Find Us on Instagram
 				</h4>
 			</div>
 		</a>
