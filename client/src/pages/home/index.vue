@@ -24,7 +24,7 @@
 					</BCol>
 
 					<BCol cols="12" md="6">
-						<div class="mb-5 px-3 bg-white shadow">
+						<div class="mb-3 mb-md-5 px-3 bg-white shadow">
 							<img
 								:src="pageData.companyInfo.bubbleologyLogo"
 								class="w-100"
