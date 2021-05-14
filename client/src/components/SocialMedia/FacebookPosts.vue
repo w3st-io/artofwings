@@ -1,36 +1,83 @@
 <template>
-	<div>
-		<h3 class="mb-4 text-center text-light">
-			<span class="p-2 bg-primary">See What Others are Saying About Us!</span>
-		</h3>
+	<BRow>
+		<BCol cols="12">
+			<h4 class="mb-4 text-center">
+				<span class="px-2">
+					See What Others are Saying About Us!
+				</span>
+			</h4>
+		</BCol>
 
-		<VueTinySlider v-bind="options">
-			<div v-for="(slide, i) in slides" :key="i" class="px-5">
-				<img :src="slide" class="w-100">
-			</div>
-		</VueTinySlider>
-	</div>
+		<BCol cols="12" class="mb-3 mb-xl-5">
+			<BRow>
+				<BCol cols="6" class="">
+					<BButton
+						variant="primary"
+						pill
+						size="sm"
+						id="FBPPrevButton"
+						class="w-100"
+					>
+						<ArrowLeftIcon
+							size="2x"
+							class="m-auto"
+						/>
+					</BButton>
+				</BCol>
+
+				<BCol cols="6" class="">
+					<BButton
+						variant="primary"
+						pill
+						size="sm"
+						id="FBPNextButton"
+						class="w-100"
+					>
+						<ArrowRightIcon
+							size="2x"
+							class="m-auto"
+						/>
+					</BButton>
+				</BCol>
+			</BRow>
+		</BCol>
+
+		<BCol cols="12" class="my-slider">
+			<VueTinySlider v-bind="options" ref="slider">
+				<div v-for="(slide, i) in slides" :key="i" class="px-1">
+					<img :src="slide" class="w-100">
+				</div>
+			</VueTinySlider>
+		</BCol>
+	</BRow>
 </template>
 
 <script>
-// [IMPORT] //
+	// [IMPORT] //
+	import { ArrowLeftIcon, ArrowRightIcon } from 'vue-feather-icons'
 	import VueTinySlider from 'vue-tiny-slider'
 
 	export default {
 		components: {
-			VueTinySlider
+			ArrowLeftIcon,
+			ArrowRightIcon,
+			VueTinySlider,
 		},
 
 		data() {
 			return {
 				options: {
+					container: '.my-slider',
 					items: 1,
 					gutter: 0,
 					nav: false,
-					controls: false,
+					controls: true,
+					prevButton: '#FBPPrevButton',
+					nextButton: '#FBPNextButton',
 					loop: true,
 					autoplay: true,
 					autoplayButtonOutput: false,
+					autoplayTimeout: 3000,
 				},
 
 				slides: [

@@ -16,12 +16,12 @@
 							<!-- Left Button -->
 							<BCol cols="6" xl="4" class="mb-3 mb-xl-5">
 								<BButton
-									variant="outline-light"
+									variant="secondary"
+									pill
 									id="prevButton"
-									class="px-0 w-100 text-dark"
+									class="w-100 text-primary"
 								>
-									<ArrowLeftIcon size="3x" class="d-none d-xl-block m-auto" />
-									<ArrowLeftIcon size="2.5x" class="d-block d-xl-none m-auto" />
+									<ArrowLeftIcon size="2.5x" class="m-auto" />
 								</BButton>
 							</BCol>
 
@@ -37,24 +37,22 @@
 							<!-- Right Button -->
 							<BCol cols="6" xl="4" class="mb-3 mb-xl-5">
 								<BButton
-									variant="outline-light"
+									variant="secondary"
+									pill
 									id="nextButton"
-									class="px-0 w-100 text-dark"
+									class="w-100 text-primary"
 								>
-									<ArrowRightIcon size="3x" class="d-none d-xl-block m-auto" />
-									<ArrowRightIcon size="2.5x" class="d-block d-xl-none m-auto" />
+									<ArrowRightIcon size="2.5x" class="m-auto" />
 								</BButton>
 							</BCol>
-						</BRow>
 
-						<BRow>
 							<!-- All Sliders -->
 							<BCol cols="12" class="my-slider">
 								<!-- Tiny Slider -->
-								<VueTinySlider ref="slider" v-bind="options">
+								<VueTinySlider v-bind="options" ref="slider">
 									<div
-										v-for="(slide, index) in slides"
-										:key="index"
+										v-for="(slide, i) in slides"
+										:key="i"
 										class="content"
 									>
 										<img
@@ -137,15 +135,6 @@
 			}
 		},
 
-		created() {
-			window.addEventListener('resize', this.handleResize)
-			this.handleResize();
-		},
-
-		destroyed() {
-			window.removeEventListener('resize', this.handleResize)
-		},
-
 		methods: {
 			handleResize() {
 				this.window.width = window.innerWidth;
@@ -170,10 +159,19 @@
 				}
 			},
 		},
+
+		created() {
+			window.addEventListener('resize', this.handleResize)
+			this.handleResize()
+		},
+
+		destroyed() {
+			window.removeEventListener('resize', this.handleResize)
+		},
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	@import '../../assets/styles/bootstrap-override.scss';
 
 	.image {
