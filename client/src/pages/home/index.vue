@@ -20,7 +20,7 @@
 			<BContainer>
 				<BRow>
 					<BCol cols="12" md="6">
-						<FacebookPosts v-if="showOnMobile()" />
+						<FacebookPosts />
 					</BCol>
 
 					<BCol cols="12" md="6">
