@@ -51,7 +51,7 @@
 						:to="button.path"
 					>
 						<BButton
-							variant="primary"
+							variant="none"
 							size="sm"
 							class="text-light menu-link"
 							data-aos="fade"
