@@ -20,7 +20,7 @@
 			<BContainer>
 				<BRow>
 					<BCol cols="12" md="6">
-						<FacebookPosts />
+						<FacebookPosts v-if="showSecond()" />
 					</BCol>
 
 					<BCol cols="12" md="6">
