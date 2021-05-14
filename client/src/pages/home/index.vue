@@ -37,7 +37,7 @@
 		</BContainer>
 			
 		<!-- Second Hero -->
-		<BContainer fluid class="p-0 text-center">
+		<BContainer fluid class="d-none d-sm-block p-0 text-center">
 			<SecondHero
 				:video="pageData.cnt3.video"
 				:link="pageData.companyInfo.orderingSystemLink"
@@ -67,23 +67,17 @@
 		</BContainer>
 
 		<!-- Chicken Wing Gates -->
-		<BContainer fluid class="py-5 text-center bg-light">
+		<BContainer fluid class="d-none d-sm-block py-5 text-center bg-light">
 			<BRow>
 				<BCol cols="3" class="p-0 d-none d-md-block">
 					<img :src="pageData.cnt5.imgLeft" class="w-100" >
 				</BCol>
 
-				<BCol cols="12" md="3" class="text-center" data-aos="fade">
-					<RouterLink to="/menu">
-						<BButton variant="primary" size="lg" class="mb-3 p-4 w-100">
-							Check Out the Menu
-						</BButton>
-					</RouterLink>
-				</BCol>
-				<BCol cols="12" md="3" class="text-center" data-aos="fade">
-					<a :href="pageData.companyInfo.orderingSystemLink">
-						<BButton size="lg" class="mb-3 p-4 w-100">Order Now</BButton>
-					</a>
+				<BCol cols="12" md="6" class="text-center" data-aos="fade">
+					<h1 class="text-center text-primary">
+						Our Mission<span style="font-family: arial !important;">..</span>
+					</h1>
+					<p>{{ pageData.companyInfo.companyMission }}</p>
 				</BCol>
 
 				<BCol cols="3" class="p-0 d-none d-md-block" data-aos="fade">

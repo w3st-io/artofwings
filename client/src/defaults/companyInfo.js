@@ -4,6 +4,8 @@ module.exports = {
 	companyName: 'Art of Wings',
 	companyCaption: 'Est. 2021',
 
+	companyMission: 'Our mission is to take traditionally favorite foods and offer them in a new creative way. Our menu is constantly evolving to serve the diverse taste profile of our guests. We strive to serve a one-of-a-kind experience to our customers by offering traditionally favorite foods in unique and creative ways hoping to elevate the experiences of our guest through familiar foods offered in new and creative ways. We hope you love our food as much as we love serving you!',
+
 	address: '48 College Ave, New Brunswick, NJ 08901',
 	googleMapsLink: 'https://www.google.com/maps/place/48+College+Ave,+New+Brunswick,+NJ+08901/@40.4994828,-74.4508458,17z/data=!3m1!4b1!4m5!3m4!1s0x89c3c65441b020cd:0xb1b7ac9a77ce5156!8m2!3d40.4994828!4d-74.4486571',
 	

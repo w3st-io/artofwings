@@ -40,7 +40,6 @@
 		},
 
 		async mounted() {
-			console.log('window.innerWidth:', window.innerWidth)
 			if (window.innerWidth < 1200) { this.end() }
 
 			// [DEV] Dont show intro to Developer //

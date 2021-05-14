@@ -37,7 +37,7 @@
 					</a>
 
 					<a :href="defaultData.orderingSystemLink">
-						<BButton>Order!</BButton>
+						<BButton>Order Now</BButton>
 					</a>
 
 					<ShopPortal v-if="localStorage.node_env == 'development'" />
