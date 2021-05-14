@@ -20,7 +20,7 @@
 			<BContainer>
 				<BRow>
 					<BCol cols="12" md="6">
-						<FacebookPosts v-if="showSecond()" />
+						<FacebookPosts v-if="showOnMobile()" />
 					</BCol>
 
 					<BCol cols="12" md="6">
@@ -37,7 +37,7 @@
 		</BContainer>
 			
 		<!-- Second Hero -->
-		<BContainer v-if="showSecond()" fluid class="p-0 text-center">
+		<BContainer v-if="showOnMobile()" fluid class="p-0 text-center">
 			<SecondHero
 				:video="pageData.cnt3.video"
 				:link="pageData.companyInfo.orderingSystemLink"
@@ -123,10 +123,8 @@
 		methods: {
 			isOdd(num) { return num % 2 },
 
-			showSecond() {
-				if (window.innerWidth > 576) {
-					return true
-				}
+			showOnMobile() {
+				if (window.innerWidth > 576) { return true }
 				else { return false }
 			},
 		},
