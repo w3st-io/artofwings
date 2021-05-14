@@ -37,7 +37,7 @@
 		</BContainer>
 			
 		<!-- Second Hero -->
-		<BContainer v-if="window.innerWidth > 576" fluid class="p-0 text-center">
+		<BContainer v-if="showSecond()" fluid class="p-0 text-center">
 			<SecondHero
 				:video="pageData.cnt3.video"
 				:link="pageData.companyInfo.orderingSystemLink"
@@ -122,6 +122,13 @@
 
 		methods: {
 			isOdd(num) { return num % 2 },
+
+			showSecond() {
+				if (window.innerWidth > 576) {
+					return true
+				}
+				else { return false }
+			},
 		},
 	}
 </script>
