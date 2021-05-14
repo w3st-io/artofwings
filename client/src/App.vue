@@ -24,7 +24,6 @@
 	import { EventBus } from '@/main'
 	import Service from '@/services/Service'
 
-	// [EXPORT] //
 	export default {
 		name: 'App',
 

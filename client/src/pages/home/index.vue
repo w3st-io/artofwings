@@ -37,7 +37,7 @@
 		</BContainer>
 			
 		<!-- Second Hero -->
-		<BContainer fluid class="d-none d-sm-block p-0 text-center">
+		<BContainer v-if="window.innerWidth > 576" fluid class="p-0 text-center">
 			<SecondHero
 				:video="pageData.cnt3.video"
 				:link="pageData.companyInfo.orderingSystemLink"
