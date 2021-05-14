@@ -41,17 +41,6 @@
 			}
 		},
 
-		async created() {
-			this.forceRerender()
-
-			await this.setNodeEnv()
-			
-			EventBus.$on('force-rerender', () => { this.forceRerender() })
-
-			// [LOG] //
-			this.log()
-		},
-
 		methods: {
 			forceRerender() { this.appKey++ },
 
@@ -72,7 +61,18 @@
 				console.log('admintoken:', localStorage.admintoken)
 				console.log('localStorage:', localStorage)
 			}
-		}
+		},
+
+		async created() {
+			this.forceRerender()
+
+			await this.setNodeEnv()
+			
+			EventBus.$on('force-rerender', () => { this.forceRerender() })
+
+			// [LOG] //
+			this.log()
+		},
 	}
 </script>
 
