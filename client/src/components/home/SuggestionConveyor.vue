@@ -7,14 +7,14 @@
 							<!-- !XL Title -->
 							<BCol cols="12" class="d-block d-xl-none mb-3">
 								<div class="">
-									<h3 class="px-2 text-center text-primary font-weight-bold">
+									<h2 class="px-2 text-center text-primary font-weight-bold">
 										Combos <span class="text-secondary">&</span> Deals
-									</h3>
+									</h2>
 								</div>
 							</BCol>
 
 							<!-- Left Button -->
-							<BCol cols="6" xl="4" class="mb-3 mb-xl-5">
+							<BCol cols="6" xl="3" class="mb-3 mb-xl-5">
 								<BButton
 									variant="secondary"
 									pill
@@ -26,16 +26,16 @@
 							</BCol>
 
 							<!-- XL Title -->
-							<BCol cols="4" class="d-none d-xl-block mb-3 mb-xl-5">
+							<BCol cols="4" xl="6" class="d-none d-xl-block mb-3 mb-xl-5">
 								<div class="mt-2 rounded">
-									<h1 class="px-2 text-center font-weight-bold text-primary">
+									<h1 class="h6-lg px-2 text-center font-weight-bold text-primary">
 										Combos <span class="text-secondary">&</span> Deals
 									</h1>
 								</div>
 							</BCol>
 
 							<!-- Right Button -->
-							<BCol cols="6" xl="4" class="mb-3 mb-xl-5">
+							<BCol cols="6" xl="3" class="mb-3 mb-xl-5">
 								<BButton
 									variant="secondary"
 									pill
