@@ -1,5 +1,5 @@
 <template>
-	<div class="">
+	<div>
 		<!-- Intro -->
 		<Intro v-if="$store.state.showIntro" />
 
@@ -16,7 +16,7 @@
 		<SuggestionConveyor :slides="pageData.cnt2.slides" />
 
 		<!-- Review and Social Media -->
-		<BContainer fluid class="py-4 bg-light">
+		<BContainer fluid class="py-4 bg-white">
 			<BContainer>
 				<BRow>
 					<BCol cols="12" md="6">
@@ -24,10 +24,11 @@
 					</BCol>
 
 					<BCol cols="12" md="6">
-						<div class="mb-3 mb-md-5 px-3 bg-white shadow">
+						<div class="mb-3 mb-md-5 px-3 text-center bg-white">
 							<img
 								:src="pageData.companyInfo.bubbleologyLogo"
 								class="w-100"
+								style="max-width: 500px;"
 							>
 						</div>
 						<InstagramPosts class="shadow" />
@@ -55,12 +56,16 @@
 						/>
 					</BCol>
 
+					<BCol cols="12" md="6" lg="4" class="d-none d-md-block mb-3">
+						<FlavorSlider />
+					</BCol>
+
 					<BCol cols="12" md="6" lg="4" class="mb-3">
-						<BestSellers class=""/>
+						<BestSellers />
 					</BCol>
 					
-					<BCol cols="12" md="6" lg="4" class="mb-3">
-						<FlavorSlider class="" />
+					<BCol cols="12" md="6" lg="4" class="d-block d-md-none mb-3">
+						<FlavorSlider />
 					</BCol>
 				</BRow>
 			</BContainer>

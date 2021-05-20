@@ -2,7 +2,7 @@
 module.exports = {
 	companyLogo: require('../assets/media/company/logo.png'),
 	companyName: 'Art of Wings',
-	companyCaption: 'Est. 2021',
+	companyCaption: 'WINGS • BURGERS • FRIES',
 
 	companyMission: 'Our mission is to take traditionally favorite foods and offer them in a new creative way. Our menu is constantly evolving to serve the diverse taste profile of our guests. We strive to serve a one-of-a-kind experience to our customers by offering traditionally favorite foods in unique and creative ways hoping to elevate the experiences of our guest through familiar foods offered in new and creative ways. We hope you love our food as much as we love serving you!',
 
@@ -11,8 +11,12 @@ module.exports = {
 	
 	hoursOfOperation: [
 		{
-			days: 'Monday - Sunday',
-			hours: '11:00 AM - Midnight'
+			days: 'Monday - Friday',
+			hours: '11:00 AM - 10:00 PM'
+		},
+		{
+			days: 'Saturday - Sunday',
+			hours: '11:00 AM - 10:00 PM'
 		},
 	],
 
