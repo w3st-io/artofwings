@@ -11,12 +11,8 @@ module.exports = {
 	
 	hoursOfOperation: [
 		{
-			days: 'Monday - Friday',
-			hours: '8:00 AM - 4:30 PM'
-		},
-		{
-			days: 'Saturday',
-			hours: '9:00 AM - 1:00 PM'
+			days: 'Monday - Sunday',
+			hours: '11:00 AM - Midnight'
 		},
 	],
 
