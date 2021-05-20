@@ -7,9 +7,9 @@
 							<!-- !XL Title -->
 							<BCol cols="12" class="d-block d-xl-none mb-3">
 								<div class="">
-									<span class="h3 px-2 text-center text-light bg-primary">
+									<h3 class="px-2 text-center text-primary font-weight-bold">
 										Combos <span class="text-secondary">&</span> Deals
-									</span>
+									</h3>
 								</div>
 							</BCol>
 
@@ -28,9 +28,9 @@
 							<!-- XL Title -->
 							<BCol cols="4" class="d-none d-xl-block mb-3 mb-xl-5">
 								<div class="mt-2 rounded">
-									<span class="h1 px-2 text-center text-light bg-primary shadow">
+									<h1 class="px-2 text-center font-weight-bold text-primary">
 										Combos <span class="text-secondary">&</span> Deals
-									</span>
+									</h1>
 								</div>
 							</BCol>
 

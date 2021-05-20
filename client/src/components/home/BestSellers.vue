@@ -26,19 +26,19 @@ export default {
 			bestSellers: [
 				{
 					title: '6 Piece Wings',
-					cost: 6.99,
+					cost: 7.99,
 				},
 				{
 					title: '12 Piece Wings',
-					cost: 12.99,
+					cost: 14.99,
 				},
 				{
 					title: '24 Piece Wings',
-					cost: 24.99,
+					cost: 27.99,
 				},
 				{
 					title: 'Rutgers Cheesesteak',
-					cost: 6.99,
+					cost: 8.99,
 				},
 			],
 		}
