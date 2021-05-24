@@ -56,10 +56,10 @@ router.get(
 					)
 					
 					if (postObj.status) { posts.push(postObj.post) }
-					else { res.status(200).send(postObj) }
+					else { res.send(postObj) }
 				}
 
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: true,
 					posts: posts,
@@ -68,7 +68,7 @@ router.get(
 				})
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/pages/cat: Invalid Params'
@@ -76,7 +76,7 @@ router.get(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/pages/post/followed: Error --> ${err}`

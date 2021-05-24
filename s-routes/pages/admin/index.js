@@ -58,7 +58,7 @@ router.get(
 				})
 			}
 
-			res.status(200).send({
+			res.send({
 				executed: true,
 				status: true,
 				users,
@@ -66,7 +66,7 @@ router.get(
 			})
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/pages/admin: Error --> ${err}`

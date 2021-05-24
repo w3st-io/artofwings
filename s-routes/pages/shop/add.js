@@ -33,7 +33,7 @@ router.get(
 				})
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					location: '/pages/shop/add',
@@ -42,7 +42,7 @@ router.get(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				location: '/pages/shop/add',

@@ -57,16 +57,16 @@ router.post(
 				})
 		
 				if (mObj.status) {
-					res.status(200).send({
+					res.send({
 						executed: true,
 						status: true,
 						message: 'Email sent',
 					})
 				}
-				else { res.status(200).send(mObj) }
+				else { res.send(mObj) }
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: `/api/mail/get-quote: Invalid params`
@@ -74,7 +74,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/admins/get-quote: Error --> ${err}`
@@ -118,14 +118,14 @@ router.post(
 						// [DELETE] //
 						fs.unlink(req.file.path, async (err) => {
 							if (!err) {
-								res.status(200).send({
+								res.send({
 									executed: true,
 									status: true,
 									message: mObj.message,
 								})
 							}
 							else {
-								res.status(200).send({
+								res.send({
 									executed: true,
 									status: false,
 									location: '/api/mail/careers',
@@ -138,10 +138,10 @@ router.post(
 						// [DELETE] //
 						fs.unlink(req.file.path, async (err) => {
 							if (!err) {
-								res.status(200).send(mObj)
+								res.send(mObj)
 							}
 							else {
-								res.status(200).send({
+								res.send({
 									executed: true,
 									status: false,
 									location: '/api/mail/careers',
@@ -160,7 +160,7 @@ router.post(
 						position: req.body.position,
 					})
 
-					res.status(200).send({
+					res.send({
 						executed: true,
 						status: true,
 						message: mObj.message,
@@ -168,7 +168,7 @@ router.post(
 				}
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					location: `/api/mail/careers`,
@@ -177,7 +177,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				location: '/api/mail/careers',

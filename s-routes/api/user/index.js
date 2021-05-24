@@ -41,10 +41,10 @@ router.post(
 					bio: req.body.bio
 				})
 		
-				res.status(200).send(returned)
+				res.send(returned)
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/user/update: Invalid params',
@@ -52,7 +52,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/user/update: Error --> ${err}`,
@@ -97,7 +97,7 @@ router.post(
 									{/* expiresIn: 7200 */}
 								)
 						
-								res.status(200).send({
+								res.send({
 									executed: true,
 									status: true,
 									message: 'success',
@@ -106,7 +106,7 @@ router.post(
 								})
 							}
 							else {
-								res.status(200).send({
+								res.send({
 									executed: true,
 									status: true,
 									message: 'Invalid email or password',
@@ -115,7 +115,7 @@ router.post(
 							}
 						}
 						else {
-							res.status(200).send({
+							res.send({
 								executed: true,
 								status: true,
 								message: 'Invalid email or password',
@@ -124,7 +124,7 @@ router.post(
 						}
 					}
 					else {
-						res.status(200).send({
+						res.send({
 							executed: true,
 							status: false,
 							message: '/api/user/login: Invalid password',
@@ -132,7 +132,7 @@ router.post(
 					}
 				}
 				else {
-					res.status(200).send({
+					res.send({
 						executed: true,
 						status: false,
 						message: '/api/user/login: Invalid email',
@@ -140,7 +140,7 @@ router.post(
 				}
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/user/login: Invalid Params',
@@ -148,7 +148,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/user/login: Error --> ${err}`,
@@ -204,7 +204,7 @@ router.post(
 					})
 
 					if (activity.status) {
-						res.status(200).send({
+						res.send({
 							executed: true,
 							status: true,
 							user: user.user,
@@ -212,12 +212,12 @@ router.post(
 							activity: activity,
 						})
 					}
-					else { res.status(200).send(activity) }
+					else { res.send(activity) }
 				}
-				else { res.status(200).send(user) }
+				else { res.send(user) }
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/user/register: Invalid Params',
@@ -225,7 +225,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/user/register: Error --> ${err}`,
@@ -256,10 +256,10 @@ router.post(
 					usersCollection.c_verify(req.body.user_id)
 				}
 
-				res.status(200).send(valid)
+				res.send(valid)
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/user/verify: Invalid params',
@@ -267,7 +267,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/user/verify: Error --> ${err}`,
@@ -298,14 +298,14 @@ router.post(
 					vCode.verificationCode.verificationCode
 				)
 
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: true,
 					message: 'Verification email sent',
 				})
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/user/resend-verification-email: Invalid params',
@@ -313,7 +313,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/user/resend-verification-email: Error --> ${err}`,
@@ -346,10 +346,10 @@ router.post(
 							req.body.password
 						)
 
-						res.status(200).send(updatedPwd) 
+						res.send(updatedPwd) 
 					}
 					else {
-						res.status(200).send({
+						res.send({
 							executed: true,
 							status: false,
 							message: '/api/user/reset-password: Invalid password',
@@ -361,7 +361,7 @@ router.post(
 				}
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/user/reset-password: Invalid Params',
@@ -369,7 +369,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/user/reset-password: Error --> ${err}`,
@@ -401,14 +401,14 @@ router.post(
 							passwordRecovery.passwordRecovery.verificationCode
 						)
 						
-						res.status(200).send(email)
+						res.send(email)
 					}
-					else { res.status(200).send(passwordRecovery) }
+					else { res.send(passwordRecovery) }
 				}
-				else { res.status(200).send(user) }
+				else { res.send(user) }
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/user/reset-password-reset: Invalid params',
@@ -416,7 +416,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/user/reset-password-reset: Error --> ${err}`,
@@ -461,19 +461,19 @@ router.post(
 							)
 
 							if (deletedPR.status) {
-								res.status(200).send({
+								res.send({
 									executed: true,
 									status: true,
 									message: 'Password reset'
 								})
 							}
 						}
-						else { res.status(200).send(updatedPwd) }
+						else { res.send(updatedPwd) }
 					}
-					else { res.status(200).send(pwdRecovery) }
+					else { res.send(pwdRecovery) }
 				}
 				else {
-					res.status(200).send({
+					res.send({
 						executed: true,
 						status: false,
 						message: '/api/user/reset-password: Invalid params',
@@ -481,7 +481,7 @@ router.post(
 				}
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: 'You have not made a request to reset your password',
@@ -489,7 +489,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/user/reset-password: Error --> ${err}`,
@@ -530,10 +530,10 @@ router.post(
 						req.body.reportedUser
 					)
 
-					res.status(200).send(userReport)
+					res.send(userReport)
 				}
 				else {
-					res.status(200).send({
+					res.send({
 						executed: true,
 						status: false,
 						message: existance.message,
@@ -542,7 +542,7 @@ router.post(
 				}
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/user/report: Invalid params',
@@ -550,7 +550,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/user/report: Error --> ${err}`,
