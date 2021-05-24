@@ -22,7 +22,7 @@
 	import Socket from '@/components/socket'
 	import UI from '@/components/UI'
 	import { EventBus } from '@/main'
-	import Service from '@/services/Service'
+	import Service from '@/services'
 
 	export default {
 		name: 'App',
