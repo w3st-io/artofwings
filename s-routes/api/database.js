@@ -5,7 +5,6 @@ const mongoose = require('mongoose')
 
 
 // [REQUIRE] Personal //
-const config = require('../../s-config')
 const productAddition = require('../../s-defaults/productAdditions')
 const productExtras = require('../../s-defaults/productExtras')
 const productOptions = require('../../s-defaults/productOptions')
