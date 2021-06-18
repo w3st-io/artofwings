@@ -62,17 +62,17 @@ router.get(
 					// [COUNT] Calculate Pages //
 					pObj.totalPages = Math.ceil(pObj.postsCount / limit)
 					
-					res.status(200).send({
+					res.send({
 						executed: true,
 						status: true,
 						cats: cats,
 						postsObj: pObj,
 					})
 				}
-				else { res.status(200).send(pObj) }
+				else { res.send(pObj) }
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/pages/cat: Invalid Params'
@@ -80,7 +80,7 @@ router.get(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/pages/cat: Error --> ${err}`

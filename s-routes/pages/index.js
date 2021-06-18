@@ -52,7 +52,7 @@ router.get(
 			).posts
 
 			
-			res.status(200).send({
+			res.send({
 				executed: true,
 				status: true,
 				customHome: customHome,
@@ -62,7 +62,7 @@ router.get(
 			})
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/pages: Error --> ${err}`

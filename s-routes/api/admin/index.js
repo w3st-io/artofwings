@@ -54,7 +54,7 @@ router.post(
 									{/* expiresIn: 7200 */}
 								)
 						
-								res.status(200).send({
+								res.send({
 									executed: true,
 									status: true,
 									validation: true,
@@ -64,7 +64,7 @@ router.post(
 								})
 							}
 							else {
-								res.status(200).send({
+								res.send({
 									executed: true,
 									status: true,
 									validation: false,
@@ -74,7 +74,7 @@ router.post(
 							}
 						}
 						else {
-							res.status(200).send({
+							res.send({
 								executed: true,
 								status: true,
 								validation: false,
@@ -84,7 +84,7 @@ router.post(
 						}
 					}
 					else {
-						res.status(200).send({
+						res.send({
 							executed: true,
 							status: false,
 							location: '/api/admin/login',
@@ -93,7 +93,7 @@ router.post(
 					}
 				}
 				else {
-					res.status(200).send({
+					res.send({
 						executed: true,
 						status: false,
 						location: '/api/admin/login',
@@ -102,7 +102,7 @@ router.post(
 				}
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					location: '/api/admin/login',
@@ -111,7 +111,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				location: '/api/admin/login',
@@ -140,10 +140,10 @@ router.post(
 					req.body.password,
 				)
 
-				res.status(200).send(returned)
+				res.send(returned)
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					location: '/api/admin/register',
@@ -152,7 +152,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				location: '/api/admin/register',

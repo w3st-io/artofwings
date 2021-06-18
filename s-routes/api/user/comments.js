@@ -125,19 +125,19 @@ router.post(
 							created_comment_id: cObj.comment._id
 						})
 
-						res.status(200).send({
+						res.send({
 							executed: true,
 							status: true,
 							comment: cObj.comment,
 							cCObj: cCObj.count,
 						})
 					}
-					else { res.status(200).send(cObj) }
+					else { res.send(cObj) }
 				}
-				else { res.status(200).send(pObj) }
+				else { res.send(pObj) }
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/comments/create: Invalid Params'
@@ -145,7 +145,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/comments/create: Error --> ${err}`,
@@ -184,12 +184,12 @@ router.post(
 							cleanJSON: req.body.cleanJSON,
 						})
 						
-						res.status(200).send(updatedComment)
+						res.send(updatedComment)
 					}
-					else { res.status(200).send(preeditedComment) }
+					else { res.send(preeditedComment) }
 				}
 				else {
-					res.status(200).send({
+					res.send({
 						executed: true,
 						status: false,
 						message: ownership.message,
@@ -197,7 +197,7 @@ router.post(
 				}
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/comments/update: Invalid params'
@@ -205,7 +205,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/comments/update: Error --> ${err}`,
@@ -247,16 +247,16 @@ router.delete(
 						req.params.comment_id
 					)
 
-					res.status(200).send({
+					res.send({
 						executed: true,
 						status: true,
 						deleted: [comment, commentLikes, notifications, activity],
 					})
 				}
-				else { res.status(200).send(comment) }
+				else { res.send(comment) }
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/comments/delete: Invalid comment_id'
@@ -265,7 +265,7 @@ router.delete(
 			*/
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/comments/delete: Error --> ${err}`,
@@ -304,10 +304,10 @@ router.post(
 						commentUser_id: req.body.commentUser_id
 					})
 
-					res.status(200).send(commentLike)
+					res.send(commentLike)
 				}
 				else {
-					res.status(200).send({
+					res.send({
 						executed: true,
 						status: false,
 						message: existance.message
@@ -315,7 +315,7 @@ router.post(
 				}
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/comments/like: Invalid params'
@@ -323,7 +323,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/comments/like: Error --> ${err}`,
@@ -348,10 +348,10 @@ router.post(
 					comment_id: req.body.comment_id,
 				})
 				
-				res.status(200).send(commentLike)
+				res.send(commentLike)
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/comments/unlike: Invalid comment _id'
@@ -359,7 +359,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/comments/unlike: Error --> ${err}`,
@@ -408,10 +408,10 @@ router.post(
 							req.body.reportType
 						)
 
-						res.status(200).send(commentReport)
+						res.send(commentReport)
 					}
 					else {
-						res.status(200).send({
+						res.send({
 							executed: true,
 							status: false,
 							message: existance.message,
@@ -420,7 +420,7 @@ router.post(
 					}
 				}
 				else {
-					res.status(200).send({
+					res.send({
 						executed: true,
 						status: false,
 						message: '/api/comments/report: Comment doesnt exist.'
@@ -428,7 +428,7 @@ router.post(
 				}
 			}
 			else {
-				res.status(200).send({
+				res.send({
 					executed: true,
 					status: false,
 					message: '/api/comments/report: Invalid params',
@@ -436,7 +436,7 @@ router.post(
 			}
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				message: `/api/comments/report: Error --> ${err}`,

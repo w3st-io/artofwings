@@ -252,7 +252,7 @@ router.get(
 				},
 			]
 
-			res.status(200).send({
+			res.send({
 				executed: true,
 				status: true,
 				location: '/pages/menu',
@@ -260,7 +260,7 @@ router.get(
 			})
 		}
 		catch (err) {
-			res.status(200).send({
+			res.send({
 				executed: false,
 				status: false,
 				location: '/pages/menu',
