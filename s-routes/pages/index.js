@@ -48,7 +48,6 @@ router.get(
 							0
 						)
 					).posts[0]
-	
 				}
 				
 				// [TOP-POSTS] //
