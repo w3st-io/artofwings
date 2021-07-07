@@ -1,8 +1,5 @@
 <template>
-	<div
-		class="bg-light component"
-		:class="{ 'd-none': !show }"
-	>
+	<div class="bg-light component" :class="{ 'd-none': !show }">
 		<VideoBG :sources="[video]" />
 
 		<BButton
