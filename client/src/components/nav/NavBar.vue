@@ -24,7 +24,6 @@
 								style="font-size: 10px;"
 							>WINGS • BURGERS • FRIES</h6>
 						</div>
-
 					</RouterLink>
 				</div>
 
